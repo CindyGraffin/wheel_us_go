@@ -1,6 +1,6 @@
 # WHEEL US GO :poultry_leg:	
 
-![GitHub last commit](https://img.shields.io/github/last-commit/CindyGraffin/wheel_us_go?label=Last%20Commit&logo=GitHub) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CindyGraffin/wheel_us_go?label=Monthly%20Commits&logo=GitHub) ![GitHub contributors](https://img.shields.io/github/contributors/CindyGraffin/wheel_us_go?label=Collaborateurs)
+![GitHub last commit](https://img.shields.io/github/last-commit/CindyGraffin/wheel_us_go?label=Last%20Commit&logo=GitHub) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CindyGraffin/wheel_us_go?label=Monthly%20Commits&logo=GitHub) ![GitHub contributors](https://img.shields.io/github/contributors/CindyGraffin/wheel_us_go?label=Collaborators)
 
 Wheel Us Go est une application web centrée sur la planification et l'organisation de sorties entre famille, amis ou amoureux, au restaurant, dans les bars ou «chez soi». 
 
