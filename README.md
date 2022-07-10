@@ -1,3 +1,5 @@
+![Bannière contenant le logo de Wheel Us Go, représenté par un poulet kawaï.](./src/assets/images/banniere.png?style=center)
+
 # WHEEL US GO :poultry_leg:	
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/CindyGraffin/wheel_us_go?label=Last%20Commit&logo=GitHub) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CindyGraffin/wheel_us_go?label=Monthly%20Commits&logo=GitHub) ![GitHub contributors](https://img.shields.io/github/contributors/CindyGraffin/wheel_us_go?label=Collaborators)
