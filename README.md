@@ -25,22 +25,22 @@ Wheel Us Go est une application web centrée sur la planification et l'organisat
 
 ### 👤 Collaborateurs
 
-:woman: **Cindy Graffin** 
-Github: [CindyGraffin](https://github.com/CindyGraffin)
-LinkedIn: [Cindy Graffin](https://www.linkedin.com/in/cindygraffin/)
-Mail: [graffincindy@gmail.com](graffincindy@gmail.com)
+:woman: **Cindy Graffin**   
+Github: [CindyGraffin](https://github.com/CindyGraffin)  
+LinkedIn: [Cindy Graffin](https://www.linkedin.com/in/cindygraffin/)  
+Mail: [graffincindy@gmail.com](graffincindy@gmail.com)  
 
-:man: **Anthony Labesse** 
-Github: [StudioAzur](https://github.com/StudioAzur)
-LinkedIn: [Anthony Labesse](https://www.linkedin.com/in/anthonylabesse/)
-Mail: [alnetweb59@gmail.com](alnetweb59@gmail.com)
+:man: **Anthony Labesse**   
+Github: [StudioAzur](https://github.com/StudioAzur)  
+LinkedIn: [Anthony Labesse](https://www.linkedin.com/in/anthonylabesse/)  
+Mail: [alnetweb59@gmail.com](alnetweb59@gmail.com)  
 
-:man: **Boubacar Sidiky DEMBELE** 
-Github: [BoubaM2i](https://github.com/BoubaM2i)
-LinkedIn: [Boubacar Sidiky DEMBELE](https://www.linkedin.com/in/boubacar-sidiky-dembele-974b53176/)
-Mail: [boubacabko@gmail.com](boubacabko@gmail.com)
+:man: **Boubacar Sidiky DEMBELE**   
+Github: [BoubaM2i](https://github.com/BoubaM2i)  
+LinkedIn: [Boubacar Sidiky DEMBELE](https://www.linkedin.com/in/boubacar-sidiky-dembele-974b53176/)  
+Mail: [boubacabko@gmail.com](boubacabko@gmail.com)  
 
-:man: **Sofian Mejeddar** 
-Github: [aceovic](https://github.com/aceovic)
-LinkedIn: [Sofian Mejeddar](https://www.linkedin.com/in/sofian-mejeddar/)
-Mail: [alphfa@hotmail.com](alphfa@hotmail.com)
+:man: **Sofian Mejeddar**   
+Github: [aceovic](https://github.com/aceovic)  
+LinkedIn: [Sofian Mejeddar](https://www.linkedin.com/in/sofian-mejeddar/)  
+Mail: [alphfa@hotmail.com](alphfa@hotmail.com)  
