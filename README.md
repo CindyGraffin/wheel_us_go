@@ -9,33 +9,57 @@ Wheel Us Go est une application web centrée sur la planification et l'organisat
 ## How to use :bulb: 
 
 ### :eyes: Cloner le projet
+  
+Avant de pouvoir commencer à travailler sur le projet, il est nécessaire de le cloner.
 
 ````
 git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en local
 ````
-
+  
 ### :cactus: Les branches
 
-Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev.
+  
+:exclamation: Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev, **on ne crée pas de branche à partir de la branche main**. Pour ajouter des fonctionnalités à une branche déjà créée autre que dev, il faut créer une branche à partir de la branche de la fonctionnalité correspondante et non à partir de la branche dev.  
+  
+*Exemple: je dois produire la Navbar qui contient x items différents.*   
 
-:exclamation: Une branche = Une fonctionnalité ou un composant
+- Je commence par créer ma branche "navbar"
+
+````
+git checkout dev // Je me positionne sur la branche dev, si je l'ai déjà en local
+OU git fetch PUIS git pull origin dev PUIS git checkout dev // Je récupère la branche distante "dev" puis me place dessus
+git checkout -b navbar dev // Je crée ma branche "navbar" à partir de la branch "dev" et me positionne dessus
+git branch // Je vérifie que je suis bien sur la branche "navbar"
+````
+- Je crée une branche "navbar_item" à partir de la branche "navbar" afin de travailler sur le composant item qui représentera un item unique de ma navbar 
+````
+git checkout -b navbar_item navbar // Je crée ma branche "navbar_item" à partir de la branch "navbar" et me positionne dessus
+git branch // Je vérifie que je suis bien sur la branche "navbar_item"
+````
+  
+:exclamation: **Une branche = Une fonctionnalité ou un composant**    
+
+:sos: Rappel des commandes git concernant les branches et utiles au projet:  
 
 ````
 git branch // Voir les branches existantes
-git pull origin remote_branch_name // Permet de se placer sur une branche remote existante
+git checkout -b new_branch_name existing_branch_name // permet de créer une branche à partir d'une autre branche existante
 git branch branch_name // Crée une branche avec le nom de "branch_name"
-git checkout -d branch_name //Crée une branche et se positionne dessus
+git checkout branch_name // Se positionne sur la branche "branch_name"
+git checkout -b branch_name //Crée une branche et se positionne dessus
+git fetch // Permet de télécharger le contenu du repos distant sur la branche
+git pull origin remote_branch_name // Permet de se placer sur une branche remote existante 
 git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
 git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEULEMENT une fois le travail mergé avec une autre branche
 ````
-
+  
 ### :floppy_disk: Les commits
 
 
 ## A propos du projet :arrow_down: 
-
+  
 ### :ledger: Fonctionnalités
-
+  
 **Qui seront présentes dans le MVP (Minimum Viable Product):** 
 
 - Profil utilisateur avec photo 
@@ -46,15 +70,15 @@ git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEUL
 - Invitations d'autres personnes dans la salle
 - Possibilité d'ajouter un dresscode ou de choisir qui paye l'apéro parmis les personnes invitées grâce à une roue aléatoire
 - Ajout d'amis
-
+  
 **Fonctionnalités futures:**
 - Messagerie instantanée, entre deux personnes ou en groupe
 - Fonction premium permettant l'accès à des recettes de cuisine ou boissons inédites, sur des thèmes différents
 - Visiter le profil d'autres utilisateurs
 - Recherche d'utilisateurs et visite de leur profil
-
+  
 ### 👤 Collaborateurs
-
+  
 :woman: **Cindy Graffin**   
 Github: [CindyGraffin](https://github.com/CindyGraffin)  
 LinkedIn: [Cindy Graffin](https://www.linkedin.com/in/cindygraffin/)  
