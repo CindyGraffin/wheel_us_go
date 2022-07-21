@@ -16,10 +16,13 @@ git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en 
 
 ### :cactus: Les branches
 
+Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev.
+
 :exclamation: Une branche = Une fonctionnalité ou un composant
 
 ````
 git branch // Voir les branches existantes
+git pull origin remote_branch_name // Permet de se placer sur une branche remote existante
 git branch branch_name // Crée une branche avec le nom de "branch_name"
 git checkout -d branch_name //Crée une branche et se positionne dessus
 git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
