@@ -6,6 +6,29 @@
 
 Wheel Us Go est une application web centrée sur la planification et l'organisation de sorties entre famille, amis ou amoureux, au restaurant, dans les bars ou «chez soi». 
 
+## How to use :bulb: 
+
+### :eyes: Cloner le projet
+
+````
+git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en local
+````
+
+### :cactus: Les branches
+
+:exclamation: Une branche = Une fonctionnalité ou un composant
+
+````
+git branch // Voir les branches existantes
+git branch branch_name // Crée une branche avec le nom de "branch_name"
+git checkout -d branch_name //Crée une branche et se positionne dessus
+git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
+git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEULEMENT une fois le travail mergé avec une autre branche
+````
+
+### :floppy_disk: Les commits
+
+
 ## A propos du projet :arrow_down: 
 
 ### :ledger: Fonctionnalités
