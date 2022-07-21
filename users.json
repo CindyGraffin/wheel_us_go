@@ -1,0 +1,116 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Cindy",
+            "lastName": "Graffin",
+            "mail": "graffincindy@gmail.com",
+            "birthday": "10/01/1996",
+            "password": "123",
+            "outingNumber": 15,
+            "tableCreations": 3,
+            "tablesId": [1, 3]
+        },
+        {
+            "id": 2,
+            "firstName": "Sofian",
+            "lastName": "Mejeddar",
+            "mail": "sofian.mejeddar@gmail.com",
+            "birthday": "23/05/1986",
+            "password": "321",
+            "outingNumber": 8,
+            "tableCreations": 6,
+            "tablesId": [1, 3, 5]
+        },
+        {
+            "id": 3,
+            "firstName": "Boubacar",
+            "lastName": "Dembele",
+            "mail": "boubacabko@gmail.com",
+            "birthday": "01/04/1966",
+            "password": "568",
+            "outingNumber": 25,
+            "tableCreations":1 ,
+            "tablesId": [1, 5]
+        },
+        {
+            "id": 4,
+            "firstName": "Cyriac",
+            "lastName": "Leclercq",
+            "mail": "cyriacleclercq@gmail.com",
+            "birthday": "23/05/1991",
+            "password": "dianalol",
+            "outingNumber": 8,
+            "tableCreations": 10,
+            "tablesId": [1, 2, 5]
+        },
+        {
+            "id": 5,
+            "firstName": "John",
+            "lastName": "Doe",
+            "mail": "jogndoe@gmail.com",
+            "birthday": "10/07/1988",
+            "password": "dodida",
+            "outingNumber": 2,
+            "tableCreations": 6,
+            "tablesId": [4]
+        },
+        {
+            "id": 6,
+            "firstName": "Camille",
+            "lastName": "Delort",
+            "mail": "delort98@gmail.com",
+            "birthday": "07/06/1998",
+            "password": "outing",
+            "outingNumber": 12,
+            "tableCreations": 8,
+            "tablesId": [3, 4, 5]
+        },
+        {
+            "id": 7,
+            "firstName": "Julie",
+            "lastName": "Dupont",
+            "mail": "jdupont@gmail.com",
+            "birthday": "12/01/1968",
+            "password": "password",
+            "outingNumber": 2,
+            "tableCreations": 1,
+            "tablesId": [2]
+        },
+        {
+            "id": 8,
+            "firstName": "Marquis",
+            "lastName": "Defontaine",
+            "mail": "marquidefontaine@gmail.com",
+            "birthday": "15/12/1971",
+            "password": "MD123",
+            "outingNumber": 35,
+            "tableCreations": 2,
+            "tablesId": [3, 4]
+        },
+        {
+            "id": 9,
+            "firstName": "Marquis",
+            "lastName": "Defontaine",
+            "mail": "marquidefontaine@gmail.com",
+            "birthday": "15/12/1971",
+            "password": "MD123",
+            "outingNumber": 35,
+            "tableCreations":2 ,
+            "tablesId": [1, 4]
+        },
+        {
+            "id": 10,
+            "firstName": "Anthony",
+            "lastName": "Labesse",
+            "mail": "alnetweb59@gmail.com",
+            "birthday": "10/12/1991",
+            "password": "Marquis985",
+            "outingNumber": 18,
+            "tableCreations": 5,
+            "tablesId": [2, 5]
+        }
+
+        
+    ]
+}
