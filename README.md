@@ -6,6 +6,28 @@
 
 Wheel Us Go est une application web centrée sur la planification et l'organisation de sorties entre famille, amis ou amoureux, au restaurant, dans les bars ou «chez soi». 
 
+
+## A propos du projet :arrow_down: 
+  
+### :ledger: Fonctionnalités
+  
+**Qui seront présentes dans le MVP (Minimum Viable Product):** 
+
+- Profil utilisateur avec photo 
+- Badges de récompenses (par exemple «Un début à tout !» pour la prmeière sortie organisée, ou encore «Adepte des bars» après 10 participations à une sortie bar)
+- Création de salles (restaurant, bar ou «chez soi»)
+- Choix du lieu, soit défini, soit par vote ou en alétoire en permettant aux invités d'ajouter des propositions 
+- Ajout de la date et de l'heure 
+- Invitations d'autres personnes dans la salle
+- Possibilité d'ajouter un dresscode ou de choisir qui paye l'apéro parmis les personnes invitées grâce à une roue aléatoire
+- Ajout d'amis
+  
+**Fonctionnalités futures:**
+- Messagerie instantanée, entre deux personnes ou en groupe
+- Fonction premium permettant l'accès à des recettes de cuisine ou boissons inédites, sur des thèmes différents
+- Visiter le profil d'autres utilisateurs
+- Recherche d'utilisateurs et visite de leur profil
+  
 ## How to use :bulb: 
 
 ### :eyes: Cloner le projet
@@ -54,30 +76,8 @@ git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEUL
 ````
   
 ### :floppy_disk: Les commits
-
-
-## A propos du projet :arrow_down: 
   
-### :ledger: Fonctionnalités
-  
-**Qui seront présentes dans le MVP (Minimum Viable Product):** 
-
-- Profil utilisateur avec photo 
-- Badges de récompenses (par exemple «Un début à tout !» pour la prmeière sortie organisée, ou encore «Adepte des bars» après 10 participations à une sortie bar)
-- Création de salles (restaurant, bar ou «chez soi»)
-- Choix du lieu, soit défini, soit par vote ou en alétoire en permettant aux invités d'ajouter des propositions 
-- Ajout de la date et de l'heure 
-- Invitations d'autres personnes dans la salle
-- Possibilité d'ajouter un dresscode ou de choisir qui paye l'apéro parmis les personnes invitées grâce à une roue aléatoire
-- Ajout d'amis
-  
-**Fonctionnalités futures:**
-- Messagerie instantanée, entre deux personnes ou en groupe
-- Fonction premium permettant l'accès à des recettes de cuisine ou boissons inédites, sur des thèmes différents
-- Visiter le profil d'autres utilisateurs
-- Recherche d'utilisateurs et visite de leur profil
-  
-### 👤 Collaborateurs
+## 👤 Collaborateurs
   
 :woman: **Cindy Graffin**   
 Github: [CindyGraffin](https://github.com/CindyGraffin)  
