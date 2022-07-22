@@ -42,7 +42,7 @@ git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en 
    
 **Convention de nomage:**
 
-<branch_type>/<branch_name> : Il faut nommer ses branches de cette façon, par exemple *feature/navbar*. On utilisera deux types de branches:
+**<branch_type>/<branch_name>** : Il faut nommer ses branches de cette façon, par exemple *feature/navbar*. On utilisera deux types de branches:
 - **feature**: pour le développement d'une nouvelle fonctionnalité ou d'un composant
 - **bug**: lorsque vous constatez un bug sur votre branche, créer une branche bug à partir de celle-ci, par exemple *bug/navbar*
   
