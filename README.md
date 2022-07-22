@@ -46,7 +46,7 @@ git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en 
 - **feature**: pour le développement d'une nouvelle fonctionnalité ou d'un composant
 - **bug**: lorsque vous constatez un bug sur votre branche, créer une branche bug à partir de celle-ci, par exemple *bug/navbar*
   
-:exclamation: Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev, **on ne crée pas de branche à partir de la branche main**. Pour ajouter des fonctionnalités à une branche déjà créée autre que dev, il faut créer une branche à partir de la branche de la fonctionnalité correspondante et non à partir de la branche dev.  
+:exclamation: Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev, **on ne crée pas de branche à partir de la branche main**. Pour ajouter des fonctionnalités à une branche déjà créée autre que dev, il faut créer une branche à partir de la branche de la fonctionnalité correspondante et non à partir de la branche dev.
   
 **Exemple:** *je dois produire la Navbar qui contient x items différents.*   
 
@@ -75,9 +75,10 @@ git branch branch_name // Crée une branche avec le nom de "branch_name"
 git checkout branch_name // Se positionne sur la branche "branch_name"
 git checkout -b branch_name //Crée une branche et se positionne dessus
 git fetch // Permet de télécharger le contenu du repos distant sur la branche
-git pull origin remote_branch_name // Permet de se placer sur une branche remote existante 
+git pull origin remote_branch_name // Permet de se placer sur une branche remote existante et d'en récupérer le contenu
 git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
 git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEULEMENT une fois le travail mergé avec une autre branche
+git merge branch_to_merge // permet de merger la branche "branch_to_merge" sur la branche sur laquelle on se trouve 
 ````
   
 ### :floppy_disk: Les commits
