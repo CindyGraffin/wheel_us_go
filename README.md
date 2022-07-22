@@ -81,7 +81,25 @@ git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEUL
 ````
   
 ### :floppy_disk: Les commits
+
+**Convention d'écriture du commentaire:**
+
+"*commit_type(feature_name): courte description :gitmoji:*"
+
+Il existe deuc type de commit:
+- **feat**: pour un commit concernant le développement d'une nouvelle fonctionnalité ou d'un composant
+- **fix**: lorsqu'un commit concerne la résolution d'un bug
+
+Retrouvez les gitmojis sur ce lien: [gitmoji.dev](https://gitmoji.dev/)
   
+**Rappel:** *Réaliser un commit*
+
+````
+git add file1 file2 file3 // Permet d'ajouter les fichiers à commit
+git commit -m "feat(navbar): création du composant navbar :sparkles:" // Permet de commit les changements apportés à la navbar
+git push -u origin remote_branch_name // Permet de pusher les changements qui ont été commits sur le dépôt distant
+````
+
 ## 👤 Collaborateurs
   
 :woman: **Cindy Graffin**   
