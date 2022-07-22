@@ -78,7 +78,7 @@ git fetch // Permet de télécharger le contenu du repos distant sur la branche
 git pull origin remote_branch_name // Permet de se placer sur une branche remote existante et d'en récupérer le contenu
 git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
 git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEULEMENT une fois le travail mergé avec une autre branche
-git merge branch_to_merge // permet de merger la branche "branch_to_merge" sur la branche sur laquelle on se trouve 
+git merge branch_to_merge // Permet de merger la branche "branch_to_merge" sur la branche sur laquelle on se trouve 
 ````
   
 ### :floppy_disk: Les commits
