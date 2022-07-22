@@ -87,7 +87,7 @@ git merge branch_to_merge // Permet de merger la branche "branch_to_merge" sur l
 
 "*commit_type(feature_name): courte description :gitmoji:*"
 
-Il existe deuc type de commit:
+Il existe deux type de commit:
 - **feat**: pour un commit concernant le développement d'une nouvelle fonctionnalité ou d'un composant
 - **fix**: lorsqu'un commit concerne la résolution d'un bug
 
