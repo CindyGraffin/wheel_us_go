@@ -1,4 +1,4 @@
-![Bannière contenant le logo de Wheel Us Go, représenté par un poulet kawaï.](./src/assets/images/banniere.png?style=center)
+![Bannière contenant le logo de Wheel Us Go, représenté par un poulet kawaï.](./public/assets/images/banniere.png?style=center)
 
 # WHEEL US GO :poultry_leg:	
 
