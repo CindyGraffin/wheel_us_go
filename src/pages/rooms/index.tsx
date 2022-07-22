@@ -1,0 +1,1 @@
+// affichage de toutes les salles, composants appelés dans le routeur
