@@ -1,46 +1,124 @@
-# Getting Started with Create React App
+![Bannière contenant le logo de Wheel Us Go, représenté par un poulet kawaï.](./src/assets/images/banniere.png?style=center)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WHEEL US GO :poultry_leg:	
 
-## Available Scripts
+![GitHub last commit](https://img.shields.io/github/last-commit/CindyGraffin/wheel_us_go?label=Last%20Commit&logo=GitHub) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/CindyGraffin/wheel_us_go?label=Monthly%20Commits&logo=GitHub) ![GitHub contributors](https://img.shields.io/github/contributors/CindyGraffin/wheel_us_go?label=Collaborators)
 
-In the project directory, you can run:
+Wheel Us Go est une application web centrée sur la planification et l'organisation de sorties entre famille, amis ou amoureux, au restaurant, dans les bars ou «chez soi». 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## A propos du projet :arrow_down: 
+  
+### :ledger: Fonctionnalités
+  
+**Qui seront présentes dans le MVP (Minimum Viable Product):** 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Profil utilisateur avec photo 
+- Badges de récompenses (par exemple «Un début à tout !» pour la prmeière sortie organisée, ou encore «Adepte des bars» après 10 participations à une sortie bar)
+- Création de salles (restaurant, bar ou «chez soi»)
+- Choix du lieu, soit défini, soit par vote ou en alétoire en permettant aux invités d'ajouter des propositions 
+- Ajout de la date et de l'heure 
+- Invitations d'autres personnes dans la salle
+- Possibilité d'ajouter un dresscode ou de choisir qui paye l'apéro parmis les personnes invitées grâce à une roue aléatoire
+- Ajout d'amis
+  
+**Fonctionnalités futures:**
+- Messagerie instantanée, entre deux personnes ou en groupe
+- Fonction premium permettant l'accès à des recettes de cuisine ou boissons inédites, sur des thèmes différents
+- Visiter le profil d'autres utilisateurs
+- Recherche d'utilisateurs et visite de leur profil
+  
+## How to use :bulb: 
 
-### `npm test`
+### :eyes: Cloner le projet
+  
+Avant de pouvoir commencer à travailler sur le projet, il est nécessaire de le cloner.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+````
+git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en local
+````
+  
+### :cactus: Les branches
+   
+**Convention de nomage:**
 
-### `npm run build`
+**<branch_type>/<branch_name>** : Il faut nommer ses branches de cette façon, par exemple *feature/navbar*. On utilisera deux types de branches:
+- **feature**: Pour le développement d'une nouvelle fonctionnalité ou d'un composant
+- **bug**: Lorsque vous constatez un bug sur votre branche, créer une branche bug à partir de celle-ci, par exemple *bug/navbar*
+  
+:exclamation: Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev, **on ne crée pas de branche à partir de la branche main**. Pour ajouter des fonctionnalités à une branche déjà créée autre que dev, il faut créer une branche à partir de la branche de la fonctionnalité correspondante et non à partir de la branche dev.
+  
+**Exemple:** *je dois produire la Navbar qui contient x items différents.*   
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- *Je commence par créer ma branche "navbar"*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+````
+git checkout dev // Je me positionne sur la branche dev, si je l'ai déjà en local
+OU git fetch PUIS git pull origin dev PUIS git checkout dev // Je récupère la branche distante "dev" puis me place dessus
+git checkout -b feature/navbar dev // Je crée ma branche "navbar" à partir de la branch "dev" et me positionne dessus
+git branch // Je vérifie que je suis bien sur la branche "navbar"
+````
+- *Je crée une branche "navbar_item" à partir de la branche "navbar" afin de travailler sur le composant item qui représentera un item unique de ma navbar* 
+````
+git checkout -b feature/navbar_item feature/navbar // Je crée ma branche "navbar_item" à partir de la branch "navbar" et me positionne dessus
+git branch // Je vérifie que je suis bien sur la branche "navbar_item"
+````
+  
+:exclamation: **Une branche = Une fonctionnalité ou un composant**    
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+:sos: Rappel des commandes git concernant les branches et utiles au projet:  
 
-### `npm run eject`
+````
+git branch // Voir les branches existantes
+git checkout -b new_branch_name existing_branch_name // permet de créer une branche à partir d'une autre branche existante
+git branch branch_name // Crée une branche avec le nom de "branch_name"
+git checkout branch_name // Se positionne sur la branche "branch_name"
+git checkout -b branch_name //Crée une branche et se positionne dessus
+git fetch // Permet de télécharger le contenu du repos distant sur la branche
+git pull origin remote_branch_name // Permet de se placer sur une branche remote existante et d'en récupérer le contenu
+git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
+git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEULEMENT une fois le travail mergé avec une autre branche
+git merge branch_to_merge // Permet de merger la branche "branch_to_merge" sur la branche sur laquelle on se trouve 
+````
+  
+### :floppy_disk: Les commits
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Convention d'écriture du commentaire:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+"*commit_type(feature_name): courte description :gitmoji:*"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Il existe deux type de commit:
+- **feat**: pour un commit concernant le développement d'une nouvelle fonctionnalité ou d'un composant
+- **fix**: lorsqu'un commit concerne la résolution d'un bug
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Retrouvez les gitmojis sur ce lien: [gitmoji.dev](https://gitmoji.dev/)
+  
+**Rappel:** *Réaliser un commit*
 
-## Learn More
+````
+git add file1 file2 file3 // Permet d'ajouter les fichiers à commit
+git commit -m "feat(navbar): création du composant navbar :sparkles:" // Permet de commit les changements apportés à la navbar
+git push -u origin remote_branch_name // Permet de pusher les changements qui ont été commits sur le dépôt distant
+````
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 👤 Collaborateurs
+  
+:woman: **Cindy Graffin**   
+Github: [CindyGraffin](https://github.com/CindyGraffin)  
+LinkedIn: [Cindy Graffin](https://www.linkedin.com/in/cindygraffin/)  
+Mail: [graffincindy@gmail.com](graffincindy@gmail.com)  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+:man: **Anthony Labesse**   
+Github: [StudioAzur](https://github.com/StudioAzur)  
+LinkedIn: [Anthony Labesse](https://www.linkedin.com/in/anthonylabesse/)  
+Mail: [alnetweb59@gmail.com](alnetweb59@gmail.com)  
+
+:man: **Boubacar Sidiky DEMBELE**   
+Github: [BoubaM2i](https://github.com/BoubaM2i)  
+LinkedIn: [Boubacar Sidiky DEMBELE](https://www.linkedin.com/in/boubacar-sidiky-dembele-974b53176/)  
+Mail: [boubacabko@gmail.com](boubacabko@gmail.com)  
+
+:man: **Sofian Mejeddar**   
+Github: [aceovic](https://github.com/aceovic)  
+LinkedIn: [Sofian Mejeddar](https://www.linkedin.com/in/sofian-mejeddar/)  
+Mail: [alphfa@hotmail.com](alphfa@hotmail.com)  

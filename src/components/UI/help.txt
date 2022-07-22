@@ -1,0 +1,1 @@
+Correspond à tous les composants les plus basiques, qui votn rarement appeler d'autres composants à l'intérieur, par exemple les card, les boutons, les badges, mais PAS ce qui concerne les formulaires
