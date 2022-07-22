@@ -39,7 +39,12 @@ git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en 
 ````
   
 ### :cactus: Les branches
+   
+**Convention de nomage:**
 
+<branch_type>/<branch_name> : Il faut nommer ses branches de cette façon, par exemple *feature/navbar*. On utilisera deux types de branches:
+- **feature**: pour le développement d'une nouvelle fonctionnalité ou d'un composant
+- **bug**: lorsque vous constatez un bug sur votre branche, créer une branche bug à partir de celle-ci, par exemple *bug/navbar*
   
 :exclamation: Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev, **on ne crée pas de branche à partir de la branche main**. Pour ajouter des fonctionnalités à une branche déjà créée autre que dev, il faut créer une branche à partir de la branche de la fonctionnalité correspondante et non à partir de la branche dev.  
   
@@ -50,12 +55,12 @@ git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en 
 ````
 git checkout dev // Je me positionne sur la branche dev, si je l'ai déjà en local
 OU git fetch PUIS git pull origin dev PUIS git checkout dev // Je récupère la branche distante "dev" puis me place dessus
-git checkout -b navbar dev // Je crée ma branche "navbar" à partir de la branch "dev" et me positionne dessus
+git checkout -b feature/navbar dev // Je crée ma branche "navbar" à partir de la branch "dev" et me positionne dessus
 git branch // Je vérifie que je suis bien sur la branche "navbar"
 ````
 - Je crée une branche "navbar_item" à partir de la branche "navbar" afin de travailler sur le composant item qui représentera un item unique de ma navbar 
 ````
-git checkout -b navbar_item navbar // Je crée ma branche "navbar_item" à partir de la branch "navbar" et me positionne dessus
+git checkout -b feature/navbar_item feature/navbar // Je crée ma branche "navbar_item" à partir de la branch "navbar" et me positionne dessus
 git branch // Je vérifie que je suis bien sur la branche "navbar_item"
 ````
   
