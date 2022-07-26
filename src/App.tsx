@@ -1,12 +1,15 @@
-import React from 'react';
-import './App.css';
-import { Button } from './components/UI';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ProfilePage } from "./pages/index";
 
 function App() {
   return (
-    <div>
-      <Button/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/profile/:id" element={<ProfilePage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
