@@ -32,10 +32,12 @@ Wheel Us Go est une application web centrée sur la planification et l'organisat
 
 ### :eyes: Cloner le projet
   
-Avant de pouvoir commencer à travailler sur le projet, il est nécessaire de le cloner.
+Avant de pouvoir commencer à travailler sur le projet, il est nécessaire de le cloner. Il faut ensuite se placer sur la branche sur laquelle on souhaite travailler.
 
 ````
 git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en local
+git switch branch_name // permet de se placer sur une branche distante non disponible en local
+git checkout branch_name PUIS git pull // permet de se placer sur une branche disponible en local et avec pull de synchroniser les changements qui auraient pu être apportés au repo distant
 ````
   
 ### :cactus: Les branches
@@ -53,8 +55,8 @@ git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en 
 - *Je commence par créer ma branche "navbar"*
 
 ````
-git checkout dev // Je me positionne sur la branche dev, si je l'ai déjà en local
-OU git fetch PUIS git pull origin dev PUIS git checkout dev // Je récupère la branche distante "dev" puis me place dessus
+git checkout dev // Je me positionne sur la branche dev
+git pull // Je met à jour mon dépôt local sur la branche dev
 git checkout -b feature/navbar dev // Je crée ma branche "navbar" à partir de la branch "dev" et me positionne dessus
 git branch // Je vérifie que je suis bien sur la branche "navbar"
 ````
@@ -74,9 +76,6 @@ git checkout -b new_branch_name existing_branch_name // permet de créer une bra
 git branch branch_name // Crée une branche avec le nom de "branch_name"
 git checkout branch_name // Se positionne sur la branche "branch_name"
 git checkout -b branch_name //Crée une branche et se positionne dessus
-git fetch // Permet de télécharger le contenu du repos distant sur la branche
-git pull origin remote_branch_name // Permet de se placer sur une branche remote existante et d'en récupérer le contenu
-git push -u origin remote_branch_name // Push la branche locale sur laquelle on se trouve sur la branche remote ayant pour nom "remote_branch_name"
 git branch -d branch_name // Supprime la branche "branch_name", à utiliser SEULEMENT une fois le travail mergé avec une autre branche
 git merge branch_to_merge // Permet de merger la branche "branch_to_merge" sur la branche sur laquelle on se trouve 
 ````
@@ -98,7 +97,7 @@ Retrouvez les gitmojis sur ce lien: [gitmoji.dev](https://gitmoji.dev/)
 ````
 git add file1 file2 file3 // Permet d'ajouter les fichiers à commit
 git commit -m "feat(navbar): création du composant navbar :sparkles:" // Permet de commit les changements apportés à la navbar
-git push -u origin remote_branch_name // Permet de pusher les changements qui ont été commits sur le dépôt distant
+git push // Permet de pusher les changements qui ont été commits sur le dépôt distant
 ````
 
 ## 👤 Collaborateurs
