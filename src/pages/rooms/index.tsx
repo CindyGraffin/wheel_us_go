@@ -1,1 +1,4 @@
-// affichage de toutes les salles, composants appelés dans le routeur
+
+import ProfilePage from "../profile/ProfilePage";
+
+export {ProfilePage}
