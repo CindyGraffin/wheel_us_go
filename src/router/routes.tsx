@@ -1,49 +1,53 @@
 import LinkTypes from "./Links.type";
 import { ProfilePage, WorkInProgress } from "../pages";
+import { ImHome, ImSearch, ImBubble } from "react-icons/im";
+import { RiRestaurantFill } from "react-icons/ri";
+import { IoStar, IoSettingsOutline } from "react-icons/io5";
+import { FaUserFriends } from "react-icons/fa";
 
 const routes: LinkTypes[] = [
   {
-    href: "/",
-    imgUrl: "#",
-    alt: "#",
-    element: <ProfilePage/>
+    path: "/",
+    icon: <ImHome />,
+    element: <ProfilePage />,
+    key : 1
   },
   {
-    href: "/search",
-    imgUrl: "#",
-    alt: "#",
-    element: <WorkInProgress/>
+    path: "/search",
+    icon: <ImSearch />,
+    element: <WorkInProgress />,
+    key : 2
   },
   {
-    href: "/rooms",
-    imgUrl: "#",
-    alt: "#",
-    element: <WorkInProgress/>
+    path: "/rooms",
+    icon: <RiRestaurantFill />,
+    element: <WorkInProgress />,
+    key : 3
   },
   {
-    href: "/chat",
-    imgUrl: "#",
-    alt: "#",
-    element: <WorkInProgress/>
+    path: "/chat",
+    icon: <ImBubble />,
+    element: <WorkInProgress />,
+    key : 4
   },
   {
-    href: "/profile/:id",
-    imgUrl: "#",
-    alt: "#",
-    element: <WorkInProgress/>
+    path: "/profile/:id",
+    icon: <FaUserFriends />,
+    element: <WorkInProgress />,
+    key : 5
   },
   {
-    href: "/premium",
-    imgUrl: "#",
-    alt: "#",
-    element: <WorkInProgress/>
+    path: "/premium",
+    icon: <IoStar />,
+    element: <WorkInProgress />,
+    key : 6
   },
   {
-    href: "/settings",
-    imgUrl: "#",
-    alt: "#",
-    element: <WorkInProgress/>
-  },
+    path: "/settings",
+    icon: <IoSettingsOutline />,
+    element: <WorkInProgress />,
+    key : 7
+  }
 ];
 
 export default routes;
