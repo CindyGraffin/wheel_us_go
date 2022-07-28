@@ -1,12 +1,24 @@
-import React from 'react';
-import './App.css';
-import { Button } from './components/UI';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ProfilePage, WorkInProgress } from "./pages/index";
+import Navbar from "./components/UI/navbar/Navbar";
+import routes from "./router/routes";
 
 function App() {
   return (
-    <div>
-      <Button/>
-    </div>
+    <BrowserRouter>
+    <Navbar links={routes}></Navbar>
+      <Routes>
+        <Route path="/profile/:id" element={<ProfilePage/>}></Route>
+        <Route path="" element={<WorkInProgress />}></Route>
+        <Route path="" element={<WorkInProgress />}></Route>
+        <Route path="" element={<WorkInProgress />}></Route>
+        <Route path="" element={<WorkInProgress />}></Route>
+        <Route path="" element={<WorkInProgress />}></Route>
+        <Route path="" element={<WorkInProgress />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
