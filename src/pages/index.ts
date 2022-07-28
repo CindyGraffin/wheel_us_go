@@ -1,3 +1,5 @@
-import ProfilePage from "./profile/ProfilePage"; 
+import ProfilePage from "./profile/ProfilePage";
+import WorkInProgress from "./workInProgress";
 
-export {ProfilePage} 
+export {ProfilePage, WorkInProgress}
+
