@@ -1,8 +1,17 @@
 import React from 'react'
+import NavbarItem from '../navbar-item/NavbarItem';
 
-const Navbar = () => {
+type NavBarProps = {
+  links: any[];
+}
+
+const Navbar = ({links}: NavBarProps) => {
   return (
-    <div>Navbar</div>
+    <nav>
+      {
+        links.map((link)=><NavbarItem href={link.href} alt={link.alt} imgUrl={link.imgUrl}></NavbarItem>)
+      }
+    </nav>
   )
 }
 
