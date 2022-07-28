@@ -5,13 +5,13 @@ import LinkTypes from '../../../router/Links.type';
 
 const NavbarItem : React.FC<Omit<LinkTypes, "element">> = ({href, imgUrl, alt}) => {
   return (
-    <span>
+    <div>
         <Link to={href}>
           <div className="navbar-item">
             <img src={imgUrl} alt={alt} />
           </div>
         </Link>
-    </span>
+    </div>
   )
 }
 
