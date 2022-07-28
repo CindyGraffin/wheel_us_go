@@ -9,7 +9,7 @@ const Navbar = ({links}: NavBarProps) => {
   return (
     <nav>
       {
-        links.map((link)=><NavbarItem href={link.href} alt={link.alt} imgUrl={link.imgUrl}></NavbarItem>)
+        links.map((link)=><NavbarItem path={link.path} icon={link.icon}></NavbarItem>)
       }
     </nav>
   )

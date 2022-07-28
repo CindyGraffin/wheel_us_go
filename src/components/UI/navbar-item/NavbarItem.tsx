@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import LinkTypes from '../../../router/Links.type';
+import './NavbarItem.css';
 
 
-const NavbarItem : React.FC<Omit<LinkTypes, "element">> = ({href, imgUrl, alt}) => {
+const NavbarItem : React.FC<Omit<LinkTypes, "element">> = ({path, icon}) => {
   return (
     <div>
-        <Link to={href}>
+        <Link to={path}>
           <div className="navbar-item">
-            <img src={imgUrl} alt={alt} />
+            <span>{icon}</span>
           </div>
         </Link>
     </div>
