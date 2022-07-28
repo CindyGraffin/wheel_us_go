@@ -10,13 +10,13 @@ function App() {
     <BrowserRouter>
     <Navbar links={routes}></Navbar>
       <Routes>
-        <Route path="/profile/:id" element={<ProfilePage/>}></Route>
-        <Route path="" element={<WorkInProgress />}></Route>
-        <Route path="" element={<WorkInProgress />}></Route>
-        <Route path="" element={<WorkInProgress />}></Route>
-        <Route path="" element={<WorkInProgress />}></Route>
-        <Route path="" element={<WorkInProgress />}></Route>
-        <Route path="" element={<WorkInProgress />}></Route>
+        <Route path="/profile/:id" element={<ProfilePage/>}/>
+        <Route path="" element={<WorkInProgress />}/>
+        <Route path="" element={<WorkInProgress />}/>
+        <Route path="" element={<WorkInProgress />}/>
+        <Route path="" element={<WorkInProgress />}/>
+        <Route path="" element={<WorkInProgress />}/>
+        <Route path="" element={<WorkInProgress />}/>
       </Routes>
     </BrowserRouter>
   );
