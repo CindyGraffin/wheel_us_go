@@ -1,12 +1,13 @@
+import React from "react";
 import { Navlist } from "../../components";
 
-const ProfilePage = () => {
+const SearchUser = () => {
     return (
         <div>
             <Navlist />
-            <div>ProfilePage</div>
+            <div>SearchUser</div>
         </div>
     );
 };
 
-export default ProfilePage;
+export default SearchUser;
