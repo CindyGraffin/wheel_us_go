@@ -2,7 +2,6 @@ import LinkTypes from "./Links.type";
 import { ProfilePage, WorkInProgress } from "../pages";
 import { ImHome, ImSearch, ImBubble } from "react-icons/im";
 import { RiRestaurantFill } from "react-icons/ri";
-
 import { IoStar, IoSettingsOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 
