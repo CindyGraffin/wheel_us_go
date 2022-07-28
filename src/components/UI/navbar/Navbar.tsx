@@ -9,7 +9,7 @@ const Navbar = ({links}: NavBarProps) => {
   return (
     <nav>
       {
-        links.map((link)=><NavbarItem path={link.path} icon={link.icon}></NavbarItem>)
+        links.map((link)=><NavbarItem key={link.key} path={link.path} icon={link.icon}></NavbarItem>)
       }
     </nav>
   )

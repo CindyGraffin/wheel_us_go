@@ -9,37 +9,44 @@ const routes: LinkTypes[] = [
   {
     path: "/",
     icon: <ImHome />,
-    element: <ProfilePage />
+    element: <ProfilePage />,
+    key : 1
   },
   {
     path: "/search",
     icon: <ImSearch />,
-    element: <WorkInProgress />
+    element: <WorkInProgress />,
+    key : 2
   },
   {
     path: "/rooms",
     icon: <RiRestaurantFill />,
-    element: <WorkInProgress />
+    element: <WorkInProgress />,
+    key : 3
   },
   {
     path: "/chat",
     icon: <ImBubble />,
-    element: <WorkInProgress />
+    element: <WorkInProgress />,
+    key : 4
   },
   {
     path: "/profile/:id",
     icon: <FaUserFriends />,
-    element: <WorkInProgress />
+    element: <WorkInProgress />,
+    key : 5
   },
   {
     path: "/premium",
     icon: <IoStar />,
-    element: <WorkInProgress />
+    element: <WorkInProgress />,
+    key : 6
   },
   {
     path: "/settings",
     icon: <IoSettingsOutline />,
-    element: <WorkInProgress />
+    element: <WorkInProgress />,
+    key : 7
   }
 ];
 
