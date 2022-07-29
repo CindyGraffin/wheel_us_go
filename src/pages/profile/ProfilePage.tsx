@@ -1,3 +1,4 @@
+import { FaBeer, FaCouch } from "react-icons/fa";
 import { IoRestaurant } from "react-icons/io5";
 import { Navlist } from "../../components";
 import "./profilePage.css";
@@ -18,9 +19,11 @@ const ProfilePage = () => {
                                 
                             </button>
                             <button className="create-table">
+                                <FaBeer className="create-table-icon"/>
                                 <p>CREER UNE TABLE BAR</p>
                             </button>
                             <button className="create-table">
+                                <FaCouch className="create-table-icon"/>
                                 <div className="create-table-home">
                                     <p>CREER UNE TABLE </p>
                                     <p>&laquo; CHEZ-SOI &raquo;</p>

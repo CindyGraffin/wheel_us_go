@@ -12,7 +12,7 @@
 .left {
     flex: 2;
     background-color: var(--color-beige);
-    border-right: 1px dotted #b2935b;
+    border: 1px dotted #b2935b;
 
 }
 .center {
@@ -26,12 +26,13 @@
 .right {
     flex: 2;
     background-color: var(--color-beige);
-    border-left: 1px dotted #b2935b;
+    border: 1px dotted #b2935b;
 }
 .center__container {
     display: flex;
     flex-direction: column;
     height: 100%;
+
 }
 img {
     width: 80%;
@@ -65,7 +66,7 @@ img {
 }
 .create-table-icon {
     font-size: 25px;
-    color: #7e5835;
+    color: var(--color-brown);
 }
 .create-table p {
     max-width: 70%;
