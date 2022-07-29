@@ -1,4 +1,4 @@
-import { Layout, Navlist} from "../../components";
+import { Layout} from "../../components";
 import "./profilePage.css";
 
 
