@@ -1,6 +1,6 @@
-import Contact from "./contact/contact";
+import userHeadband from "./userHeadband/userHeadband";
+import Navlist from "./UI/navlist/Navlist";
 
-export {Contact};
 
-
+export {userHeadband, Navlist} ;
 
