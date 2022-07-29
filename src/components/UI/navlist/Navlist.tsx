@@ -1,85 +1,41 @@
 import { NavLink } from "react-router-dom";
+import NavbarItem from "../navbar-item/NavbarItem";
 
 const Navlist = () => {
-	let activeStyle = {
-		backgroundColor: 'red'
-	}
+    let activeStyle = {
+        backgroundColor: "red",
+    };
+    let navlinksInfos = [
+        "/profile",
+        "/searchuser",
+        "/usertables",
+        "/usermessages",
+        "/userfriends",
+        "/premium",
+        "/reglages",
+    ];
     return (
-		<nav>
-			<ul>
-				<li>
-					<NavLink id="1"
-						to="/profile"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Home
-					</NavLink>
-				</li>
-				<li>
-					<NavLink id="1"
-						to="/searchuser"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Search
-					</NavLink>
-				</li>
-				<li>
-					<NavLink id="2"
-						to="/usertables"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Tables
-					</NavLink>
-				</li>
-				<li>
-					<NavLink id="2"
-						to="/usermessages"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Messages
-					</NavLink>
-				</li>
-				<li>
-					<NavLink id="2"
-						to="/userfriends"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Friends
-					</NavLink>
-				</li>
-				<li>
-					<NavLink id="2"
-						to="/premium"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Premium
-					</NavLink>
-				</li>
-				<li>
-					<NavLink id="2"
-						to="/reglages"
-						style={({ isActive }) => 
-							isActive ? activeStyle : {}
-						}
-					>
-						Reglages
-					</NavLink>
-				</li>
-			</ul>
-		</nav>
-	);
+        <nav>
+            <ul>
+                {navlinksInfos.map((navlink, i) => {
+                    return (
+                        <li>
+                            <NavLink
+                                id="1"
+                                key={i}
+                                to={navlink}
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : {}
+                                }
+                            >
+                                {navlink}
+                            </NavLink>
+                        </li>
+                    );
+                })}
+            </ul>
+        </nav>
+    );
 };
 
 export default Navlist;

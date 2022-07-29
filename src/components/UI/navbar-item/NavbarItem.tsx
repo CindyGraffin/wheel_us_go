@@ -1,12 +1,12 @@
-import './NavbarItem.css';
-
+import React from "react";
+import "./NavbarItem.css";
 
 const NavbarItem = () => {
-  return (
-    <div>
+    return (
+		<div className="navbar-item">
+			item
+		</div>
+		);
+};
 
-    </div>
-  )
-}
-
-export default NavbarItem
+export default NavbarItem;
