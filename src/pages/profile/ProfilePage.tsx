@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import ContactUsers from '../../components/contactUsers/ContactUsers'
-
-const ProfilePage = () => {
-  return (
-
-    <ContactUsers />
-  )
-}
-=======
 import { Navlist } from "../../components";
 import "./profilePage.css";
 
@@ -50,6 +39,5 @@ const ProfilePage = () => {
         </div>
     );
 };
->>>>>>> 234ce412a13735e7664937bb9badccbfcc70dbf5
 
 export default ProfilePage;
