@@ -7,7 +7,9 @@ const ProfilePage = () => {
             <div className="profile__container">
                 <div className="left">
                     <div className="left__container">
-                        <img src={require("./logo2.png")} alt="" />
+                        <div className="logo">
+                            <img src={require("./logo2.png")} alt="" />
+                        </div>
                         <div className="create-table__container">
                             <button className="create-table">
                                 <p>Créer une table restaurant</p>
