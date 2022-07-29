@@ -9,8 +9,11 @@ import NavbarItem from "../UI/navbar-item/NavbarItem";
 
 const Navlist = () => {
     let activeStyle = {
-        backgroundColor: "red",
+        textDecoration: "none",
     };
+    let myStyle = {
+        textDecoration: "none"
+    }
     let navlinksInfos = [
         {
 			path: "/profile",
@@ -59,7 +62,7 @@ const Navlist = () => {
                                 key={navlink.name}
                                 to={navlink.path}
                                 style={({ isActive }) =>
-                                    isActive ? activeStyle : {}
+                                    isActive ? activeStyle :myStyle
                                 }
                             >
                                 <NavbarItem icon={navlink.icon}/>

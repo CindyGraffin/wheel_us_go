@@ -1,12 +1,20 @@
 .navbar-item {
     font-size: 25px;
-    color: #7e5835;
+    color: var(--color-blue);
     background-color: var(--color-beige-light);
-    width: 40px;
+    width: 50px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: rgba(110, 110, 110, 0.288) 0px 3px 5px;
+    box-shadow: rgba(110, 110, 110, 0.104) 0px 3px 5px;
+    
+}
+.navbar-item p {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
 }

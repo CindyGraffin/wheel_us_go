@@ -4,11 +4,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-beige);
 
     padding: 3px 0px;
-    height: 50px;
-    border-bottom: 1px dotted #b2935b;
+    height: 70px;
+
 
 }
 ul {

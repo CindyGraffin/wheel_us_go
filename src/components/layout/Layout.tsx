@@ -1,6 +1,8 @@
-import { FaBeer, FaCouch } from "react-icons/fa";
-import { IoRestaurant } from "react-icons/io5";
+
+import { IoRestaurantOutline } from "react-icons/io5";
 import { Navlist } from "../index";
+import { BiBeer } from "react-icons/bi";
+import { TbSofa } from "react-icons/tb";
 import "./layout.css";
 
 interface Props {
@@ -18,16 +20,16 @@ const Layout = ({children}: Props) => {
                         </div>
                         <div className="create-table__container">
                             <button className="create-table">
-                                <IoRestaurant className="create-table-icon"/>
+                                <IoRestaurantOutline className="create-table-icon"/>
                                 <p>CREER UNE TABLE RESTAURANT</p>
                                 
                             </button>
                             <button className="create-table">
-                                <FaBeer className="create-table-icon"/>
+                                <BiBeer className="create-table-icon"/>
                                 <p>CREER UNE TABLE BAR</p>
                             </button>
                             <button className="create-table">
-                                <FaCouch className="create-table-icon"/>
+                                <TbSofa className="create-table-icon"/>
                                 <div className="create-table-home">
                                     <p>CREER UNE TABLE HOME</p>
                                 </div>

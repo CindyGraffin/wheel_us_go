@@ -17,11 +17,11 @@ code {
 }
 
 :root {
-  --color-beige: #f3efcd;
+  --color-beige: #F6F4DF;
   --color-beige-light: #f9f9e7;
   --color-black-light: #474747;
   --color-red: #a42424;
-  --color-brown: #7e5835;
+  --color-blue: #35527e;
   --color-light-brown: #b2935b;
   --box-shadow-bold: rgba(107, 107, 107, 0.521) 0px 3px 6px;
 }
