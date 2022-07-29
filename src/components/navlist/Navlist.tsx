@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { ImSearch, ImBubble } from "react-icons/im";
-import { RiRestaurantFill } from "react-icons/ri";
-import { IoSettingsSharp, IoStar } from "react-icons/io5";
-import { FaUserFriends } from "react-icons/fa";
-import { AiOutlineMessage } from "react-icons/ai";
+import { TbBrandAirtable } from "react-icons/tb";
+import { AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
+import { BiHomeAlt, BiSearchAlt } from "react-icons/bi";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { FiSettings } from "react-icons/fi";
 import './navlist.css';
 import NavbarItem from "../UI/navbar-item/NavbarItem";
 
@@ -14,17 +14,17 @@ const Navlist = () => {
     let navlinksInfos = [
         {
 			path: "/profile",
-			icon: <AiOutlineMessage/>,
+			icon: <BiHomeAlt/>,
             name: 'profile'
 		},
         {
 			path: "/searchuser",
-			icon: <ImSearch/>,
+			icon: <BiSearchAlt/>,
             name: 'searchuser'
 		},
         {
 			path: "/usertables",
-			icon: <RiRestaurantFill/>,
+			icon: <TbBrandAirtable/>,
             name: 'usertables'
 		},
         {
@@ -34,17 +34,17 @@ const Navlist = () => {
 		},
         {
 			path: "/userfriends",
-			icon: <FaUserFriends/>,
+			icon: <HiOutlineUserGroup/>,
             name: 'userfriends'
 		},
         {
 			path: "/premium",
-			icon: <IoStar/>,
+			icon: <AiOutlineStar/>,
             name: 'premium'
 		},
         {
 			path: "/reglages",
-			icon: <IoSettingsSharp/>,
+			icon: <FiSettings/>,
             name: 'reglages'
 		}
     ];
