@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
-import NavbarItem from "../navbar-item/NavbarItem";
-import { ImHome, ImSearch, ImBubble } from "react-icons/im";
+import { ImSearch, ImBubble } from "react-icons/im";
 import { RiRestaurantFill } from "react-icons/ri";
 import { IoSettingsSharp, IoStar } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
+import { AiOutlineMessage } from "react-icons/ai";
 import './navlist.css';
+import NavbarItem from "../UI/navbar-item/NavbarItem";
 
 const Navlist = () => {
     let activeStyle = {
@@ -13,7 +14,7 @@ const Navlist = () => {
     let navlinksInfos = [
         {
 			path: "/profile",
-			icon: <ImHome/>,
+			icon: <AiOutlineMessage/>,
             name: 'profile'
 		},
         {
@@ -28,7 +29,7 @@ const Navlist = () => {
 		},
         {
 			path: "/usermessages",
-			icon: <ImBubble/>,
+			icon: <AiOutlineMessage/>,
             name: 'usermessages'
 		},
         {

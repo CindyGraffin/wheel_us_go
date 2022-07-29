@@ -9,8 +9,8 @@ interface Props {
 
 const Layout = ({children}: Props) => {
     return (
-        <div className="profile">
-            <div className="profile__container">
+        <div className="layout">
+            <div className="layout__container">
                 <div className="left">
                     <div className="left__container">
                         <div className="logo">
@@ -29,8 +29,7 @@ const Layout = ({children}: Props) => {
                             <button className="create-table">
                                 <FaCouch className="create-table-icon"/>
                                 <div className="create-table-home">
-                                    <p>CREER UNE TABLE </p>
-                                    <p>&laquo; CHEZ-SOI &raquo;</p>
+                                    <p>CREER UNE TABLE HOME</p>
                                 </div>
                             </button>
                         </div>
@@ -42,8 +41,6 @@ const Layout = ({children}: Props) => {
                             <Navlist />
                             {children}
                         </div>
-                        <div className="band__container">band</div>
-                        <div className="badges__container">badge</div>
                     </div>
                 </div>
                 <div className="right">
