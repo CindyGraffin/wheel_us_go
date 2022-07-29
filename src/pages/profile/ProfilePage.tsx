@@ -4,7 +4,11 @@ import "./profilePage.css";
 
 const ProfilePage = () => {
     return (
-        <Layout component={<div>hello</div>}/>
+        <Layout>
+            <div>
+                
+            </div>
+        </Layout>
     );
 };
 

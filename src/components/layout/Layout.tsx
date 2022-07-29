@@ -4,10 +4,10 @@ import { Navlist } from "../index";
 import "./layout.css";
 
 interface Props {
-	component: JSX.Element
+	children: JSX.Element
 }
 
-const Layout = ({component}: Props) => {
+const Layout = ({children}: Props) => {
     return (
         <div className="profile">
             <div className="profile__container">
@@ -40,7 +40,7 @@ const Layout = ({component}: Props) => {
                     <div className="center__container">
                         <div className="navlist__container">
                             <Navlist />
-                            {component}
+                            {children}
                         </div>
                         <div className="band__container">band</div>
                         <div className="badges__container">badge</div>
