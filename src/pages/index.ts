@@ -10,3 +10,12 @@ import UserTables from "./userTables/UserTables";
 
 export {ProfilePage, ConnectionPage, SearchUser, UserTables, UserMessages, PremiumPage, ReglagesPage, UserFriends};
 
+<<<<<<< HEAD:src/pages/index.ts
+export {ProfilePage} 
+
+
+
+
+
+=======
+>>>>>>> 234ce412a13735e7664937bb9badccbfcc70dbf5:src/pages/index.tsx
