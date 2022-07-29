@@ -1,12 +1,12 @@
 import { Navlist } from "../../components";
 
-const ProfilePage = () => {
+const UserFriends = () => {
     return (
         <div>
             <Navlist />
-            <div>ProfilePage</div>
+            <div>UserTables</div>
         </div>
     );
 };
 
-export default ProfilePage;
+export default UserFriends;

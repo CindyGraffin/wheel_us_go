@@ -1,12 +1,12 @@
 import { Navlist } from "../../components";
 
-const ProfilePage = () => {
+const ReglagesPage = () => {
     return (
         <div>
             <Navlist />
-            <div>ProfilePage</div>
+            <div>Reglages</div>
         </div>
     );
 };
 
-export default ProfilePage;
+export default ReglagesPage;

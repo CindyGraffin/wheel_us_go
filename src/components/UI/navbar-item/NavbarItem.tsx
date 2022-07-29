@@ -1,19 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import LinkTypes from '../../../router/Links.type';
-import './NavbarItem.css';
+import React from "react";
+import "./NavbarItem.css";
 
+const NavbarItem = () => {
+    return (
+		<div className="navbar-item">
+			item
+		</div>
+		);
+};
 
-const NavbarItem : React.FC<Omit<LinkTypes, "element">> = ({path, icon}) => {
-  return (
-    <div>
-        <Link to={path}>
-          <div className="navbar-item">
-            <span>{icon}</span>
-          </div>
-        </Link>
-    </div>
-  )
-}
-
-export default NavbarItem
+export default NavbarItem;

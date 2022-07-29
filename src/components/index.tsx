@@ -1,6 +1,5 @@
 import userHeadband from "./userHeadband/userHeadband";
-import Navbar from "./UI/navbar/Navbar";
-import WorkInProgress from "../pages/WorkInProgress";
+import Navlist from "./UI/navlist/Navlist";
 
 
-export {userHeadband, Navbar, WorkInProgress} ;
+export {userHeadband, Navlist} ;
