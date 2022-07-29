@@ -3,18 +3,16 @@ import React from 'react';
 interface ContactProps {
     firstName : string;
     lastName : string;
-    imgUrl: string;
 
 }
 
 
-const Contact: React.FC<ContactProps>= ({firstName, lastName, imgUrl}) => {
+const Contact: React.FC<ContactProps>= ({firstName, lastName}) => {
   return (
     <>
         <div> 
-            <img src={imgUrl}  alt="" />
            
-        {firstName} {lastName}
+        {firstName} {lastName} 
     </div>
 
        
