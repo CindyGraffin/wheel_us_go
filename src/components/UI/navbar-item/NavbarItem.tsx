@@ -1,10 +1,14 @@
 import React from "react";
 import "./NavbarItem.css";
 
-const NavbarItem = () => {
+interface Props {
+	icon: JSX.Element
+}
+
+const NavbarItem = ({icon}: Props) => {
     return (
 		<div className="navbar-item">
-			item
+			{icon}
 		</div>
 		);
 };

@@ -1,0 +1,19 @@
+nav {
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9e7;
+    border-bottom: 1px solid #f3f1b2;
+    padding: 3px 0px;
+    background-color: var(--color-yellow);
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+ul li {
+    list-style: none;
+}
