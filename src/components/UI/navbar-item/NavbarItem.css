@@ -1,5 +1,12 @@
 .navbar-item {
-    font-size: 30px;
-    color: rgba(95, 95, 95, 0.788);
+    font-size: 25px;
+    color: #7e5835;
+    background-color: var(--color-beige-light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }

@@ -1,3 +1,4 @@
+import { IoRestaurant } from "react-icons/io5";
 import { Navlist } from "../../components";
 import "./profilePage.css";
 
@@ -12,13 +13,18 @@ const ProfilePage = () => {
                         </div>
                         <div className="create-table__container">
                             <button className="create-table">
-                                <p>Créer une table restaurant</p>
+                            <IoRestaurant className="create-table-icon"/>
+                                <p>CREER UNE TABLE RESTAURANT</p>
+                                
                             </button>
                             <button className="create-table">
-                                <p>Créer une table bar</p>
+                                <p>CREER UNE TABLE BAR</p>
                             </button>
                             <button className="create-table">
-                                <p>Créer une tablechez moi</p>
+                                <div className="create-table-home">
+                                    <p>CREER UNE TABLE </p>
+                                    <p>&laquo; CHEZ-SOI &raquo;</p>
+                                </div>
                             </button>
                         </div>
                     </div>

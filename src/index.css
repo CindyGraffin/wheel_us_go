@@ -20,7 +20,8 @@ code {
 }
 
 :root {
-  --color-yellow: #f0eeae;
-  --color-yellow-light: #f9f9e7;
+  --color-beige: #ebe4b3;
+  --color-beige-light: #f9f9e7;
   --color-black-light: #474747;
+  --color-red: #a42424
 }
