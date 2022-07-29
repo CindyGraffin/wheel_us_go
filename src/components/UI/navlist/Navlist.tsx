@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 import NavbarItem from "../navbar-item/NavbarItem";
 import { ImHome, ImSearch, ImBubble } from "react-icons/im";
 import { RiRestaurantFill } from "react-icons/ri";
-import { IoSettingsSharp } from "react-icons/io5";
+import { IoSettingsSharp, IoStar } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
+import './navlist.css';
 
 const Navlist = () => {
     let activeStyle = {
@@ -12,42 +13,49 @@ const Navlist = () => {
     let navlinksInfos = [
         {
 			path: "/profile",
-			icon: <ImHome/>
+			icon: <ImHome/>,
+            name: 'profile'
 		},
         {
 			path: "/searchuser",
-			icon: <ImSearch/>
+			icon: <ImSearch/>,
+            name: 'searchuser'
 		},
         {
 			path: "/usertables",
-			icon: <RiRestaurantFill/>
+			icon: <RiRestaurantFill/>,
+            name: 'usertables'
 		},
         {
 			path: "/usermessages",
-			icon: <ImBubble/>
+			icon: <ImBubble/>,
+            name: 'usermessages'
 		},
         {
 			path: "/userfriends",
-			icon: <FaUserFriends/>
+			icon: <FaUserFriends/>,
+            name: 'userfriends'
 		},
         {
 			path: "/premium",
-			icon: <FaUserFriends/>
+			icon: <IoStar/>,
+            name: 'premium'
 		},
         {
 			path: "/reglages",
-			icon: <IoSettingsSharp/>
+			icon: <IoSettingsSharp/>,
+            name: 'reglages'
 		}
     ];
     return (
         <nav>
             <ul>
-                {navlinksInfos.map((navlink, i) => {
+                {navlinksInfos.map((navlink) => {
                     return (
                         <li>
                             <NavLink
                                 id="1"
-                                key={i}
+                                key={navlink.name}
                                 to={navlink.path}
                                 style={({ isActive }) =>
                                     isActive ? activeStyle : {}
