@@ -5,7 +5,7 @@ import { BiHomeAlt, BiSearchAlt } from "react-icons/bi";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { FiSettings } from "react-icons/fi";
 import './navlist.css';
-import NavbarItem from "../../UI/navbar-item/NavbarItem";
+import NavbarItem from "./navbar-item/NavbarItem";
 
 const Navlist = () => {
     let activeStyle = {

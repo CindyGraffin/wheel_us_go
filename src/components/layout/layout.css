@@ -14,7 +14,6 @@
     width: 100%;
     height: 100%;
     flex: 1;
-
 }
 .center {
     width: 100%;
@@ -25,12 +24,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .right {
     width: 100%;
     height: 100%;
     flex: 1;
-    /* border-left: 1px dotted #fff8ea; */
 }
 
 /* ================== LEFT LAYOUT ================== */
@@ -42,7 +41,7 @@
     justify-content: start;
     padding: 2rem 0rem;
     position: fixed;
-    top: 0;
+    width: 20%;
 }
 .logo {
     display: flex;
@@ -51,6 +50,7 @@
 }
 .logo>img {
     max-width: 80%;   
+    z-index: 10;
 }
 .create-table__container {
     display: flex;
@@ -99,6 +99,7 @@
 }
 
 .navlist__container {
+
     z-index: 100;
     width: 60%;
     margin: 0 auto;

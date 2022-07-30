@@ -1,7 +1,7 @@
 .profile__container {
     background-color: var(--color-secondary);
     border-radius: 15px;
-    margin-top: 9rem;
+    margin-top: 8rem;
     height: 3000px;
     width: 80%;
     box-shadow: var(--box-shadow-bold);
