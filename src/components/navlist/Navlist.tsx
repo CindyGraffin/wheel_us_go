@@ -14,7 +14,7 @@ const Navlist = () => {
     let myStyle = {
         textDecoration: "none"
     }
-    let navlinksInfos = [
+    const navlinksInfos = [
         {
 			path: "/profile",
 			icon: <BiHomeAlt/>,
@@ -50,7 +50,7 @@ const Navlist = () => {
 			icon: <FiSettings/>,
             name: 'reglages'
 		}
-    ];
+    ] as const;
     return (
         <nav>
             <ul>

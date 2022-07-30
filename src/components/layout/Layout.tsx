@@ -21,8 +21,7 @@ const Layout = ({children}: Props) => {
                         <div className="create-table__container">
                             <button className="create-table">
                                 <IoRestaurantOutline className="create-table-icon"/>
-                                <p>CREER UNE TABLE RESTAURANT</p>
-                                
+                                <p>CREER UNE TABLE RESTAURANT</p>  
                             </button>
                             <button className="create-table">
                                 <BiBeer className="create-table-icon"/>
@@ -41,7 +40,9 @@ const Layout = ({children}: Props) => {
                     <div className="center__container">
                         <div className="navlist__container">
                             <Navlist />
-                            {children}
+                            <div className="cent">
+                                {children}
+                            </div>
                         </div>
                     </div>
                 </div>

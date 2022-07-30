@@ -4,11 +4,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 3px 0px;
-    height: 70px;
-
-
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 ul {
     display: flex;

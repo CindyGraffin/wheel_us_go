@@ -10,6 +10,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-primary);
 }
 
 code {
@@ -17,11 +18,10 @@ code {
 }
 
 :root {
-  --color-beige: #F6F4DF;
-  --color-beige-light: #f9f9e7;
-  --color-black-light: #474747;
+  --color-primary: #F6F4DF;
+  --color-secondary: #f9f9ee;
+  --color-tertiary: #35527e;
+  --color-black: #474747;
   --color-red: #a42424;
-  --color-blue: #35527e;
-  --color-light-brown: #b2935b;
-  --box-shadow-bold: rgba(107, 107, 107, 0.521) 0px 3px 6px;
+  --box-shadow-bold: rgba(110, 110, 110, 0.050) 0px 3px 5px;
 }

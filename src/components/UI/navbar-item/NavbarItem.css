@@ -1,14 +1,14 @@
 .navbar-item {
     font-size: 25px;
-    color: var(--color-blue);
-    background-color: var(--color-beige-light);
+    color: var(--color-tertiary);
+    background-color: var(--color-secondary);
     width: 55px;
     height: 40px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: rgba(110, 110, 110, 0.104) 0px 3px 5px;
+    box-shadow: var(--box-shadow-bold);
     
 }
 .navbar-item p {
