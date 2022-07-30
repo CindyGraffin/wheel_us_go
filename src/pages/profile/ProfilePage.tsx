@@ -8,14 +8,14 @@ const ProfilePage = () => {
         <Layout>
             <div className="profile__container">
                 <div className="me">
-                <img src={me} alt="" />
-                <div>
-                <h1>Cindy Graffin</h1>
-                    <p>Loos</p>
+                    <img src={me} alt="" />
+                    <div className="about">
+                        <h1>Cindy Graffin</h1>
+                        <p>Loos</p>
+                    </div>
                 </div>
-                </div>
-    
             </div>
+
         </Layout>
     );
 };

@@ -2,7 +2,6 @@
 .layout {
     width: 100vw;
     height: 100vh;
-
 }
 .layout__container {
     margin: 0 auto;
@@ -43,6 +42,8 @@
     align-items: center;
     justify-content: start;
     padding: 2rem 0rem;
+    position: fixed;
+    top: 0;
 }
 .logo {
     display: flex;
@@ -98,13 +99,16 @@
     height: 100%;
 }
 
+.navlist__container {
+    z-index: 100;
+    width: 60%;
+    margin: 0 auto;
+    background-color: var(--color-primary);
+    top: 0;
+    z-index: 99;
+    position: fixed;
+}
 
-.band__container {
-    height: 30%;
-}
-.badges__container {
-    flex: 4;
-}
 
 
 

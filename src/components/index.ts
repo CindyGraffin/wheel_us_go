@@ -1,6 +1,6 @@
 import userHeadband from "./userHeadband/userHeadband";
 import Layout from "./layout/Layout";
-import Navlist from "./navlist/Navlist";
+import Navlist from "./layout/navlist/Navlist";
 
 
 

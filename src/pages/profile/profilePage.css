@@ -1,18 +1,19 @@
 .profile__container {
     background-color: var(--color-secondary);
-    border-radius: 10px;
-    margin-top: 20px;
+    border-radius: 15px;
+    margin-top: 9rem;
     height: 3000px;
     width: 80%;
     box-shadow: var(--box-shadow-bold);
     z-index: 90;
 }
 .me img {
-    width: 170px;
-    height: 170px;
-    border-radius: 10px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
     object-fit: cover;
-    filter: drop-shadow(silver 3px 3px 5px);
+    border: 3px solid whitesmoke;
+    filter: drop-shadow(rgba(128, 128, 128, 0.355) 2px 2px 6px);
     margin-right: 30px;
 }
 .me {
@@ -22,8 +23,9 @@
     align-items: center;
     margin-top: 30px;
 }
-.h1 {
+.me h1 {
     font-size: 40px;
+    color: var(--color-black);
     
 }
 p {
