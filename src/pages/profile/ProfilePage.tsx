@@ -1,4 +1,5 @@
 import { Navlist } from "../../components";
+import BadgesList from "../../components/UI/badges/badges-list";
 import "./profilePage.css";
 
 const ProfilePage = () => {
@@ -18,7 +19,7 @@ const ProfilePage = () => {
                                 <p>Créer une table bar</p>
                             </button>
                             <button className="create-table">
-                                <p>Créer une tablechez moi</p>
+                                <p>Créer une table chez moi</p>
                             </button>
                         </div>
                     </div>
@@ -29,7 +30,7 @@ const ProfilePage = () => {
                             <Navlist />
                         </div>
                         <div className="band__container">band</div>
-                        <div className="badges__container">badge</div>
+                        <div className="badges__container"><BadgesList/></div>
                     </div>
                 </div>
                 <div className="right">
