@@ -5,12 +5,18 @@ import { TbSofa } from "react-icons/tb";
 import { BsPeople } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import "./layout.css";
+import Contact from "../contact/Contact";
+
+
 
 interface Props {
 	children: JSX.Element;
 }
 
 const Layout = ({ children }: Props) => {
+	const nums = [1, 2, 3, 4]
+	const nums2 = [1, 2, 3]
+
 	return (
 		<div className="layout">
 			<div className="layout__container">
@@ -57,11 +63,21 @@ const Layout = ({ children }: Props) => {
 									<IoPersonOutline className="contact-title-icon" />
 									<p>CONTACTS</p>
 								</div>
+								<div className="all-contacts">
+									{nums.map(num => (
+										<Contact/>
+									))}
+								</div>
 							</div>
 							<div className="contacts-group groups">
 								<div className="contacts-title">
 									<BsPeople className="contact-title-icon" />
 									<p>GROUPS</p>
+								</div>
+								<div className="all-contacts">
+									{nums2.map(num => (
+										<Contact/>
+									))}
 								</div>
 							</div>
 						</div>

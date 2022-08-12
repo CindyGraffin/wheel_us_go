@@ -68,7 +68,7 @@
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-bold);
     margin-bottom: 1.7rem;
-    width: 11rem;
+    width: 12rem;
     height: 8rem;
     border-radius: 10px;
     color: var(--color-black);
@@ -125,15 +125,26 @@
 }
 .contacts__container {
     position: fixed;
-    width: 16%;
+    width: 17%;
 }
 .contacts-group {
     width: 100%;
     background-color: var(--color-secondary);
-    display: flex;
-    justify-content: center;
     box-shadow: var(--box-shadow-bold);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.all-contacts {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-self: flex-start;
+    justify-items: center;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
 .contacts__container {
     top: 8rem;
@@ -158,11 +169,13 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
 }
 .contact-title-icon {
     color: var(--color-tertiary);
     font-size: 1.3rem;
 }
+
 
 
 
