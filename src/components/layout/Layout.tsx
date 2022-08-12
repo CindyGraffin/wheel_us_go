@@ -16,25 +16,27 @@ const Layout = ({ children }: Props) => {
 			<div className="layout__container">
 				<div className="left">
 					<div className="left__container">
-						<div className="logo__container">
-							<img src={require("./logo2.png")} alt="" />
-						</div>
-						<div className="create-table__container">
-							<div className="create-tables">
-								<button className="create-table">
-									<IoRestaurantOutline className="create-table-icon" />
-									<p>CREER UNE TABLE RESTAURANT</p>
-								</button>
-								<button className="create-table">
-									<BiBeer className="create-table-icon" />
-									<p>CREER UNE TABLE BAR</p>
-								</button>
-								<button className="create-table">
-									<TbSofa className="create-table-icon" />
-									<div className="create-table-home">
-										<p>CREER UNE TABLE HOME</p>
-									</div>
-								</button>
+						<div className="left-items__container">
+							<div className="logo__container">
+								<img src={require("./logo2.png")} alt="" />
+							</div>
+							<div className="create-table__container">
+								<div className="create-tables">
+									<button className="create-table">
+										<IoRestaurantOutline className="create-table-icon" />
+										<p>CREER UNE TABLE RESTAURANT</p>
+									</button>
+									<button className="create-table">
+										<BiBeer className="create-table-icon" />
+										<p>CREER UNE TABLE BAR</p>
+									</button>
+									<button className="create-table">
+										<TbSofa className="create-table-icon" />
+										<div className="create-table-home">
+											<p>CREER UNE TABLE HOME</p>
+										</div>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>

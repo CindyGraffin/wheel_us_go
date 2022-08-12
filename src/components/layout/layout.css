@@ -37,22 +37,28 @@
     position: relative;
     width: 100%;
 }
-.logo__container {
+.left-items__container {
     position: fixed;
-    top: 2rem;
-    width: 40%;
-    height: 40%;
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2.5rem;
+}
+.logo__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 .logo__container>img {
-    margin-left: 2rem;
-    max-width: 44%;    
+    max-width: 100%;    
     z-index: 10;
 }
 .create-table__container {
-    position: fixed;
-    top: 18rem;
-    width: 20%;
-    height: 40%;
+
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,8 +68,7 @@
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-bold);
     margin-bottom: 1.7rem;
-    margin-left: 1.4rem;
-    width: 12rem;
+    width: 11rem;
     height: 8rem;
     border-radius: 10px;
     color: var(--color-black);
