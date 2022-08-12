@@ -18,10 +18,10 @@ code {
 }
 
 :root {
-  --color-primary: #F6F4DF;
+  --color-primary: #f4f3e2;
   --color-secondary: #f9f9ee;
-  --color-tertiary: #35527e;
-  --color-black: #474747;
+  --color-tertiary: #c8865a;
+  --color-black: #3d3d3d;
   --color-red: #a42424;
   --box-shadow-bold: rgba(110, 110, 110, 0.050) 0px 3px 5px;
 }

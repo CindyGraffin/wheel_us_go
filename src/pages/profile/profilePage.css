@@ -2,8 +2,8 @@
     background-color: var(--color-secondary);
     border-radius: 15px;
     margin-top: 8rem;
-    height: 3000px;
-    width: 80%;
+    width: 83%;
+    height: 1000px;
     box-shadow: var(--box-shadow-bold);
     z-index: 90;
 }

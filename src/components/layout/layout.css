@@ -72,8 +72,10 @@
     justify-content: center;
     gap: 0.6rem;
     cursor: pointer;
-    font-size: 1rem;
     font-weight: 600;
+}
+.create-table p {
+    font-size: 1.1rem;
 }
 .create-table-home {
     display: flex;
@@ -84,7 +86,7 @@
 .create-table-icon {
     font-size: 1.6rem;
     color: var(--color-tertiary);
-    ;
+    
 }
 .create-table p {
     max-width: 7rem;
@@ -107,6 +109,27 @@
     top: 0;
     z-index: 99;
     position: fixed;
+}
+
+/* ================== RIGHT LAYOUT ================== */
+.right__container {
+    position: relative;
+    width: 100%;
+}
+.contacts__container {
+    position: fixed;
+    top: 10rem;
+    width: 16%;
+    height: 40%;
+    background-color: var(--color-secondary);
+}
+.groups__container {
+    top: 32.5rem;
+    position: fixed;
+    width: 16%;
+
+    height: 30%;
+    background-color: var(--color-secondary);
 }
 
 

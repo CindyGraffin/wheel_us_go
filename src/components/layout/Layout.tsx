@@ -47,7 +47,14 @@ const Layout = ({children}: Props) => {
                     </div>
                 </div>
                 <div className="right">
-                    <div className="right__container"></div>
+                    <div className="right__container">
+                        <div className="contacts__container">
+        hey
+                        </div>
+                        <div className="groups__container">
+ho
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

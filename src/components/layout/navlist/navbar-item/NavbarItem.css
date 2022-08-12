@@ -1,8 +1,8 @@
 .navbar-item {
     font-size: 25px;
-    color: var(--color-tertiary);
+    color: var(--color-black);
     background-color: var(--color-secondary);
-    width: 3.6rem;
+    width: 3.8rem;
     height: 40px;
     border-radius: 10px;
     display: flex;
