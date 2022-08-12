@@ -34,45 +34,46 @@
 
 /* ================== LEFT LAYOUT ================== */
 .left__container {
-    gap: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding: 2rem 0rem;
+    position: relative;
+    width: 100%;
+}
+.logo__container {
     position: fixed;
-    width: 20%;
+    top: 2rem;
+    width: 40%;
+    height: 40%;
 }
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logo>img {
-    max-width: 80%;   
+.logo__container>img {
+    margin-left: 2rem;
+    max-width: 44%;    
     z-index: 10;
 }
 .create-table__container {
+    position: fixed;
+    top: 18rem;
+    width: 20%;
+    height: 40%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
-    width: 100%;
+
 }
 .create-table {
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-bold);
+    margin-bottom: 1.7rem;
+    margin-left: 1.4rem;
     width: 12rem;
-    height: 9rem;
+    height: 8rem;
     border-radius: 10px;
     color: var(--color-black);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.2rem;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 500;
 }
 .create-table p {
     font-size: 1.1rem;
@@ -115,22 +116,49 @@
 .right__container {
     position: relative;
     width: 100%;
+    color: var(--color-black);
 }
 .contacts__container {
     position: fixed;
-    top: 10rem;
     width: 16%;
-    height: 40%;
+}
+.contacts-group {
+    width: 100%;
     background-color: var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--box-shadow-bold);
+    border-radius: 10px;
+}
+.contacts__container {
+    top: 8rem;
+    height: 40%;
 }
 .groups__container {
-    top: 32.5rem;
-    position: fixed;
-    width: 16%;
-
-    height: 30%;
-    background-color: var(--color-secondary);
+    margin-top: 1rem;
+    top: 30rem;
+    height: 30%;   
 }
+.contacts {
+    margin-bottom: 3rem;
+    height: 100%;
+}
+.groups {
+    height: 70%;
+}
+.contacts-title {
+    font-weight: 500;
+    height: 10%;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.contact-title-icon {
+    color: var(--color-tertiary);
+    font-size: 1.3rem;
+}
+
 
 
 
