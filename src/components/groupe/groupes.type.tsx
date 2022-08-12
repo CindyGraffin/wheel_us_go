@@ -1,6 +1,6 @@
 export type Users = {
     id : number;
-    groups : Groups,
+    groups : Groups[],
    
 }
 

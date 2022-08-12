@@ -1,47 +1,50 @@
-import { group } from "console";
-import { useEffect, useState } from "react";
+import react, { useEffect, useState } from "react";
 import {Users} from "../groupe/groupes.type"
 
-const GroupesListes = () => {
-  const fetchUsers = async () => {
-    const res = await fetch("http://localhost:3001/users");
-    const users = await res.json();
-    return users;
-  }
+const listGroupes : React.FC<unknown> = () => {   
 
-  const [users, setUsers] = useState<Users[]>([]);
+    const [users, setUsers] = useState<Users[]>([]);
 
-  console.log(users);
-  
-
+    const fetchUsers = async () => {
+        const res = await fetch("http://localhost:3001/users");
+        const users = await res.json();
+        setUsers(users);
+        return users;
+    };
+    
   useEffect(() => {
-    fetchUsers().then((users) => {
-        setUsers(users)
-    })
-  }, [users])
+    fetchUsers()
+  }, []);
 
-  return (
+  return(
     <div>
-      <h2>Liste d'utilisateurs</h2>
-
-      {/* {users.map((user) => (
-        // <Users user={user} key={user.id} />
+  {users.map((user) => {
+    return (
         <div>
-            {user.groups.name}
-            {console.log(user)
-            }
-            
-            
+
+            {user.id}
+
+            <>
+            {user.groups.map((group)=> {
+                return <div> {group.name} </div>;
+            })}
+            </>
         </div>
-      ))} */}
-
-
-
-    </div>
-  );
+        
+    );
+  })}
+  </div>)
 };
 
-export default GroupesListes;
+
+export default listGroupes;
+
+ 
+ 
+
+
+  
+
 
 
 
