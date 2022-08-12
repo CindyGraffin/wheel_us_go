@@ -1,5 +1,6 @@
 export type Users = {
     id : number;
+    firstName : string;
     groups : Groups[],
    
 }

@@ -1,6 +1,6 @@
 import { Navlist } from "../../components";
+import ListGroupes from "../../components/listGroupes/listGroupes";
 // import ContactUsers from "../../components/contactUsers/ContactUsers";
-import GroupesListes from "../../components/listGroupes/listGroupes";
 import "./profilePage.css";
 
 const ProfilePage = () => {
@@ -37,7 +37,7 @@ const ProfilePage = () => {
                 <div className="right">
                     <div className="right__container">
                       {/* <ContactUsers/> */}
-                      <GroupesListes />
+                      <ListGroupes  />
                     </div>
                 </div>
             </div>
