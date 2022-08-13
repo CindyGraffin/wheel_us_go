@@ -1,4 +1,4 @@
-.profile__container {
+/* .profile__container {
     background-color: var(--color-secondary);
     border-radius: 15px 15px 0px 0px;
     margin-top: 8rem;
@@ -7,7 +7,7 @@
     box-shadow: var(--box-shadow-bold);
     z-index: 90;
     color: var(--color-black);
-}
+} */
 .badges-title {
     display: flex;
     align-items: center;

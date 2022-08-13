@@ -6,7 +6,7 @@ const PremiumPage = () => {
     return (
         <Layout>
             <div>
-                
+
             </div>
         </Layout>
     );

@@ -17,8 +17,8 @@ const ProfilePage = () => {
 							<p>MES BADGES</p>
 						</div>
 						<div className="badges">
-							{nums.map((num) => {
-								return <Badge />;
+							{nums.map((num, i) => {
+								return <Badge key={i}/>;
 							})}
 						</div>
 					</div>

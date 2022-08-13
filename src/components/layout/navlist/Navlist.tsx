@@ -54,7 +54,7 @@ const Navlist = () => {
     return (
         <nav>
             <ul>
-                {navlinksInfos.map((navlink) => {
+                {navlinksInfos.map((navlink, i) => {
                     return (
                         <li>
                             <NavLink
@@ -65,7 +65,7 @@ const Navlist = () => {
                                     isActive ? activeStyle :myStyle
                                 }
                             >
-                                <NavbarItem icon={navlink.icon}/>
+                                <NavbarItem icon={navlink.icon} key={i}/>
                             </NavLink>
                         </li>
                     );

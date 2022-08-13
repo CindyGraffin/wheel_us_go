@@ -50,7 +50,13 @@ const Layout = ({ children }: Props) => {
 						<div className="navlist__container">
 							<Navlist />
 						</div>
-						<div className="cent">{children}</div>
+						<div className="cent">
+							<div className="page__container">
+								{children}
+
+							</div>
+
+						</div>
 					</div>
 				</div>
 				<div className="right">
