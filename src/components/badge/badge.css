@@ -18,3 +18,7 @@
     align-items: center;
     justify-content: center;
 }
+.btn-icon {
+    color: var(--color-tertiary);
+    font-size: 1.9rem;
+}

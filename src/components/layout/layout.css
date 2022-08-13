@@ -119,7 +119,7 @@
 
 /* ================== RIGHT LAYOUT ================== */
 .right__container {
-    position: relative;
+
     width: 100%;
     color: var(--color-black);
 }
@@ -135,8 +135,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 .all-contacts {
+    
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -144,7 +147,6 @@
     align-self: flex-start;
     justify-items: center;
     margin-left: 1rem;
-    margin-top: 1rem;
 }
 .contacts__container {
     top: 8rem;
@@ -178,6 +180,23 @@
 
 
 
+.contact-btn {
+    padding: 0.20rem;
+    border-radius: 50%;
+    background-color: var(--color-tertiary);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 0.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
+
+}
 
 
 

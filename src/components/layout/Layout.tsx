@@ -1,21 +1,19 @@
-import { IoRestaurantOutline } from "react-icons/io5";
+import { IoRestaurantOutline, IoPersonOutline } from "react-icons/io5";
 import { Navlist } from "../index";
 import { BiBeer } from "react-icons/bi";
 import { TbSofa } from "react-icons/tb";
 import { BsPeople } from "react-icons/bs";
-import { IoPersonOutline } from "react-icons/io5";
+import { AiOutlinePlus } from "react-icons/ai";
 import "./layout.css";
 import Contact from "../contact/Contact";
-
-
 
 interface Props {
 	children: JSX.Element;
 }
 
 const Layout = ({ children }: Props) => {
-	const nums = [1, 2, 3, 4]
-	const nums2 = [1, 2, 3]
+	const nums = [1, 2, 3, 4];
+	const nums2 = [1, 2, 3];
 
 	return (
 		<div className="layout">
@@ -64,9 +62,12 @@ const Layout = ({ children }: Props) => {
 									<p>CONTACTS</p>
 								</div>
 								<div className="all-contacts">
-									{nums.map(num => (
-										<Contact/>
+									{nums.map((num) => (
+										<Contact />
 									))}
+								</div>
+								<div className="contact-btn">
+									<AiOutlinePlus className="contact-btn-icon" />
 								</div>
 							</div>
 							<div className="contacts-group groups">
@@ -75,10 +76,16 @@ const Layout = ({ children }: Props) => {
 									<p>GROUPS</p>
 								</div>
 								<div className="all-contacts">
-									{nums2.map(num => (
-										<Contact/>
+									{nums2.map((num) => (
+										<Contact />
 									))}
 								</div>
+							
+
+								<div className="contact-btn">
+									<AiOutlinePlus className="contact-btn-icon" />
+								</div>
+								
 							</div>
 						</div>
 					</div>
