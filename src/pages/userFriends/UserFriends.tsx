@@ -1,11 +1,14 @@
-import { Navlist } from "../../components";
+import { Layout} from "../../components";
+import "./userFriends.css";
+
 
 const UserFriends = () => {
     return (
-        <div>
-            <Navlist />
-            <div>UserTables</div>
-        </div>
+        <Layout>
+            <div>
+                
+            </div>
+        </Layout>
     );
 };
 

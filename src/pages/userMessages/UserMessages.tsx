@@ -1,13 +1,15 @@
-import React from 'react'
-import { Navlist } from '../../components';
+import { Layout} from "../../components";
+import "./userMessages.css";
+
 
 const UserMessages = () => {
     return (
-        <div>
-            <Navlist />
-            <div>UserMessages</div>
-        </div>
+        <Layout>
+            <div>
+                
+            </div>
+        </Layout>
     );
-}
+};
 
-export default UserMessages
+export default UserMessages;

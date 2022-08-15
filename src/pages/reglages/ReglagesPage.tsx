@@ -1,11 +1,14 @@
-import { Navlist } from "../../components";
+import { Layout} from "../../components";
+import "./reglagesPage.css";
+
 
 const ReglagesPage = () => {
     return (
-        <div>
-            <Navlist />
-            <div>Reglages</div>
-        </div>
+        <Layout>
+            <div>
+                
+            </div>
+        </Layout>
     );
 };
 

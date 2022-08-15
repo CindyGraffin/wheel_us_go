@@ -10,7 +10,3 @@ import UserTables from "./userTables/UserTables";
 
 export {ProfilePage, ConnectionPage, SearchUser, UserTables, UserMessages, PremiumPage, ReglagesPage, UserFriends};
 
-
-
-
-

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Contact from "../contact/contact";
+// import Contact from "../contact/Contact";
 
 const ContactUsers = () => {
   const fetchUsers = async () => {
@@ -85,9 +85,9 @@ const ContactUsers = () => {
         />{" "}
       </div> */}
 
-      {users.map((user) => 
+      {/* {users.map((user) => 
         <Contact key={user.firstname}  firstName={user.firstName} lastName={user.lastName}   />
-      )}
+      )} */}
 
     </>
   );

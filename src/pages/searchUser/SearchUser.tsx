@@ -1,12 +1,14 @@
-import React from "react";
-import { Navlist } from "../../components";
+import { Layout} from "../../components";
+import "./searchUser.css";
+
 
 const SearchUser = () => {
     return (
-        <div>
-            <Navlist />
-            <div>SearchUser</div>
-        </div>
+        <Layout>
+            <div>
+                
+            </div>
+        </Layout>
     );
 };
 
