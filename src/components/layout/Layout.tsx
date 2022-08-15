@@ -79,7 +79,7 @@ const Layout = ({ children }: Props) => {
 							<div className="contacts-group groups">
 								<div className="contacts-title">
 									<BsPeople className="contact-title-icon" />
-									<p>GROUPS</p>
+									<p>GROUPES</p>
 								</div>
 								<div className="all-contacts">
 									{nums2.map((num) => (
