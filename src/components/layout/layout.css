@@ -1,0 +1,213 @@
+/* ================== GOLBAL LAYOUT ================== */
+.layout {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.layout__container {
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+.left {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+.center {
+    width: 100%;
+    height: 100%;
+    flex: 3;
+}
+.cent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.right {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+/* ================== LEFT LAYOUT ================== */
+.left__container {
+    position: relative;
+    width: 100%;
+}
+.left-items__container {
+    position: fixed;
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2.5rem;
+}
+.logo__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.logo__container>img {
+    max-width: 100%;    
+    z-index: 10;
+}
+.create-table__container {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.create-table {
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow-bold);
+    margin-bottom: 1.7rem;
+    width: 12rem;
+    height: 8rem;
+    border-radius: 10px;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.create-table p {
+    font-size: 1.1rem;
+}
+.create-table-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.create-table-icon {
+    font-size: 1.6rem;
+    color: var(--color-tertiary);
+    
+}
+.create-table p {
+    max-width: 7rem;
+    text-align: center;
+}
+
+/* ================== CENTER LAYOUT ================== */
+.center__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navlist__container {
+
+    z-index: 100;
+    width: 60%;
+    margin: 0 auto;
+    background-color: var(--color-primary);
+    top: 0;
+    z-index: 99;
+    position: fixed;
+}
+
+/* ================== RIGHT LAYOUT ================== */
+.right__container {
+
+    width: 100%;
+    color: var(--color-black);
+}
+.contacts__container {
+    position: fixed;
+    width: 17%;
+}
+.contacts-group {
+    width: 100%;
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow-bold);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.all-contacts {
+    
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-self: flex-start;
+    justify-items: center;
+    margin-left: 1rem;
+}
+.contacts__container {
+    top: 8rem;
+    height: 40%;
+}
+.groups__container {
+    margin-top: 1rem;
+    top: 30rem;
+    height: 30%;   
+}
+.contacts {
+    margin-bottom: 3rem;
+    height: 100%;
+}
+.groups {
+    height: 70%;
+}
+.contacts-title {
+    font-weight: 500;
+    height: 10%;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+.contact-title-icon {
+    color: var(--color-tertiary);
+    font-size: 1.3rem;
+}
+
+
+
+.contact-btn {
+    padding: 0.20rem;
+    border-radius: 50%;
+    background-color: var(--color-tertiary);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 0.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
+
+}
+
+
+
+
+.page__container {
+        background-color: var(--color-secondary);
+        border-radius: 15px 15px 0px 0px;
+        margin-top: 8rem;
+        width: 83%;
+        box-shadow: var(--box-shadow-bold);
+        z-index: 90;
+        color: var(--color-black);
+    
+}

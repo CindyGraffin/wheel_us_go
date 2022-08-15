@@ -1,56 +1,60 @@
 import { NavLink } from "react-router-dom";
-import NavbarItem from "../navbar-item/NavbarItem";
-import { ImHome, ImSearch, ImBubble } from "react-icons/im";
-import { RiRestaurantFill } from "react-icons/ri";
-import { IoSettingsSharp, IoStar } from "react-icons/io5";
-import { FaUserFriends } from "react-icons/fa";
+import { TbBrandAirtable } from "react-icons/tb";
+import { AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
+import { BiHomeAlt, BiSearchAlt } from "react-icons/bi";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { FiSettings } from "react-icons/fi";
 import './navlist.css';
+import NavbarItem from "./navbar-item/NavbarItem";
 
 const Navlist = () => {
     let activeStyle = {
-        backgroundColor: "red",
+        textDecoration: "none",
     };
-    let navlinksInfos = [
+    let myStyle = {
+        textDecoration: "none"
+    }
+    const navlinksInfos = [
         {
 			path: "/profile",
-			icon: <ImHome/>,
+			icon: <BiHomeAlt/>,
             name: 'profile'
 		},
         {
 			path: "/searchuser",
-			icon: <ImSearch/>,
+			icon: <BiSearchAlt/>,
             name: 'searchuser'
 		},
         {
 			path: "/usertables",
-			icon: <RiRestaurantFill/>,
+			icon: <TbBrandAirtable/>,
             name: 'usertables'
 		},
         {
 			path: "/usermessages",
-			icon: <ImBubble/>,
+			icon: <AiOutlineMessage/>,
             name: 'usermessages'
 		},
         {
 			path: "/userfriends",
-			icon: <FaUserFriends/>,
+			icon: <HiOutlineUserGroup/>,
             name: 'userfriends'
 		},
         {
 			path: "/premium",
-			icon: <IoStar/>,
+			icon: <AiOutlineStar/>,
             name: 'premium'
 		},
         {
 			path: "/reglages",
-			icon: <IoSettingsSharp/>,
+			icon: <FiSettings/>,
             name: 'reglages'
 		}
-    ];
+    ] as const;
     return (
         <nav>
             <ul>
-                {navlinksInfos.map((navlink) => {
+                {navlinksInfos.map((navlink, i) => {
                     return (
                         <li>
                             <NavLink
@@ -58,10 +62,10 @@ const Navlist = () => {
                                 key={navlink.name}
                                 to={navlink.path}
                                 style={({ isActive }) =>
-                                    isActive ? activeStyle : {}
+                                    isActive ? activeStyle :myStyle
                                 }
                             >
-                                <NavbarItem icon={navlink.icon}/>
+                                <NavbarItem icon={navlink.icon} key={i}/>
                             </NavLink>
                         </li>
                     );

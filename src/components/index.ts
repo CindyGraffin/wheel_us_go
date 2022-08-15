@@ -1,6 +1,8 @@
 import userHeadband from "./userHeadband/userHeadband";
-import Navlist from "./UI/navlist/Navlist";
+import Layout from "./layout/Layout";
+import Navlist from "./layout/navlist/Navlist";
 
 
-export {userHeadband, Navlist} ;
+
+export {userHeadband, Navlist, Layout} ;
 
