@@ -1,12 +1,14 @@
-import React from "react";
-import { Navlist } from "../../components";
+import { Layout} from "../../components";
+import "./premiumPage.css";
+
 
 const PremiumPage = () => {
     return (
-        <div>
-            <Navlist />
-            <div>premium</div>
-        </div>
+        <Layout>
+            <div>
+
+            </div>
+        </Layout>
     );
 };
 

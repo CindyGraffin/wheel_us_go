@@ -1,12 +1,14 @@
-import React from "react";
-import { Navlist } from "../../components";
+import { Layout} from "../../components";
+import "./userTables.css";
+
 
 const UserTables = () => {
     return (
-        <div>
-            <Navlist />
-            <div>UserTables</div>
-        </div>
+        <Layout>
+            <div>
+                
+            </div>
+        </Layout>
     );
 };
 
