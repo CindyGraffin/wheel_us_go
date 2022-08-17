@@ -28,47 +28,6 @@
 }
 
 
-/* ================== LEFT LAYOUT ================== */
-.left__container {
-    position: relative;
-    width: 100%;
-}
-.left-items__container {
-    position: fixed;
-    width: 16%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2.5rem;
-}
-/* LOGO */
-.logo__container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-.logo__container>img {
-    max-width: 100%;    
-    z-index: 10;
-}
-/* CREATE ROOMS */
-.create-rooms__container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.create-table-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
 /* ================== CENTER LAYOUT ================== */
 .center__container {
     display: flex;

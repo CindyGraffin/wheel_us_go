@@ -1,7 +1,8 @@
 import "./layout.css";
 
 import { Navlist, CreateRoom, ContactGroup} from "../index";
-import { BiBeer, TbSofa, BsPeople, IoPersonOutline, IoRestaurantOutline } from "../../icons/index";
+import { BsPeople, IoPersonOutline } from "../../icons/index";
+import LeftLayout from "../form/leftLayout/LeftLayout";
 
 interface LayoutProps {
 	children: JSX.Element;
@@ -10,20 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
 	const nums = [1, 2, 3, 4];
 	const nums2 = [1, 2, 3];
-	const roomsCreation = [
-		{
-			type: 'RESTAURANT',
-			icon: <IoRestaurantOutline className="create-room-icon" />
-		},
-		{
-			type: 'BAR',
-			icon: <BiBeer className="create-room-icon" />
-		},
-		{
-			type: 'HOME',
-			icon: <TbSofa className="create-room-icon" />
-		}
-	] as const;
+	
 	const contactsGroupsCreation = [
 		{
 			classname: "contacts-group contacts",
@@ -43,18 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
 		<div className="layout">
 			<div className="layout__container">
 				<div className="left">
-					<div className="left__container">
-						<div className="left-items__container">
-							<div className="logo__container">
-								<img src={require("./logo2.png")} alt="" />
-							</div>
-							<div className="create-rooms__container">
-									{roomsCreation.map(room => (
-										<CreateRoom icon={room.icon} type={room.type} key={room.type}/>
-									))}
-							</div>
-						</div>
-					</div>
+					<LeftLayout/>
 				</div>
 				<div className="center">
 					<div className="center__container">

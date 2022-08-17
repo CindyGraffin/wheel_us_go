@@ -4,7 +4,4 @@ import Navlist from "./layout/navlist/Navlist";
 import CreateRoom from "./layout/createRoom/CreateRoom";
 import ContactGroup from "./layout/contactsGroup/ContactGroup";
 
-
-
-export {userHeadband, Navlist, Layout, CreateRoom, ContactGroup} ;
-
+export { userHeadband, Navlist, Layout, CreateRoom, ContactGroup };
