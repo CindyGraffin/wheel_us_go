@@ -1,13 +1,3 @@
-/* .profile__container {
-    background-color: var(--color-secondary);
-    border-radius: 15px 15px 0px 0px;
-    margin-top: 8rem;
-    width: 83%;
-
-    box-shadow: var(--box-shadow-bold);
-    z-index: 90;
-    color: var(--color-black);
-} */
 .badges-title {
     display: flex;
     align-items: center;
@@ -16,12 +6,10 @@
     font-weight: 600;
     font-size: 1.6rem;
 }
-
 .badge-icon {
     color: var(--color-tertiary);
     font-size: 1.8rem;
 }
-
 .badges {
     margin-left: 2.2rem;
     margin-right: 2.2rem;
