@@ -24,5 +24,6 @@ const ProfilePage: React.FC<unknown> = () => {
 			</div>
 		</Layout>
 	);
+}
 
 export default ProfilePage;
