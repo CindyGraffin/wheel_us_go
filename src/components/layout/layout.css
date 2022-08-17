@@ -20,17 +20,13 @@
     height: 100%;
     flex: 3;
 }
-.cent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
+
 .right {
     width: 100%;
     height: 100%;
     flex: 1;
 }
+
 
 /* ================== LEFT LAYOUT ================== */
 .left__container {
@@ -45,6 +41,7 @@
     align-items: center;
     margin-left: 2.5rem;
 }
+/* LOGO */
 .logo__container {
     display: flex;
     justify-content: center;
@@ -56,48 +53,21 @@
     max-width: 100%;    
     z-index: 10;
 }
-.create-table__container {
-
+/* CREATE ROOMS */
+.create-rooms__container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-}
-.create-table {
-    background-color: var(--color-secondary);
-    box-shadow: var(--box-shadow-bold);
-    margin-bottom: 1.7rem;
-    width: 12rem;
-    height: 8rem;
-    border-radius: 10px;
-    color: var(--color-black);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-    cursor: pointer;
-    font-weight: 500;
-}
-.create-table p {
-    font-size: 1.1rem;
-}
 .create-table-home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.create-table-icon {
-    font-size: 1.6rem;
-    color: var(--color-tertiary);
-    
-}
-.create-table p {
-    max-width: 7rem;
-    text-align: center;
-}
+
 
 /* ================== CENTER LAYOUT ================== */
 .center__container {
@@ -105,9 +75,8 @@
     flex-direction: column;
     height: 100%;
 }
-
+/* NAVLIST */
 .navlist__container {
-
     z-index: 100;
     width: 60%;
     margin: 0 auto;
@@ -116,10 +85,26 @@
     z-index: 99;
     position: fixed;
 }
+/* CHILDREN PAGE */
+.children-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.children-page__container {
+    background-color: var(--color-secondary);
+    border-radius: 15px 15px 0px 0px;
+    margin-top: 8rem;
+    width: 83%;
+    box-shadow: var(--box-shadow-bold);
+    z-index: 90;
+    color: var(--color-black);
+}
+
 
 /* ================== RIGHT LAYOUT ================== */
 .right__container {
-
     width: 100%;
     color: var(--color-black);
 }
@@ -201,13 +186,3 @@
 
 
 
-.page__container {
-        background-color: var(--color-secondary);
-        border-radius: 15px 15px 0px 0px;
-        margin-top: 8rem;
-        width: 83%;
-        box-shadow: var(--box-shadow-bold);
-        z-index: 90;
-        color: var(--color-black);
-    
-}

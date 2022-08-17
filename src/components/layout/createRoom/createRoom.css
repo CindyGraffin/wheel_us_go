@@ -1,0 +1,28 @@
+.create-room {
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow-bold);
+    margin-bottom: 1.7rem;
+    width: 12rem;
+    height: 8rem;
+    border-radius: 10px;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.create-room p {
+    max-width: 7rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.create-room-icon {
+    font-size: 1.6rem;
+    color: var(--color-tertiary);
+}
+

@@ -6,6 +6,7 @@ import { BsPeople } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 import "./layout.css";
 import Contact from "../contact/Contact";
+import CreateRoom from "./createRoom/CreateRoom";
 
 interface Props {
 	children: JSX.Element;
@@ -14,6 +15,29 @@ interface Props {
 const Layout = ({ children }: Props) => {
 	const nums = [1, 2, 3, 4];
 	const nums2 = [1, 2, 3];
+	const roomsCreation = [
+		{
+			type: 'RESTAURANT',
+			icon: <IoRestaurantOutline className="create-room-icon" />
+		},
+		{
+			type: 'BAR',
+			icon: <BiBeer className="create-room-icon" />
+		},
+		{
+			type: 'HOME',
+			icon: <TbSofa className="create-room-icon" />
+		}
+	] as const;
+	const contactsGroupsCreation = [
+		{
+			type: 'CONTACTS',
+			contacts: nums
+		},
+		{
+			type: 'GROUPES'
+		}
+	]
 
 	return (
 		<div className="layout">
@@ -24,23 +48,10 @@ const Layout = ({ children }: Props) => {
 							<div className="logo__container">
 								<img src={require("./logo2.png")} alt="" />
 							</div>
-							<div className="create-table__container">
-								<div className="create-tables">
-									<button className="create-table">
-										<IoRestaurantOutline className="create-table-icon" />
-										<p>CREER UNE TABLE RESTAURANT</p>
-									</button>
-									<button className="create-table">
-										<BiBeer className="create-table-icon" />
-										<p>CREER UNE TABLE BAR</p>
-									</button>
-									<button className="create-table">
-										<TbSofa className="create-table-icon" />
-										<div className="create-table-home">
-											<p>CREER UNE TABLE HOME</p>
-										</div>
-									</button>
-								</div>
+							<div className="create-rooms__container">
+									{roomsCreation.map(room => (
+										<CreateRoom icon={room.icon} type={room.type} key={room.type}/>
+									))}
 							</div>
 						</div>
 					</div>
@@ -50,12 +61,10 @@ const Layout = ({ children }: Props) => {
 						<div className="navlist__container">
 							<Navlist />
 						</div>
-						<div className="cent">
-							<div className="page__container">
+						<div className="children-page">
+							<div className="children-page__container">
 								{children}
-
 							</div>
-
 						</div>
 					</div>
 				</div>
@@ -69,7 +78,7 @@ const Layout = ({ children }: Props) => {
 								</div>
 								<div className="all-contacts">
 									{nums.map((num) => (
-										<Contact />
+										<Contact key={num}/>
 									))}
 								</div>
 								<div className="contact-btn">
@@ -85,13 +94,10 @@ const Layout = ({ children }: Props) => {
 									{nums2.map((num) => (
 										<Contact />
 									))}
-								</div>
-							
-
+								</div>		
 								<div className="contact-btn">
 									<AiOutlinePlus className="contact-btn-icon" />
 								</div>
-								
 							</div>
 						</div>
 					</div>
