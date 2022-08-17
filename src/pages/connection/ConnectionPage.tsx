@@ -1,9 +1,15 @@
+import LoginForm from "../../components/form/LoginForm";
 
 
-const ConnectionPage = () => {
+
+
+const ConnectionPage: React.FC = () => {
     return (
         <div>
-            <div>ConnectionPage</div>
+            <div>   
+
+            <LoginForm/>
+            </div>
         </div>
     );
 };
