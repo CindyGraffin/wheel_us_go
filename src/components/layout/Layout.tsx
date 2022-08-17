@@ -1,19 +1,13 @@
-import { IoRestaurantOutline, IoPersonOutline } from "react-icons/io5";
-import { Navlist } from "../index";
-import { BiBeer } from "react-icons/bi";
-import { TbSofa } from "react-icons/tb";
-import { BsPeople } from "react-icons/bs";
-import { AiOutlinePlus } from "react-icons/ai";
 import "./layout.css";
-import Contact from "../contact/Contact";
-import CreateRoom from "./createRoom/CreateRoom";
-import { type } from "@testing-library/user-event/dist/type";
 
-interface Props {
+import { Navlist, CreateRoom, ContactGroup} from "../index";
+import { BiBeer, TbSofa, BsPeople, IoPersonOutline, IoRestaurantOutline } from "../../icons/index";
+
+interface LayoutProps {
 	children: JSX.Element;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps) => {
 	const nums = [1, 2, 3, 4];
 	const nums2 = [1, 2, 3];
 	const roomsCreation = [
@@ -32,14 +26,16 @@ const Layout = ({ children }: Props) => {
 	] as const;
 	const contactsGroupsCreation = [
 		{
-			type: 'contacts',
+			classname: "contacts-group contacts",
 			contacts: nums,
-			title: 'CONTACTS'
+			title: 'CONTACTS',
+			icon: <IoPersonOutline className="contact-title-icon" />
 		},
 		{
-			type: 'groups',
+			classname: "contacts-group groups",
 			contacts: nums2,
-			title: 'GROUPES'
+			title: 'GROUPES',
+			icon: <BsPeople className="contact-title-icon" />
 		}
 	]
 
@@ -75,34 +71,13 @@ const Layout = ({ children }: Props) => {
 				<div className="right">
 					<div className="right__container">
 						<div className="contacts__container">
-							<div className="contacts-group contacts">
-								<div className="contacts-title">
-									<IoPersonOutline className="contact-title-icon" />
-									<p>CONTACTS</p>
-								</div>
-								<div className="all-contacts">
-									{nums.map((num) => (
-										<Contact key={num}/>
-									))}
-								</div>
-								<div className="contact-btn">
-									<AiOutlinePlus className="contact-btn-icon" />
-								</div>
-							</div>
-							<div className="contacts-group groups">
-								<div className="contacts-title">
-									<BsPeople className="contact-title-icon" />
-									<p>GROUPES</p>
-								</div>
-								<div className="all-contacts">
-									{nums2.map((num) => (
-										<Contact />
-									))}
-								</div>		
-								<div className="contact-btn">
-									<AiOutlinePlus className="contact-btn-icon" />
-								</div>
-							</div>
+							{contactsGroupsCreation.map((conctactsGroup) => (
+								<ContactGroup 
+									classname={conctactsGroup.classname} 
+									contacts={conctactsGroup.contacts} 
+									title={conctactsGroup.title} 
+									icon={conctactsGroup.icon}/>
+							))}
 						</div>
 					</div>
 				</div>
