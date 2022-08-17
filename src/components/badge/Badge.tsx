@@ -1,8 +1,7 @@
 import './badge.css'
-import {GiRoastChicken} from 'react-icons/gi'
+import { GiRoastChicken } from '../../icons/index';
 
-
-const Badge = () => {
+const Badge: React.FC<unknown> = () => {
 	return (
         <div className='badge-unique'>
             <div className="badge__container">

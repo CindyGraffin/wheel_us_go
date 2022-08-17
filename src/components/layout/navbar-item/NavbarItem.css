@@ -9,7 +9,6 @@
     align-items: center;
     justify-content: center;
     box-shadow: var(--box-shadow-bold);
-    
 }
 .navbar-item p {
     text-decoration: none;
