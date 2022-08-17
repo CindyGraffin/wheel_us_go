@@ -7,6 +7,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import "./layout.css";
 import Contact from "../contact/Contact";
 import CreateRoom from "./createRoom/CreateRoom";
+import { type } from "@testing-library/user-event/dist/type";
 
 interface Props {
 	children: JSX.Element;
@@ -31,11 +32,14 @@ const Layout = ({ children }: Props) => {
 	] as const;
 	const contactsGroupsCreation = [
 		{
-			type: 'CONTACTS',
-			contacts: nums
+			type: 'contacts',
+			contacts: nums,
+			title: 'CONTACTS'
 		},
 		{
-			type: 'GROUPES'
+			type: 'groups',
+			contacts: nums2,
+			title: 'GROUPES'
 		}
 	]
 
