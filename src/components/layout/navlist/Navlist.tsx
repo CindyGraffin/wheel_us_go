@@ -1,13 +1,9 @@
+import {AiOutlineMessage, AiOutlineStar, BiHomeAlt, BiSearchAlt, FiSettings, HiOutlineUserGroup, TbBrandAirtable} from '../../../icons/index'
+import {NavbarItem} from "../index";
 import { NavLink } from "react-router-dom";
-import { TbBrandAirtable } from "react-icons/tb";
-import { AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
-import { BiHomeAlt, BiSearchAlt } from "react-icons/bi";
-import { HiOutlineUserGroup } from "react-icons/hi";
-import { FiSettings } from "react-icons/fi";
 import './navlist.css';
-import NavbarItem from "./navbar-item/NavbarItem";
 
-const Navlist = () => {
+const Navlist: React.FC<unknown> = () => {
     let activeStyle = {
         textDecoration: "none",
     };
@@ -56,16 +52,14 @@ const Navlist = () => {
             <ul>
                 {navlinksInfos.map((navlink, i) => {
                     return (
-                        <li>
+                        <li key={navlink.name}>
                             <NavLink
-                                id="1"
-                                key={navlink.name}
                                 to={navlink.path}
                                 style={({ isActive }) =>
                                     isActive ? activeStyle :myStyle
                                 }
                             >
-                                <NavbarItem icon={navlink.icon} key={i}/>
+                                <NavbarItem icon={navlink.icon} key={navlink.name+i}/>
                             </NavLink>
                         </li>
                     );

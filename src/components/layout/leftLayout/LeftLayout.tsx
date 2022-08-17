@@ -1,19 +1,19 @@
 import './leftLayout.css';
 import { IoRestaurantOutline, BiBeer, TbSofa } from '../../../icons/index';
-import CreateRoom from '../../layout/createRoom/CreateRoom';
+import { CreateRoom } from '../index';
 
-const LeftLayout = () => {
+const LeftLayout: React.FC<unknown> = () => {
     const roomsCreation = [
 		{
-			type: 'RESTAURANT',
+			typeRoom: 'RESTAURANT',
 			icon: <IoRestaurantOutline className="create-room-icon" />
 		},
 		{
-			type: 'BAR',
+			typeRoom: 'BAR',
 			icon: <BiBeer className="create-room-icon" />
 		},
 		{
-			type: 'HOME',
+			typeRoom: 'HOME',
 			icon: <TbSofa className="create-room-icon" />
 		}
 	] as const;
@@ -27,8 +27,8 @@ const LeftLayout = () => {
                     {roomsCreation.map((room) => (
                         <CreateRoom
                             icon={room.icon}
-                            type={room.type}
-                            key={room.type}
+                            typeRoom={room.typeRoom}
+                            key={room.typeRoom}
                         />
                     ))}
                 </div>

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Contact from "../contact/Contact";
+import { Contact } from "../index";
 import { AiOutlinePlus } from "react-icons/ai";
 import './contactgroup.css'
 
@@ -10,7 +10,7 @@ interface ContactGroupProps {
     icon: ReactNode;
 }
 
-const ContactGroup = ({classname, title, contacts, icon}: ContactGroupProps) => {
+const ContactGroup: React.FC<ContactGroupProps> = ({classname, title, contacts, icon}) => {
 
     return (
         <div className={classname}>

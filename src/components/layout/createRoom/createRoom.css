@@ -14,13 +14,11 @@
     cursor: pointer;
     font-weight: 500;
 }
-
 .create-room p {
     max-width: 7rem;
     text-align: center;
     font-size: 1.1rem;
 }
-
 .create-room-icon {
     font-size: 1.6rem;
     color: var(--color-tertiary);

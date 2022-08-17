@@ -1,32 +1,11 @@
 import "./layout.css";
-
-import { Navlist, CreateRoom, ContactGroup} from "../index";
-import { BsPeople, IoPersonOutline } from "../../icons/index";
-import LeftLayout from "../form/leftLayout/LeftLayout";
+import { Navlist, LeftLayout, RightLayout  } from "./index";
 
 interface LayoutProps {
 	children: JSX.Element;
 }
 
-const Layout = ({ children }: LayoutProps) => {
-	const nums = [1, 2, 3, 4];
-	const nums2 = [1, 2, 3];
-	
-	const contactsGroupsCreation = [
-		{
-			classname: "contacts-group contacts",
-			contacts: nums,
-			title: 'CONTACTS',
-			icon: <IoPersonOutline className="contact-title-icon" />
-		},
-		{
-			classname: "contacts-group groups",
-			contacts: nums2,
-			title: 'GROUPES',
-			icon: <BsPeople className="contact-title-icon" />
-		}
-	]
-
+const Layout: React.FC<LayoutProps>  = ({ children }) => {
 	return (
 		<div className="layout">
 			<div className="layout__container">
@@ -46,17 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
 					</div>
 				</div>
 				<div className="right">
-					<div className="right__container">
-						<div className="contacts__container">
-							{contactsGroupsCreation.map((conctactsGroup) => (
-								<ContactGroup 
-									classname={conctactsGroup.classname} 
-									contacts={conctactsGroup.contacts} 
-									title={conctactsGroup.title} 
-									icon={conctactsGroup.icon}/>
-							))}
-						</div>
-					</div>
+					<RightLayout/>
 				</div>
 			</div>
 		</div>
