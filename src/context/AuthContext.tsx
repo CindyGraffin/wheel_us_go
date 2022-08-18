@@ -35,7 +35,7 @@ type AuthProviderProps = {
 
 // le hook useReducer est utilisé pour les manipulations complexes du state et sa mise à jour, il prend en paramètre le state initial ainsi que le reducer créé auparavant
 
-const AuthProvider: React.FC<AuthProviderProps> = ({children}: AuthProviderProps) => {
+const AuthContextProvider: React.FC<AuthProviderProps> = ({children}: AuthProviderProps) => {
     // dispatch permettra de déclencher une action
 	const [state, dispatch] = useReducer(authReducer, initialState);
 
@@ -54,7 +54,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({children}: AuthProviderProps
 	)
 }
 
-export {AuthProvider};
+export {AuthContextProvider};
 
 
 
