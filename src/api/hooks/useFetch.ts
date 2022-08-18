@@ -4,13 +4,13 @@ import axios from 'axios';
 
 const useFetch = (url: string) => {
     const [data, setData] = useState<any>([]);
-    const [loading, setLoading] = useState<any>(true);
+    const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<any>(null);
 
     useEffect(() => {
         const fetchData = async(): Promise<void> => {
             try {
-                const response = await axios.get<any>(url);
+                const response = await axios.get(url);
                 setData(response.data);
             } catch (error) {
                 if (axios.isAxiosError(error)) {
