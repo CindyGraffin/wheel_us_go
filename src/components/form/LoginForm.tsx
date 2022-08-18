@@ -1,5 +1,6 @@
+import { useContext, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-
+import { AuthContext } from "../../context/AuthContext";
 type LoginFormValues = {
     email: string;
     password: string;
@@ -8,6 +9,11 @@ type LoginFormValues = {
 const LoginForm: React.FC<unknown> = () => {
 	const { register, handleSubmit, formState: {errors}} = useForm<LoginFormValues>();
     const onSubmit: SubmitHandler<LoginFormValues> = data => console.log(data);
+    const {state, dispatch} = useContext(AuthContext)
+	useEffect(() => {
+		console.log(state.user);
+		
+	}, [])
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>

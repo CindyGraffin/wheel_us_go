@@ -13,14 +13,15 @@ type InitialStateType = {
 
 const initialState = {
     // on récupére les données concernant l'utilisateur dans le localStorage si elles existent 
-	user: JSON.parse(localStorage.getItem("user") || ""),
+	// @ts-ignore
+	user: JSON.parse(localStorage.getItem("user") || null),
 	loading: false,
 	error: false
 };
 
 // on crée le contexte en lui passant les données qui lui serviront de state initial
 
-const AuthContext = createContext<{
+export const AuthContext = createContext<{
 	state: InitialStateType;
 	dispatch: React.Dispatch<IActionAuth>
 }>({
