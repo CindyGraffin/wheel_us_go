@@ -1,8 +1,8 @@
-import IAction from "../../types/IAction";
+import IActionAuth from "../../types/IActionAuth";
 import IAuthState from "../../types/IAuthState";
 
 // un reducer est une fonction qui prend en compte le state et une action et retourne un state mis à jour en fonction de l'action
-export const authReducer = (state: IAuthState, action: IAction) => {
+export const authReducer = (state: IAuthState, action: IActionAuth) => {
     // une action est un événement qui va changer le state
 	switch (action.type) {
         // lorsqu'on déclenche l'action LOGIN_START le state se met à jour et correspondra à ce qui est contenu dans le return statement
