@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useEffect, ReactNode } from "react";
 import { authReducer } from "./reducers/authReducer";
 import IUser from "../types/IUser";
+import IActionAuth from "../types/IActionAuth";
 
 // on utilise React useContext pour le state management, ce qui permet d'accéder à la data à travers les différents composants sans passer par le props drilling
 
@@ -21,7 +22,7 @@ const initialState = {
 
 const AuthContext = createContext<{
 	state: InitialStateType;
-	dispatch: React.Dispatch<any>
+	dispatch: React.Dispatch<IActionAuth>
 }>({
 	state: initialState,
 	dispatch: () => null
