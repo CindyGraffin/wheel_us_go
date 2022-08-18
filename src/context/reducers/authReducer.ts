@@ -1,5 +1,5 @@
-import IAction from "../types/IAction";
-import IAuthState from "../types/IAuthState";
+import IAction from "../../types/IAction";
+import IAuthState from "../../types/IAuthState";
 
 // un reducer est une fonction qui prend en compte le state et une action et retourne un state mis à jour en fonction de l'action
 export const authReducer = (state: IAuthState, action: IAction) => {
