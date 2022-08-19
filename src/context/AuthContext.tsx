@@ -11,10 +11,9 @@ type InitialStateType = {
 	error: boolean;
 };
 
-const initialState = {
+const initialState: InitialStateType = {
     // on récupére les données concernant l'utilisateur dans le localStorage si elles existent 
-	// @ts-ignore
-	user: JSON.parse(localStorage.getItem("user") || null),
+	user: JSON.parse(localStorage.getItem("user") as string),
 	loading: false,
 	error: false
 };
@@ -36,7 +35,7 @@ type AuthProviderProps = {
 
 // le hook useReducer est utilisé pour les manipulations complexes du state et sa mise à jour, il prend en paramètre le state initial ainsi que le reducer créé auparavant
 
-const AuthContextProvider: React.FC<AuthProviderProps> = ({children}: AuthProviderProps) => {
+const AuthContextProvider: React.FC<AuthProviderProps> = ({children}) => {
     // dispatch permettra de déclencher une action
 	const [state, dispatch] = useReducer(authReducer, initialState);
 
