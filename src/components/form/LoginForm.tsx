@@ -33,14 +33,6 @@ const LoginForm: React.FC<unknown> = () => {
 		}
 	}
 
-	useEffect(() => {
-		console.log(state.user);
-	}, [state.user])
-	useEffect(() => {
-		console.log(credentials);
-	}, [credentials])
-
-
 	const emailField = register('email', {required: true})
 	
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

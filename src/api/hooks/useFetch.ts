@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-
+// le hook useFecth() va faire la requête axios nécessaire sur l'url passée en paramètre pour récupérer la data
 const useFetch = (url: string) => {
     const [data, setData] = useState<any>([]);
     const [loading, setLoading] = useState<boolean>(true);
