@@ -1,6 +1,6 @@
 # Liste des badges 
 
-1. Créateurs de tables : ***Trouver un nom***
+1. Créateurs de tables : L'Oeuf ou la Poule ?
     1. Oeuf -> 10 tables crées 
     2. Poussin -> 25 tables crées
     3. Poulet -> 50 tables crées
