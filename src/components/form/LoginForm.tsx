@@ -31,11 +31,12 @@ const LoginForm: React.FC<unknown> = () => {
 	}
 
 	const navigate = useNavigate()
-
+	const baseUrl = process.env.REACT_APP_BASE_URL;
+	
 	const onSubmit = async(e: any) => {
 		dispatch({type: 'LOGIN_START', payload: null})
 		try {
-			const response = await axios.post('http://localhost:8800/api/auth/login', credentials)
+			const response = await axios.post(`${baseUrl}auth/login`, credentials)
 			dispatch({type: 'LOGIN_SUCCESS', payload: response.data})
 			navigate('/profile', {replace: true})
 		} catch (error) {
