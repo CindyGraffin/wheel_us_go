@@ -11,7 +11,6 @@ interface ContactGroupProps {
 }
 
 const ContactGroup: React.FC<ContactGroupProps> = ({classname, title, contacts, icon}) => {
-
     return (
         <div className={classname}>
             <div className="contacts-title">
