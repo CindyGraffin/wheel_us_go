@@ -4,8 +4,8 @@ import ContactGroup from "../contactGroup/ContactGroup";
 import React from "react";
 
 const RightLayout: React.FC<unknown> = () => {
-    const nums = [1, 2, 3, 4];
-	const nums2 = [1, 2, 3];
+    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+	const nums2 = [1, 2, 3, 4, 5];
     const contactsGroupsCreation = [
 		{
 			classname: "contacts-group contacts",
