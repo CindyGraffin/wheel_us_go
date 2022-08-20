@@ -53,7 +53,7 @@
 }
 .children-page__container {
     background-color: var(--color-secondary);
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px;
     margin-top: 8rem;
     width: 83%;
     box-shadow: var(--box-shadow-bold);

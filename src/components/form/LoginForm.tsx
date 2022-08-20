@@ -1,4 +1,4 @@
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ChangeEvent, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -30,11 +30,14 @@ const LoginForm: React.FC<unknown> = () => {
 		}))
 	}
 
+	const navigate = useNavigate()
+
 	const onSubmit = async(e: any) => {
 		dispatch({type: 'LOGIN_START', payload: null})
 		try {
 			const response = await axios.post('http://localhost:8800/api/auth/login', credentials)
 			dispatch({type: 'LOGIN_SUCCESS', payload: response.data})
+			navigate('/profile', {replace: true})
 		} catch (error) {
 			dispatch({type: 'LOGIN_FAILURE', payload: null})
 		}
