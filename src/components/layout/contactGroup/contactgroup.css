@@ -11,7 +11,6 @@
 }
 .contact-group::-webkit-scrollbar {
     width: 9px; /* width of the entire scrollbar */
-
 }
 .contact-group::-webkit-scrollbar-track {
     background: var(--color-primary); /* color of the tracking area */
