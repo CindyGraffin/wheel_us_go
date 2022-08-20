@@ -1,7 +1,7 @@
 
 import axios from "axios";
-import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { ChangeEvent, useContext, useState } from "react";
+import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthContext";
 
 type LoginFormValues = {
@@ -18,20 +18,8 @@ const LoginForm: React.FC<unknown> = () => {
 		email: undefined,
 		password: undefined
 	})
-	const {state, dispatch} = useContext(AuthContext);
-	const { register, handleSubmit, formState: {errors}, getValues} = useForm<LoginFormValues>({mode: "onChange"});
-    const onSubmit: SubmitHandler<LoginFormValues> = data => console.log(data);
-
-	const handleClick = async(e: any) => {
-	
-		dispatch({type: 'LOGIN_START', payload: null})
-		try {
-			const response = await axios.post('http://localhost:8800/api/auth/login', credentials)
-			dispatch({type: 'LOGIN_SUCCESS', payload: response.data})
-		} catch (error) {
-			dispatch({type: 'LOGIN_FAILURE', payload: null})
-		}
-	}
+	const { dispatch} = useContext(AuthContext);
+	const { register, handleSubmit, formState: {errors}} = useForm<LoginFormValues>({mode: "onChange"});
 
 	const emailField = register('email', {required: true})
 	
@@ -41,8 +29,19 @@ const LoginForm: React.FC<unknown> = () => {
 			[e.target.id]: e.target.value
 		}))
 	}
+
+	const onSubmit = async(e: any) => {
+		dispatch({type: 'LOGIN_START', payload: null})
+		try {
+			const response = await axios.post('http://localhost:8800/api/auth/login', credentials)
+			dispatch({type: 'LOGIN_SUCCESS', payload: response.data})
+		} catch (error) {
+			dispatch({type: 'LOGIN_FAILURE', payload: null})
+		}
+	}
+
 	return (
-		<form onSubmit={handleSubmit(handleClick)}>
+		<form onSubmit={handleSubmit(onSubmit)}>
 			<input 
 				placeholder="Votre adresse mail" 
 				type="email" 
@@ -51,9 +50,7 @@ const LoginForm: React.FC<unknown> = () => {
 				onChange={(e)=> {
 					emailField.onChange(e)
 					handleChange(e)
-				}}
-				
-				
+				}}				
 			/>
 			{errors.email && <span>Adresse mail requise</span>}
 			<input 
