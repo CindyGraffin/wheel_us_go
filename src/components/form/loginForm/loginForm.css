@@ -1,0 +1,65 @@
+.co-form {
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+.input-container {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+}
+.input-container input {
+    margin: 0 auto;
+    width: 80%;
+    height: 1.8rem;
+    border-radius: 10px;
+    padding: 0.2rem 0.5rem;
+    color: var(--color-black);
+}
+.input-container input:focus {
+    border: 1px solid var(--color-tertiary);
+    outline: none;
+    color: var(--color-black);
+}
+.input-container input::placeholder {
+    text-align: center;
+}
+.input-error {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.connect-btn {
+    width: 80%;
+    height: 2rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    margin-top: 0.3rem;
+    box-shadow: var(--box-shadow-light);
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);cursor: pointer;
+    font-weight: 600;
+}
+
+.forget-pw {
+    font-size: 0.8rem;
+    color: var(--color-tertiary);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.co-error {
+    max-width: 80%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--color-black);
+}
+.co-error-icon {
+    font-size: 1.2rem;
+    margin-bottom: -0.1rem;
+}

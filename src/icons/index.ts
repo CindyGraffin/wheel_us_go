@@ -6,6 +6,7 @@ import {GiRoastChicken} from 'react-icons/gi';
 import {GoLocation} from "react-icons/go";
 import { HiOutlineBadgeCheck, HiOutlineUserGroup } from "react-icons/hi";
 import { IoRestaurantOutline, IoPersonOutline } from "react-icons/io5";
+import { RiErrorWarningLine } from "react-icons/ri";
 import { TbSofa, TbBrandAirtable } from "react-icons/tb";
 
 export {
@@ -22,6 +23,7 @@ export {
     HiOutlineUserGroup, 
     IoPersonOutline, 
     IoRestaurantOutline,  
+    RiErrorWarningLine,
     TbBrandAirtable, 
     TbSofa
 };
