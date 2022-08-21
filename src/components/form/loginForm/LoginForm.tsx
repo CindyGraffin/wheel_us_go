@@ -33,6 +33,8 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 	} = useForm<LoginFormValues>({ mode: "onChange" });
 
 	const emailField = register("email", { required: true });
+	const passwordField = register("password", { required: true });
+
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setCredentials((prev) => ({
@@ -78,9 +80,9 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 					placeholder="Votre mot de passe"
 					type="password"
 					id="password"
-					{...register("password", { required: true })}
+					{...passwordField}
 					onChange={(e) => {
-						emailField.onChange(e);
+						passwordField.onChange(e);
 						handleChange(e);
 					}}
 					onFocus={() => setLogoPath('./logo-close.png')}

@@ -19,7 +19,7 @@ const ConnectionPage: React.FC<unknown> = () => {
                     </div>
                     <div className="no-account">
                         <p>Pas encore inscrit ?</p>
-                        <p>Rejoins notre communauté de gourmands dès à présent !</p>
+                        <p>Rejoins notre communauté de gourmands dès à présent ! 🍗</p>
                         <button className="connect-btn">INSCRIPTION</button>
                     </div>
 				</div>
