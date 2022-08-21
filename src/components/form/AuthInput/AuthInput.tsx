@@ -1,4 +1,4 @@
-import React from "react";
+import './authInput.css';
 
 interface AuthInputProps {
     inputType: string;
@@ -9,6 +9,7 @@ interface AuthInputProps {
     textError: string;
     onChange: (e: any) => void
 }
+
 const AuthInput: React.FC<AuthInputProps> = ({inputType, inputPlaceholder, inputId, nameField, textError, onChange, formErrors}) => {
 	return (
 		<div className="input-container">

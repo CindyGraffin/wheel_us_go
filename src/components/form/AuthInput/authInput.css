@@ -1,0 +1,28 @@
+.input-container {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+}
+.input-container input {
+    margin: 0 auto;
+    width: 80%;
+    height: 1.8rem;
+    border-radius: 10px;
+    padding: 0.2rem 0.5rem;
+    color: var(--color-black);
+}
+.input-container input:focus {
+    border: 1px solid var(--color-tertiary);
+    outline: none;
+    color: var(--color-black);
+}
+.input-container input::placeholder {
+    text-align: center;
+}
+.input-error {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
