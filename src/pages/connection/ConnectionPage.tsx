@@ -8,17 +8,17 @@ const ConnectionPage: React.FC<unknown> = () => {
 				<div> hey</div>
 				<div className="form__container">
                     <div>
-                    <div className="co-logo">
-                        <div className="logo">
-                            <img src={require("./logo.png")} alt="" />
+                        <div className="co-logo">
+                            <div className="logo">
+                                <img src={require("./logo.png")} alt="" />
+                            </div>
                         </div>
-                    </div>
-					<LoginForm />
+                        <LoginForm />
                     </div>
                     <div className="no-account">
-        <p>Pas encore inscrit ?</p>
-        <p>Rejoins notre communauté de gourmands dès à présent !</p>
-        <button className="connect-btn">INSCRIPTION</button>
+                        <p>Pas encore inscrit ?</p>
+                        <p>Rejoins notre communauté de gourmands dès à présent !</p>
+                        <button className="connect-btn">INSCRIPTION</button>
                     </div>
 				</div>
 			</div>

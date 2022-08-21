@@ -69,7 +69,6 @@ const LoginForm: React.FC<unknown> = () => {
 				/>
 				{errors.email && <span className="input-error">Adresse mail requise</span>}
 			</div>
-
 			<div className="input-container">
 				<input
 					placeholder="Votre mot de passe"
@@ -85,7 +84,7 @@ const LoginForm: React.FC<unknown> = () => {
 			</div>
 			<p className="forget-pw">Vous avez oublié votre mot de passe ?</p>
 			{state.loading ? 
-				<button className="connect-btn">CHARGEMENT ...</button> 
+				<button className="loading">CHARGEMENT ...</button> 
 				: 
 				<button type="submit" className="connect-btn">SE CONNECTER</button> 
 			}

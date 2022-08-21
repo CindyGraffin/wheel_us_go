@@ -34,16 +34,10 @@
     font-size: 0.8rem;
     font-weight: 600;
 }
-.connect-btn {
+.connect-btn, 
+.loading {
     width: 80%;
-    height: 2rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 10px;
     margin-top: 0.3rem;
-    box-shadow: var(--box-shadow-light);
-    background-color: var(--color-tertiary);
-    color: var(--color-secondary);cursor: pointer;
-    font-weight: 600;
 }
 
 .forget-pw {
