@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../context/AuthContext";
 import "./loginForm.css";
 import {RiErrorWarningLine} from '../../../icons/index'
+import AuthInput from "../AuthInput/AuthInput";
 
 type LoginFormValues = {
 	email: string;
@@ -59,37 +60,19 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 			dispatch({ type: "LOGIN_FAILURE", payload: null });
 		}
 	};
+	const onChangeEmail = (e: any) => {
+		emailField.onChange(e);
+		handleChange(e);
+	}
+	const onChangePassword = (e: any) => {
+		passwordField.onChange(e);
+		handleChange(e);
+	}
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="co-form">
-			<div className="input-container">
-				<input
-					placeholder="Votre adresse mail"
-					type="email"
-					id="email"
-					{...emailField}
-					onChange={(e) => {
-						emailField.onChange(e);
-						handleChange(e);
-					}}
-				/>
-				{errors.email && <span className="input-error">Adresse mail requise</span>}
-			</div>
-			<div className="input-container">
-				<input
-					placeholder="Votre mot de passe"
-					type="password"
-					id="password"
-					{...passwordField}
-					onChange={(e) => {
-						passwordField.onChange(e);
-						handleChange(e);
-					}}
-					onFocus={() => setLogoPath('./logo-close.png')}
-					onBlur={() => setLogoPath('./logo.png')}
-				/>
-				{errors.password && <span className="input-error">Mot de passe requis</span>}
-			</div>
+			<AuthInput inputPlaceholder="Votre adresse mail" inputType="email" inputId="email" nameField={emailField} formErrors={errors.email} textError={"Adresse mail requise"} onChange={onChangeEmail}/>
+			<AuthInput inputPlaceholder="Votre mot de passe" inputType="password" inputId="password" nameField={passwordField} formErrors={errors.password} onChange={onChangePassword} textError={"Mot de passe requis"}/>
 			<p className="forget-pw">Vous avez oublié votre mot de passe ?</p>
 			{state.loading ? 
 				<button className="loading">CHARGEMENT ...</button> 
