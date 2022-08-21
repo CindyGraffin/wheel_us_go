@@ -1,0 +1,67 @@
+.contacts-group {
+    width: 100%;
+    background-color: var(--color-secondary);
+    box-shadow: var(--box-shadow-bold);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.contact-group::-webkit-scrollbar {
+    width: 9px; /* width of the entire scrollbar */
+}
+.contact-group::-webkit-scrollbar-track {
+    background: var(--color-primary); /* color of the tracking area */
+}
+.contact-group::-webkit-scrollbar-thumb {
+    background-color: var(--color-tertiary); /* color of the scroll thumb */
+    border-radius: 5px; /* roundness of the scroll thumb */
+}
+.contact-group {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-self: flex-start;
+    justify-items: center;
+    margin-left: 1rem;
+    overflow-y: scroll;
+}
+.contacts {
+    margin-bottom: 3rem;
+    height: 100%;
+}
+.groups {
+    height: 70%;
+}
+.contacts-title {
+    font-weight: 500;
+    height: 10%;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.contact-title-icon {
+    color: var(--color-tertiary);
+    font-size: 1.3rem;
+}
+.contact-btn {
+    padding: 0.20rem;
+    border-radius: 50%;
+    background-color: var(--color-tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 0.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
+}

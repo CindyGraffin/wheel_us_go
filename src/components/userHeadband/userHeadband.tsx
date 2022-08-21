@@ -1,8 +1,7 @@
 import './userHeaband.css';
-import {GoLocation} from "react-icons/go";
+import {GoLocation} from '../../icons/index'
 
-
-const UserHeadband = () => {
+const UserHeadband: React.FC<unknown> = () => {
 	return (
 		<div className="headband__container">
 			<div className="headband-img">

@@ -1,8 +1,9 @@
-import userHeadband from "./userHeadband/userHeadband";
+import Badge from "./badge/Badge";
 import Layout from "./layout/Layout";
-import Navlist from "./layout/navlist/Navlist";
+import UserHeadband from "./userHeadband/userHeadband";
 
-
-
-export {userHeadband, Navlist, Layout} ;
-
+export { 
+    Badge,
+    Layout,
+    UserHeadband
+};
