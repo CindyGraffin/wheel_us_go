@@ -7,7 +7,7 @@ interface AuthInputProps {
     nameField: any;
     formErrors: any;
     textError: string;
-    onChange: (e: any) => void
+    onChange: (e: Event) => void
 }
 
 const AuthInput: React.FC<AuthInputProps> = ({inputType, inputPlaceholder, inputId, nameField, textError, onChange, formErrors}) => {

@@ -92,7 +92,6 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 		}
 	};
 
-
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="co-form">
 			{authInputs.map((authInput) => (
