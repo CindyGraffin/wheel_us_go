@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ConnectionPage, PremiumPage, ProfilePage, ReglagesPage, SearchUser, UserFriends, UserMessages, UserTables } from './pages';
+import { ConnectionPage, PremiumPage, ProfilePage, ReglagesPage, SearchUser, UserFriends, UserMessages, UserTables, CreateTableRestaurant} from './pages';
 
 
 
@@ -17,6 +17,7 @@ function App() {
         <Route path='/userfriends/' element={<UserFriends/>}/>
         <Route path='/premium' element={<PremiumPage/>}/>
         <Route path='/reglages' element={<ReglagesPage/>}/>
+        <Route path='/createroom' element={<CreateTableRestaurant/>}/>
       </Routes>
     </BrowserRouter>
   );

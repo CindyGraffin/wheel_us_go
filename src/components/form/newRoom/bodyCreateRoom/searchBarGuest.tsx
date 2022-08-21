@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchBarGuest = () => {
   return (
-    <div>S</div>
+    <div>SearchBarGuest</div>
   )
 }
 
