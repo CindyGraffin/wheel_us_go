@@ -20,6 +20,6 @@ body {
   --color-tertiary: #c8865a;
   --color-black: #3d3d3d;
   --color-red: #a42424;
-  --box-shadow-bold: rgba(110, 110, 110, 0.050) 0px 3px 5px;
+  --box-shadow-light: rgba(110, 110, 110, 0.050) 0px 3px 5px;
 }
 

@@ -1,5 +1,5 @@
 import './badge.css'
-import { GiRoastChicken } from '../../icons/index';
+import { GiRoastChicken } from '../../../icons/index';
 
 const Badge: React.FC<unknown> = () => {
 	return (
