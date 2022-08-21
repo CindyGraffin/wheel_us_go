@@ -104,6 +104,7 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 					formErrors={authInput.formErrors} 
 					textError={authInput.textError} 
 					onChange={authInput.onChange}
+					setLogoPath={setLogoPath}
 				/>
 			))}
 			<p className="forget-pw">Vous avez oublié votre mot de passe ?</p>
