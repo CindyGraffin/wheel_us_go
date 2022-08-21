@@ -7,7 +7,11 @@ const ConnectionPage: React.FC<unknown> = () => {
 	return (
 		<div className="co-page">
 			<div className="co-page__container">
-				<div> hey</div>
+				<div className="pres__container">
+                    <div className="logo">
+                        <img src={require('./logo.png')} alt="" />
+                    </div>
+                </div>
 				<div className="form__container">
                     <div>
                         <div className="co-logo">
