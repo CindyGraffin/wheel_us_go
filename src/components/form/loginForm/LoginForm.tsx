@@ -14,8 +14,12 @@ interface ICredentials {
 	email: undefined | string;
 	password: undefined | string;
 }
+interface LoginFormProps {
+	logoPath: string;
+	setLogoPath: React.Dispatch<React.SetStateAction<string>>
+}
 
-const LoginForm: React.FC<unknown> = () => {
+const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 
 	const [credentials, setCredentials] = useState<ICredentials>({
 		email: undefined,
@@ -79,6 +83,8 @@ const LoginForm: React.FC<unknown> = () => {
 						emailField.onChange(e);
 						handleChange(e);
 					}}
+					onFocus={() => setLogoPath('./logo-close.png')}
+					onBlur={() => setLogoPath('./logo.png')}
 				/>
 				{errors.password && <span className="input-error">Mot de passe requis</span>}
 			</div>
