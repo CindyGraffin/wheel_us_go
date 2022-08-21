@@ -3,7 +3,7 @@ import LoginForm from "../../components/form/loginForm/LoginForm";
 import './connectionPage.css';
 
 const ConnectionPage: React.FC<unknown> = () => {
-	const [logoPath, setLogoPath] = useState<string>('./logo.png')
+	const [logoPath, setLogoPath] = useState<string>('./logo-open.png')
 	return (
 		<div className="co-page">
 			<div className="co-page__container">
