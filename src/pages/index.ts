@@ -1,4 +1,4 @@
-import ConnectionPage from "./connection/ConnectionPage";
+import ConnectionPage from "./auth/ConnectionPage";
 import PremiumPage from "./premium/PremiumPage";
 import ProfilePage from "./profile/ProfilePage";
 import ReglagesPage from "./reglages/ReglagesPage";
