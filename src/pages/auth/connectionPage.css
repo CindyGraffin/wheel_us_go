@@ -34,7 +34,7 @@
 }
 
 
-.no-account {
+.form-footer {
     margin: 1.5rem auto;
     width: 80%;
     text-align: center;
@@ -43,10 +43,10 @@
     border-top: 1px solid var(--color-tertiary) ;
     font-size: 0.9rem;
 }
-.no-account p:nth-child(1) {
+.from-footer p:nth-child(1) {
     margin-top: 1rem;
 }
-.no-account button {
+.form-footer button {
     margin-top: 1rem;
     width: 100%;
 }
