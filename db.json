@@ -13,7 +13,7 @@
 			"tableCreations": 3,
 			"tablesId": [2, 3, 4, 5],
 			"friends": [2, 3, 4, 5,10],
-			"groups1": [
+			"groups": [
 				{
 					"name": "BestTeams",
 					"users":[1,2,3,10],
@@ -226,11 +226,7 @@
 			"tablesId": [],
 			"friends": [],
 			"groups": [
-				{
-					"name": "",
-					"users":[],
-					"groupImg" : ""
-				}
+				
 			]
 		},
 		{

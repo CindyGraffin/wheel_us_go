@@ -1,10 +1,11 @@
 import react, { useEffect, useState } from "react";
-import {Users} from "../groupe/groupes.type"
+import {Users} from "../groupe/groupes.type";
+import "./listGroupes.css";
 
 const ListGroupes : React.FC<unknown> = () => {   
 const [users, setUsers] = useState<Users[]>([]);
 const fetchUsers = async () => {
-        const res = await fetch("http://localhost:3001/users");
+        const res = await fetch("http://localhost:3001/users/");
         const users = await res.json();
         setUsers(users);
         return users;
@@ -21,31 +22,40 @@ const fetchUsers = async () => {
 
   {users.map((user) => {
     return (
-        <div > 
-        
+        <div key={user.id} 
+         > 
+      
 
            <h3> user : {user.id} {user.firstName} </h3> 
 
+{user.groups && (
             <> 
+            
             {user.groups.map((group)=> {
                 return (
-                    <div > 
+                    <div key={user.id + group.name} > 
                        <img src={group.groupImg} alt="" /> 
         
-                   <p>  {group.name} </p>  
-                   <p> {group.users} </p>
+                   <p> GroupesName : {group.name} </p>  
+                   <p> GroupesUsers : {group.users} </p>
                 
                 </div>
                 
                 )
-            })};
+            })}
             </>
+
+  )}
+
+
+
         </div>
         
     );
-  })};
-  </div>);
+  })}
+          <div className="button" > <button> + </button> </div>
 
+  </div>);
 
 };
 
