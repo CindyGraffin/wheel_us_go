@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ChangeEvent, useContext, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../../context/AuthContext";
 import "./loginForm.css";
 import {RiErrorWarningLine} from '../../../icons/index'
 import AuthInput from "../authInput/AuthInput";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { loginFailure, loginStart, loginSuccess } from "../../../redux/slice/authSlice";
 
 type LoginFormValues = {
 	email: string;
@@ -28,7 +29,7 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 		email: undefined,
 		password: undefined,
 	});
-	const { state, dispatch } = useContext(AuthContext);
+	const dispatch = useAppDispatch()
 	const {
 		register,
 		handleSubmit,
@@ -74,21 +75,22 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 			[e.target.id]: e.target.value,
 		}));
 	};
-
+	const authState = useAppSelector((state) => state.auth)
 	const navigate = useNavigate();
 	const baseUrl = process.env.REACT_APP_BASE_URL;
 
 	const onSubmit = async (e: any) => {
-		dispatch({ type: "LOGIN_START", payload: null });
+		dispatch(loginStart);
 		try {
 			const response = await axios.post(
 				`${baseUrl}auth/login`,
 				credentials
 			);
-			dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
+			const user = response.data
+			dispatch(loginSuccess(user));
 			navigate("/profile", { replace: true });
 		} catch (error) {
-			dispatch({ type: "LOGIN_FAILURE", payload: null });
+			dispatch(loginFailure);
 		}
 	};
 
@@ -108,12 +110,12 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 				/>
 			))}
 			<p className="forget-pw">Vous avez oublié votre mot de passe ?</p>
-			{state.loading ? 
+			{authState.loading ? 
 				<button className="loading">CHARGEMENT ...</button> 
 				: 
 				<button type="submit" className="connect-btn">SE CONNECTER</button> 
 			}
-			{state.error && 
+			{authState.error && 
 				<div className="co-error">
 					<RiErrorWarningLine className="co-error-icon"/>
 					<p>Adresse mail introuvable ou mot de passe incorrect</p>

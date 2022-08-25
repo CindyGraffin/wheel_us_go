@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import IUser from "../types/IUser";
+import IUser from "../types/User";
 
 interface ProtectedRouteProps {
     user: IUser | null;
