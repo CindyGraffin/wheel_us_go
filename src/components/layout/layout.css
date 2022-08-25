@@ -62,18 +62,6 @@
 }
 
 
-/* ================== RIGHT LAYOUT ================== */
-.right__container {
-    width: 100%;
-    color: var(--color-black);
-}
-.contacts__container {
-    position: fixed;
-    width: 17%;
-    top: 8rem;
-    height: 40%;
-}
-
 
 
 
