@@ -23,11 +23,12 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     align-self: flex-start;
-    justify-items: center;
+    justify-items: flex-start;
     margin-left: 1rem;
     overflow-y: scroll;
 }
