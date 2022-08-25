@@ -1,7 +1,7 @@
 
 import './userHeaband.css';
 import {GoLocation} from '../../icons/index'
-import IUser from '../../types/User';
+import IUser from '../../types/IUser';
 
 interface UserHeadbandProps {
 	user: IUser | null;

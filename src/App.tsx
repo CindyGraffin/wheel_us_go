@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -11,17 +12,16 @@ import {
 	UserTables,
 } from "./pages";
 import ProtectedRoute from "./router/ProtectedRoute";
-import { useAppSelector } from "./hooks/hooks";
-
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
-	const authState = useAppSelector((state) => state.auth)
+	const { state } = useContext(AuthContext);
 
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<ConnectionPage />} />
-				<Route element={<ProtectedRoute user={authState.user} />}>
+				<Route element={<ProtectedRoute user={state.user} />}>
 					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/searchuser" element={<SearchUser />} />
 					<Route path="/usertables" element={<UserTables />} />
