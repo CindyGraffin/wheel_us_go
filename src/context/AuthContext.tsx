@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useEffect, ReactNode } from "react";
 import { authReducer } from "./reducers/authReducer";
-import IUser from "../types/IUser";
+import IUser from "../types/User";
 import IActionAuth from "../types/IActionAuth";
 
 // on utilise React useContext pour le state management, ce qui permet d'accéder à la data à travers les différents composants sans passer par le props drilling
