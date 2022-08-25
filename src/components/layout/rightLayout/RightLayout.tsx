@@ -8,9 +8,11 @@ const RightLayout: React.FC<unknown> = () => {
     const { state } = useContext(AuthContext);
     const userFriends = state.user?.friendsId;
     console.log(userFriends);
-	const nums = [1, 2, 3, 4, 5];
+    const userGroups = state.user?.groupsId;
+    console.log(userGroups);
     
-	const nums2 = [1, 2, 3, 4, 5];
+    
+	
     const contactsGroupsCreation = [
 		{
 			classname: "contacts-group contacts",
@@ -20,7 +22,7 @@ const RightLayout: React.FC<unknown> = () => {
 		},
 		{
 			classname: "contacts-group groups",
-			contacts: nums2,
+			contacts: userGroups,
 			title: 'GROUPES',
 			icon: <BsPeople className="contact-title-icon" />
 		}
@@ -28,7 +30,7 @@ const RightLayout: React.FC<unknown> = () => {
     return (
         <div className="right__container">
             <div className="contacts__container">
-                {userFriends && contactsGroupsCreation.map((contactsGroup) => (
+                {contactsGroupsCreation.map((contactsGroup) => (
                     <ContactGroup
                         key={contactsGroup.title}
                         classname={contactsGroup.classname}
