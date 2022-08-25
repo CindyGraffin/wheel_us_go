@@ -45,7 +45,7 @@ export const authSlice = createSlice({
                 loading: false,
                 error: false
             }
-        },
+        }
     }
 })
 

@@ -83,11 +83,12 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 	const onSubmit = async (e: any) => {
 		dispatch(loginStart);
 		try {
-			const response: User = await axios.post(
+			const response: any = await axios.post(
 				`${baseUrl}auth/login`,
 				credentials
 			);
-			dispatch(loginSuccess(response));
+			const user = response.data
+			dispatch(loginSuccess(user));
 			navigate("/profile", { replace: true });
 		} catch (error) {
 			dispatch(loginFailure);
