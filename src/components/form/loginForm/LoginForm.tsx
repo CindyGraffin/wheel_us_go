@@ -7,7 +7,6 @@ import {RiErrorWarningLine} from '../../../icons/index'
 import AuthInput from "../authInput/AuthInput";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import { loginFailure, loginStart, loginSuccess } from "../../../redux/slice/authSlice";
-import User from '../../../types/User';
 
 type LoginFormValues = {
 	email: string;
@@ -83,7 +82,7 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 	const onSubmit = async (e: any) => {
 		dispatch(loginStart);
 		try {
-			const response: any = await axios.post(
+			const response = await axios.post(
 				`${baseUrl}auth/login`,
 				credentials
 			);
