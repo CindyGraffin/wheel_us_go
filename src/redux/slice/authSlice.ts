@@ -8,11 +8,11 @@ export interface AuthState {
     error: boolean
 }
 
-const initialState: AuthState = {
+const initialState = {
     user: JSON.parse(localStorage.getItem("user") as string),
 	loading: false,
 	error: false
-}
+} as AuthState
 
 export const authSlice = createSlice({
     name: 'auth',

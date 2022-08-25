@@ -12,16 +12,17 @@ import {
 	UserTables,
 } from "./pages";
 import ProtectedRoute from "./router/ProtectedRoute";
-import { AuthContext } from "./context/AuthContext";
+import { useAppSelector } from "./hooks/hooks";
+
 
 function App() {
-	const { state } = useContext(AuthContext);
+	const authState = useAppSelector((state) => state.auth)
 
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<ConnectionPage />} />
-				<Route element={<ProtectedRoute user={state.user} />}>
+				<Route element={<ProtectedRoute user={authState.user} />}>
 					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/searchuser" element={<SearchUser />} />
 					<Route path="/usertables" element={<UserTables />} />

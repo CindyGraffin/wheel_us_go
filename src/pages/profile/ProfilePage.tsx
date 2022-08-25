@@ -1,19 +1,19 @@
 import "./profilePage.css";
 import { Badge, Layout, UserHeadband } from "../../components/index";
 import { HiOutlineBadgeCheck } from "../../icons/index";
-import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
+import { useAppSelector } from "../../hooks/hooks";
 
 
 const ProfilePage: React.FC<unknown> = () => {
 	const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-	const {state} = useContext(AuthContext);
+	const authState = useAppSelector((state) => state.auth)
+
 	// const {data} = useFetc
 	return (
 		<Layout>
 			<div className="profile__container">
 				<div className="headband">
-					<UserHeadband user={state.user}/>
+					<UserHeadband user={authState.user}/>
 					<div className="badges__container">
 						<div className="badges-title">
 							<HiOutlineBadgeCheck className="badge-icon" />

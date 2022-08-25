@@ -3,13 +3,14 @@ import FormFooter from "../../components/form/formFooter/FormFooter";
 import FormLogo from "../../components/form/formLogo/FormLogo";
 import Presentation from "../../components/auth/presentation/Presentation";
 import LoginForm from "../../components/form/loginForm/LoginForm";
-import { AuthContext } from "../../context/AuthContext";
 import "./connectionPage.css";
+import { useAppSelector } from "../../hooks/hooks";
 
 const ConnectionPage: React.FC<unknown> = () => {
     const [logoPath, setLogoPath] = useState<string>("./logo-open.png");
     const [formType, setFormType] = useState<string>('connection')
-	const {state} = useContext(AuthContext);
+    const authState = useAppSelector((state) => state.auth)
+    
     const formFooterInfosInsc = {
         textQuestion: "Pas encore inscrit ?",
         textContent: "Rejoins notre communauté de gourmands dès à présent ! 🍗",
