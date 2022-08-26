@@ -1,8 +1,15 @@
-import React from 'react'
+import { HTMLInputTypeAttribute } from "react"
 
-const Calendar = () => {
+type CalendarType = {
+  type: HTMLInputTypeAttribute;
+  //handleChange: React.FormEvent<HTMLInputElement>;
+}
+
+const Calendar : React.FC<CalendarType> = ({type}) => {
   return (
-    <div>calendar</div>
+    <input  name=""  type={type} 
+    //value={ moment(this.state.item.requested_order_ship_date).format("DD-MMM-YYYY") } 
+    className="form-calendar"  />   
   )
 }
 

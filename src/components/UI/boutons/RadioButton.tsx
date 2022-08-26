@@ -1,9 +1,9 @@
 import React from 'react'
 
-const RadioBouton = () => {
+const RadioButton = () => {
   return (
     <div>RadioBouton</div>
   )
 }
 
-export default RadioBouton
+export default RadioButton

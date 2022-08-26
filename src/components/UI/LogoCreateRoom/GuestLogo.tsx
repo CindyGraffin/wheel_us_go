@@ -2,7 +2,7 @@ import React from 'react'
 
 const GuestLogo = () => {
   return (
-    <div>G</div>
+    <div>Guestlogo</div>
   )
 }
 
