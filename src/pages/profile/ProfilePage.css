@@ -1,0 +1,20 @@
+.badges-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+.badge-icon {
+    color: var(--color-tertiary);
+    font-size: 1.8rem;
+}
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2.8rem;
+    margin: 2rem 2.2rem
+}

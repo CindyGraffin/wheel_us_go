@@ -1,20 +1,26 @@
+
 import './userHeaband.css';
 import {GoLocation} from '../../icons/index'
+import IUser from '../../types/IUser';
 
-const UserHeadband: React.FC<unknown> = () => {
+interface UserHeadbandProps {
+	user: IUser | null;
+}
+
+const UserHeadband: React.FC<UserHeadbandProps> = ({user}) => {
 	return (
 		<div className="headband__container">
 			<div className="headband-img">
-				<img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
+				<img src={user?.userImg} alt="visage de l'utilisateur" />
 			</div>
 			<div className="headband-infos">
 				<div className="headband-name">
-					<p>JOHN</p>
-					<p>DOEDOE</p>
+					<p>{user?.firstName}</p>
+					<p>{user?.lastName}</p>
 				</div>
 				<div className="headband-location">
 					<GoLocation/>
-					<p>Lille</p>
+					<p>{user?.city}</p>
 				</div>
 
 			</div>

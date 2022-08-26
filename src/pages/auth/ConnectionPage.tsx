@@ -1,32 +1,58 @@
-import { useState } from "react";
-import FormLogo from "../../components/authPage/formLogo/FormLogo";
-import Presentation from "../../components/authPage/presentation/Presentation";
+import { useContext, useState } from "react";
+import FormFooter from "../../components/form/formFooter/FormFooter";
+import FormLogo from "../../components/form/formLogo/FormLogo";
+import Presentation from "../../components/auth/presentation/Presentation";
 import LoginForm from "../../components/form/loginForm/LoginForm";
+import { AuthContext } from "../../context/AuthContext";
 import "./connectionPage.css";
 
 const ConnectionPage: React.FC<unknown> = () => {
     const [logoPath, setLogoPath] = useState<string>("./logo-open.png");
+    const [formType, setFormType] = useState<string>('connection')
+	const {state} = useContext(AuthContext);
+    const formFooterInfosInsc = {
+        textQuestion: "Pas encore inscrit ?",
+        textContent: "Rejoins notre communauté de gourmands dès à présent ! 🍗",
+        btnText: "INSCRIPTION",
+    };
+    const formFooterInfosCon = {
+        textQuestion: "Déjà inscrit ?",
+        textContent: "Connecte toi dès à présent ! 🍗",
+        btnText: "CONNEXION",
+    };
+    const handleClick = () => {
+        formType === "connection" ? setFormType('inscription') : setFormType('connection') 
+    }
     return (
         <div className="co-page">
             <div className="co-page__container">
-                <Presentation/>
+                <Presentation />
+                { formType === 'connection' ? (
                 <div className="form__container">
                     <div>
-                        <FormLogo logoPath={logoPath}/>
+                        <FormLogo logoPath={logoPath} />
                         <LoginForm
                             logoPath={logoPath}
                             setLogoPath={setLogoPath}
                         />
                     </div>
-                    <div className="no-account">
-                        <p>Pas encore inscrit ?</p>
-                        <p>
-                            Rejoins notre communauté de gourmands dès à présent
-                            ! 🍗
-                        </p>
-                        <button className="connect-btn">INSCRIPTION</button>
-                    </div>
+                    <FormFooter
+                        textQuestion={formFooterInfosInsc.textQuestion}
+                        textContent={formFooterInfosInsc.textContent}
+                        btnText={formFooterInfosInsc.btnText}
+                        onClick={handleClick}
+                    />
                 </div>
+                ) : (
+                    <div className="form__container">
+                        <FormFooter
+                        textQuestion={formFooterInfosCon.textQuestion}
+                        textContent={formFooterInfosCon.textContent}
+                        btnText={formFooterInfosCon.btnText}
+                        onClick={handleClick}
+                    />
+                    </div>
+                )}
             </div>
         </div>
     );

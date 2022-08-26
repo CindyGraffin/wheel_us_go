@@ -1,21 +1,28 @@
 import { BsPeople, IoPersonOutline } from "../../../icons/index";
 import './rightLayout.css'
 import ContactGroup from "../contactGroup/ContactGroup";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 const RightLayout: React.FC<unknown> = () => {
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-	const nums2 = [1, 2, 3, 4, 5];
+    const { state } = useContext(AuthContext);
+    const userFriends = state.user?.friendsId;
+    console.log(userFriends);
+    const userGroups = state.user?.groupsId;
+    console.log(userGroups);
+    
+    
+	
     const contactsGroupsCreation = [
 		{
 			classname: "contacts-group contacts",
-			contacts: nums,
+			contacts: userFriends,
 			title: 'CONTACTS',
 			icon: <IoPersonOutline className="contact-title-icon" />
 		},
 		{
 			classname: "contacts-group groups",
-			contacts: nums2,
+			contacts: userGroups,
 			title: 'GROUPES',
 			icon: <BsPeople className="contact-title-icon" />
 		}
