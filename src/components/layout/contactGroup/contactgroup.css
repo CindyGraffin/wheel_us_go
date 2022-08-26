@@ -23,20 +23,21 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     align-self: flex-start;
-    justify-items: center;
+    justify-items: flex-start;
     margin-left: 1rem;
     overflow-y: scroll;
 }
 .contacts {
     margin-bottom: 3rem;
-    height: 100%;
+    height: 95%;
 }
 .groups {
-    height: 70%;
+    height: 80%;
 }
 .contacts-title {
     font-weight: 500;
@@ -65,3 +66,4 @@
     font-size: 1.3rem;
     box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
 }
+
