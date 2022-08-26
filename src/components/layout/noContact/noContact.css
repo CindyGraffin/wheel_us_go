@@ -9,9 +9,6 @@
 .no-contacts-message p:nth-child(2) {
     font-weight: bold;
 }
-.add-contact-btn {
-    color: antiquewhite;
-}
 .add-contact {
     padding: 0.2rem 0.6rem;
     border-radius: 10px;
