@@ -10,7 +10,7 @@ const RightLayout: React.FC<unknown> = () => {
     console.log(userFriends);
     const userGroups = state.user?.groupsId;
     console.log(userGroups);
-    
+    console.log(state)
     
 	
     const contactsGroupsCreation = [

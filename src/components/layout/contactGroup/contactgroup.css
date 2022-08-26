@@ -67,29 +67,3 @@
     box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
 }
 
-.no-contacts-message {
-    margin: 1.5rem;
-    text-align: center;
-}
-.no-contacts-message p:nth-child(1) {
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-}
-.no-contacts-message p:nth-child(2) {
-    font-weight: bold;
-}
-.add-contact-btn {
-    color: antiquewhite;
-}
-.add-contact {
-    padding: 0.2rem 0.6rem;
-    border-radius: 10px;
-    background-color: var(--color-tertiary);
-    color: var(--color-secondary);
-    font-weight: 600;
-    align-self: center;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
-    cursor: pointer;
-}
