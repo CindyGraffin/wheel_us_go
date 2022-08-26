@@ -56,23 +56,12 @@
     border-radius: 15px;
     margin-top: 8rem;
     width: 83%;
+    min-height:76vh;
     box-shadow: var(--box-shadow-bold);
     z-index: 90;
     color: var(--color-black);
 }
 
-
-/* ================== RIGHT LAYOUT ================== */
-.right__container {
-    width: 100%;
-    color: var(--color-black);
-}
-.contacts__container {
-    position: fixed;
-    width: 17%;
-    top: 8rem;
-    height: 40%;
-}
 
 
 
