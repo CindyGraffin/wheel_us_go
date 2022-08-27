@@ -1,8 +1,11 @@
 import React, { useState, ChangeEvent, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../context/AuthContext";
-import {RiErrorWarningLine} from '../../../icons/index'
+import { useNavigate } from "react-router-dom";
+
 import AuthInput from "../authInput/AuthInput";
+import axios from "axios";
+
 
 
 
@@ -33,7 +36,7 @@ const InscriptionForm = () => {
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setInscriptionInfos((prev) => ({
 			...prev,
-			[e.target.id]: e.target.value,
+			[e.target.id]: e.target.value.toLowerCase(),
 		}));
 	};
 
@@ -51,11 +54,11 @@ const InscriptionForm = () => {
 		passwordField.onChange(e);
 		handleChange(e);
 	}
-	const onChangeFirstname = (e: any) => {
+	const onChangefirstname = (e: any) => {
 		firstnameField.onChange(e);
 		handleChange(e);
 	}
-	const onChangeLastname = (e: any) => {
+	const onChangelastname = (e: any) => {
 		lastnameField.onChange(e);
 		handleChange(e);
 	}
@@ -66,25 +69,25 @@ const InscriptionForm = () => {
     const inscriptionsInputs = [
 		{
 			inputPlaceholder: 'Votre nom',
-			inputType: 'lastname',
+			inputType: 'text',
 			inputId: 'lastname',
 			nameField: lastnameField,
 			formErrors: errors.lastname,
 			textError: 'Nom requis',
-			onChange: onChangeFirstname
+			onChange: onChangefirstname
 		},
 		{
 			inputPlaceholder: 'Votre prénom',
-			inputType: 'firstname',
+			inputType: 'text',
 			inputId: 'firstname',
 			nameField: firstnameField,
 			formErrors: errors.firstname,
 			textError: 'Prénom requis',
-			onChange: onChangeLastname
+			onChange: onChangelastname
 		},
 		{
 			inputPlaceholder: 'Votre ville',
-			inputType: 'city',
+			inputType: 'text',
 			inputId: 'city',
 			nameField: cityField,
 			formErrors: errors.city,
@@ -110,10 +113,22 @@ const InscriptionForm = () => {
 			onChange: onChangePassword
 		}
 	]
-	const onSubmit = () => {
-		console.log(inscriptionInfos);
-		
-	}
+	const baseUrl = process.env.REACT_APP_BASE_URL;
+	const navigate = useNavigate();
+
+	const onSubmit = async (e: any) => {
+		dispatch({ type: "LOGIN_START", payload: null });
+		try {
+			const response = await axios.post(
+				`${baseUrl}auth/register`,
+				inscriptionInfos
+			);
+			dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
+			navigate("/profile", { replace: true });
+		} catch (error) {
+			dispatch({ type: "LOGIN_FAILURE", payload: null });
+		}
+	};
 	return (
 			<form onSubmit={handleSubmit(onSubmit)} className="co-form">
 			{inscriptionsInputs.map((inscriptionInput) => (

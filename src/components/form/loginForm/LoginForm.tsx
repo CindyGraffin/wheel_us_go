@@ -71,7 +71,7 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setCredentials((prev) => ({
 			...prev,
-			[e.target.id]: e.target.value,
+			[e.target.id]: e.target.value.toLowerCase(),
 		}));
 	};
 
@@ -91,6 +91,7 @@ const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
 			dispatch({ type: "LOGIN_FAILURE", payload: null });
 		}
 	};
+	
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="co-form">

@@ -43,8 +43,8 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                         {contacts.map((contact: IUser) => (
                             <Contact
                                 key={contact.email + contact}
-                                firstName={contact.firstName}
-                                lastName={contact.lastName}
+                                firstName={contact.firstname}
+                                lastName={contact.lastname}
                                 imgSrc={contact.userImg}
                             />
                         ))}
