@@ -13,6 +13,7 @@ import {
 } from "./pages";
 import ProtectedRoute from "./router/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext";
+import AuthProtectedRoute from "./router/AuthProtectedRoute";
 
 function App() {
 	const { state } = useContext(AuthContext);
@@ -20,7 +21,14 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<ConnectionPage />} />
+				<Route
+					path="/"
+					element={
+						<AuthProtectedRoute user={state.user}>
+							<ConnectionPage />
+						</AuthProtectedRoute>
+					}
+				/>
 				<Route element={<ProtectedRoute user={state.user} />}>
 					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/searchuser" element={<SearchUser />} />

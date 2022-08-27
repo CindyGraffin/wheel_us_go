@@ -18,6 +18,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
     contacts,
     icon,
 }) => {
+    
     const noContactInfos = [
         {
             question: "Vous n'avez pas encore de poulets à vos côtés ?",
@@ -43,8 +44,8 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                         {contacts.map((contact: IUser) => (
                             <Contact
                                 key={contact.email + contact}
-                                firstName={contact.firstName}
-                                lastName={contact.lastName}
+                                firstName={contact.firstname}
+                                lastName={contact.lastname}
                                 imgSrc={contact.userImg}
                             />
                         ))}

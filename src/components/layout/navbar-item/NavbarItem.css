@@ -10,6 +10,10 @@
     justify-content: center;
     box-shadow: var(--box-shadow-bold);
 }
+.active-link  .navbar-item {
+    color: var(--color-tertiary);
+    box-shadow: rgba(177, 177, 177, 0.674) 1px 1px 6px 0px inset;
+}
 .navbar-item p {
     text-decoration: none;
     display: flex;

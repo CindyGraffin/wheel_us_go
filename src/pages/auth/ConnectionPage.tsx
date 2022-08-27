@@ -7,10 +7,13 @@ import { AuthContext } from "../../context/AuthContext";
 import "./connectionPage.css";
 import InscriptionForm from "../../components/form/inscriptionForm/InscriptionForm";
 import { RiNewspaperLine } from "../../icons/index";
+import { useNavigate } from "react-router-dom";
 const ConnectionPage: React.FC<unknown> = () => {
 	const [logoPath, setLogoPath] = useState<string>("./logo-open.png");
 	const [formType, setFormType] = useState<string>("connection");
 	const { state } = useContext(AuthContext);
+	const navigate = useNavigate();
+
 	const formFooterInfosInsc = {
 		textQuestion: "Pas encore inscrit ?",
 		textContent: "Rejoins notre communauté de gourmands dès à présent ! 🍗",
