@@ -28,9 +28,21 @@
     border-radius: 15px;
     padding: 1.5rem;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     justify-content: space-evenly;
     box-shadow: var(--box-shadow-light);
 }
 
 
+.inscription-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-tertiary);
+    text-align: center;
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.8rem;
+}

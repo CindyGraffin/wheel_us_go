@@ -8,7 +8,7 @@ interface AuthInputProps {
 	formErrors: any;
 	textError: string;
 	onChange: (e: Event) => void;
-    setLogoPath: React.Dispatch<React.SetStateAction<string>>
+	setLogoPath?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const AuthInput: React.FC<AuthInputProps> = ({
@@ -19,31 +19,50 @@ const AuthInput: React.FC<AuthInputProps> = ({
 	textError,
 	onChange,
 	formErrors,
-    setLogoPath
+	setLogoPath,
 }) => {
 	return (
-		<div className="input-container">
-			{inputId === "password" ? (
-				<input
-					placeholder={inputPlaceholder}
-					type={inputType}
-					id={inputId}
-					{...nameField}
-					onChange={onChange}
-                    onFocus={() => setLogoPath('./logo-close.png')}
-                    onBlur={() => setLogoPath('./logo-open.png')}
-				/>
+		<>
+			{setLogoPath !== undefined ? (
+				<div className="input-container">
+					{inputId === "password" ? (
+						<input
+							placeholder={inputPlaceholder}
+							type={inputType}
+							id={inputId}
+							{...nameField}
+							onChange={onChange}
+							onFocus={() => setLogoPath("./logo-close.png")}
+							onBlur={() => setLogoPath("./logo-open.png")}
+						/>
+					) : (
+						<input
+							placeholder={inputPlaceholder}
+							type={inputType}
+							id={inputId}
+							{...nameField}
+							onChange={onChange}
+						/>
+					)}
+					{formErrors && (
+						<span className="input-error">{textError}</span>
+					)}
+				</div>
 			) : (
-				<input
-					placeholder={inputPlaceholder}
-					type={inputType}
-					id={inputId}
-					{...nameField}
-					onChange={onChange}
-				/>
+				<div className="input-container">
+					<input
+						placeholder={inputPlaceholder}
+						type={inputType}
+						id={inputId}
+						{...nameField}
+						onChange={onChange}
+					/>
+					{formErrors && (
+						<span className="input-error">{textError}</span>
+					)}
+				</div>
 			)}
-			{formErrors && <span className="input-error">{textError}</span>}
-		</div>
+		</>
 	);
 };
 
