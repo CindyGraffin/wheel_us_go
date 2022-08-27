@@ -5,10 +5,10 @@ import './navlist.css';
 
 const Navlist: React.FC<unknown> = () => {
     let activeStyle = {
-        textDecoration: "none",
+        color: '#c8865a',
     };
     let myStyle = {
-        textDecoration: "none"
+        color: '#c8865a'
     }
     const navlinksInfos = [
         {
@@ -55,8 +55,8 @@ const Navlist: React.FC<unknown> = () => {
                         <li key={navlink.name}>
                             <NavLink
                                 to={navlink.path}
-                                style={({ isActive }) =>
-                                    isActive ? activeStyle :myStyle
+                                className={({ isActive }) =>
+                                    isActive ? 'active-link' : ''
                                 }
                             >
                                 <NavbarItem icon={navlink.icon} key={navlink.name+i}/>
