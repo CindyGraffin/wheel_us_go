@@ -18,6 +18,7 @@
     color: var(--color-tertiary);
     cursor: pointer;
     text-decoration: underline;
+    text-align: center;
 }
 .co-error {
     max-width: 80%;
