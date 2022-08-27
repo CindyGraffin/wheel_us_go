@@ -18,6 +18,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
     contacts,
     icon,
 }) => {
+    
     const noContactInfos = [
         {
             question: "Vous n'avez pas encore de poulets à vos côtés ?",
