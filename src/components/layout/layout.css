@@ -57,7 +57,7 @@
     margin-top: 8rem;
     width: 83%;
     min-height:76vh;
-    box-shadow: var(--box-shadow-bold);
+    box-shadow: var(--box-shadow-light);
     z-index: 90;
     color: var(--color-black);
 }
