@@ -1,0 +1,33 @@
+.co-form {
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.connect-btn, 
+.loading {
+    width: 80%;
+    margin-top: 0.3rem;
+}
+
+.forget-pw {
+    font-size: 0.8rem;
+    color: var(--color-tertiary);
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: center;
+}
+.co-error {
+    max-width: 80%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--color-black);
+}
+.co-error-icon {
+    font-size: 1.2rem;
+    margin-bottom: -0.1rem;
+}

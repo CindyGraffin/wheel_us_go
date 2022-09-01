@@ -30,6 +30,7 @@
     font-size: 3rem;
     font-weight: 500;
     color: var(--color-tertiary);
+    text-transform: uppercase;
 }
 .headband-name p:nth-child(1) {
     margin-bottom: -1.3rem;
