@@ -1,0 +1,15 @@
+.pres__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pres__container .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.pres__container .logo img{
+    width:65%;
+}

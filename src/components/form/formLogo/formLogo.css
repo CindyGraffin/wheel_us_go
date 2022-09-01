@@ -1,0 +1,21 @@
+.co-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom:1.6rem;
+    margin-top: 1rem;
+}
+.co-logo .logo {
+    background-color: var(--color-primary);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow-light);
+}
+.co-logo img {
+    object-fit: cover;
+    width: 5.7rem;
+    height: 5.7rem;
+}
