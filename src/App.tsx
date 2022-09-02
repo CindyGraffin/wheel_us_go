@@ -9,7 +9,7 @@ import {
 	SearchUser,
 	UserFriends,
 	UserMessages,
-	UserTables,
+	UserRooms
 } from "./pages";
 import ProtectedRoute from "./router/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext";
@@ -32,7 +32,7 @@ function App() {
 				<Route element={<ProtectedRoute user={state.user} />}>
 					<Route path="/profile" element={<ProfilePage />} />
 					<Route path="/searchuser" element={<SearchUser />} />
-					<Route path="/usertables" element={<UserTables />} />
+					<Route path="/usertables" element={<UserRooms />} />
 					<Route path="/usermessages" element={<UserMessages />} />
 					<Route path="/userfriends" element={<UserFriends />} />
 					<Route path="/premium" element={<PremiumPage />} />
