@@ -8,7 +8,6 @@ export default interface IUser {
     userImg?: string;
     outingPart: number;
     outingCre: number;
-    // Types.ObjectId à vérifier
     tablesPartId?: string[];
     friendsId?: string[];
     groupsId?: string[];
