@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FormRenderValues } from "../../../../../types/FormRenderValues";
 import ButtonGeneric from "../../../../UI/boutons/ButtonGeneric";
@@ -13,14 +13,32 @@ import Calendar from "../calendar/calendar";
 import InputAdressRestaurant from "../InputAdressRestaurant/InputAdressRestaurant";
 import InputNameRestaurant from "../InputNameRestaurant/InputNameRestaurant";
 import AddPeople from "../AddPeople/AddPeople";
+import { UserFriends } from "../../../../../pages";
+import { FriendsType } from "../../../../../types/Friends";
+import { AuthContext } from "../../../../../context/AuthContext";
+
 
 const FormRender: React.FC<unknown> = () => {
+
+  const [list, setList] = useState<FriendsType[]>([])
+  const {state} = useContext(AuthContext);
+
+  useEffect(() => {
+    console.log(state)
+    // call service qui récupère la liste d'amis dans la db
+    //.then((liste) => setList(liste)).then(() => listeAInviter = [...liste])
+  
+  }, [])
+  
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormRenderValues>({ mode: "onChange" });
-  const [data, setData] = useState("");
+
+
+  const [dataRooms, setDataRooms] = useState("");
 
   const placeNameField = register("placeName", { required: true });
   const adressField = register("address", { required: true });
@@ -42,12 +60,14 @@ const FormRender: React.FC<unknown> = () => {
     console.log("reset");
   };
 
- 
+  const handleChoice = (friend: FriendsType) => {
+    // faire en sorte que le friend sélectionné soit dans la liste d'amis sélectionnés et plus dans la liste d'amis à inviter
+  }
 
 
 
   return (
-    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+    <form onSubmit={handleSubmit((data) => setDataRooms(JSON.stringify(data)))}>
       <LogoLocation />
       <h3>Lieu : </h3>
       <InputNameRestaurant
@@ -72,12 +92,12 @@ const FormRender: React.FC<unknown> = () => {
       <h2>Options Supplémentaires</h2>
       <LogoApero />
       <h3>Roue de l'apéro</h3>
-      <RadioButton />
-      <RadioButton />
+      {/* <RadioButton />
+      <RadioButton /> */}
       <LogoDressCode />
       <h3>Dresscode</h3>
-      <RadioButton />
-      <RadioButton />
+   {/*    <RadioButton />
+      <RadioButton /> */}
       <InputDressCode />
       <ButtonGeneric
         classname=""

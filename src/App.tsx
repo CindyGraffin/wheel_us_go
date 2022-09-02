@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
 	ConnectionPage,
+	CreateTableRestaurant,
 	PremiumPage,
 	ProfilePage,
 	ReglagesPage,
@@ -14,6 +15,7 @@ import {
 import ProtectedRoute from "./router/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext";
 import AuthProtectedRoute from "./router/AuthProtectedRoute";
+import { CreateRoom } from "./components/layout";
 
 function App() {
 	const { state } = useContext(AuthContext);
@@ -37,6 +39,7 @@ function App() {
 					<Route path="/userfriends" element={<UserFriends />} />
 					<Route path="/premium" element={<PremiumPage />} />
 					<Route path="/reglages" element={<ReglagesPage />} />
+					<Route path="/createroom" element={<CreateTableRestaurant />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

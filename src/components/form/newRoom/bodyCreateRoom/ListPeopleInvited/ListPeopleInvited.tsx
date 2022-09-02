@@ -1,18 +1,21 @@
 import { FriendsType } from "../../../../../types/Friends";
 
-interface ListFriendsSelectedProps  {
+interface ListFriendsSelectedProps {
   listFriendsSelected: FriendsType[];
-  setListFriendsSelected: React.Dispatch<React.SetStateAction<FriendsType[]>>
+  setListFriendsSelected: React.Dispatch<React.SetStateAction<FriendsType[]>>;
 }
 
-
-
-const ListPeopleInvited : React.FC<ListFriendsSelectedProps> = ({listFriendSelected, setListFriendsSelected}) => {
-  return <div className="people_invited">
-    <ul>
-      {listFriendSelected.map(listFriend=> console.log(listFriend))}
-    </ul>
-  </div>;
+const ListPeopleInvited: React.FC<ListFriendsSelectedProps> = ({
+  listFriendsSelected,
+  setListFriendsSelected,
+}) => {
+  return (
+    <div className="people_invited">
+      <ul>
+        {/* {listFriendsSelected.map((listFriend) => <li>{listFriend}</li>)} */}
+      </ul>
+    </div>
+  );
 };
 
 export default ListPeopleInvited;
