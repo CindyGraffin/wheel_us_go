@@ -36,8 +36,10 @@ Avant de pouvoir commencer à travailler sur le projet, il est nécessaire de le
 
 ````
 git clone https://github.com/CindyGraffin/wheel_us_go.git // clone le projet en local
+npm install // installe tout les packages nécessaires au projet
+git fetch --all // récupérer les mises à jour distantes
 git switch branch_name // permet de se placer sur une branche distante non disponible en local
-git checkout branch_name PUIS git pull // permet de se placer sur une branche disponible en local et avec pull de synchroniser les changements qui auraient pu être apportés au repo distant
+git checkout branch_name PUIS git pull // permet de se placer sur une branche disponible en local et avec pull de synchroniser les changements qui auraient pu être apportés au repo distant sur cette branche
 ````
   
 ### :cactus: Les branches
