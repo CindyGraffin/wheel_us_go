@@ -12,21 +12,21 @@ Wheel Us Go est une application web centrée sur la planification et l'organisat
 
 **Qui seront présentes dans le MVP (Minimum Viable Product):**
 
-- Profil utilisateur avec photo
-- Badges de récompenses (par exemple «Un début à tout !» pour la prmeière sortie organisée, ou encore «Adepte des bars» après 10 participations à une sortie bar)
-- Création de salles (restaurant, bar ou «chez soi»)
-- Choix du lieu, soit défini, soit par vote ou en alétoire en permettant aux invités d'ajouter des propositions
-- Ajout de la date et de l'heure
-- Invitations d'autres personnes dans la salle
-- Possibilité d'ajouter un dresscode ou de choisir qui paye l'apéro parmis les personnes invitées grâce à une roue aléatoire
-- Ajout d'amis
+-   Profil utilisateur avec photo
+-   Badges de récompenses (par exemple «Un début à tout !» pour la prmeière sortie organisée, ou encore «Adepte des bars» après 10 participations à une sortie bar)
+-   Création de salles (restaurant, bar ou «chez soi»)
+-   Choix du lieu, soit défini, soit par vote ou en alétoire en permettant aux invités d'ajouter des propositions
+-   Ajout de la date et de l'heure
+-   Invitations d'autres personnes dans la salle
+-   Possibilité d'ajouter un dresscode ou de choisir qui paye l'apéro parmis les personnes invitées grâce à une roue aléatoire
+-   Ajout d'amis
 
 **Fonctionnalités futures:**
 
-- Messagerie instantanée, entre deux personnes ou en groupe
-- Fonction premium permettant l'accès à des recettes de cuisine ou boissons inédites, sur des thèmes différents
-- Visiter le profil d'autres utilisateurs
-- Recherche d'utilisateurs et visite de leur profil
+-   Messagerie instantanée, entre deux personnes ou en groupe
+-   Fonction premium permettant l'accès à des recettes de cuisine ou boissons inédites, sur des thèmes différents
+-   Visiter le profil d'autres utilisateurs
+-   Recherche d'utilisateurs et visite de leur profil
 
 ## How to use :bulb:
 
@@ -48,14 +48,14 @@ git checkout branch_name PUIS git pull // permet de se placer sur une branche di
 
 **<branch_type>/<branch_name>** : Il faut nommer ses branches de cette façon, par exemple _feature/navbar_. On utilisera deux types de branches:
 
-- **feature**: Pour le développement d'une nouvelle fonctionnalité ou d'un composant
-- **bug**: Lorsque vous constatez un bug sur votre branche, créer une branche bug à partir de celle-ci, par exemple _bug/navbar_
+-   **feature**: Pour le développement d'une nouvelle fonctionnalité ou d'un composant
+-   **bug**: Lorsque vous constatez un bug sur votre branche, créer une branche bug à partir de celle-ci, par exemple _bug/navbar_
 
 :exclamation: Avant de créer une nouvelle branche ne provenant pas d'une fonctionnalité existante, il faut se placer sur la branche remote dev, **on ne crée pas de branche à partir de la branche main**. Pour ajouter des fonctionnalités à une branche déjà créée autre que dev, il faut créer une branche à partir de la branche de la fonctionnalité correspondante et non à partir de la branche dev.
 
 **Exemple:** _je dois produire la Navbar qui contient x items différents._
 
-- _Je commence par créer ma branche "navbar"_
+-   _Je commence par créer ma branche "navbar"_
 
 ```
 git checkout dev // Je me positionne sur la branche dev
@@ -64,7 +64,7 @@ git checkout -b feature/navbar dev // Je crée ma branche "navbar" à partir de 
 git branch // Je vérifie que je suis bien sur la branche "navbar"
 ```
 
-- _Je crée une branche "navbar_item" à partir de la branche "navbar" afin de travailler sur le composant item qui représentera un item unique de ma navbar_
+-   _Je crée une branche "navbar_item" à partir de la branche "navbar" afin de travailler sur le composant item qui représentera un item unique de ma navbar_
 
 ```
 git checkout -b feature/navbar_item feature/navbar // Je crée ma branche "navbar_item" à partir de la branch "navbar" et me positionne dessus
@@ -93,8 +93,8 @@ git merge branch_to_merge // Permet de merger la branche "branch_to_merge" sur l
 
 Il existe deux type de commit:
 
-- **feat**: pour un commit concernant le développement d'une nouvelle fonctionnalité ou d'un composant
-- **fix**: lorsqu'un commit concerne la résolution d'un bug
+-   **feat**: pour un commit concernant le développement d'une nouvelle fonctionnalité ou d'un composant
+-   **fix**: lorsqu'un commit concerne la résolution d'un bug
 
 Retrouvez les gitmojis sur ce lien: [gitmoji.dev](https://gitmoji.dev/)
 
