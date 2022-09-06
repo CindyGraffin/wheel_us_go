@@ -1,10 +1,10 @@
 import React from "react";
-interface UserRoomsButtonProps {
+interface RoomButtonProps {
     buttonText: string;
     onClick: () => void;
 }
 
-const UserRoomsButton: React.FC<UserRoomsButtonProps> = ({buttonText, onClick}) => {
+const RoomButton: React.FC<RoomButtonProps> = ({buttonText, onClick}) => {
     return (
         <div>
             <button onClick={onClick}>
@@ -14,4 +14,4 @@ const UserRoomsButton: React.FC<UserRoomsButtonProps> = ({buttonText, onClick}) 
     );
 };
 
-export default UserRoomsButton;
+export default RoomButton;

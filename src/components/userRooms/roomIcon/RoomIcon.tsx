@@ -1,17 +1,17 @@
 import { IoRestaurantOutline, BiBeer, TbSofa } from '../../../icons/index';
 
 interface RoomIconProps {
-    theme: string
+    roomTheme: string
 }
 
-const RoomIcon: React.FC<RoomIconProps> = ({theme}) => {
+const RoomIcon: React.FC<RoomIconProps> = ({roomTheme}) => {
     return (
-        <div>
-            {theme === 'restaurant' ? 
+        <div className='room-icon'>
+            {roomTheme === 'restaurant' ? 
             (
                 <IoRestaurantOutline/>
             )
-            : theme === 'bar' ?
+            : roomTheme === 'bar' ?
             (
                 <BiBeer/>
 
