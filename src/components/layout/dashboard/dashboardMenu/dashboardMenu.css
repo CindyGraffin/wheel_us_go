@@ -1,0 +1,10 @@
+.dashboard_nav {
+    margin: 0;
+}
+
+.dashboard_nav ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(42, 38, 75);
+    height: 100vh;
+}

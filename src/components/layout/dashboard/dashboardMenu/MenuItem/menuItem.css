@@ -1,0 +1,12 @@
+.icon__container {
+    padding: 5px;
+    background-color: rgb(92, 86, 146);
+    margin: 5px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20%;
+    color: whitesmoke;
+}
+.icon__container:hover {
+    background-color: rgb(64, 59, 105);
+}
