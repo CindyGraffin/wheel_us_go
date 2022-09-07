@@ -1,3 +1,4 @@
+import Dashboard from "./dashboard";
 import ConnectionPage from "./auth/ConnectionPage";
 import PremiumPage from "./premium/PremiumPage";
 import ProfilePage from "./profile/ProfilePage";
@@ -8,6 +9,15 @@ import UserMessages from "./userMessages/UserMessages";
 import UserTables from "./userTables/UserTables";
 import CreateTableRestaurant from "./createTableRestaurant/CreateTableRestaurant";
 
-
-export {ProfilePage, ConnectionPage, SearchUser, UserTables, UserMessages, PremiumPage, ReglagesPage, UserFriends, CreateTableRestaurant};
-
+export {
+    Dashboard,
+    ProfilePage,
+    ConnectionPage,
+    SearchUser,
+    UserTables,
+    UserMessages,
+    PremiumPage,
+    ReglagesPage,
+    UserFriends,
+    CreateTableRestaurant,
+};
