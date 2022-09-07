@@ -1,4 +1,6 @@
 import React from "react";
+import DashboardLayout from "../../components/layout/dashboard/dashboard/DashboardLayout";
+import "./dashboard.css";
 
 export interface DashboardProps {
     className?: string;
@@ -6,9 +8,9 @@ export interface DashboardProps {
 
 const Dashboard: React.FC<DashboardProps> = ({ className = "" }) => {
     return (
-        <div className={className}>
+        <DashboardLayout>
             <p>indexDashboard</p>
-        </div>
+        </DashboardLayout>
     );
 };
 
