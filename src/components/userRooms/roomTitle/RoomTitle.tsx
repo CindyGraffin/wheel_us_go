@@ -1,4 +1,4 @@
-import React from "react";
+import './roomTitle.css'
 
 interface RoomTitleProps {
     roomTitle: string;

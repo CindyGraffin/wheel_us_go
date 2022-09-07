@@ -18,6 +18,7 @@
 .contact-group::-webkit-scrollbar-thumb {
     background-color: var(--color-tertiary); /* color of the scroll thumb */
     border-radius: 5px; /* roundness of the scroll thumb */
+    
 }
 .contact-group {
     margin-top: 1rem;

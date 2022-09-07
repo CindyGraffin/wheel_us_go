@@ -1,0 +1,27 @@
+.room {
+    display: flex;
+    flex-direction: column;
+}
+.room-infos {
+    display: flex;
+    align-items: center;
+    column-gap: 1.3rem;
+    align-self: flex-start;
+}
+.room-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.room-btns {
+    align-self: flex-end;
+    display: flex;
+    column-gap: 1rem;
+}

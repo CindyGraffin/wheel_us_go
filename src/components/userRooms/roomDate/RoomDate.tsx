@@ -1,4 +1,4 @@
-import React from "react";
+import './roomDate.css';
 
 interface RoomDateProps {
     roomDate: string;
