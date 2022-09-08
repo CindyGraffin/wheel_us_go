@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { roomService } from "../../../services/roomService";
-import RoomButton from "../roomButton/RoomButton";
+import RoomButton from "../../UI/roomButton/RoomButton";
 import { RoomDate } from "../roomDate/RoomDate";
 import RoomIcon from "../roomIcon/RoomIcon";
 import RoomTitle from "../roomTitle/RoomTitle";
@@ -41,7 +41,7 @@ const Room: React.FC<RoomProps> = ({ deleteRoom, setDeleteRoom, roomTitle, roomT
                     handleClick={() => console.log("voir")}
                 />
                 <RoomButton
-                    buttonText="Supprimer"
+                    buttonText="Quitter la salle"
                     handleClick={deleteUserInRoom}
                 />
             </div>

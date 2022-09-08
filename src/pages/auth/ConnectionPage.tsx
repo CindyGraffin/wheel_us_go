@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import FormFooter from "../../components/form/formFooter/FormFooter";
-import FormLogo from "../../components/form/formLogo/FormLogo";
+import FormFooter from "../../components/form/auth/formFooter/FormFooter";
+import FormLogo from "../../components/form/auth/formLogo/FormLogo";
 import Presentation from "../../components/auth/presentation/Presentation";
-import LoginForm from "../../components/form/loginForm/LoginForm";
+import LoginForm from "../../components/form/auth/loginForm/LoginForm";
 import { AuthContext } from "../../context/AuthContext";
 import "./connectionPage.css";
-import InscriptionForm from "../../components/form/inscriptionForm/InscriptionForm";
+import InscriptionForm from "../../components/form/auth/inscriptionForm/InscriptionForm";
 import { RiNewspaperLine } from "../../icons/index";
 import { useNavigate } from "react-router-dom";
 const ConnectionPage: React.FC<unknown> = () => {

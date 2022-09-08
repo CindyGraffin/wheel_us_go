@@ -14,6 +14,7 @@ import {
 import ProtectedRoute from "./router/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext";
 import AuthProtectedRoute from "./router/AuthProtectedRoute";
+import ViewRoom from "./pages/viewRoom/ViewRoom";
 
 function App() {
 	const { state } = useContext(AuthContext);
@@ -37,6 +38,7 @@ function App() {
 					<Route path="/userfriends" element={<UserFriends />} />
 					<Route path="/premium" element={<PremiumPage />} />
 					<Route path="/reglages" element={<ReglagesPage />} />
+					<Route path="/viewroom" element={<ViewRoom/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>
