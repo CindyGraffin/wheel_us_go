@@ -1,9 +1,12 @@
+/* DASHBOARD LAYOUT */
 .layout__dashboard {
-    background-color: whitesmoke !important;
+    background-color: var(--dashboard-color-primary);
     height: 100vh;
     display: flex;
 }
 
-.dashboard__menu{
-    
+/* VIEW CONTAINER */
+.content__container {
+    padding: 40px;
+    width: 100%;
 }

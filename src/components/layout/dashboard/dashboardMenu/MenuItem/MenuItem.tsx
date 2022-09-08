@@ -11,13 +11,15 @@ export interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ path, name, icon }) => {
     return (
-        <li>
+        <li className="list__items">
             <NavLink
                 to={path}
                 className={({ isActive }) => (isActive ? "is-active-link" : "")}
             >
-                {/* <p>{name}</p> */}
-                <div className="icon__container">{icon}</div>
+                <div className="menu__items">
+                    <p>{name}</p>
+                    <div className="icon__container">{icon}</div>
+                </div>
             </NavLink>
         </li>
     );
