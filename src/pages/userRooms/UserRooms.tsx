@@ -11,6 +11,7 @@ const UserRooms: React.FC<unknown> = () => {
     const userId = state.user?._id
 
     const [rooms, setRooms] = useState<[] | IRoom[]>([])
+    const [deleteRoom, setDeleteRoom] = useState(false);
 
     useEffect(() => {
         const fetchRooms = async() => {
@@ -19,14 +20,14 @@ const UserRooms: React.FC<unknown> = () => {
             
         }
         fetchRooms()   
-    }, [])
+    }, [deleteRoom])
     
     return (
         <Layout>
             <div className="rooms__container">
                 <RoomsTitle titleText="MES SALLES"/> 
                 {rooms.map((room) => (
-                    <Room roomId={room._id} roomTheme={room.theme} roomDate={room.date.toString()} roomTitle={room.placeName} key={room._id}/>
+                    <Room roomId={room._id} roomTheme={room.theme} roomDate={room.date.toString()} roomTitle={room.placeName} key={room._id} deleteRoom={deleteRoom} setDeleteRoom={setDeleteRoom}/>
                 ))}   
                 
             </div>

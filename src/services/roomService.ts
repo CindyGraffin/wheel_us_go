@@ -6,12 +6,7 @@ class RoomService {
     }; 
 
     deleteUserInRoom = (roomId: string, userId: string) => {
-        return axios.delete(`http://localhost:8800/api/rooms/delete/${roomId}/${userId}`, {
-            params: {
-                userid: userId,
-                roomid: roomId
-            }
-        })
+        return axios.delete(`http://localhost:8800/api/rooms/${roomId}/${userId}`)
     }
 }  
 
