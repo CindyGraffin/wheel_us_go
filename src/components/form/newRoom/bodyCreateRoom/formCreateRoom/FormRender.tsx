@@ -14,29 +14,35 @@ import InputAdressRestaurant from "../InputAdressRestaurant/InputAdressRestauran
 import InputNameRestaurant from "../InputNameRestaurant/InputNameRestaurant";
 import AddPeople from "../AddPeople/AddPeople";
 import { UserFriends } from "../../../../../pages";
-import { FriendsType } from "../../../../../types/Friends";
 import { AuthContext } from "../../../../../context/AuthContext";
-
+import { userService } from "../../../../../services/userService";
+import IUser from "../../../../../types/IUser";
 
 const FormRender: React.FC<unknown> = () => {
-
-  const [list, setList] = useState<FriendsType[]>([])
-  const {state} = useContext(AuthContext);
+  
+  const [list, setList] = useState<IUser[]>([]);
+  const { state } = useContext(AuthContext);
+  
+  const fetchFriendList = async () => {
+    const idUser = state.user?._id;
+    if (idUser) {
+      const listFriends = await userService.getFriendsByUserId(idUser);
+      setList(listFriends.data.friendsId);
+    } else {
+      throw new Error("Id utilisateur non trouvé ! ");
+    }
+  };
 
   useEffect(() => {
-    console.log(state)
     // call service qui récupère la liste d'amis dans la db
-    //.then((liste) => setList(liste)).then(() => listeAInviter = [...liste])
-  
-  }, [])
-  
+    fetchFriendList();
+  }, []);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormRenderValues>({ mode: "onChange" });
-
 
   const [dataRooms, setDataRooms] = useState("");
 
@@ -60,12 +66,6 @@ const FormRender: React.FC<unknown> = () => {
     console.log("reset");
   };
 
-  const handleChoice = (friend: FriendsType) => {
-    // faire en sorte que le friend sélectionné soit dans la liste d'amis sélectionnés et plus dans la liste d'amis à inviter
-  }
-
-
-
   return (
     <form onSubmit={handleSubmit((data) => setDataRooms(JSON.stringify(data)))}>
       <LogoLocation />
@@ -88,7 +88,7 @@ const FormRender: React.FC<unknown> = () => {
       <h3>Date et heure : </h3>
       <Calendar type="date" />
       <GuestLogo />
-      <AddPeople/>
+      <AddPeople listFriends={list} />
       <h2>Options Supplémentaires</h2>
       <LogoApero />
       <h3>Roue de l'apéro</h3>
@@ -96,7 +96,7 @@ const FormRender: React.FC<unknown> = () => {
       <RadioButton /> */}
       <LogoDressCode />
       <h3>Dresscode</h3>
-   {/*    <RadioButton />
+      {/*    <RadioButton />
       <RadioButton /> */}
       <InputDressCode />
       <ButtonGeneric

@@ -1,8 +1,9 @@
-import { FriendsType } from "../../../../../types/Friends";
+import IUser from "../../../../../types/IUser";
+
 
 interface ListFriendsSelectedProps {
-  listFriendsSelected: FriendsType[];
-  setListFriendsSelected: React.Dispatch<React.SetStateAction<FriendsType[]>>;
+  listFriendsSelected: IUser[];
+  setListFriendsSelected: React.Dispatch<React.SetStateAction<[]>>;
 }
 
 const ListPeopleInvited: React.FC<ListFriendsSelectedProps> = ({

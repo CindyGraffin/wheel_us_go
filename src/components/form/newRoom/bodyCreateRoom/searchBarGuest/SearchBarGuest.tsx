@@ -1,28 +1,41 @@
-import { FriendsType } from "../../../../../types/Friends";
+import { useState } from "react";
+import IUser from "../../../../../types/IUser";
 
 type SearchBarGuestProps = {
-  friends: FriendsType[];
-  setFriends: React.Dispatch<React.SetStateAction<FriendsType[]>>
+  friends: IUser[];
+};
+
+type SearchBarSelectedFriendListType = {
+  list: string[];
 }
 
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const [listFriendsSelected, setListFriendsSelected] = useState<SearchBarSelectedFriendListType[]>([]);
+const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
 
-
-const SearchBarGuest : React.FC<SearchBarGuestProps> = ({friends, setFriends}) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-
-  const handleChangeSearchBarGuest  = (e : React.ChangeEvent<HTMLSelectElement>): void  => {
+  const handleChangeSearchBarGuest = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ): void => {
     //TODO
+    setListFriendsSelected(e.target.value);
   };
-  let listFriends = [...friends]
+  let listFriends = [...friends];
   return (
     <div className="select__container__searchbar">
-      <select onChange={handleChangeSearchBarGuest}>
+      <select defaultValue={undefined} onChange={handleChangeSearchBarGuest}>
+        <option>Rajouter un ami à la liste</option>
         {listFriends.map((friend) => (
-          <option key={friend.pseudo} value={friend.pseudo}>
-            {friend.pseudo}
+          <option
+            key={friend._id}
+            value={friend.firstname + " " + friend.lastname}
+          >
+            {friend.firstname + " " + friend.lastname}
           </option>
         ))}
       </select>
+      <div>
+         {/* //TODO */}
+      </div>
     </div>
   );
 };
