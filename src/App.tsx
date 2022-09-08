@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
     ConnectionPage,
     Dashboard,
+    DashboardStats,
+    DashboardUsers,
     PremiumPage,
     ProfilePage,
     ReglagesPage,
@@ -43,6 +45,14 @@ function App() {
 
                 <Route element={<AdminRoute user={state.user} />}>
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route
+                        path="/dashboard/users"
+                        element={<DashboardUsers />}
+                    />
+                    <Route
+                        path="/dashboard/stats"
+                        element={<DashboardStats />}
+                    />
                 </Route>
             </Routes>
         </BrowserRouter>

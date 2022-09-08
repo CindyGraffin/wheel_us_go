@@ -1,4 +1,6 @@
 import Dashboard from "./dashboard";
+import DashboardStats from "./dashboard-stats/DashboardStats";
+import DashboardUsers from "./dashboard-users/DashboardUsers";
 import ConnectionPage from "./auth/ConnectionPage";
 import PremiumPage from "./premium/PremiumPage";
 import ProfilePage from "./profile/ProfilePage";
@@ -11,6 +13,8 @@ import CreateTableRestaurant from "./createTableRestaurant/CreateTableRestaurant
 
 export {
     Dashboard,
+    DashboardStats,
+    DashboardUsers,
     ProfilePage,
     ConnectionPage,
     SearchUser,
