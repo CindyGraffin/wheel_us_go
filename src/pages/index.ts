@@ -6,7 +6,7 @@ import SearchUser from "./searchUser/SearchUser";
 import UserFriends from "./userFriends/UserFriends";
 import UserMessages from "./userMessages/UserMessages";
 import UserTables from "./userTables/UserTables";
-import CreateTableRestaurant from "./createTableRestaurant/CreateTableRestaurant";
+import CreateTableRestaurant from "./createNewRoom/CreateNewRoom";
 
 
 export {ProfilePage, ConnectionPage, SearchUser, UserTables, UserMessages, PremiumPage, ReglagesPage, UserFriends, CreateTableRestaurant};

@@ -1,9 +1,12 @@
 import { Layout} from "../../components";
 import FormCreateRoom from "../../components/form/newRoom/bodyCreateRoom/formCreateRoom/FormCreateRoom";
-import "./createTableRestaurant.css";
+import "./createNewRoom.css";
 
+interface CreateNewRoomProps {
+    roomType?: string;
+}
 
-const CreateTableRestaurant : React.FC<unknown> = ()  => {
+const CreateNewRoom : React.FC<CreateNewRoomProps> = ({roomType})  => {
     return (
         <Layout>
             <div>
@@ -14,4 +17,4 @@ const CreateTableRestaurant : React.FC<unknown> = ()  => {
     );
 };
 
-export default CreateTableRestaurant;
+export default CreateNewRoom;
