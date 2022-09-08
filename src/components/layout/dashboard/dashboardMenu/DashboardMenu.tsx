@@ -29,10 +29,6 @@ export interface DashboardMenuProps {
 const DashboardMenu: React.FC<DashboardMenuProps> = ({ className = "" }) => {
     const [show, setShow] = useState<boolean>(false);
 
-    // useEffect(() => {
-    //     console.log(show);
-    // }, [show]);
-
     const onClickDisplayPanelMenu = () => {
         if (show === false) {
             setShow(true);

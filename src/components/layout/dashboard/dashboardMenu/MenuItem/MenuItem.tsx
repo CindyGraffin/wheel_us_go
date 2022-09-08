@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import "./menuItem.css";
 
 export interface MenuItemProps {
-    // id: string;
     path: string;
     name: string;
     icon: JSX.Element;
