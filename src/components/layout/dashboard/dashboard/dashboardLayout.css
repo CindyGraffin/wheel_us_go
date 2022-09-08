@@ -1,0 +1,12 @@
+/* DASHBOARD LAYOUT */
+.layout__dashboard {
+    background-color: var(--dashboard-color-primary);
+    height: 100vh;
+    display: flex;
+}
+
+/* VIEW CONTAINER */
+.content__container {
+    padding: 40px;
+    width: 100%;
+}
