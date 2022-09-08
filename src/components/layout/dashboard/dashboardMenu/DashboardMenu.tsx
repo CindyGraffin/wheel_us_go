@@ -22,11 +22,7 @@ const navlinks = [
     },
 ] as const;
 
-export interface DashboardMenuProps {
-    className?: string;
-}
-
-const DashboardMenu: React.FC<DashboardMenuProps> = ({ className = "" }) => {
+const DashboardMenu: React.FC<unknown> = () => {
     const [show, setShow] = useState<boolean>(false);
 
     const onClickDisplayPanelMenu = () => {
