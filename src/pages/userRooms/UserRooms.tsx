@@ -26,7 +26,7 @@ const UserRooms: React.FC<unknown> = () => {
             <div className="rooms__container">
                 <RoomsTitle titleText="MES SALLES"/> 
                 {rooms.map((room) => (
-                    <Room roomTheme={room.theme} roomDate={room.date.toString()} roomTitle={room.placeName} key={room._id}/>
+                    <Room roomId={room._id} roomTheme={room.theme} roomDate={room.date.toString()} roomTitle={room.placeName} key={room._id}/>
                 ))}   
                 
             </div>

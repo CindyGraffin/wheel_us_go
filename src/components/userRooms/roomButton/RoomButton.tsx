@@ -2,13 +2,13 @@ import './roomButton.css';
 
 interface RoomButtonProps {
     buttonText: string;
-    onClick: () => void;
+    handleClick: () => void;
 }
 
-const RoomButton: React.FC<RoomButtonProps> = ({buttonText, onClick}) => {
+const RoomButton: React.FC<RoomButtonProps> = ({buttonText, handleClick}) => {
     return (
         <div>
-            <button  className="room-btn" onClick={onClick}>
+            <button  className="room-btn" onClick={handleClick}>
                 {buttonText}
             </button>
         </div>

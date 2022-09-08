@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { roomService } from "../../../services/roomService";
 import RoomButton from "../roomButton/RoomButton";
 import { RoomDate } from "../roomDate/RoomDate";
 import RoomIcon from "../roomIcon/RoomIcon";
@@ -9,9 +11,16 @@ interface RoomProps {
     roomTitle: string;
     roomTheme: string;
     roomDate: string;
+    roomId: string;
 }
 
-const Room: React.FC<RoomProps> = ({ roomTitle, roomTheme, roomDate }) => {
+const Room: React.FC<RoomProps> = ({ roomTitle, roomTheme, roomDate, roomId }) => {
+	const {state} = useContext(AuthContext);
+    const deleteUserInRoom = async() => {
+        console.log(roomId);
+        console.log(state.user!._id);
+        await roomService.deleteUserInRoom(roomId, state.user!._id)
+    }
     return (
         <div className="room">
             <div className="room-infos">
@@ -26,11 +35,11 @@ const Room: React.FC<RoomProps> = ({ roomTitle, roomTheme, roomDate }) => {
             <div className="room-btns">
                 <RoomButton
                     buttonText="Voir"
-                    onClick={() => console.log("voir")}
+                    handleClick={() => console.log("voir")}
                 />
                 <RoomButton
                     buttonText="Supprimer"
-                    onClick={() => console.log("supprimer")}
+                    handleClick={deleteUserInRoom}
                 />
             </div>
         </div>
