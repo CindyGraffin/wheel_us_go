@@ -1,4 +1,4 @@
-import React from "react";
+import './contactFriends.css';
 
 interface ContactFriendsProps  {
     firstname : string;
@@ -10,7 +10,7 @@ const ContactFriends : React.FC<ContactFriendsProps> = ({ firstname, lastname, u
     return (
         <div>
         <p>  {firstname} {lastname} </p>
-            <img src={userImg} alt="" />
+            <img className="friend-picture" src={userImg} alt="" />
 
         </div>
     )

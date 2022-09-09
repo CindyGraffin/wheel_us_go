@@ -6,12 +6,8 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const RightLayout: React.FC<unknown> = () => {
     const { state } = useContext(AuthContext);
-    console.log(state);
-    
     const userFriends = state.user?.friendsId;
-    console.log(userFriends);
     const userGroups = state.user?.groupsId;
-    console.log(userGroups);
     
     
 	

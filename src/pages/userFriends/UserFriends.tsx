@@ -1,80 +1,76 @@
 import "./userFriends.css";
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from "react";
 import { Layout } from "../../components";
 import { AuthContext } from "../../context/AuthContext";
 import { UFriends } from "./types/UFriends";
 import { userService } from "./UserService/userService";
 import ContactFriends from "./ContactUserF/ContactFriends";
 
-
-
 const UserFriends: React.FC<unknown> = () => {
-    const {state} = useContext(AuthContext);
+	const { state } = useContext(AuthContext);
 
-    const userId = state.user?._id;
-    const userGroups = state.user?.groupsId;
-    
-    const [friends, setFriends] = useState<[] | UFriends[]>([])    
-    useEffect(() => {
-        const fetchUFriends = async() => {
-            const response = await userService.getFriendsByUserId(userId!);
-            setFriends(response.data.friendsId)
-            console.table(response.data.friendsId);
-            
-        }
-        fetchUFriends()
-        
-    }, [userId])
+	const userId = state.user?._id;
+	const userGroups = state.user?.groupsId;
 
-    useEffect(() => {
-        console.table( friends);
-        
-    }, [friends])
+	const [friends, setFriends] = useState<[] | UFriends[]>([]);
+	useEffect(() => {
+		const fetchUFriends = async () => {
+			const response = await userService.getFriendsByUserId(userId!);
+			setFriends(response.data.friendsId);
+			console.table(response.data);
+			console.table(response.data.friendsId);
+		};
+		fetchUFriends();
+	}, [userId]);
 
-    const [ active, setActive ] = useState('Contacts');
+	useEffect(() => {
+		console.table(friends);
+	}, [friends]);
 
-   
+	const [active, setActive] = useState("Contacts");
 
-  return (
-    <Layout>
-    <div >
-        <button onClick={()=>{setActive('Contacts')}}>Contacts</button> <button onClick={()=>{setActive('Groupes')}}>Groupes</button>
-        <div id="Contacts" hidden={active === 'Contacts' ? false : true}> <h1> Liste d'Amis : </h1> 
-       
-       {friends.map((friend) => (
-        < ContactFriends
-        key={friend.firstname}
-        firstname={friend.firstname}
-        lastname={friend.lastname}
-        userImg={friend.userImg}
-        />
-       ))}
-
-        </div>
-
-        <div id="Groupes" hidden={active === 'Groupes' ? false : true}> <h1> Mes Groupes : </h1> 
-        
-        
-        </div>
-
-    </div>
-
-        </Layout>
-  )
-}
+	return (
+		<Layout>
+			<div>
+				<button
+					onClick={() => {
+						setActive("Contacts");
+					}}
+				>
+					Contacts
+				</button>{" "}
+				<button
+					onClick={() => {
+						setActive("Groupes");
+					}}
+				>
+					Groupes
+				</button>
+				<div
+					id="Contacts"
+					hidden={active === "Contacts" ? false : true}
+				>
+			
+					<h1> Liste d'Amis : </h1>
+					{friends.map((friend) => (
+						<ContactFriends
+							key={friend.firstname}
+							firstname={friend.firstname}
+							lastname={friend.lastname}
+							userImg={friend.userImg}
+						/>
+					))}
+				</div>
+				<div id="Groupes" hidden={active === "Groupes" ? false : true}>
+		
+					<h1> Mes Groupes : </h1>
+				</div>
+			</div>
+		</Layout>
+	);
+};
 
 export default UserFriends;
-
-
-
-
-
-
-
-
-
-
-
 
 // import { useContext } from "react";
 // import { Layout} from "../../components";
@@ -86,28 +82,25 @@ export default UserFriends;
 
 // import React, { useState } from 'react'
 
-
-
 // const UserFriends = () => {
 //     // const [userFriends, setUserFriends] = useState("Bouba");
 //     const { state} = useContext(AuthContext);
 //     console.log(state);
-    
+
 //     const userFriends = state.user?.friendsId;
 //     console.log(userFriends);
 
 //     const userGroups = state.user?.groupsId
 //     console.log(userGroups);
-    
+
 //     const contactsUsersCreation = [
 // 		{
 // 			classname: "contacts-group contacts",
 // 			contacts: userFriends,
 // 			title: 'CONTACTS',
 // 			icon: <IoPersonOutline className="contact-title-icon" />
-// 		} 
+// 		}
 //     ]
-
 
 //     const contactsGroupsCreation = [
 // 		{
@@ -123,7 +116,7 @@ export default UserFriends;
 //   return (
 //     <div >
 //         <button onClick={()=>{setActive('Contacts')}}>Contacts</button> <button onClick={()=>{setActive('Groupes')}}>Groupes</button>
-//         <div id="Contacts" hidden={active === 'Contacts' ? false : true}>TODO: 
+//         <div id="Contacts" hidden={active === 'Contacts' ? false : true}>TODO:
 
 //         {contactsUsersCreation.map((contactsGroup) => (
 //                     <ContactGroup
@@ -135,7 +128,7 @@ export default UserFriends;
 //                     />
 //                 ))}
 //         </div>
-//         <div id="Groupes" hidden={active === 'Groupes' ? false : true}>TODO: 
+//         <div id="Groupes" hidden={active === 'Groupes' ? false : true}>TODO:
 //         {contactsGroupsCreation.map((contactsGroup) => (
 //                     <ContactGroup
 //                         key={contactsGroup.title}
@@ -151,5 +144,3 @@ export default UserFriends;
 // }
 
 // export default UserFriends;
-
-
