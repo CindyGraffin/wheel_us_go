@@ -1,20 +1,23 @@
 import IUser from "../../../../../types/IUser";
 
-
 interface ListFriendsSelectedProps {
-  listFriendsSelected: IUser[];
+    listFriendsSelected: IUser[];
 }
 
 const ListPeopleInvited: React.FC<ListFriendsSelectedProps> = ({
-  listFriendsSelected,
+    listFriendsSelected,
 }) => {
-  return (
-    <div className="people_invited">
-      <ul>
-        {listFriendsSelected.map((listFriend) => <li key={listFriend._id}>{listFriend.lastname + " " + listFriend.firstname}</li>)}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="people_invited">
+            <ul>
+                {listFriendsSelected.map((listFriend) => (
+                    <li key={listFriend._id}>
+                        {listFriend.lastname + " " + listFriend.firstname}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default ListPeopleInvited;
