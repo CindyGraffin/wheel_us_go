@@ -1,8 +1,8 @@
 /* DASHBOARD LAYOUT */
 .layout__dashboard {
     background-color: var(--dashboard-color-primary);
-    /* height: 100vh; */
-    min-height: max-content;
+    min-height: 100vh;
+    min-width: fit-content;
     display: flex;
 }
 
