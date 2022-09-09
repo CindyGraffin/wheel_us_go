@@ -10,7 +10,7 @@ import ViewRoomTitle from "../../components/viewRoom/viewRoomTitle/ViewRoomTitle
 import { roomService } from "../../services/roomService";
 import { IRoom } from "../../types/IRoom";
 import "./viewRoom.css";
-import ViewRoomUser from '../../components/viewRoom/viewRoomUsers/ViewRoomUser'
+import ViewRoomUser from '../../components/viewRoom/viewRoomUser/ViewRoomUser'
 
 const ViewRoom: React.FC<unknown> = () => {
 	const navigate = useNavigate();
