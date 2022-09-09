@@ -1,0 +1,58 @@
+.grid_content {
+    border: #5c56927a solid 1px;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+.grid_header {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 10px;
+    border: #5c56927a solid 1px;
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+    margin-bottom: -1px;
+}
+
+.grid_items {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 10px;
+}
+
+.grid_items:nth-child(even) {
+    background-color: #8a81da7a;
+    box-shadow: inset 2px 2px 5px 0px #6f66af7a;
+}
+.grid_items:hover {
+    background-color: #5e58967a;
+}
+
+.grid_img {
+    grid-column: span 1 / span 1;
+    grid-column-start: 1;
+}
+
+.grid_name {
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+}
+
+.grid_email {
+    grid-column: span 3 / span 3;
+    grid-column-start: 5;
+}
+
+.grid_role {
+    grid-column: span 1 / span 1;
+    grid-column-start: 8;
+}
+
+.grid_actions {
+    grid-column: span 2 / span 2;
+    grid-column-start: 9;
+}
