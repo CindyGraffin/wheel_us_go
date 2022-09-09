@@ -22,21 +22,22 @@ const FormRender: React.FC<unknown> = () => {
   
   const [list, setList] = useState<IUser[]>([]);
   const { state } = useContext(AuthContext);
+  const idUser = state.user?._id;
   
-  const fetchFriendList = async () => {
-    const idUser = state.user?._id;
-    if (idUser) {
-      const listFriends = await userService.getFriendsByUserId(idUser);
-      setList(listFriends.data.friendsId);
-    } else {
-      throw new Error("Id utilisateur non trouvé ! ");
-    }
-  };
+  
 
   useEffect(() => {
+    const fetchFriendList = async () => {
+      if (idUser) {
+        const listFriends = await userService.getFriendsByUserId(idUser);
+        setList(listFriends.data.friendsId);
+      } else {
+        throw new Error("Id utilisateur non trouvé ! ");
+      }
+    };
     // call service qui récupère la liste d'amis dans la db
     fetchFriendList();
-  }, []);
+  }, [idUser]);
 
   const {
     register,

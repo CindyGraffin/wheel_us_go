@@ -1,41 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import IUser from "../../../../../types/IUser";
+import ListPeopleInvited from "../ListPeopleInvited/ListPeopleInvited";
 
 type SearchBarGuestProps = {
   friends: IUser[];
 };
 
-type SearchBarSelectedFriendListType = {
-  list: string[];
-}
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const [listFriendsSelected, setListFriendsSelected] = useState<SearchBarSelectedFriendListType[]>([]);
 const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
+  // On crée une copie de la liste d'amis
+  const [listFriendsIdSelected, setListFriendsIdSelected] = useState<string[]>([]);
+  const [filteredFriends, setFilteredFriends] = useState<IUser[]>([])
+
+  const copyFriends = [...friends]
 
   const handleChangeSearchBarGuest = (
     e: React.ChangeEvent<HTMLSelectElement>
   ): void => {
     //TODO
-    setListFriendsSelected(e.target.value);
+    const friendSelected = (e.target as HTMLSelectElement).value;
+    if (!listFriendsIdSelected.includes(friendSelected)) {
+      setListFriendsIdSelected([...listFriendsIdSelected, friendSelected]);
+      
+    } else {
+      console.log("La valeur est déjà présente dans la liste");
+    }
   };
-  let listFriends = [...friends];
+
+  useEffect(()=>{
+    const newFilter = copyFriends.filter((friend)=> listFriendsIdSelected.includes(friend._id!))
+      setFilteredFriends(newFilter);
+    
+  }, [listFriendsIdSelected, friends, copyFriends])
+  
   return (
     <div className="select__container__searchbar">
       <select defaultValue={undefined} onChange={handleChangeSearchBarGuest}>
         <option>Rajouter un ami à la liste</option>
-        {listFriends.map((friend) => (
-          <option
-            key={friend._id}
-            value={friend.firstname + " " + friend.lastname}
-          >
+        {copyFriends.map((friend) => (
+          <option key={friend._id} value={friend._id}>
             {friend.firstname + " " + friend.lastname}
           </option>
         ))}
       </select>
       <div>
-         {/* //TODO */}
+        <ListPeopleInvited listFriendsSelected = {filteredFriends}/>
       </div>
+      <button onClick={()=> console.log(listFriendsIdSelected)}>Debug</button>
     </div>
   );
 };
