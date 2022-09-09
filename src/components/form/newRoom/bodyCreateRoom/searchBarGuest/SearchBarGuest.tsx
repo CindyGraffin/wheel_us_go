@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import IUser from "../../../../../types/IUser";
 import ListPeopleInvited from "../ListPeopleInvited/ListPeopleInvited";
 
@@ -14,6 +14,8 @@ const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
   const [filteredFriends, setFilteredFriends] = useState<IUser[]>([]);
 
   const [copyFriends, setCopyFriends] = useState<IUser[]>([]);
+
+    const defaultOption = useRef<HTMLOptionElement>(null);
 
   const handleChangeSearchBarGuest = (
     e: React.ChangeEvent<HTMLSelectElement>
@@ -35,12 +37,14 @@ const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
     };
     setCopyFriends(friends);
     setFilteredFriends(getSelected);
+    if(defaultOption.current)
+      defaultOption.current.selected = true;
   }, [copyFriends, friends, listFriendsIdSelected]);
 
   return (
     <div className="select__container__searchbar">
-      <select defaultValue={undefined} onChange={handleChangeSearchBarGuest}>
-        <option>Rajouter un ami à la liste</option>
+      <select  defaultValue={undefined} onChange={handleChangeSearchBarGuest}>
+        <option ref={defaultOption}>Rajouter un ami à la liste</option>
         {copyFriends.map((friend) => (
           <option key={friend._id} value={friend._id}>
             {friend.firstname + " " + friend.lastname}
@@ -51,7 +55,18 @@ const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
         <h3>Personnes invitées</h3>
         <ListPeopleInvited listFriendsSelected={filteredFriends} />
       </div>
-      <button onClick={() => console.log({copyFriends, friends, filteredFriends, listFriendsIdSelected})}>Debug</button>
+      <button
+        onClick={() =>
+          console.log({
+            copyFriends,
+            friends,
+            filteredFriends,
+            listFriendsIdSelected,
+          })
+        }
+      >
+        Debug
+      </button>
     </div>
   );
 };
