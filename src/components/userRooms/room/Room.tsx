@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import { roomService } from "../../../services/roomService";
 import RoomButton from "../../UI/roomButton/RoomButton";
@@ -17,12 +18,14 @@ interface RoomProps {
 }
 
 const Room: React.FC<RoomProps> = ({ deleteRoom, setDeleteRoom, roomTitle, roomTheme, roomDate, roomId }) => {
+    const navigate = useNavigate()
 	const {state} = useContext(AuthContext);
     const deleteUserInRoom = async() => {
-        console.log(roomId);
-        console.log(state.user!._id);
         await roomService.deleteUserInRoom(roomId, state.user!._id)
         setDeleteRoom(!deleteRoom)
+    }
+    const goToRoom = () => {
+        navigate(`/viewroom/${roomId}`)
     }
     return (
         <div className="room">
@@ -38,7 +41,7 @@ const Room: React.FC<RoomProps> = ({ deleteRoom, setDeleteRoom, roomTitle, roomT
             <div className="room-btns">
                 <RoomButton
                     buttonText="Voir"
-                    handleClick={() => console.log("voir")}
+                    handleClick={goToRoom}
                 />
                 <RoomButton
                     buttonText="Quitter la salle"

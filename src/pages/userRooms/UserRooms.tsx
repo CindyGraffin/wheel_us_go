@@ -20,14 +20,21 @@ const UserRooms: React.FC<unknown> = () => {
             
         }
         fetchRooms()   
-    }, [deleteRoom])
+    }, [deleteRoom, userId])
     
     return (
         <Layout>
             <div className="rooms__container">
                 <RoomsTitle titleText="MES SALLES"/> 
                 {rooms.map((room) => (
-                    <Room roomId={room._id} roomTheme={room.theme} roomDate={room.date.toString()} roomTitle={room.placeName} key={room._id} deleteRoom={deleteRoom} setDeleteRoom={setDeleteRoom}/>
+                    <Room 
+                        key={room._id} 
+                        roomId={room._id} 
+                        roomTheme={room.theme} 
+                        roomDate={room.date.toString()} 
+                        roomTitle={room.placeName} 
+                        deleteRoom={deleteRoom} 
+                        setDeleteRoom={setDeleteRoom}/>
                 ))}   
                 
             </div>

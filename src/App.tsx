@@ -38,7 +38,7 @@ function App() {
 					<Route path="/userfriends" element={<UserFriends />} />
 					<Route path="/premium" element={<PremiumPage />} />
 					<Route path="/reglages" element={<ReglagesPage />} />
-					<Route path="/viewroom" element={<ViewRoom/>}/>
+					<Route path="/viewroom/:roomid" element={<ViewRoom/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -3,6 +3,7 @@
     color: var(--color-tertiary);
     font-size: 3rem;
     text-transform: uppercase;
+    max-width: 400px;
 }
 .view-room-section {
     font-weight: 600;

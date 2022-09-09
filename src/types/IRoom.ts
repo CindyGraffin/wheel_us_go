@@ -15,7 +15,7 @@ export type IRoom = {
     placeName: string;
     address: string;
     date: Date;
-    partIds: [string];
+    partIds: [any];
     theme: string;
     aperoWheel: WheelAperoType;
     dresscode: Dresscode;

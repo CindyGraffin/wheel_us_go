@@ -1,8 +1,8 @@
-interface ViewRoomUsersProps {
+interface ViewRoomUserProps {
     roomId: string;
 }
 
-const ViewRoomUsers: React.FC<ViewRoomUsersProps> = () => {
+const ViewRoomUser: React.FC<ViewRoomUserProps> = () => {
     return (
         <div>
             <div>1</div>
@@ -12,4 +12,4 @@ const ViewRoomUsers: React.FC<ViewRoomUsersProps> = () => {
     );
 };
 
-export default ViewRoomUsers;
+export default ViewRoomUser;
