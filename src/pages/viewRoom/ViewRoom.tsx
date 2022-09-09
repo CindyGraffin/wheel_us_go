@@ -7,10 +7,10 @@ import ViewRoomDate from "../../components/viewRoom/viewRoomDate/ViewRoomDate";
 import ViewRoomDresscode from "../../components/viewRoom/viewRoomDresscode/ViewRoomDresscode";
 import ViewRoomLocation from "../../components/viewRoom/viewRoomLocation/ViewRoomLocation";
 import ViewRoomTitle from "../../components/viewRoom/viewRoomTitle/ViewRoomTitle";
-import ViewRoomUser from "../../components/viewRoom/viewRoomUsers/ViewRoomUser";
 import { roomService } from "../../services/roomService";
 import { IRoom } from "../../types/IRoom";
 import "./viewRoom.css";
+import ViewRoomUser from '../../components/viewRoom/viewRoomUsers/ViewRoomUser'
 
 const ViewRoom: React.FC<unknown> = () => {
 	const navigate = useNavigate();
@@ -41,9 +41,11 @@ const ViewRoom: React.FC<unknown> = () => {
 					<ViewRoomDate roomDate={room.date.toString()} />
 					<ViewRoomDresscode dresscodeDescription="Déguisement de souris verte" />
 					<ViewRoomApero roomId="1" />
+					<div className="view-room-parts">
                     {room.partIds.map((part) => (
-                        <img className='view-room-part-picture'src={part.userImg} alt="" />
-                    ))}
+						<ViewRoomUser user={part} key={part.id+part.lastname}/>
+						))}
+					</div>
 					<div className="view-room-btns">
 						<RoomButton
 							buttonText="Retour aux salles"
