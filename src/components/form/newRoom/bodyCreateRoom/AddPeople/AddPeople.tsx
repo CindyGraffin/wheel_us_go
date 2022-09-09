@@ -8,11 +8,10 @@ type AddPeopleProps = {
 };
 
 const AddPeople = ({ listFriends }: AddPeopleProps) => {
-  return (
+   return (
     <div>
       <h3>Sélectionner les invités</h3>
       <SearchBarGuest friends={listFriends} />
-      <h3>Personnes invitées</h3>
     </div>
   );
 };

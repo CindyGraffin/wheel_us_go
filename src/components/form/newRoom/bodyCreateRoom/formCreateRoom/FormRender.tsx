@@ -28,8 +28,8 @@ const FormRender: React.FC<unknown> = () => {
 
   useEffect(() => {
     const fetchFriendList = async () => {
-      if (idUser) {
-        const listFriends = await userService.getFriendsByUserId(idUser);
+      if (true) {
+        const listFriends = await userService.getFriendsByUserId(idUser!);
         setList(listFriends.data.friendsId);
       } else {
         throw new Error("Id utilisateur non trouvé ! ");

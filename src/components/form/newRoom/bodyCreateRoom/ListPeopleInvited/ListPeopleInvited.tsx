@@ -11,7 +11,7 @@ const ListPeopleInvited: React.FC<ListFriendsSelectedProps> = ({
   return (
     <div className="people_invited">
       <ul>
-        {listFriendsSelected.map((listFriend) => <li>{listFriend.lastname + " " + listFriend.firstname}</li>)}
+        {listFriendsSelected.map((listFriend) => <li key={listFriend._id}>{listFriend.lastname + " " + listFriend.firstname}</li>)}
       </ul>
     </div>
   );
