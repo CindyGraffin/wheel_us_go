@@ -15,8 +15,8 @@ const UserHeadband: React.FC<UserHeadbandProps> = ({user}) => {
 			</div>
 			<div className="headband-infos">
 				<div className="headband-name">
-					<p>{user?.firstName}</p>
-					<p>{user?.lastName}</p>
+					<p>{user?.firstname}</p>
+					<p>{user?.lastname}</p>
 				</div>
 				<div className="headband-location">
 					<GoLocation/>

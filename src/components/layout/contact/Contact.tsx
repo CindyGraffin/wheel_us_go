@@ -1,16 +1,16 @@
 import './contact.css';
 
 interface ContactProps {
-	firstName: string;
-	lastName: string;
+	firstname: string;
+	lastname: string;
 	imgSrc: string | undefined;
 }
 
-const Contact: React.FC<ContactProps> = ({firstName, lastName, imgSrc}) => {
+const Contact: React.FC<ContactProps> = ({firstname, lastname, imgSrc}) => {
 	return (
 			<div className="contact__container">
 				<img src={imgSrc} alt="" />
-				<p>{firstName} {lastName}</p>
+				<p>{firstname} {lastname}</p>
 			</div>
 	);
 };
