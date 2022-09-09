@@ -1,0 +1,9 @@
+.view-room-title {
+    font-weight: 600;
+    color: var(--color-tertiary);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.view-room-section {
+    font-weight: 600;
+}

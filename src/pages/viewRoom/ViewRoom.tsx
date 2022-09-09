@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Layout } from '../../components';
 import RoomButton from '../../components/UI/roomButton/RoomButton';
 import ViewRoomApero from '../../components/viewRoom/viewRoomApero/ViewRoomApero';
@@ -9,17 +10,24 @@ import ViewRoomUsers from '../../components/viewRoom/viewRoomUsers/ViewRoomUsers
 import './viewRoom.css';
 
 const ViewRoom: React.FC<unknown> = () => {
+    const navigate = useNavigate();
+
+    const returnToRooms = () => {
+        navigate('/userrooms')
+    }
     return (
         <Layout>
-            <div className='room-view__container'>
+            <div className='view-room__container'>
                 <ViewRoomTitle roomTitle='Le Camden Bar'/>
                 <ViewRoomLocation roomLocation='Vieux-Lille'/>
                 <ViewRoomDate roomDate='Mercredi 31 Juillet 2022 - 19h45'/>
                 <ViewRoomDresscode dresscodeDescription='Déguisement de souris verte'/>
                 <ViewRoomApero roomId='1'/>
                 <ViewRoomUsers roomId='1'/>
-                <RoomButton buttonText='Quitter la salle' handleClick={() => console.log('hey')}/>
-                <RoomButton buttonText='Retour aux salles' handleClick={() => console.log('hey')}/>
+                <div className='view-room-btns'>
+                    <RoomButton buttonText='Retour aux salles' handleClick={returnToRooms}/>
+                    <RoomButton buttonText='Quitter la salle' handleClick={() => console.log('hey')}/>
+                </div>
             </div>
         </Layout>
     );

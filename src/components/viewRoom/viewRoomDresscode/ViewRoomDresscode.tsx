@@ -1,4 +1,5 @@
 import {RiShirtLine} from '../../../icons/index';
+import './viewRoomDresscode.css'
 
 interface ViewRoomDresscodeProps {
     dresscodeDescription: string
@@ -6,9 +7,12 @@ interface ViewRoomDresscodeProps {
 
 const ViewRoomDresscode: React.FC<ViewRoomDresscodeProps> = ({dresscodeDescription}) => {
     return (
-        <div>
-            <RiShirtLine/>
-            <p>Dresscode: {dresscodeDescription}</p>
+        <div className="view-room-item">
+            <div className="view-room-section">
+                <RiShirtLine className='view-room-icon'/>
+                <span>Dresscode:</span>
+            </div>
+            <p>{dresscodeDescription}</p>
         </div>
     );
 };

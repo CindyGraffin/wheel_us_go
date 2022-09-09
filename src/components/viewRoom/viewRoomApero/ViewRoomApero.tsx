@@ -1,5 +1,6 @@
 import {BiBeer} from '../../../icons/index';
 import RoomButton from '../../UI/roomButton/RoomButton';
+import './viewRoomApero.css';
 
 interface ViewRoomAperoProps {
     roomId: string;
@@ -7,11 +8,16 @@ interface ViewRoomAperoProps {
 
 const ViewRoomApero: React.FC<ViewRoomAperoProps> = () => {
     return (
-        <div>
-            <BiBeer/>
-            <p>Qui paye l'apéro ?</p>
-            <RoomButton buttonText='Lancer la roue' handleClick={()=> {console.log('user')}}/>
+        <div className="view-room-item">
+            <div className="view-room-section">
+                <BiBeer className='view-room-icon'/>
+                <span>Qui paye l'apéro ?</span>
+            </div>
+            <div className='wheel-btn'>
+                <RoomButton buttonText='Lancer la roue' handleClick={()=> {console.log('user')}}/>
+            </div>
         </div>
+
     );
 };
 
