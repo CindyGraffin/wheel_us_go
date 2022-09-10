@@ -1,9 +1,10 @@
 import ViewRoomUser from "../viewRoomPart/ViewRoomPart";
 import './viewRoomParts.css';
 import {BsPeople} from '../../../icons/index'
+import IUser from "../../../types/IUser";
 
 interface ViewRoomPartsProps {
-	parts: any[];
+	parts: IUser[];
 }
 
 const ViewRoomParts: React.FC<ViewRoomPartsProps> = ({ parts }) => {
@@ -15,7 +16,7 @@ const ViewRoomParts: React.FC<ViewRoomPartsProps> = ({ parts }) => {
             </div>
 			<div className="view-room-parts">
 				{parts.map((part) => (
-					<ViewRoomUser part={part} key={part.id + part.lastname} />
+					<ViewRoomUser part={part} key={part._id} />
 				))}
 			</div>
 		</div>

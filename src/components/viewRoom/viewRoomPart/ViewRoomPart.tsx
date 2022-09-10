@@ -1,8 +1,8 @@
-import React from "react";
+import IUser from "../../../types/IUser";
 import './viewRoomPart.css';
 
 interface ViewRoomPartProps {
-    part: any;
+    part: IUser;
 }
 
 const ViewRoomPart: React.FC<ViewRoomPartProps> = ({part}) => {
