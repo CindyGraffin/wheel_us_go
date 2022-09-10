@@ -1,3 +1,5 @@
+import IUser from "./IUser";
+
 type WheelAperoType = {
     setUp: boolean;
     launched: boolean;
@@ -15,7 +17,7 @@ export type IRoom = {
     placeName: string;
     address: string;
     date: Date;
-    partIds: [any];
+    partIds: [IUser];
     theme: string;
     aperoWheel: WheelAperoType;
     dresscode: Dresscode;
