@@ -1,0 +1,7 @@
+.view-room-parts {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1rem;
+}
