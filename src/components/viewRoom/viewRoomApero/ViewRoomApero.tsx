@@ -1,5 +1,5 @@
 import {BiBeer} from '../../../icons/index';
-import RoomButton from '../../UI/roomButton/RoomButton';
+import RoomButton from '../../UI/CommonButton/CommonButton';
 import './viewRoomApero.css';
 
 interface ViewRoomAperoProps {

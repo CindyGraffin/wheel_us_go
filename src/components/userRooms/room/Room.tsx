@@ -1,11 +1,9 @@
-import React, { useContext, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
+import { RoomDate, RoomIcon, RoomTitle, CommonButton } from "../../index";
 import { roomService } from "../../../services/roomService";
-import RoomButton from "../../UI/roomButton/RoomButton";
-import { RoomDate } from "../roomDate/RoomDate";
-import RoomIcon from "../roomIcon/RoomIcon";
-import RoomTitle from "../roomTitle/RoomTitle";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./room.css";
 
 interface RoomProps {
@@ -18,10 +16,13 @@ interface RoomProps {
 }
 
 const Room: React.FC<RoomProps> = ({ deleteRoom, setDeleteRoom, roomTitle, roomTheme, roomDate, roomId }) => {
+    
     const navigate = useNavigate()
 	const {state} = useContext(AuthContext);
+    const userId = state.user!._id
+
     const deleteUserInRoom = async() => {
-        await roomService.deleteUserInRoom(roomId, state.user!._id)
+        await roomService.deleteUserInRoom(roomId, userId)
         setDeleteRoom(!deleteRoom)
     }
     const goToRoom = () => {
@@ -39,11 +40,11 @@ const Room: React.FC<RoomProps> = ({ deleteRoom, setDeleteRoom, roomTitle, roomT
                 </div>
             </div>
             <div className="room-btns">
-                <RoomButton
+                <CommonButton
                     buttonText="Voir"
                     handleClick={goToRoom}
                 />
-                <RoomButton
+                <CommonButton
                     buttonText="Quitter la salle"
                     handleClick={deleteUserInRoom}
                 />

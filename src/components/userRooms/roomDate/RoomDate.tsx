@@ -4,10 +4,12 @@ interface RoomDateProps {
     roomDate: string;
 }
 
-export const RoomDate: React.FC<RoomDateProps> = ({roomDate}) => {
+const RoomDate: React.FC<RoomDateProps> = ({roomDate}) => {
     return (
         <div className="room-date">
             <p>{roomDate}</p>
         </div>
     );
 };
+
+export default RoomDate;

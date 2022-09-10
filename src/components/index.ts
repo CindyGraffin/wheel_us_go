@@ -1,11 +1,39 @@
-import Badge from "./profile/badge/Badge";
-import Layout from "./layout/Layout";
-import UserHeadband from "./profile/userHeadband/userHeadband";
-import RoomsTitle from "./userRooms/roomsTitle/RoomsTitle";
+// Auth components
+import {AuthInput, FormFooter, FormLogo, InscriptionForm, LoginForm, Presentation} from "./auth/index";
+// Layout components
+import { Contact, ContactGroup, CreateRoom, Layout, LeftLayout, NavbarItem, Navlist, RightLayout } from "./layout";
+// Profile components
+import {Badge, UserHeadband} from './profile/index';
+// UserRooms components
+import {Room, RoomDate, RoomIcon, RoomTitle, RoomsTitle} from "./userRooms/index";
+// UI components
+import {Loader, CommonButton} from "./UI/index";
+// ViewRooms components
+
+
 
 export { 
+    AuthInput,
     Badge,
+    Contact,
+    CommonButton,
+    ContactGroup,
+    CreateRoom,
+    FormFooter,
+    FormLogo,
+    InscriptionForm,
     Layout,
-    UserHeadband,
-    RoomsTitle
+    LeftLayout,
+    Loader,
+    LoginForm,
+    NavbarItem,
+    Navlist,
+    Presentation,
+    RightLayout,
+    Room,
+    RoomDate,
+    RoomIcon,
+    RoomTitle,
+    RoomsTitle,
+    UserHeadband
 };

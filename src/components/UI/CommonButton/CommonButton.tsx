@@ -1,11 +1,11 @@
-import './roomButton.css';
+import './commonButton.css';
 
-interface RoomButtonProps {
+interface CommonButtonProps {
     buttonText: string;
     handleClick: () => void;
 }
 
-const RoomButton: React.FC<RoomButtonProps> = ({buttonText, handleClick}) => {
+const CommonButton: React.FC<CommonButtonProps> = ({buttonText, handleClick}) => {
     return (
         <div>
             <button  className="room-btn" onClick={handleClick}>
@@ -15,4 +15,4 @@ const RoomButton: React.FC<RoomButtonProps> = ({buttonText, handleClick}) => {
     );
 };
 
-export default RoomButton;
+export default CommonButton;

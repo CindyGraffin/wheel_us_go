@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Layout } from "../../components";
-import RoomButton from "../../components/UI/roomButton/RoomButton";
+import RoomButton from "../../components/UI/CommonButton/CommonButton";
 import ViewRoomApero from "../../components/viewRoom/viewRoomApero/ViewRoomApero";
 import ViewRoomDate from "../../components/viewRoom/viewRoomDate/ViewRoomDate";
 import ViewRoomDresscode from "../../components/viewRoom/viewRoomDresscode/ViewRoomDresscode";
@@ -10,9 +10,9 @@ import ViewRoomTitle from "../../components/viewRoom/viewRoomTitle/ViewRoomTitle
 import { roomService } from "../../services/roomService";
 import { IRoom } from "../../types/IRoom";
 import "./viewRoom.css";
-import ViewRoomUser from '../../components/viewRoom/viewRoomPart/ViewRoomPart'
 import { AuthContext } from "../../context/AuthContext";
 import ViewRoomParts from "../../components/viewRoom/viewRoomParts/ViewRoomParts";
+import Loader from "../../components/UI/loader/Loader";
 
 const ViewRoom: React.FC<unknown> = () => {
 	const navigate = useNavigate();
@@ -62,9 +62,7 @@ const ViewRoom: React.FC<unknown> = () => {
 					</div>
 				</div>
 			) : (
-			<div className="loader">
-                <div className="view-room-loading"></div>
-			</div>
+			<Loader/>
         )}
 		</Layout>
 	);
