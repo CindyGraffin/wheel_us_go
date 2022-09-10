@@ -48,7 +48,7 @@ const Navlist: React.FC<unknown> = () => {
 		}
     ] as const;
     return (
-        <nav>
+        <nav className='nav'>
             <ul>
                 {navlinksInfos.map((navlink, i) => {
                     return (

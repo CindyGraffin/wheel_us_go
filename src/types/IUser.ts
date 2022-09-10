@@ -9,8 +9,8 @@ export default interface IUser {
     userImg?: string;
     outingPart: number;
     outingCre: number;
+    role: string;
     tablesPartId?: string[];
     friendsId?: string[];
     groupsId?: string[];
 }
-
