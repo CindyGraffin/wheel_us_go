@@ -1,23 +1,25 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Layout, RoomsTitle} from "../../components";
-import Room from "../../components/userRooms/room/Room";
+import { useContext, useState, useEffect } from "react";
+import { Layout, Room, RoomsTitle} from "../../components/index";
 import { AuthContext } from "../../context/AuthContext";
 import { roomService } from "../../services/roomService";
 import { IRoom } from "../../types/IRoom";
 import "./userRooms.css";
 
 const UserRooms: React.FC<unknown> = () => {
+
 	const {state} = useContext(AuthContext);
     const userId = state.user?._id
 
     const [rooms, setRooms] = useState<[] | IRoom[]>([])
     const [deleteRoom, setDeleteRoom] = useState(false);
 
+    /**
+     * au chargement du composant, ou lors de la modification de deleteRoom ou userId, le service va récupérer les salles de l'utilisateur et les stocker dans le state room
+     */
     useEffect(() => {
         const fetchRooms = async() => {
             const response = await roomService.getRoomsByUserId(userId!)
             setRooms(response.data)
-            
         }
         fetchRooms()   
     }, [deleteRoom, userId])

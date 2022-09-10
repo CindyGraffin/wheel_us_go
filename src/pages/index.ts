@@ -6,7 +6,19 @@ import SearchUser from "./searchUser/SearchUser";
 import UserFriends from "./userFriends/UserFriends";
 import UserMessages from "./userMessages/UserMessages";
 import UserRooms from "./userRooms/UserRooms";
+import ViewRoom from "./viewRoom/ViewRoom";
 
 
-export {ProfilePage, ConnectionPage, SearchUser, UserRooms, UserMessages, PremiumPage, ReglagesPage, UserFriends};
+
+export {
+    ProfilePage, 
+    ConnectionPage, 
+    SearchUser, 
+    UserRooms,
+    UserMessages, 
+    PremiumPage, 
+    ReglagesPage, 
+    UserFriends,
+    ViewRoom
+};
 

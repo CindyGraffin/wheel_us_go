@@ -9,7 +9,7 @@ import {Room, RoomDate, RoomIcon, RoomTitle, RoomsTitle} from "./userRooms/index
 // UI components
 import {Loader, CommonButton} from "./UI/index";
 // ViewRooms components
-
+import { ViewRoomApero, ViewRoomDate, ViewRoomDresscode, ViewRoomLocation, ViewRoomPart, ViewRoomParts, ViewRoomTitle } from "./viewRoom";
 
 
 export { 
@@ -35,5 +35,12 @@ export {
     RoomIcon,
     RoomTitle,
     RoomsTitle,
-    UserHeadband
+    UserHeadband,
+    ViewRoomApero, 
+    ViewRoomDate, 
+    ViewRoomDresscode, 
+    ViewRoomLocation, 
+    ViewRoomPart, 
+    ViewRoomParts,
+    ViewRoomTitle
 };

@@ -1,30 +1,30 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { Layout } from "../../components";
-import RoomButton from "../../components/UI/CommonButton/CommonButton";
-import ViewRoomApero from "../../components/viewRoom/viewRoomApero/ViewRoomApero";
-import ViewRoomDate from "../../components/viewRoom/viewRoomDate/ViewRoomDate";
-import ViewRoomDresscode from "../../components/viewRoom/viewRoomDresscode/ViewRoomDresscode";
-import ViewRoomLocation from "../../components/viewRoom/viewRoomLocation/ViewRoomLocation";
-import ViewRoomTitle from "../../components/viewRoom/viewRoomTitle/ViewRoomTitle";
-import { roomService } from "../../services/roomService";
-import { IRoom } from "../../types/IRoom";
 import "./viewRoom.css";
 import { AuthContext } from "../../context/AuthContext";
-import ViewRoomParts from "../../components/viewRoom/viewRoomParts/ViewRoomParts";
-import Loader from "../../components/UI/loader/Loader";
+import {CommonButton, Layout, Loader, ViewRoomApero, ViewRoomDate, ViewRoomDresscode, ViewRoomLocation, ViewRoomParts, ViewRoomTitle} from '../../components/index';
+import { IRoom } from "../../types/IRoom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { roomService } from "../../services/roomService";
 
 const ViewRoom: React.FC<unknown> = () => {
-	const navigate = useNavigate();
-	const {state} = useContext(AuthContext);
-
-	const returnToRooms = () => {
-		navigate("/userrooms");
-	};
-	const { roomid } = useParams();
 
 	const [room, setRoom] = useState<undefined | IRoom>(undefined);
 
+	const navigate = useNavigate();
+	const { roomid } = useParams();
+
+	const {state} = useContext(AuthContext);
+
+	/**
+	 * fonction qui permet de retourner sur la page des salles de l'utilisateur
+	 */
+	const returnToRooms = () => {
+		navigate("/userrooms");
+	};
+
+	/** 
+	 * A l'initialisation du composant, et lors de changement sur roomid, le service récupére la salle ayant l'id roomid
+	*/
 	useEffect(() => {
 		const fetchRoom = async () => {
 			const response = await roomService.getRoomByIdWithParts(roomid!);
@@ -33,6 +33,9 @@ const ViewRoom: React.FC<unknown> = () => {
 		fetchRoom();
 	}, [roomid]);
 
+	/**
+	 * Permet à l'utilisateur de quitter la salle et ainsi de supprimer son id de ceux participants à la salle
+	 */
 	const leaveRoom = async() => {
         await roomService.deleteUserInRoom(roomid!, state.user!._id)
 		navigate('/userrooms')
@@ -47,17 +50,15 @@ const ViewRoom: React.FC<unknown> = () => {
 					<ViewRoomDate roomDate={room.date.toString()} />
 					<ViewRoomDresscode dresscodeDescription="Déguisement de souris verte" />
 					<ViewRoomApero roomId="1" />
-					<ViewRoomParts parts={room.partIds}/>
-                        
+					<ViewRoomParts parts={room.partIds}/>      
 					<div className="view-room-btns">
-						<RoomButton
+						<CommonButton
 							buttonText="Retour aux salles"
 							handleClick={returnToRooms}
 						/>
-						<RoomButton
+						<CommonButton
 							buttonText="Quitter la salle"
 							handleClick={leaveRoom}
-		
 						/>
 					</div>
 				</div>
