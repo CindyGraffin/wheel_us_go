@@ -1,5 +1,5 @@
 import "./message.css";
-import { format } from 'timeago.js';
+// import { format } from 'timeago.js';
 
 interface MessageProps {
     message: any;
@@ -17,7 +17,7 @@ const Message: React.FC<MessageProps> = ({ message, own }) => {
 				/>
 				<p className="messageText">{message.text}</p>
 			</div>
-			<div className="messageBottom">{format(message.createdAt)}</div>
+			<div className="messageBottom">{message.createdAt.toString()}</div>
 		</div>
 	);
 }

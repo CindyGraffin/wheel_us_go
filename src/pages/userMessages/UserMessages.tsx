@@ -6,20 +6,35 @@ import { AuthContext } from "../../context/AuthContext";
 import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
+import {io} from 'socket.io-client';
 
 
 const UserMessages: React.FC<unknown> = () => {
 
 	const [conversations, setConversations] = useState<any>([]);
 	const [currentChat, setCurrentChat] = useState<any>();
-
+	// const [socket, setSocket] = useState<any>(null)
 	const [messages, setMessages] = useState<any>([]);
 	const [newMessage, setNewMessage] = useState<any>('');
+
+	const socket = useRef(io("ws://localhost:8900"))
 
 	const { state } = useContext(AuthContext);
 	const userId = state.user!._id;
 
 	const scrollRef = useRef<any>()
+
+	useEffect(() => {
+		// TODO
+		// @ts-ignore
+		socket.current.emit('addUser', userId)
+		socket.current.on('getUsers', users => {
+			console.log(users);
+			
+		})
+	}, [userId])
+
+
 
 	useEffect(() => {
 		const getConversationsByUserId = async () => {
