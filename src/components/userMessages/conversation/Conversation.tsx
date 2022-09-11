@@ -1,11 +1,38 @@
 import './conversation.css';
+import {useEffect, useState} from 'react';
+import { userService } from '../../../services/userService';
 
-const Conversation: React.FC<unknown> = () => {
+interface ConversationProps {
+    conversation: any
+    userId: string
+}
+
+const Conversation: React.FC<ConversationProps> = ({conversation, userId}) => {
+    const [friend, setFriend] = useState<any>(null)
+
+    useEffect(() => {
+        const friendId = conversation.members.find((member: string) => member !== userId)
+        const getUserById = async() => {
+            const response = await userService.getUserById(friendId)
+            setFriend(response.data);
+        }
+        getUserById()
+    }, [conversation.members, userId])
+    
+
 	return (
-        <div className='conversation'>
-            <img className='conversation-img' src="https://images.unsplash.com/photo-1613318286980-4b3dd8475772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
-            <span className="conversation-name"> Cindy Graffin</span>
-        </div>
+        <div className="conversation">
+      <img
+        className="conversationImg"
+        src={
+          friend?.userImg
+            ? friend.userImg
+            : ""
+        }
+        alt=""
+      />
+      <span className="conversationName">{friend?.firstname}</span>
+    </div>
     );
 };
 

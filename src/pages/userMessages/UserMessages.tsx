@@ -1,20 +1,61 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { Layout } from "../../components";
 import Conversation from "../../components/userMessages/conversation/Conversation";
 import Message from "../../components/userMessages/message/Message";
 import { AuthContext } from "../../context/AuthContext";
+import { conversationService } from "../../services/conversationService";
+import { messageService } from "../../services/messageService";
 import "./userMessages.css";
 
-interface UserMessagesProps {
-	own: boolean;
-}
 
-const UserMessages: React.FC<UserMessagesProps> = ({ own }) => {
+const UserMessages: React.FC<unknown> = () => {
 
-	const [conversations, setConversations] = useState([])
+	const [conversations, setConversations] = useState<any>([]);
+	const [currentChat, setCurrentChat] = useState<any>();
+
+	const [messages, setMessages] = useState<any>([]);
+	const [newMessage, setNewMessage] = useState<any>('');
 
 	const { state } = useContext(AuthContext);
-	const userId = state.user!._id
+	const userId = state.user!._id;
+
+	const scrollRef = useRef<any>()
+
+	useEffect(() => {
+		const getConversationsByUserId = async () => {
+			const response = await conversationService.getConversationsByUserId(userId);
+			setConversations(response.data);
+		};
+		getConversationsByUserId();
+	}, [userId]);
+
+	useEffect(() => {
+		const getMessagesByConversationId = async () => {
+			const response = await messageService.getMessagesByConversationId(currentChat?._id);
+			setMessages(response.data);
+		};
+		getMessagesByConversationId();
+	}, [currentChat]);
+
+	const handleSubmit = (e: any) => {
+		e.preventDefault()
+		const message = {
+			sender: userId,
+			text: newMessage,
+			conversationId: currentChat._id
+		}
+		const addMessage = async() => {
+			await messageService.addMessage(message)
+			setNewMessage('')
+		}
+		addMessage()
+	}
+
+	useEffect(() => {
+		scrollRef.current?.scrollIntoView({behavior: "smooth"})
+	}, [messages]);
+		
+	
 
 	return (
 		<Layout>
@@ -26,52 +67,57 @@ const UserMessages: React.FC<UserMessagesProps> = ({ own }) => {
 							placeholder="Search for friends"
 							className="chatMenuInput"
 						/>
-						{/* {conversations.map((c) => (
-              <div onClick={() => setCurrentChat(c)}>
-                <Conversation conversation={c} currentUser={user} />
-              </div>
-            ))} */}
+						{conversations.map((conversation: any) => (
+							<div  key={conversation._id} onClick={() => setCurrentChat(conversation)}>
+
+							<Conversation
+								key={conversation._id}
+								conversation={conversation}
+								userId={userId}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 				<div className="chatBox">
 					<div className="chatBoxWrapper">
-						{/* {currentChat ? (
-              <>
-                <div className="chatBoxTop">
-                  {messages.map((m) => (
-                    <div ref={scrollRef}>
-                      <Message message={m} own={m.sender === user._id} />
-                    </div>
-                  ))}
-                </div>
-                <div className="chatBoxBottom">
-                  <textarea
-                    className="chatMessageInput"
-                    placeholder="write something..."
-                    onChange={(e) => setNewMessage(e.target.value)}
-                    value={newMessage}
-                  ></textarea>
-                  <button className="chatSubmitButton" onClick={handleSubmit}>
-                    Send
-                  </button>
-                </div>
-              </>
-            ) : (
-              <span className="noConversationText">
-                Open a conversation to start a chat.
-              </span> */}
-						{/* )} */}
+						{currentChat ? (
+							<>
+								<div className="chatBoxTop">
+									{messages.map((message: any) => (
+										<div ref={scrollRef} key={message._id}>
+											<Message
+												message={message}
+												own={message.sender ===userId}
+											/>
+										</div>
+									))}
+								</div>
+								<div className="chatBoxBottom">
+									<textarea
+										className="chatMessageInput"
+										placeholder="write something..."
+										onChange={(e) =>
+											setNewMessage(e.target.value)
+										}
+										value={newMessage}
+									></textarea>
+									<button
+										className="chatSubmitButton"
+										onClick={handleSubmit}
+									>
+										Send
+									</button>
+								</div>
+							</>
+						) : (
+							<span className="noConversationText">
+								Open a conversation to start a chat.
+							</span>
+						)}
 					</div>
 				</div>
-				<div className="chatOnline">
-					{/* <div className="chatOnlineWrapper">
-            <ChatOnline
-              onlineUsers={onlineUsers}
-              currentId={user._id}
-              setCurrentChat={setCurrentChat}
-            />
-          </div> */}
-				</div>
+		
 			</div>
 		</Layout>
 	);
