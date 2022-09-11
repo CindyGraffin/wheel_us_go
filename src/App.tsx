@@ -37,7 +37,7 @@ function App() {
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/usertables" element={<UserTables />} />
-                    <Route path="/usermessages" element={<UserMessages />} />
+                    <Route path="/usermessages" element={<UserMessages own={true}/>} />
                     <Route path="/userfriends" element={<UserFriends />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />

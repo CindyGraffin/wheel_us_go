@@ -1,0 +1,9 @@
+.conversation-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.conversation:hover {
+    background-color: var(--color-primary);
+}
