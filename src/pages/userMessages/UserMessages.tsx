@@ -6,39 +6,37 @@ import { AuthContext } from "../../context/AuthContext";
 import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
-import {io} from 'socket.io-client';
+import { io } from "socket.io-client";
 
+const socket = io("ws://localhost:8900");
 
 const UserMessages: React.FC<unknown> = () => {
-
 	const [conversations, setConversations] = useState<any>([]);
 	const [currentChat, setCurrentChat] = useState<any>();
-	// const [socket, setSocket] = useState<any>(null)
 	const [messages, setMessages] = useState<any>([]);
-	const [newMessage, setNewMessage] = useState<any>('');
-
-	const socket = useRef(io("ws://localhost:8900"))
+	const [newMessage, setNewMessage] = useState<any>("");
 
 	const { state } = useContext(AuthContext);
 	const userId = state.user!._id;
 
-	const scrollRef = useRef<any>()
+	const scrollRef = useRef<any>();
 
 	useEffect(() => {
-		// TODO
-		// @ts-ignore
-		socket.current.emit('addUser', userId)
-		socket.current.on('getUsers', users => {
+		socket.emit('addUser', userId);
+		socket.on('getUsers', users => {
 			console.log(users);
-			
 		})
-	}, [userId])
-
-
+		return () => {
+			socket.off("addUser");
+			socket.off("getUsers");
+		};
+	}, [userId]);
 
 	useEffect(() => {
 		const getConversationsByUserId = async () => {
-			const response = await conversationService.getConversationsByUserId(userId);
+			const response = await conversationService.getConversationsByUserId(
+				userId
+			);
 			setConversations(response.data);
 		};
 		getConversationsByUserId();
@@ -46,31 +44,31 @@ const UserMessages: React.FC<unknown> = () => {
 
 	useEffect(() => {
 		const getMessagesByConversationId = async () => {
-			const response = await messageService.getMessagesByConversationId(currentChat?._id);
+			const response = await messageService.getMessagesByConversationId(
+				currentChat?._id
+			);
 			setMessages(response.data);
 		};
 		getMessagesByConversationId();
 	}, [currentChat]);
 
 	const handleSubmit = (e: any) => {
-		e.preventDefault()
+		e.preventDefault();
 		const message = {
 			sender: userId,
 			text: newMessage,
-			conversationId: currentChat._id
-		}
-		const addMessage = async() => {
-			await messageService.addMessage(message)
-			setNewMessage('')
-		}
-		addMessage()
-	}
+			conversationId: currentChat._id,
+		};
+		const addMessage = async () => {
+			await messageService.addMessage(message);
+			setNewMessage("");
+		};
+		addMessage();
+	};
 
 	useEffect(() => {
-		scrollRef.current?.scrollIntoView({behavior: "smooth"})
+		scrollRef.current?.scrollIntoView({ behavior: "smooth" });
 	}, [messages]);
-		
-	
 
 	return (
 		<Layout>
@@ -83,12 +81,14 @@ const UserMessages: React.FC<unknown> = () => {
 							className="chatMenuInput"
 						/>
 						{conversations.map((conversation: any) => (
-							<div  key={conversation._id} onClick={() => setCurrentChat(conversation)}>
-
-							<Conversation
+							<div
 								key={conversation._id}
-								conversation={conversation}
-								userId={userId}
+								onClick={() => setCurrentChat(conversation)}
+							>
+								<Conversation
+									key={conversation._id}
+									conversation={conversation}
+									userId={userId}
 								/>
 							</div>
 						))}
@@ -103,7 +103,7 @@ const UserMessages: React.FC<unknown> = () => {
 										<div ref={scrollRef} key={message._id}>
 											<Message
 												message={message}
-												own={message.sender ===userId}
+												own={message.sender === userId}
 											/>
 										</div>
 									))}
@@ -132,7 +132,6 @@ const UserMessages: React.FC<unknown> = () => {
 						)}
 					</div>
 				</div>
-		
 			</div>
 		</Layout>
 	);
