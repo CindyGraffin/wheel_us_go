@@ -22,9 +22,9 @@ const Navlist: React.FC<unknown> = () => {
             name: 'searchuser'
 		},
         {
-			path: "/usertables",
+			path: "/userrooms",
 			icon: <TbBrandAirtable/>,
-            name: 'usertables'
+            name: 'userrooms'
 		},
         {
 			path: "/usermessages",

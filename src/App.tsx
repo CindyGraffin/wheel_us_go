@@ -1,25 +1,30 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./App.css";
+import { AuthContext } from "./context/AuthContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
-    ConnectionPage,
+	ConnectionPage,
     Dashboard,
     DashboardStats,
     DashboardUsers,
-    PremiumPage,
-    ProfilePage,
-    ReglagesPage,
-    SearchUser,
-    UserFriends,
-    UserMessages,
-    UserTables,
+	PremiumPage,
+	ProfilePage,
+	ReglagesPage,
+	SearchUser,
+	UserFriends,
+	UserMessages,
+	UserRooms,
+    ViewRoom
 } from "./pages";
+
 import ProtectedRoute from "./router/ProtectedRoute";
-import { AuthContext } from "./context/AuthContext";
 import AuthProtectedRoute from "./router/AuthProtectedRoute";
+
 import AdminRoute from "./router/AdminRoute";
 
+
 function App() {
+
     const { state } = useContext(AuthContext);
 
     return (
@@ -36,11 +41,12 @@ function App() {
                 <Route element={<ProtectedRoute user={state.user} />}>
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/searchuser" element={<SearchUser />} />
-                    <Route path="/usertables" element={<UserTables />} />
-                    <Route path="/usermessages" element={<UserMessages own={true}/>} />
+                    <Route path="/userrooms" element={<UserRooms />} />
+                    <Route path="/usermessages" element={<UserMessages />} />
                     <Route path="/userfriends" element={<UserFriends />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />
+                    <Route path="/viewroom/:roomid" element={<ViewRoom/>}/>
                 </Route>
 
                 <Route element={<AdminRoute user={state.user} />}>
@@ -54,6 +60,7 @@ function App() {
                         element={<DashboardStats />}
                     />
                 </Route>
+
             </Routes>
         </BrowserRouter>
     );

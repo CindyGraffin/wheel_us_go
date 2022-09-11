@@ -1,18 +1,13 @@
-import { useContext, useState } from "react";
-import FormFooter from "../../components/form/formFooter/FormFooter";
-import FormLogo from "../../components/form/formLogo/FormLogo";
-import Presentation from "../../components/auth/presentation/Presentation";
-import LoginForm from "../../components/form/loginForm/LoginForm";
-import { AuthContext } from "../../context/AuthContext";
 import "./connectionPage.css";
-import InscriptionForm from "../../components/form/inscriptionForm/InscriptionForm";
+import {FormFooter, FormLogo, InscriptionForm, LoginForm, Presentation} from '../../components/index'
 import { RiNewspaperLine } from "../../icons/index";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+
 const ConnectionPage: React.FC<unknown> = () => {
+	
 	const [logoPath, setLogoPath] = useState<string>("./logo-open.png");
 	const [formType, setFormType] = useState<string>("connection");
-	const { state } = useContext(AuthContext);
-	const navigate = useNavigate();
 
 	const formFooterInfosInsc = {
 		textQuestion: "Pas encore inscrit ?",
@@ -24,11 +19,16 @@ const ConnectionPage: React.FC<unknown> = () => {
 		textContent: "Connecte toi dès à présent ! 🍗",
 		btnText: "CONNEXION",
 	};
-	const handleClick = () => {
+
+	/**
+	 * change le type de formulaire (formulaire de connexion ou d'inscription)
+	 */
+	const changeTypeOfForm = () => {
 		formType === "connection"
 			? setFormType("inscription")
 			: setFormType("connection");
 	};
+
 	return (
 		<div className="co-page">
 			<div className="co-page__container">
@@ -46,7 +46,7 @@ const ConnectionPage: React.FC<unknown> = () => {
 							textQuestion={formFooterInfosInsc.textQuestion}
 							textContent={formFooterInfosInsc.textContent}
 							btnText={formFooterInfosInsc.btnText}
-							onClick={handleClick}
+							onClick={changeTypeOfForm}
 						/>
 					</div>
 				) : (
@@ -62,7 +62,7 @@ const ConnectionPage: React.FC<unknown> = () => {
 							textQuestion={formFooterInfosCon.textQuestion}
 							textContent={formFooterInfosCon.textContent}
 							btnText={formFooterInfosCon.btnText}
-							onClick={handleClick}
+							onClick={changeTypeOfForm}
 						/>
 					</div>
 				)}

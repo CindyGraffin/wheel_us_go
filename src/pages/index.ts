@@ -8,20 +8,22 @@ import ReglagesPage from "./reglages/ReglagesPage";
 import SearchUser from "./searchUser/SearchUser";
 import UserFriends from "./userFriends/UserFriends";
 import UserMessages from "./userMessages/UserMessages";
-import UserTables from "./userTables/UserTables";
-import CreateTableRestaurant from "./createTableRestaurant/CreateTableRestaurant";
+import UserRooms from "./userRooms/UserRooms";
+import ViewRoom from "./viewRoom/ViewRoom";
+
+
 
 export {
     Dashboard,
     DashboardStats,
     DashboardUsers,
-    ProfilePage,
-    ConnectionPage,
-    SearchUser,
-    UserTables,
-    UserMessages,
-    PremiumPage,
-    ReglagesPage,
+    ProfilePage, 
+    ConnectionPage, 
+    SearchUser, 
+    UserRooms,
+    UserMessages, 
+    PremiumPage, 
+    ReglagesPage, 
     UserFriends,
-    CreateTableRestaurant,
+    ViewRoom
 };
