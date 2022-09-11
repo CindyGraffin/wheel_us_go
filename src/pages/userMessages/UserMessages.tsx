@@ -120,8 +120,8 @@ const UserMessages: React.FC<unknown> = () => {
 						{currentChat ? (
 							<>
 								<div className="chatBoxTop">
-									{messages.map((message: any) => (
-										<div ref={scrollRef} key={message._id}>
+									{messages.map((message: any, i: any) => (
+										<div ref={scrollRef} key={i}>
 											<Message
 												message={message}
 												own={message.sender === userId}
