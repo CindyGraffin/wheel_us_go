@@ -13,8 +13,10 @@ const socket = io("ws://localhost:8900");
 const UserMessages: React.FC<unknown> = () => {
 	const [conversations, setConversations] = useState<any>([]);
 	const [currentChat, setCurrentChat] = useState<any>();
+
 	const [messages, setMessages] = useState<any>([]);
 	const [newMessage, setNewMessage] = useState<any>("");
+	const [arrivalMessage, setArrivalMessage] = useState<any>("");
 
 	const { state } = useContext(AuthContext);
 	const userId = state.user!._id;
@@ -26,11 +28,23 @@ const UserMessages: React.FC<unknown> = () => {
 		socket.on('getUsers', users => {
 			console.log(users);
 		})
+		socket.on('getMessage', data => {
+			setArrivalMessage({
+				sender: data.senderId,
+				text: data.text,
+				createdAt: Date.now()
+			})
+		})
 		return () => {
 			socket.off("addUser");
 			socket.off("getUsers");
 		};
 	}, [userId]);
+
+	useEffect(() => {
+		arrivalMessage && currentChat?.members.includes(arrivalMessage.sender) &&
+		setMessages((prev: any) => [...prev, arrivalMessage])
+	}, [arrivalMessage, currentChat]);
 
 	useEffect(() => {
 		const getConversationsByUserId = async () => {
@@ -59,8 +73,15 @@ const UserMessages: React.FC<unknown> = () => {
 			text: newMessage,
 			conversationId: currentChat._id,
 		};
+		const receiverId = currentChat.members.find((member: any) => member !== userId)
+		socket.emit('sendMessage', {
+			senderId: userId,
+			receiverId,
+			text: newMessage
+		})
 		const addMessage = async () => {
 			await messageService.addMessage(message);
+			setMessages((prev: any) => [...prev, message])
 			setNewMessage("");
 		};
 		addMessage();

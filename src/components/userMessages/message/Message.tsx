@@ -17,7 +17,7 @@ const Message: React.FC<MessageProps> = ({ message, own }) => {
 				/>
 				<p className="messageText">{message.text}</p>
 			</div>
-			<div className="messageBottom">{message.createdAt.toString()}</div>
+			<div className="messageBottom">crée</div>
 		</div>
 	);
 }
