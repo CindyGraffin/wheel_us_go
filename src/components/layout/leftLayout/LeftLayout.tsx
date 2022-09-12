@@ -19,7 +19,6 @@ const LeftLayout: React.FC<unknown> = () => {
 	] as const;
     return (
         <div className="left__container">
-            <div className="left-items__container">
                 <div className="logo__container">
                     <img src={require("./logo.png")} alt="" />
                 </div>
@@ -32,7 +31,6 @@ const LeftLayout: React.FC<unknown> = () => {
                         />
                     ))}
                 </div>
-            </div>
         </div>
     );
 };

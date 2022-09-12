@@ -13,10 +13,13 @@ const CreateRoom:React.FC<CreateRoomProps> = ({icon, typeRoom}) => {
         navigate('/createroom')
     }
     return (
+        <div>
+
         <button className="create-room" onClick={handleClick}>
             {icon}
             <p>CREER UNE TABLE {typeRoom}</p>
         </button>
+        </div>
     );
 };
 

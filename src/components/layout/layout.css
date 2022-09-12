@@ -26,6 +26,8 @@
     height: 100%;
     flex: 1;
 }
+
+/* ================== CENTER LAYOUT ================== */
 .center__container {
     display: flex;
     flex-direction: column;
@@ -49,7 +51,7 @@
     box-shadow: var(--box-shadow-light);
     overflow-y: scroll
 }
-
+/* children scrollbar */
 .children-page::-webkit-scrollbar {
     width: 10px; /* width of the entire scrollbar */
 }
