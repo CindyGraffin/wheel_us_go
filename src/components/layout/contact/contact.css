@@ -1,4 +1,4 @@
-.contact__container {
+/* .contact__container {
     cursor: pointer;
     margin-right: 1rem;
     display: flex;
@@ -10,13 +10,15 @@
     border-radius: 50px 20px 20px 50px;
     color: var(--color-black);
 }
+*/
 .contact__container img {
     width: 2rem;
     height: 2rem;
     object-fit: cover;
     border-radius: 50%;
 }
+/*
 .contact__container p {
     font-weight: 500;
     text-transform: capitalize;
-}
+} */

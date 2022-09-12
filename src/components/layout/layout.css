@@ -2,13 +2,14 @@
 .layout {
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .layout__container {
-    margin: 0 auto;
     display: flex;
+    justify-content: center;
     height: 100%;
-    justify-content: space-between;
 }
 .left {
     width: 100%;
@@ -20,47 +21,46 @@
     height: 100%;
     flex: 3;
 }
-
 .right {
     width: 100%;
     height: 100%;
     flex: 1;
 }
-
-
-/* ================== CENTER LAYOUT ================== */
 .center__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
-}
-/* NAVLIST */
+    width: 100%;
+} 
 .navlist__container {
     z-index: 100;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     background-color: var(--color-primary);
     top: 0;
     z-index: 99;
-    position: fixed;
 }
-/* CHILDREN PAGE */
 .children-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-.children-page__container {
+    width: 90%;
+    height: 80%;
     background-color: var(--color-secondary);
     border-radius: 15px;
-    margin-top: 8rem;
-    width: 83%;
-    min-height:76vh;
     box-shadow: var(--box-shadow-light);
-    z-index: 90;
-    color: var(--color-black);
+    overflow-y: scroll
 }
+
+.children-page::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+}
+.children-page::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0); /* color of the tracking area */
+}
+.children-page::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary); /* color of the scroll thumb */
+    border-radius: 5px; /* roundness of the scroll thumb */
+};
+
 
 
 

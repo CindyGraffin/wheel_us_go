@@ -1,4 +1,9 @@
-.left__container {
+.logo__container>img {
+    max-width: 100%;    
+    z-index: 10;
+}
+
+/*.left__container {
     position: relative;
     width: 100%;
 }
@@ -11,7 +16,7 @@
     margin-left: 2.5rem;
 }
 /* LOGO */
-.logo__container {
+/*.logo__container {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -23,7 +28,7 @@
     z-index: 10;
 }
 /* CREATE ROOMS */
-.create-rooms__container {
+/*.create-rooms__container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -34,4 +39,4 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+}*/
