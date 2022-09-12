@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HiOutlineUsers } from "react-icons/hi";
 import DashboardLayout from "../../components/layout/dashboard/dashboard/DashboardLayout";
-import DashboardUserTable from "../../components/layout/dashboard/dashboardUser/DashboardUserTable";
+import DashboardUserTable from "../../components/UI/dashboard/dashboardUser/DashboardUserTable";
 import LoadingScreen from "../../components/UI/dashboard/LoadingScreen/LoadingScreen";
 import IUser from "../../types/IUser";
 import "./dashboardUser.css";

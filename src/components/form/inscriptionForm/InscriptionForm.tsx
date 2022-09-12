@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-import AuthInput from "../AuthInput/AuthInput";
 import axios from "axios";
+import AuthInput from "../AuthInput/AuthInput";
 
 interface InscriptionValues {
     firstname: undefined | string;

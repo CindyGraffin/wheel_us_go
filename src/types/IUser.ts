@@ -12,4 +12,5 @@ export default interface IUser {
     tablesPartId?: string[];
     friendsId?: string[];
     groupsId?: string[];
+    createdAt?: Date;
 }

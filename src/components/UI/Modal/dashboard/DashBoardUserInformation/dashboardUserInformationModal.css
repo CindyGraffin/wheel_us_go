@@ -1,0 +1,10 @@
+.modal_user_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.img_container {
+    display: flex;
+    justify-content: center;
+}
