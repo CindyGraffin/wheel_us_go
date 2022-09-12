@@ -1,3 +1,16 @@
+.right__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts__container .contacts {
+    height: 40vh;
+}
+.contacts__container .groups {
+    height: 40vh;
+}
 /* .right__container {
     width: 100%;
     color: var(--color-black);

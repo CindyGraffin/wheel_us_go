@@ -2,8 +2,9 @@
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-light);
     margin-bottom: 1.5rem;
-    width: 12rem;
-    height: 8rem;
+    width: 13.5vw;
+    height: 15vh;
+    max-width: 230px;
     border-radius: 10px;
     color: var(--color-black);
     display: flex;
