@@ -4,12 +4,13 @@
     flex-direction: row-reverse;
     position: relative;
     margin: 0;
+    height: 100%;
 }
 .dashboard_nav ul {
     display: flex;
     flex-direction: column;
     background-color: var(--dashboard-color-secondary);
-    height: 100vh;
+    height: 100%;
     padding-left: 4px;
 }
 .category__spacing {
