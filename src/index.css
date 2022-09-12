@@ -25,4 +25,5 @@ body {
     --box-shadow: rgba(119, 119, 119, 0.141) 1px 1px 6px;
     --dashboard-color-primary: #f5f5f5;
     --dashboard-color-secondary: #2a264b;
+    --box-shadow-dashboard: rgba(110, 110, 110, 0.507) 0px 2px 8px;
 }

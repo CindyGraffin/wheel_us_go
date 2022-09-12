@@ -4,8 +4,8 @@ import { ChangeEvent, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../../context/AuthContext";
 import "./loginForm.css";
-import {RiErrorWarningLine} from '../../../../icons/index'
-import AuthInput from '../authInput/AuthInput'
+import {RiErrorWarningLine} from './../../../../icons/index';
+import AuthInput from "../authInput/AuthInput";
 
 type LoginFormValues = {
 	email: string;
@@ -22,7 +22,7 @@ interface LoginFormProps {
 	setLogoPath: React.Dispatch<React.SetStateAction<string>>
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
+const LoginForm: React.FC<LoginFormProps> = ({ setLogoPath}) => {
 
 	const [credentials, setCredentials] = useState<ICredentials>({
 		email: undefined,
