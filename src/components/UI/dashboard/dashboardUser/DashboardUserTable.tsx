@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoEyeOutline } from "react-icons/io5";
 
 import IUser from "../../../../types/IUser";
 import DashboardUserInformationModal from "../../Modal/dashboard/DashBoardUserInformation/DashboardUserInformationModal";
@@ -49,15 +50,16 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
                                 </div>
                                 <div className="grid_email">{user.email}</div>
                                 <div className="grid_role">{user.role}</div>
-                                <div className="grid_actions">
+                                <div className="grid_actions actions__container">
                                     <button
                                         type="button"
+                                        className="see_more_button"
                                         onClick={() => {
                                             setSelectedUser(user);
                                             setShowModalUserInformation(true);
                                         }}
                                     >
-                                        voir
+                                        <IoEyeOutline className="see_more_icon" />
                                     </button>
                                 </div>
                             </div>
