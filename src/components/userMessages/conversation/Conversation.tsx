@@ -31,7 +31,7 @@ const Conversation: React.FC<ConversationProps> = ({conversation, userId}) => {
         }
         alt=""
       />
-      <span className="conversationName">{friend?.firstname}</span>
+      <span className="conversationName">{friend?.firstname} {friend?.lastname}</span>
     </div>
     );
 };

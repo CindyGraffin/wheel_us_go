@@ -6,6 +6,9 @@
     font-weight: 600;
     font-size: 1.6rem;
 }
+.badges-title p {
+    color: var(--color-black);
+}
 .badge-icon {
     color: var(--color-tertiary);
     font-size: 1.8rem;
@@ -16,5 +19,5 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 2.8rem;
-    margin: 2rem 2.2rem
+    margin: 2rem 2.2rem;
 }
