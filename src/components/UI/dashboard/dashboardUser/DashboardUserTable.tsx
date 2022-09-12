@@ -14,6 +14,11 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
     const [showModalUserInformation, setShowModalUserInformation] =
         useState<boolean>(false);
     const [selectedUser, setSelectedUser] = useState<IUser>();
+
+    const onClickSeeUser = (user: IUser): void => {
+        setSelectedUser(user);
+        setShowModalUserInformation(true);
+    };
     return (
         <>
             <div>
@@ -55,8 +60,7 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
                                         type="button"
                                         className="see_more_button"
                                         onClick={() => {
-                                            setSelectedUser(user);
-                                            setShowModalUserInformation(true);
+                                            onClickSeeUser(user);
                                         }}
                                     >
                                         <IoEyeOutline className="see_more_icon" />
