@@ -1,15 +1,15 @@
+import { format } from "date-fns";
 import React from "react";
 import IUser from "../../../../../types/IUser";
 import "./dashboardUserInformationModal.css";
 
 export interface DashboardUserInformationModalProps {
     user?: IUser;
-    className?: string;
 }
 
 const DashboardUserInformationModal: React.FC<
     DashboardUserInformationModalProps
-> = ({ user, className = "" }) => {
+> = ({ user }) => {
     return (
         <div>
             {user && (
@@ -22,25 +22,29 @@ const DashboardUserInformationModal: React.FC<
                         />
                     </div>
                     <div>
-                        <div>
-                            <p>
+                        <div className="user_information_container">
+                            <p className="information_title">
                                 {user.firstname}&nbsp;{user.lastname}
                             </p>
-                            <p>{user.email}</p>
+                            <p className="information_mail">{user.email}</p>
                             <p>
-                                Née le&nbsp;
+                                Née le :&nbsp;
                                 <span>
-                                    {new Date(user.birthday as Date).toString()}
+                                    {format(
+                                        new Date(user.birthday as Date),
+                                        "dd-MM-yyyy"
+                                    )}
                                 </span>
                             </p>
-                            <p>{user.role}</p>
-                            <p>{user.city}</p>
+                            <p>Rôle : {user.role}</p>
+                            <p>Ville : {user.city}</p>
                             <p>
-                                inscrit depuis le{" "}
+                                inscrit depuis le :&nbsp;
                                 <span>
-                                    {new Date(
-                                        user.createdAt as Date
-                                    ).toString()}
+                                    {format(
+                                        new Date(user.createdAt as Date),
+                                        "dd-MM-yyyy"
+                                    )}
                                 </span>
                             </p>
                         </div>
