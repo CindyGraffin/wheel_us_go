@@ -27,26 +27,30 @@ const DashboardUserInformationModal: React.FC<
                                 {user.firstname}&nbsp;{user.lastname}
                             </p>
                             <p className="information_mail">{user.email}</p>
-                            <p>
-                                Née le :&nbsp;
-                                <span>
-                                    {format(
-                                        new Date(user.birthday as Date),
-                                        "dd-MM-yyyy"
-                                    )}
-                                </span>
-                            </p>
+                            {user && user.birthday && (
+                                <p>
+                                    Née le :&nbsp;
+                                    <span>
+                                        {format(
+                                            new Date(user.birthday),
+                                            "dd-MM-yyyy"
+                                        )}
+                                    </span>
+                                </p>
+                            )}
                             <p>Rôle : {user.role}</p>
                             <p>Ville : {user.city}</p>
-                            <p>
-                                inscrit depuis le :&nbsp;
-                                <span>
-                                    {format(
-                                        new Date(user.createdAt as Date),
-                                        "dd-MM-yyyy"
-                                    )}
-                                </span>
-                            </p>
+                            {user && user.createdAt && (
+                                <p>
+                                    inscrit depuis le :&nbsp;
+                                    <span>
+                                        {format(
+                                            new Date(user.createdAt as Date),
+                                            "dd-MM-yyyy"
+                                        )}
+                                    </span>
+                                </p>
+                            )}
                         </div>
                         <div>TODO ACTIONS</div>
                     </div>
