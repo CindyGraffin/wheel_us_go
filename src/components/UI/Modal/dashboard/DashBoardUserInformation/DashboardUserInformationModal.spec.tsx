@@ -13,10 +13,31 @@ describe("Test sur la page DashboardUsersInformationModal", () => {
 
     afterEach(cleanup);
 
+    const user = {
+        firstname: "TestName",
+        lastname: "BTestLastName",
+        email: "test@mail.com",
+        role: "user",
+        password: "1234",
+        outingPart: 0,
+        outingCre: 0,
+        city: "lille",
+        birthday: new Date(),
+        createdAt: new Date(),
+    };
+
     test("Le composant doit fournir un rendu", () => {
         render(
             <BrowserRouter>
                 <DashboardUserInformationModal />
+            </BrowserRouter>
+        );
+    });
+
+    test("Le composant doit fournir un rendu avec un user", () => {
+        render(
+            <BrowserRouter>
+                <DashboardUserInformationModal user={user} />
             </BrowserRouter>
         );
     });
