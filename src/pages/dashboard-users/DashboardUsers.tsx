@@ -35,9 +35,9 @@ const DashboardUsers: React.FC<DashboardUsersProps> = ({ className = "" }) => {
     return (
         <DashboardLayout>
             <div>
-                <div>
+                <div className="dashboard_user_title">
                     <p>Utilisateurs</p>
-                    <HiOutlineUsers />
+                    <HiOutlineUsers className="dashboard_user_icon" />
                 </div>
                 <div>
                     <DashboardUserTable users={users} />
