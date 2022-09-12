@@ -1,9 +1,10 @@
 .logo__container>img {
-    max-width: 80%;   
+    position: absolute;
+    max-width: 200px;   
     object-fit: cover; 
-    z-index: 10;
 }
 .logo__container {
+
     margin-top: 1.8rem;
     margin-bottom: 1rem;
     display: flex;
