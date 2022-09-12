@@ -12,10 +12,17 @@ interface RoomProps {
     roomDate: string;
     roomId: string;
     deleteRoom: boolean;
-    setDeleteRoom: any;
+    setDeleteRoom: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Room: React.FC<RoomProps> = ({ deleteRoom, setDeleteRoom, roomTitle, roomTheme, roomDate, roomId }) => {
+const Room: React.FC<RoomProps> = ({ 
+    deleteRoom, 
+    setDeleteRoom, 
+    roomTitle, 
+    roomTheme, 
+    roomDate, 
+    roomId 
+}) => {
     
     const navigate = useNavigate()
 	const {state} = useContext(AuthContext);

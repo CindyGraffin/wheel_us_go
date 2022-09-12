@@ -48,7 +48,7 @@ const ViewRoom: React.FC<unknown> = () => {
 					<ViewRoomTitle roomTitle={room.placeName} />
 					<ViewRoomLocation roomLocation={room.address} />
 					<ViewRoomDate roomDate={room.date.toString()} />
-					<ViewRoomDresscode dresscodeDescription="Déguisement de souris verte" />
+					<ViewRoomDresscode dresscodeDescription={room.dresscode.description!} />
 					<ViewRoomApero roomId="1" />
 					<ViewRoomParts parts={room.partIds}/>      
 					<div className="view-room-btns">

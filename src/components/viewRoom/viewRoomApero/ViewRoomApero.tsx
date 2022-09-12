@@ -14,6 +14,7 @@ const ViewRoomApero: React.FC<ViewRoomAperoProps> = () => {
                 <span>Qui paye l'apéro ?</span>
             </div>
             <div className='wheel-btn'>
+                // TODO
                 <RoomButton buttonText='Lancer la roue' handleClick={()=> {console.log('user')}}/>
             </div>
         </div>

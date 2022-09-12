@@ -9,7 +9,7 @@ const ViewRoomPart: React.FC<ViewRoomPartProps> = ({part}) => {
     return (
         <div>
             <div>
-                <img className="view-room-part-picture" src={part.userImg} alt="" />
+                <img className="view-room-part-picture" src={part.userImg} alt="utilistaeur participant à la salle actuelle" />
             </div>
             <div className="part-name">
                 <p>{part.firstname}</p>
