@@ -16,6 +16,7 @@ describe("Test sur le composant DashBoardLayout", () => {
 
     test("doit fournir un rendu", () => {
         const users = {
+            _id: '1',
             firstname: "TestName",
             lastname: "TestLastName",
             email: "test@mail.com",

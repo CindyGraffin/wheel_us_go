@@ -1,10 +1,10 @@
 import React, { useState, ChangeEvent, useContext } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../../context/AuthContext";
+import { AuthContext } from "../../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
-import AuthInput from "../AuthInput/AuthInput";
+import AuthInput from "../authInput/AuthInput";
 
 interface InscriptionValues {
     firstname: undefined | string;
@@ -14,7 +14,7 @@ interface InscriptionValues {
     city: undefined | string;
 }
 
-const InscriptionForm = () => {
+const InscriptionForm: React.FC<unknown> = () => {
     const { state, dispatch } = useContext(AuthContext);
     const [inscriptionInfos, setInscriptionInfos] = useState<InscriptionValues>(
         {

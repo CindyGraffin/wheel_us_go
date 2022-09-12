@@ -17,6 +17,7 @@ describe("Test sur le composant DashBoardUserTable", () => {
 
     const users = [
         {
+            _id: '1',
             firstname: "TestName",
             lastname: "BTestLastName",
             email: "test@mail.com",
@@ -27,6 +28,7 @@ describe("Test sur le composant DashBoardUserTable", () => {
             city: "lille",
         },
         {
+            _id: '2',
             firstname: "TestName2",
             lastname: "BTestLastName",
             email: "test@mail.com",
@@ -37,6 +39,7 @@ describe("Test sur le composant DashBoardUserTable", () => {
             city: "lille",
         },
         {
+            _id: '3',
             firstname: "TestName",
             lastname: "ATestLastName",
             email: "test@mail.com",

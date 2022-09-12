@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ChangeEvent, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../../context/AuthContext";
+import { AuthContext } from "../../../../context/AuthContext";
 import "./loginForm.css";
-import {RiErrorWarningLine} from '../../../icons/index'
-import AuthInput from "../AuthInput/AuthInput";
+import {RiErrorWarningLine} from './../../../../icons/index';
+import AuthInput from "../authInput/AuthInput";
 
 type LoginFormValues = {
 	email: string;
@@ -22,7 +22,7 @@ interface LoginFormProps {
 	setLogoPath: React.Dispatch<React.SetStateAction<string>>
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({logoPath, setLogoPath}) => {
+const LoginForm: React.FC<LoginFormProps> = ({ setLogoPath}) => {
 
 	const [credentials, setCredentials] = useState<ICredentials>({
 		email: undefined,

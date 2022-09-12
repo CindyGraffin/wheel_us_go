@@ -14,6 +14,7 @@ describe("Test sur la page DashboardUsersInformationModal", () => {
     afterEach(cleanup);
 
     const user = {
+        _id: '1234',
         firstname: "TestName",
         lastname: "BTestLastName",
         email: "test@mail.com",

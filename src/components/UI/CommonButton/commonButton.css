@@ -1,0 +1,9 @@
+.room-btn {
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
+    padding: 0.3rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}

@@ -14,37 +14,30 @@ const Navlist: React.FC<unknown> = () => {
         {
 			path: "/profile",
 			icon: <BiHomeAlt/>,
-            name: 'profile'
 		},
         {
 			path: "/searchuser",
 			icon: <BiSearchAlt/>,
-            name: 'searchuser'
 		},
         {
-			path: "/usertables",
+			path: "/userrooms",
 			icon: <TbBrandAirtable/>,
-            name: 'usertables'
 		},
         {
 			path: "/usermessages",
 			icon: <AiOutlineMessage/>,
-            name: 'usermessages'
 		},
         {
 			path: "/userfriends",
 			icon: <HiOutlineUserGroup/>,
-            name: 'userfriends'
 		},
         {
 			path: "/premium",
 			icon: <AiOutlineStar/>,
-            name: 'premium'
 		},
         {
 			path: "/reglages",
 			icon: <FiSettings/>,
-            name: 'reglages'
 		}
     ] as const;
     return (
@@ -52,14 +45,14 @@ const Navlist: React.FC<unknown> = () => {
             <ul>
                 {navlinksInfos.map((navlink, i) => {
                     return (
-                        <li key={navlink.name}>
+                        <li key={i}>
                             <NavLink
                                 to={navlink.path}
                                 className={({ isActive }) =>
                                     isActive ? 'active-link' : ''
                                 }
                             >
-                                <NavbarItem icon={navlink.icon} key={navlink.name+i}/>
+                                <NavbarItem icon={navlink.icon} key={navlink.path}/>
                             </NavLink>
                         </li>
                     );
