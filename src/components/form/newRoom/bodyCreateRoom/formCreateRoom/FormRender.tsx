@@ -9,7 +9,7 @@ import LogoCalendar from "../../../../UI/LogoCreateRoom/LogoCalendar";
 import LogoDressCode from "../../../../UI/LogoCreateRoom/LogoDressCode";
 import LogoLocation from "../../../../UI/LogoCreateRoom/LogoLocation";
 import InputDressCode from "../../options/InputDressCode/InputDressCode";
-import Calendar from "../calendar/calendar";
+import Calendar from "../Calendar/Calendar";
 import InputAdressRestaurant from "../InputAdressRestaurant/InputAdressRestaurant";
 import InputNameRestaurant from "../InputNameRestaurant/InputNameRestaurant";
 import AddPeople from "../AddPeople/AddPeople";
@@ -35,7 +35,7 @@ const FormRender: React.FC<unknown> = () => {
         throw new Error("Id utilisateur non trouvé ! ");
       }
     };
-    // call service qui récupère la liste d'amis dans la db
+    // appel du service qui récupère la liste d'amis dans la db
     fetchFriendList();
   }, [idUser]);
 
@@ -66,7 +66,13 @@ const FormRender: React.FC<unknown> = () => {
   const reset = () => {
     console.log("reset");
   };
-
+  const onChangeApero = ()=> {
+    console.log("test")
+  }
+  
+  const onChangeDresscode = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
+  }
   return (
     <form onSubmit={handleSubmit((data) => setDataRooms(JSON.stringify(data)))}>
       <LogoLocation />
@@ -74,10 +80,12 @@ const FormRender: React.FC<unknown> = () => {
       <InputNameRestaurant
         placeholder="Le nom de votre restaurant"
         type="text"
+        name="placeName"
       />
       <InputAdressRestaurant
         placeholder="L'adresse de votre restaurant"
         type="text"
+        name="address"
       />
       <ButtonGeneric
         classname=""
@@ -87,18 +95,18 @@ const FormRender: React.FC<unknown> = () => {
       />
       <LogoCalendar />
       <h3>Date et heure : </h3>
-      <Calendar type="date" />
+      <Calendar type="date" name="date" />
       <GuestLogo />
       <AddPeople listFriends={list} />
       <h2>Options Supplémentaires</h2>
       <LogoApero />
       <h3>Roue de l'apéro</h3>
-      {/* <RadioButton />
-      <RadioButton /> */}
+      <RadioButton onChange={onChangeApero} value="Oui" name="aperoWheel" />
+      <RadioButton onChange={onChangeApero} value="Non" name="aperoWheel" />
       <LogoDressCode />
       <h3>Dresscode</h3>
-      {/*    <RadioButton />
-      <RadioButton /> */}
+      <RadioButton onChange={onChangeDresscode} value="Oui" name="dresscode" />
+      <RadioButton onChange={onChangeDresscode} value="Non" name="dresscode" />
       <InputDressCode />
       <ButtonGeneric
         classname=""

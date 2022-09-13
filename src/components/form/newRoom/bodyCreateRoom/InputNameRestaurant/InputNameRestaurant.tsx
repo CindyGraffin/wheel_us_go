@@ -3,16 +3,18 @@ import { HTMLInputTypeAttribute } from "react";
 type InputNameRestaurantType = {
   placeholder: string;
   type: HTMLInputTypeAttribute;
+  name: string;
 };
 
 const InputNameRestaurant: React.FC<InputNameRestaurantType> = ({
   placeholder,
-  type
+  type,
+  name
 }) => {
   return (
     <label>
       Nom du restaurant
-      <input placeholder={placeholder} type={type} />
+      <input placeholder={placeholder} type={type} name={name} />
     </label>
   );
 };
