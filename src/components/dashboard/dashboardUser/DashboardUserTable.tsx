@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 
-import IUser from "../../../../types/IUser";
-import DashboardUserInformationModal from "../../Modal/dashboard/DashBoardUserInformation/DashboardUserInformationModal";
-import Modal from "../../Modal/Modal";
+import IUser from "../../../types/IUser";
+import DashboardUserInformationModal from "../../UI/Modal/dashboard/DashBoardUserInformation/DashboardUserInformationModal";
+import Modal from "../../UI/Modal/Modal";
 import "./dashboardUserTable.css";
 
 export interface DashboardUserTableProps {
