@@ -42,7 +42,7 @@ function App() {
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/userrooms" element={<UserRooms />} />
-                    <Route path="/usermessages" element={<UserMessages />} />
+                    <Route path="/usermessages" element={<UserMessages/>} />
                     <Route path="/userfriends" element={<UserFriends />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />

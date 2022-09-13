@@ -1,0 +1,30 @@
+.conversation {
+    width: 92%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 16px;
+    border-bottom-right-radius: 10px;
+	  border-top-right-radius: 10px;
+  }
+  
+  .conversation:hover {
+    background-color: var(--color-primary);
+    border-left: 2px solid var(--color-tertiary);
+  }
+  
+  .conversationImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .conversationName {
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
