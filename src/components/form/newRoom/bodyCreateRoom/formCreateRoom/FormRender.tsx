@@ -17,14 +17,12 @@ import { UserFriends } from "../../../../../pages";
 import { AuthContext } from "../../../../../context/AuthContext";
 import { userService } from "../../../../../services/userService";
 import IUser from "../../../../../types/IUser";
+import SearchBarGuest from "../searchBarGuest/SearchBarGuest";
 
 const FormRender: React.FC<unknown> = () => {
-  
   const [list, setList] = useState<IUser[]>([]);
   const { state } = useContext(AuthContext);
   const idUser = state.user?._id;
-  
-  
 
   useEffect(() => {
     const fetchFriendList = async () => {
@@ -51,7 +49,6 @@ const FormRender: React.FC<unknown> = () => {
   const adressField = register("address", { required: true });
   const dateField = register("date", { required: true });
   const partIdsField = register("partsIds", { required: true });
-  const themeField = register("theme", { required: true });
   const aperoWheel = register("aperoWheel", { required: true });
   const dresscode = register("dresscode", { required: true });
 
@@ -66,13 +63,13 @@ const FormRender: React.FC<unknown> = () => {
   const reset = () => {
     console.log("reset");
   };
-  const onChangeApero = ()=> {
-    console.log("test")
-  }
-  
+  const onChangeApero = () => {
+    console.log("test");
+  };
+
   const onChangeDresscode = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
-  }
+    console.log(e.target.value);
+  };
   return (
     <form onSubmit={handleSubmit((data) => setDataRooms(JSON.stringify(data)))}>
       <LogoLocation />
@@ -98,6 +95,7 @@ const FormRender: React.FC<unknown> = () => {
       <Calendar type="date" name="date" />
       <GuestLogo />
       <AddPeople listFriends={list} />
+      <SearchBarGuest friends={list} name="partsIds" />
       <h2>Options Supplémentaires</h2>
       <LogoApero />
       <h3>Roue de l'apéro</h3>

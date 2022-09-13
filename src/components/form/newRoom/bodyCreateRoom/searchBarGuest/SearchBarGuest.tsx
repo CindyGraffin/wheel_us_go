@@ -4,9 +4,10 @@ import ListPeopleInvited from "../ListPeopleInvited/ListPeopleInvited";
 
 type SearchBarGuestProps = {
     friends: IUser[];
+    name: string;
 };
 
-const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
+const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends, name }) => {
     // On crée une copie de la liste d'amis
     const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
     const [copyFriends, setCopyFriends] = useState<IUser[]>([]);
@@ -44,7 +45,7 @@ const SearchBarGuest: React.FC<SearchBarGuestProps> = ({ friends }) => {
                 <option ref={defaultOption}>Rajouter un ami à la liste</option>
                 {friendsRemoveList.map((friend) => (
                     <option key={friend._id} value={friend._id}>
-                        {friend.firstname + " " + friend.lastname}
+                        {`${friend.firstname} ${friend.lastname}`}
                     </option>
                 ))}
             </select>
