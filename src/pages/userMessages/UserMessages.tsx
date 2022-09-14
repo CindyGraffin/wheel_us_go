@@ -103,11 +103,13 @@ const UserMessages: React.FC<unknown> = () => {
                 </div>
                 <div className="user-messages">
                     <div className="user-messages-chat-menu">
-                        <div className="chatMenuWrapper">
+                        <div className="chat-menu-input">
                             <input
                                 placeholder="Chercher un ami"
-                                className="chatMenuInput"
+                                className="chat-input"
                             />
+                        </div>
+                        <div className="chat-friends">
                             {conversations.map((conversation: any) => (
                                 <div
                                     key={conversation._id}
