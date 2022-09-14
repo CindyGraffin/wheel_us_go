@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoEyeOutline } from "react-icons/io5";
+import { userService } from "../../../services/userService";
 
 import IUser from "../../../types/IUser";
+import { Button } from "../../UI";
 import DashboardUserInformationModal from "../../UI/Modal/dashboard/DashBoardUserInformation/DashboardUserInformationModal";
 import Modal from "../../UI/Modal/Modal";
 import "./dashboardUserTable.css";
 
 export interface DashboardUserTableProps {
     users: IUser[];
+    refetchData: () => Promise<void>;
 }
 
-const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
+const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
+    users,
+    refetchData,
+}) => {
     const [showModalUserInformation, setShowModalUserInformation] =
         useState<boolean>(false);
     const [selectedUser, setSelectedUser] = useState<IUser>();
@@ -19,6 +25,15 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
         setSelectedUser(user);
         setShowModalUserInformation(true);
     };
+
+    const onClickBanUser = (userId: string): void => {
+        userService.banUserById(userId);
+
+        refetchData();
+    };
+
+    useEffect(() => {}, [users]);
+
     return (
         <>
             <div>
@@ -65,6 +80,29 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
                                     >
                                         <IoEyeOutline className="see_more_icon" />
                                     </button>
+                                    {user.role !== "admin" && (
+                                        <div>
+                                            {user.isActive ? (
+                                                <Button
+                                                    color="red"
+                                                    onClick={() =>
+                                                        onClickBanUser(user._id)
+                                                    }
+                                                >
+                                                    <p>Bannir</p>
+                                                </Button>
+                                            ) : (
+                                                <Button
+                                                    color="purple"
+                                                    onClick={() =>
+                                                        onClickBanUser(user._id)
+                                                    }
+                                                >
+                                                    <p>Débannir</p>
+                                                </Button>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}
