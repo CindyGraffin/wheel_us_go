@@ -1,7 +1,7 @@
 // Auth components
 import {AuthInput, FormFooter, FormLogo, InscriptionForm, LoginForm, Presentation} from "./auth/index";
 // Dashboard components
-import DashboardLoading from "./UI/dashboard/LoadingScreen/LoadingScreen";
+import DashboardLoading from "./dashboard/LoadingScreen/LoadingScreen";
 // Layout components
 import { Contact, ContactGroup, CreateRoom, Layout, LeftLayout, NavbarItem, Navlist, RightLayout } from "./layout";
 // Profile components

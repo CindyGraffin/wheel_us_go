@@ -1,0 +1,7 @@
+.card__container {
+    border: #5c56927a solid;
+    border-width: 1px;
+    border-radius: 25px;
+    background-color: #f0efef;
+    box-shadow: var(--box-shadow-dashboard);
+}
