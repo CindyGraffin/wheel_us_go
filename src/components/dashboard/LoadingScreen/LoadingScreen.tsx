@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardLayout from "../../../layout/dashboard/dashboard/DashboardLayout";
+import DashboardLayout from "../../layout/dashboard/dashboard/DashboardLayout";
 import "./loadingScreen.css";
 
 const LoadingScreen: React.FC<unknown> = () => {

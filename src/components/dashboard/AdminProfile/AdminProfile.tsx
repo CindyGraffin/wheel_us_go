@@ -1,5 +1,6 @@
 import React from "react";
-import IUser from "../../../../types/IUser";
+import IUser from "../../../types/IUser";
+import Card from "../../UI/dashboard/Card/Card";
 import "./adminProfile.css";
 
 export interface AdminProfileProps {
@@ -8,7 +9,7 @@ export interface AdminProfileProps {
 
 const AdminProfile: React.FC<AdminProfileProps> = ({ user }) => {
     return (
-        <div className="profiles__container">
+        <Card className="profiles__container">
             <div>
                 <div>
                     <img
@@ -27,7 +28,7 @@ const AdminProfile: React.FC<AdminProfileProps> = ({ user }) => {
                 <span className="information_mail">{user.email}</span>
                 <span className="information_role">{user.role}</span>
             </div>
-        </div>
+        </Card>
     );
 };
 
