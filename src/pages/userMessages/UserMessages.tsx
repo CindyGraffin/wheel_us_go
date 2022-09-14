@@ -7,6 +7,7 @@ import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
 import { io } from "socket.io-client";
+import {IoChatbubblesOutline} from '../../icons/index';
 
 const socket = io("ws://127.0.0.1:8900");
 
@@ -98,9 +99,6 @@ const UserMessages: React.FC<unknown> = () => {
     return (
         <Layout>
             <div className="user-messages__container">
-                <div className="user-messages-title">
-                    <RoomsTitle titleText="MESSAGES" />
-                </div>
                 <div className="user-messages">
                     <div className="user-messages-chat-menu">
                         <div className="chat-menu-input">
@@ -122,10 +120,15 @@ const UserMessages: React.FC<unknown> = () => {
                                     />
                                 </div>
                             ))}
+                            <p>heeeeyy</p>
+                            <p>heeeeyy</p>
+                            <p>heeeeyy</p>
+                            <p>heeeeyy</p>
+                            <p>heeeeyy</p>
+                            <p>heeeeyy</p>
                         </div>
                     </div>
                     <div className="user-messages-chat-box">
-                        <div className="chatBoxWrapper">
                             {currentChat ? (
                                 <>
                                     <div className="chatBoxTop">
@@ -169,11 +172,13 @@ const UserMessages: React.FC<unknown> = () => {
                                     </div>
                                 </>
                             ) : (
-                                <span className="noConversationText">
-                                    Open a conversation to start a chat.
-                                </span>
+                                <div className="no-conversation">
+                                    <IoChatbubblesOutline className="no-conversation-icon"/>
+                                    <span>
+                                    Ouvrez une conversation pour commencer à discuter !
+                                    </span>
+                                </div>
                             )}
-                        </div>
                     </div>
                 </div>
             </div>

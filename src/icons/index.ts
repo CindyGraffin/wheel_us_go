@@ -5,7 +5,7 @@ import { FiSettings } from "react-icons/fi";
 import {GiRoastChicken} from 'react-icons/gi';
 import {GoLocation} from "react-icons/go";
 import { HiOutlineBadgeCheck, HiOutlineUserGroup } from "react-icons/hi";
-import { IoCalendarOutline, IoRestaurantOutline, IoPersonOutline } from "react-icons/io5";
+import { IoCalendarOutline, IoChatbubblesOutline, IoRestaurantOutline, IoPersonOutline } from "react-icons/io5";
 import { RiErrorWarningLine, RiNewspaperLine, RiShirtLine } from "react-icons/ri";
 import { TbSofa, TbBrandAirtable } from "react-icons/tb";
 
@@ -22,6 +22,7 @@ export {
     HiOutlineBadgeCheck, 
     HiOutlineUserGroup, 
     IoCalendarOutline,
+    IoChatbubblesOutline,
     IoPersonOutline, 
     IoRestaurantOutline,  
     RiErrorWarningLine,
