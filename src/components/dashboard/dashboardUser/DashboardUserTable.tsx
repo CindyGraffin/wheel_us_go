@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { FiAlertTriangle } from "react-icons/fi";
 import { IoEyeOutline } from "react-icons/io5";
 import { userService } from "../../../services/userService";
 
@@ -20,7 +21,6 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
     const [showModalUserInformation, setShowModalUserInformation] =
         useState<boolean>(false);
     const [selectedUser, setSelectedUser] = useState<IUser>();
-
     const onClickSeeUser = (user: IUser): void => {
         setSelectedUser(user);
         setShowModalUserInformation(true);
@@ -68,6 +68,13 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
                                 </div>
                                 <div className="grid_email">{user.email}</div>
                                 <div className="grid_role">{user.role}</div>
+                                <div className="grid_alert">
+                                    {!user.isActive && (
+                                        <div className="alert_icons_container">
+                                            <FiAlertTriangle className="alert_icons" />
+                                        </div>
+                                    )}
+                                </div>
                                 <div className="grid_actions actions__container">
                                     <button
                                         type="button"
