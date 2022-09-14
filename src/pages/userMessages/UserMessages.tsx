@@ -120,17 +120,11 @@ const UserMessages: React.FC<unknown> = () => {
                                     />
                                 </div>
                             ))}
-                            <p>heeeeyy</p>
-                            <p>heeeeyy</p>
-                            <p>heeeeyy</p>
-                            <p>heeeeyy</p>
-                            <p>heeeeyy</p>
-                            <p>heeeeyy</p>
                         </div>
                     </div>
                     <div className="user-messages-chat-box">
                             {currentChat ? (
-                                <>
+                                <div className="chat-box">
                                     <div className="chatBoxTop">
                                         {messages.map(
                                             (message: any, i: any) => (
@@ -146,7 +140,7 @@ const UserMessages: React.FC<unknown> = () => {
                                             )
                                         )}
                                     </div>
-                                    <div className="chatBoxBottom">
+                                    <div className="chat-textarea">
                                         <textarea
                                             className="chatMessageInput"
                                             placeholder="Ecrivez quelque chose ..."
@@ -170,7 +164,7 @@ const UserMessages: React.FC<unknown> = () => {
                                             </button>
                                         </div>
                                     </div>
-                                </>
+                                </div>
                             ) : (
                                 <div className="no-conversation">
                                     <IoChatbubblesOutline className="no-conversation-icon"/>

@@ -1,5 +1,5 @@
 .contacts-group {
-    width: 100%;
+    width: 95%;
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-light);
     border-radius: 10px;
@@ -23,14 +23,14 @@
 .contact-group {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    width: 90%;
+    width: 95%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     align-self: flex-start;
     justify-items: flex-start;
-    margin-left: 0.8rem;
+    margin-left: 0.2rem;
     overflow-y: scroll;
 }
 .contacts {
