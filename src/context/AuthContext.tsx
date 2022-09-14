@@ -42,14 +42,8 @@ const AuthContextProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // des que le state concernant l'utilisateur est modifié on met à jour les données de l'utilisateur avec les nouvelles data dans le localStorage
     useEffect(() => {
         // on stock les données concernant l'utilisateur dans le localStorage afin qu'elles soient persistantes dans le navigateur de celui-ci
-        if (state.user?.isActive) {
-            localStorage.setItem("user", JSON.stringify(state.user));
-        }
-        if (state.user?.isActive === false) {
-            localStorage.clear();
-            redirect("/");
-        }
-    }, [state.user, state.user?.isActive]);
+        localStorage.setItem("user", JSON.stringify(state.user));
+    }, [state.user]);
 
     // un Provider permet aux composants descendants qui vont l'utiliser de s'abonner aux mises à jour du contexte
     // children sera le composant qui souhaite accéder à la data stockée dans le state
