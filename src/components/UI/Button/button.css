@@ -1,0 +1,17 @@
+.brown_button_basic {
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
+    border-radius: 20px;
+}
+
+.brown_button_basic:hover {
+    background-color: #bd7e54;
+}
+
+.button_className {
+    padding: 0.3rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}

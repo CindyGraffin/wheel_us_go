@@ -37,7 +37,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                 <p>{title}</p>
             </div>
 
-            {contacts.length > 0 ? (
+            {contacts && contacts.length > 0 ? (
                 <>
                     <div className="contact-group">
                         {contacts.map((contact: IUser) => (
