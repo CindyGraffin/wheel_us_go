@@ -1,5 +1,5 @@
 import { AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
-import { BiBeer, BiHomeAlt, BiSearchAlt } from "react-icons/bi";
+import { BiBeer, BiHomeAlt, BiSearchAlt, BiSend } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import {GiRoastChicken} from 'react-icons/gi';
@@ -15,6 +15,7 @@ export {
     BiBeer, 
     BiHomeAlt, 
     BiSearchAlt, 
+    BiSend,
     BsPeople, 
     FiSettings, 
     GiRoastChicken,

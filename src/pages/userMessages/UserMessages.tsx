@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, useRef } from "react";
-import { Layout, RoomsTitle } from "../../components";
+import { Layout } from "../../components";
 import Conversation from "../../components/userMessages/conversation/Conversation";
 import Message from "../../components/userMessages/message/Message";
 import { AuthContext } from "../../context/AuthContext";
@@ -7,7 +7,7 @@ import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
 import { io } from "socket.io-client";
-import {IoChatbubblesOutline} from '../../icons/index';
+import {BiSend, IoChatbubblesOutline} from '../../icons/index';
 
 const socket = io("https://wheelsocket.azurewebsites.net/");
 
@@ -18,6 +18,7 @@ const UserMessages: React.FC<unknown> = () => {
     const [messages, setMessages] = useState<any>([]);
     const [newMessage, setNewMessage] = useState<any>("");
     const [arrivalMessage, setArrivalMessage] = useState<any>("");
+
 
     const { state } = useContext(AuthContext);
     const userId = state.user!._id;
@@ -69,6 +70,7 @@ const UserMessages: React.FC<unknown> = () => {
         getMessagesByConversationId();
     }, [currentChat]);
 
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
         const message = {
@@ -117,6 +119,7 @@ const UserMessages: React.FC<unknown> = () => {
                                         key={conversation._id}
                                         conversation={conversation}
                                         userId={userId}
+                                        currentChat={currentChat}
                                     />
                                 </div>
                             ))}
@@ -125,7 +128,7 @@ const UserMessages: React.FC<unknown> = () => {
                     <div className="user-messages-chat-box">
                             {currentChat ? (
                                 <div className="chat-box">
-                                    <div className="chatBoxTop">
+                                    <div className="chat-box-messages">
                                         {messages.map(
                                             (message: any, i: any) => (
                                                 <div ref={scrollRef} key={i}>
@@ -154,13 +157,7 @@ const UserMessages: React.FC<unknown> = () => {
                                                 className="chatSubmitButton"
                                                 onClick={handleSubmit}
                                             >
-                                                Envoyer le message
-                                            </button>
-                                            <button
-                                                className="chatSubmitButton"
-                                                onClick={handleSubmit}
-                                            >
-                                                Fermer la discussion
+                                                <BiSend className="send-message-icon"/>
                                             </button>
                                         </div>
                                     </div>
