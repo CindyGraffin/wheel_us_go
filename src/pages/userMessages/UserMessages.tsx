@@ -8,7 +8,7 @@ import { messageService } from "../../services/messageService";
 import "./userMessages.css";
 import { io } from "socket.io-client";
 
-const socket = io("ws://127.0.0.1:8900");
+const socket = io("https://wheelsocket.azurewebsites.net/");
 
 const UserMessages: React.FC<unknown> = () => {
     const [conversations, setConversations] = useState<any>([]);
