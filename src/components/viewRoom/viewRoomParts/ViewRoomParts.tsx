@@ -15,8 +15,8 @@ const ViewRoomParts: React.FC<ViewRoomPartsProps> = ({ parts }) => {
                 <span>Participants:</span>
             </div>
 			<div className="view-room-parts">
-				{parts.map((part) => (
-					<ViewRoomUser part={part} key={part._id} />
+				{parts.map((part, i) => (
+					<ViewRoomUser part={part} key={part._id + i} />
 				))}
 			</div>
 		</div>
