@@ -22,7 +22,7 @@ const UserMessages: React.FC<unknown> = () => {
 	const [arrivalMessage, setArrivalMessage] = useState<any>("");
 
 	const [friends, setFriends] = useState<any>([]);
-    const [friendChat, setFriendChat] = useState({})
+    const [friendChat, setFriendChat] = useState<any>(undefined)
 
 	const { state } = useContext(AuthContext);
 	const userId = state.user!._id;
