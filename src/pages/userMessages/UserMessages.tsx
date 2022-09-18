@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
-import { io } from "socket.io-client";
+import {  Socket } from "socket.io-client";
 import {
 	BiSend,
 	IoChatbubblesOutline,
@@ -15,9 +15,11 @@ import {
 import { AiOutlinePlus } from "react-icons/ai";
 import { userService } from "../../services/userService";
 
-const socket = io("https://wheelsocket.azurewebsites.net/");
+interface UserMessagesProps {
+	socket: Socket;
+}
 
-const UserMessages: React.FC<unknown> = () => {
+const UserMessages: React.FC<UserMessagesProps> = ({socket}) => {
 	const [conversations, setConversations] = useState<any>([]);
 	const [currentChat, setCurrentChat] = useState<any>();
 
@@ -34,10 +36,7 @@ const UserMessages: React.FC<unknown> = () => {
 	const scrollRef = useRef<any>();
 
 	useEffect(() => {
-		socket.emit("addUser", userId);
-		socket.on("getUsers", (users) => {
-			console.log(users);
-		});
+		
 		socket.on("getMessage", (data) => {
 			setArrivalMessage({
 				sender: data.senderId,
@@ -46,11 +45,10 @@ const UserMessages: React.FC<unknown> = () => {
 			});
 		});
 		return () => {
-			socket.off("addUser");
-			socket.off("getUsers");
+
 			socket.off("getMessage");
 		};
-	}, [userId]);
+	}, [socket, userId]);
 
 	useEffect(() => {
 		const getMessagesByConversationId = async () => {
