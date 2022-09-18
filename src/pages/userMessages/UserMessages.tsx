@@ -7,7 +7,11 @@ import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
 import { io } from "socket.io-client";
-import { BiSend, IoChatbubblesOutline, IoTrashBinOutline } from "../../icons/index";
+import {
+	BiSend,
+	IoChatbubblesOutline,
+	IoTrashBinOutline,
+} from "../../icons/index";
 import { AiOutlinePlus } from "react-icons/ai";
 import { userService } from "../../services/userService";
 
@@ -22,13 +26,12 @@ const UserMessages: React.FC<unknown> = () => {
 	const [arrivalMessage, setArrivalMessage] = useState<any>("");
 
 	const [friends, setFriends] = useState<any>([]);
-    const [friendId, setFriendId] = useState<any>(undefined)
+	const [friendId, setFriendId] = useState<any>(undefined);
 
 	const { state } = useContext(AuthContext);
 	const userId = state.user!._id;
 
 	const scrollRef = useRef<any>();
-
 
 	useEffect(() => {
 		socket.emit("addUser", userId);
@@ -119,47 +122,75 @@ const UserMessages: React.FC<unknown> = () => {
 		scrollRef.current?.scrollIntoView({ behavior: "smooth" });
 	}, [messages]);
 
-    const handleChanegOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const friendIdSelected = (e.target as HTMLSelectElement).value;
-        setFriendId(friendIdSelected)
-    }
+	const handleChanegOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		const friendIdSelected = (e.target as HTMLSelectElement).value;
+		setFriendId(friendIdSelected);
+	};
 
-	const createConversation = async() => {
+	const createConversation = async () => {
 		if (friendId !== undefined) {
 			console.log(friendId);
-			const createdConversation = await conversationService.createConversation(userId, friendId)
-			setConversations([...conversations, createdConversation.data])
-			setCurrentChat(createdConversation.data)
+			const createdConversation =
+				await conversationService.createConversation(userId, friendId);
+			setConversations([...conversations, createdConversation.data]);
+			setCurrentChat(createdConversation.data);
 		}
-	}
+	};
 
-	const deleteConversation = async() => {
-		const chatIdToDelete = currentChat._id
-		await conversationService.deleteConversation(chatIdToDelete)
-		const filterConversations = conversations.filter((conversation: any) => conversation._id !== chatIdToDelete)
-		setConversations(filterConversations)
-		setCurrentChat(undefined)
-	}
+	const deleteConversation = async () => {
+		const chatIdToDelete = currentChat._id;
+		await conversationService.deleteConversation(chatIdToDelete);
+		const filterConversations = conversations.filter(
+			(conversation: any) => conversation._id !== chatIdToDelete
+		);
+		setConversations(filterConversations);
+		setCurrentChat(undefined);
+	};
 
 	return (
 		<Layout>
 			<div className="user-messages__container">
+				<div className="chat-menu-input-small-screen">
+					<select
+						defaultValue={"Choisir un ami"}
+						onChange={handleChanegOption}
+						className="chat-input-small-screen"
+					>
+						<option value="Choisir un ami" disabled>
+							Choisir un ami
+						</option>
+						{friends.map((friend: any) => (
+							<option key={friend._id} value={friend._id}>
+								{`${friend.firstname} ${friend.lastname}`}
+							</option>
+						))}
+					</select>
+					<AiOutlinePlus
+						className="chat-menu-start-small-screen"
+						onClick={createConversation}
+					/>
+				</div>
 				<div className="user-messages">
 					<div className="user-messages-chat-menu">
 						<div className="chat-menu-input">
 							<select
 								defaultValue={"Choisir un ami"}
 								onChange={handleChanegOption}
-                                className="chat-input"
+								className="chat-input"
 							>
-                                <option value="Choisir un ami" disabled>Choisir un ami</option>
+								<option value="Choisir un ami" disabled>
+									Choisir un ami
+								</option>
 								{friends.map((friend: any) => (
 									<option key={friend._id} value={friend._id}>
 										{`${friend.firstname} ${friend.lastname}`}
 									</option>
 								))}
 							</select>
-							<AiOutlinePlus className="chat-menu-start" onClick={createConversation}/>
+							<AiOutlinePlus
+								className="chat-menu-start"
+								onClick={createConversation}
+							/>
 						</div>
 						<div className="chat-friends">
 							{conversations.map((conversation: any) => (
