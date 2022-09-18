@@ -12,7 +12,11 @@ const ViewRoomDresscode: React.FC<ViewRoomDresscodeProps> = ({dresscodeDescripti
                 <RiShirtLine className='view-room-icon'/>
                 <span>Dresscode:</span>
             </div>
-            <p>{dresscodeDescription}</p>
+            {dresscodeDescription === undefined ? (
+                    <p>Aucun dresscode défini.</p>
+                ) : (
+                    <p>{dresscodeDescription}</p>
+                )}
         </div>
     );
 };

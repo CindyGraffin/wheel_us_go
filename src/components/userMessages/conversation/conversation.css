@@ -1,30 +1,46 @@
 .conversation {
-    width: 92%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
-    margin-top: 16px;
-    border-bottom-right-radius: 10px;
-	  border-top-right-radius: 10px;
-  }
-  
-  .conversation:hover {
-    background-color: var(--color-primary);
-    border-left: 2px solid var(--color-tertiary);
-  }
-  
-  .conversationImg {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-  }
-  
-  .conversationName {
-    font-weight: 500;
-    text-transform: capitalize;
-  }
-  
+	width: 92%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 5px;
+	cursor: pointer;
+	margin-top: 15px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+
+.conversation-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 15px;
+}
+
+.conversation-name {
+	font-weight: 500;
+	text-transform: capitalize;
+}
+.conversation.help {
+	background-color: var(--color-primary);
+	border-left: 2px solid var(--color-tertiary);
+}
+
+@media only screen and (max-width: 600px) {
+	.conversation {
+		width: max-content;
+	}
+	.conversation-name {
+		display: none;
+	}
+	.conversation-img {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-right: 3px;
+		margin-left: 0.3rem;
+	}
+}

@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-right: 0.4rem;
 }
 
 .messageTop {
     display: flex;
 }
 
-.messageImg {
+.message-img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -16,7 +17,7 @@
     margin-right: 10px;
 }
 
-.messageText {
+.message-text {
     padding: 10px;
     border-radius: 20px;
     background-color: var(--color-tertiary);
@@ -24,16 +25,12 @@
     max-width: 300px;
 }
 
-.messageBottom {
-    font-size: 12px;
-    margin-top: 10px;
-}
-
 .message.own {
     align-items: flex-end;
+    
 }
 
-.message.own .messageText {
+.message.own .message-text {
     background-color: white;
     color:var(--color-black);
 }

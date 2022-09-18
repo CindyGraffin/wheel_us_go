@@ -63,7 +63,9 @@ const ViewRoom: React.FC<unknown> = () => {
 					</div>
 				</div>
 			) : (
-			<Loader/>
+				<div className="room-loader">
+					<Loader/>
+				</div>
         )}
 		</Layout>
 	);
