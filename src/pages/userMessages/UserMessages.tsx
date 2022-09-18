@@ -7,7 +7,7 @@ import { conversationService } from "../../services/conversationService";
 import { messageService } from "../../services/messageService";
 import "./userMessages.css";
 import { io } from "socket.io-client";
-import { BiSend, IoChatbubblesOutline } from "../../icons/index";
+import { BiSend, IoChatbubblesOutline, IoTrashBinOutline } from "../../icons/index";
 import { AiOutlinePlus } from "react-icons/ai";
 import { userService } from "../../services/userService";
 
@@ -22,7 +22,7 @@ const UserMessages: React.FC<unknown> = () => {
 	const [arrivalMessage, setArrivalMessage] = useState<any>("");
 
 	const [friends, setFriends] = useState<any>([]);
-    const [friendChat, setFriendChat] = useState<any>(undefined)
+    const [friendId, setFriendId] = useState<any>(undefined)
 
 	const { state } = useContext(AuthContext);
 	const userId = state.user!._id;
@@ -48,6 +48,7 @@ const UserMessages: React.FC<unknown> = () => {
 			socket.off("getMessage");
 		};
 	}, [userId]);
+
 	useEffect(() => {
 		const getMessagesByConversationId = async () => {
 			const response = await messageService.getMessagesByConversationId(
@@ -120,8 +121,14 @@ const UserMessages: React.FC<unknown> = () => {
 
     const handleChanegOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const friendIdSelected = (e.target as HTMLSelectElement).value;
-        setFriendChat(friendIdSelected)
+        setFriendId(friendIdSelected)
     }
+
+	const createConversation = async() => {
+		console.log(friendId);
+		const createdConversation = await conversationService.createConversation(userId, friendId)
+		setConversations([...conversations, createdConversation.data])
+	}
 
 	return (
 		<Layout>
@@ -141,7 +148,7 @@ const UserMessages: React.FC<unknown> = () => {
 									</option>
 								))}
 							</select>
-							<AiOutlinePlus className="chat-menu-start" onClick={() => console.log(friendChat)}/>
+							<AiOutlinePlus className="chat-menu-start" onClick={createConversation}/>
 						</div>
 						<div className="chat-friends">
 							{conversations.map((conversation: any) => (
@@ -187,6 +194,12 @@ const UserMessages: React.FC<unknown> = () => {
 											onClick={handleSubmit}
 										>
 											<BiSend className="send-message-icon" />
+										</button>
+										<button
+											className="chatSubmitButton bin-btn"
+											onClick={handleSubmit}
+										>
+											<IoTrashBinOutline className="send-message-icon" />
 										</button>
 									</div>
 								</div>

@@ -16,14 +16,14 @@ const Conversation: React.FC<ConversationProps> = ({
 	const [friend, setFriend] = useState<any>(null);
 
 	useEffect(() => {
-		const friendId = conversation.members.find(
-			(member: string) => member !== userId
-		);
-		const getUserById = async () => {
-			const response = await userService.getUserById(friendId);
-			setFriend(response.data);
-		};
-		getUserById();
+			const friendId = conversation.members.find(
+				(member: string) => member !== userId
+				);
+				const getUserById = async () => {
+					const response = await userService.getUserById(friendId);
+					setFriend(response.data);
+				};
+				getUserById();
 	}, [conversation.members, userId]);
 
 	return (

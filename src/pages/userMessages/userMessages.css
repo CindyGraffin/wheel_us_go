@@ -6,6 +6,9 @@
 	align-items: center;
 	color: var(--color-black);
 }
+.bin-btn {
+	margin-top: 0.3rem;
+}
 
 .user-messages {
 	width: 100%;
