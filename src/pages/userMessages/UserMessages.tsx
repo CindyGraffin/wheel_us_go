@@ -125,9 +125,20 @@ const UserMessages: React.FC<unknown> = () => {
     }
 
 	const createConversation = async() => {
-		console.log(friendId);
-		const createdConversation = await conversationService.createConversation(userId, friendId)
-		setConversations([...conversations, createdConversation.data])
+		if (friendId !== undefined) {
+			console.log(friendId);
+			const createdConversation = await conversationService.createConversation(userId, friendId)
+			setConversations([...conversations, createdConversation.data])
+			setCurrentChat(createdConversation.data)
+		}
+	}
+
+	const deleteConversation = async() => {
+		const chatIdToDelete = currentChat._id
+		await conversationService.deleteConversation(chatIdToDelete)
+		const filterConversations = conversations.filter((conversation: any) => conversation._id !== chatIdToDelete)
+		setConversations(filterConversations)
+		setCurrentChat(undefined)
 	}
 
 	return (
@@ -197,7 +208,7 @@ const UserMessages: React.FC<unknown> = () => {
 										</button>
 										<button
 											className="chatSubmitButton bin-btn"
-											onClick={handleSubmit}
+											onClick={deleteConversation}
 										>
 											<IoTrashBinOutline className="send-message-icon" />
 										</button>

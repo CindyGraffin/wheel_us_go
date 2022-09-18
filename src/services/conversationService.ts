@@ -13,6 +13,10 @@ class ConversationService {
         })
     }
 
+    deleteConversation = (conversationId: string) => {
+        return axios.delete(`http://localhost:8800/api/conversations/${conversationId}`)
+    }
+
 }  
 
 export const conversationService = Object.freeze(new ConversationService());
