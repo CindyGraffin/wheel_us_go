@@ -4,6 +4,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import "./contactgroup.css";
 import IUser from "../../../types/IUser";
 import NoContact from "../noContact/NoContact";
+import { useNavigate } from "react-router-dom";
 
 interface ContactGroupProps {
     classname: string;
@@ -18,6 +19,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
     contacts,
     icon,
 }) => {
+    const navigate = useNavigate()
     const noContactInfos = [
         {
             question: "Vous n'avez pas encore de poulets à vos côtés ?",
@@ -30,6 +32,12 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
             btnText: "Créer un groupe",
         },
     ] as const;
+    const goToAddFriends = () => {
+        navigate('/searchuser')
+    }
+    const goToCreateGroup = () => {
+        navigate('/userfriends')
+    }
     return (
         <div className={classname}>
             <div className="contacts-title">
@@ -49,7 +57,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                             />
                         ))}
                     </div>
-                    <div className="contact-btn">
+                <div className="contact-btn" onClick={goToAddFriends}>
                         <AiOutlinePlus className="contact-btn-icon" />
                     </div>
                 </>
@@ -59,6 +67,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                     question={noContactInfos[0].question}
                     info={noContactInfos[0].info}
                     btnText={noContactInfos[0].btnText}
+                    onClick={goToAddFriends}
                 />
             ) : (
                 <NoContact
@@ -66,6 +75,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                     question={noContactInfos[1].question}
                     info={noContactInfos[1].info}
                     btnText={noContactInfos[1].btnText}
+                    onClick={goToCreateGroup}
                 />
             )}
         </div>
