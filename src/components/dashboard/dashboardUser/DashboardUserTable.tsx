@@ -114,12 +114,12 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
                 </div>
             </div>
             {showModalUserInformation && (
-                <Modal
-                    show={showModalUserInformation}
-                    setShow={setShowModalUserInformation}
-                >
-                    <DashboardUserInformationModal user={selectedUser} />
-                </Modal>
+                <DashboardUserInformationModal
+                    user={selectedUser}
+                    open={showModalUserInformation}
+                    setOpen={setShowModalUserInformation}
+                    refetchData={refetchData}
+                />
             )}
         </>
     );

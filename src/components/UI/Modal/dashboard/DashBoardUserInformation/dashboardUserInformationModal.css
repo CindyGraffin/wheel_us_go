@@ -13,3 +13,39 @@
     flex-direction: column;
     align-items: center;
 }
+
+.actions_modal_container {
+    margin-top: 10px;
+    display: flex;
+}
+
+.account_state {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.account_state p {
+    text-align: center;
+    font-size: medium;
+    font-weight: 700;
+}
+
+.actions_modal_container .alert_text {
+    color: #d32c2c;
+}
+
+.modal_button {
+    width: inherit;
+}
+
+.separator {
+    width: 1px;
+    background-color: #a3a3a3;
+    border-radius: 50%;
+    opacity: 0.9;
+    margin-left: 5px;
+    margin-right: 5px;
+}

@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, renderHook } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import { useState } from "react";
 import DashboardUserInformationModal from "./DashboardUserInformationModal";
 
 describe("Test sur la page DashboardUsersInformationModal", () => {
@@ -14,7 +15,7 @@ describe("Test sur la page DashboardUsersInformationModal", () => {
     afterEach(cleanup);
 
     const user = {
-        _id: '1234',
+        _id: "1234",
         firstname: "TestName",
         lastname: "BTestLastName",
         email: "test@mail.com",
@@ -27,10 +28,18 @@ describe("Test sur la page DashboardUsersInformationModal", () => {
         createdAt: new Date(),
     };
 
+    const onclickPromise = async () => {
+        await console.log("toto");
+    };
+
     test("Le composant doit fournir un rendu", () => {
         render(
             <BrowserRouter>
-                <DashboardUserInformationModal />
+                <DashboardUserInformationModal
+                    open={true}
+                    setOpen={onclickPromise}
+                    refetchData={onclickPromise}
+                />
             </BrowserRouter>
         );
     });
@@ -38,7 +47,12 @@ describe("Test sur la page DashboardUsersInformationModal", () => {
     test("Le composant doit fournir un rendu avec un user", () => {
         render(
             <BrowserRouter>
-                <DashboardUserInformationModal user={user} />
+                <DashboardUserInformationModal
+                    user={user}
+                    open={true}
+                    setOpen={onclickPromise}
+                    refetchData={onclickPromise}
+                />
             </BrowserRouter>
         );
     });
