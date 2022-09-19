@@ -16,7 +16,7 @@
 	height: 40px;
 	border-radius: 50%;
 	object-fit: cover;
-	margin-right: 15px;
+	margin-right: 10px;
 }
 
 .conversation-name {
@@ -44,3 +44,5 @@
 		margin-left: 0.3rem;
 	}
 }
+
+
