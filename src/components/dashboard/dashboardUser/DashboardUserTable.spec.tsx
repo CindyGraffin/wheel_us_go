@@ -75,7 +75,7 @@ describe("Test sur le composant DashBoardUserTable", () => {
         expect(text).toHaveTextContent("Nom");
     });
 
-    test("la modal doit s'ouvrir quand je clique su l'oeil", () => {
+    test("la modal doit s'ouvrir quand je clique sur l'oeil", () => {
         render(
             <BrowserRouter>
                 <DashboardUserTable
