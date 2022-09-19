@@ -57,9 +57,7 @@ describe("Test sur le composant DashBoardUserTable", () => {
         return { showModal, setShowModal };
     });
 
-    const onclickPromise = async () => {
-        await console.log("toto");
-    };
+    const onclickPromise = async () => Promise.resolve();
 
     test("doit fournir un rendu", () => {
         render(

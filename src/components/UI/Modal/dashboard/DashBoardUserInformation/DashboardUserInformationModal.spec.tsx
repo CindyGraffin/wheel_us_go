@@ -28,9 +28,7 @@ describe("Test sur la page DashboardUsersInformationModal", () => {
         createdAt: new Date(),
     };
 
-    const onclickPromise = async () => {
-        await console.log("toto");
-    };
+    const onclickPromise = async () => Promise.resolve();
 
     test("Le composant doit fournir un rendu", () => {
         render(
