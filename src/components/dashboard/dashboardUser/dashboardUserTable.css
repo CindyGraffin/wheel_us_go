@@ -6,7 +6,7 @@
 
 .grid_header {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(11, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     padding: 10px;
@@ -14,14 +14,16 @@
     border-start-start-radius: 10px;
     border-start-end-radius: 10px;
     margin-bottom: -1px;
+    gap: 10px;
 }
 
 .grid_items {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(11, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     padding: 10px;
+    gap: 10px;
 }
 
 .grid_items:nth-child(even) {
@@ -52,9 +54,14 @@
     grid-column-start: 8;
 }
 
+.grid_alert {
+    grid-column: span 1 / span 1;
+    grid-column-start: 9;
+}
+
 .grid_actions {
     grid-column: span 2 / span 2;
-    grid-column-start: 9;
+    grid-column-start: 10;
 }
 
 .dashboard_user_img {
@@ -90,7 +97,22 @@
 .grid_img,
 .grid_email,
 .grid_actions,
+.grid_alert,
 .grid_role {
     display: flex;
     align-items: center;
 }
+
+.alert_icons {
+    height: 20px;
+    width: 20px;
+    color: #ac2c2c;
+}
+
+.alert_icons_container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+
