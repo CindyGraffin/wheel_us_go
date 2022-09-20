@@ -5,3 +5,20 @@
     max-width: 400px;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 925px) {
+    .rooms__container {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .rooms__container {
+        max-width: 250px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .rooms__container {
+        max-width: 220px;
+    }
+}
