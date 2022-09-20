@@ -13,3 +13,9 @@
 .pres__container .logo img{
     width:65%;
 }
+
+@media only screen and (max-width: 700px) {
+    .pres__container {
+        display: none;
+    }
+}

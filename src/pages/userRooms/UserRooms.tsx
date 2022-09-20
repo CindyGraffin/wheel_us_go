@@ -26,8 +26,9 @@ const UserRooms: React.FC<unknown> = () => {
     
     return (
         <Layout>
-            <div className="rooms__container">
+            <>
                 <RoomsTitle titleText="MES SALLES"/> 
+            <div className="rooms__container">
                 {rooms.map((room) => (
                     <Room 
                         key={room._id} 
@@ -40,6 +41,7 @@ const UserRooms: React.FC<unknown> = () => {
                 ))}   
                 
             </div>
+            </>
         </Layout>
     );
 };
