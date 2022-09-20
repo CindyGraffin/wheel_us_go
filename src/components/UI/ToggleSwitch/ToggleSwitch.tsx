@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { Fragment } from "react";
 import "./toggleSwitch.css";
 
 type ToggleSwitchProps = {
   label: string;
   name: string;
+  onChange:  React.ChangeEventHandler<HTMLInputElement>
 };
 
-const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, name }) => {
-  const [toggle, setToggle] = useState(false);
-
-  return (
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, name, onChange}) => {
+return (
+  <Fragment>
     <div className="container">
       {name}{" "}
       <div className="toggle-switch">
@@ -18,8 +18,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, name }) => {
           className="checkbox"
           name={label}
           id={label}
-          onChange={(e) => setToggle((prevCheck) => !prevCheck)}
-		  value={toggle.toString()}
+          onChange={onChange}
         />
         <label className="label" htmlFor={label}>
           <span className="inner" />
@@ -27,6 +26,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, name }) => {
         </label>
       </div>
     </div>
+    </Fragment>
   );
 };
 

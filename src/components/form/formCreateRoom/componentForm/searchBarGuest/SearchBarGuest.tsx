@@ -1,17 +1,16 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, RefObject } from "react";
 import IUser from "../../../../../types/IUser";
 import ListPeopleInvited from "../ListPeopleInvited/ListPeopleInvited";
 
+
 type SearchBarGuestProps = {
   friends: IUser[];
-  name: string;
   friendsIdSelected: string[];
   onChange: ChangeEventHandler<HTMLSelectElement>;
 };
 
 const SearchBarGuest: React.FC<SearchBarGuestProps> = ({
   friends,
-  name,
   friendsIdSelected,
   onChange,
 }) => {
