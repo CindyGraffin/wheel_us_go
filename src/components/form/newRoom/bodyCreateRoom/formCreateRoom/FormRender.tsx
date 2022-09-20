@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { FormRenderValues } from "../../../../../types/FormRenderValues";
 import ButtonGeneric from "../../../../UI/boutons/ButtonGeneric";
 import RadioButton from "../../../../UI/boutons/RadioButton";
@@ -13,11 +13,11 @@ import Calendar from "../Calendar/Calendar";
 import InputAdressRestaurant from "../InputAdressRestaurant/InputAdressRestaurant";
 import InputNameRestaurant from "../InputNameRestaurant/InputNameRestaurant";
 import AddPeople from "../AddPeople/AddPeople";
-import { UserFriends } from "../../../../../pages";
 import { AuthContext } from "../../../../../context/AuthContext";
 import { userService } from "../../../../../services/userService";
 import IUser from "../../../../../types/IUser";
 import SearchBarGuest from "../searchBarGuest/SearchBarGuest";
+import ToggleSwitch from "../../../../UI/ToggleSwitch/ToggleSwitch";
 
 const FormRender: React.FC<unknown> = () => {
   const [list, setList] = useState<IUser[]>([]);
@@ -41,7 +41,9 @@ const FormRender: React.FC<unknown> = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormRenderValues>({ mode: "onChange" });
+    getValues,
+    setValue,
+  } = useForm({ mode: "onChange" });
 
   const [dataRooms, setDataRooms] = useState("");
 
@@ -52,34 +54,49 @@ const FormRender: React.FC<unknown> = () => {
   const aperoWheel = register("aperoWheel", { required: true });
   const dresscode = register("dresscode", { required: true });
 
-  const handleBackToChoice = () => {
-    console.log("handleBackToChoice");
+  const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
+  const [copyFriends, setCopyFriends] = useState<IUser[]>([]);
+
+  const defaultOption = useRef<HTMLOptionElement>(null);
+
+  const handleChangeSearchBarGuest = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    //TODO
+    const friendSelected = (e.target as HTMLSelectElement).value;
+    // Contrôle affiche REFACTO
+    setFriendsIdSelected([...friendsIdSelected, friendSelected]);
+    setValue("partsIdField", [...friendsIdSelected, friendSelected]);
   };
 
-  const submit = () => {
-    console.log("submit");
+
+  const handleBackToChoice = () => {
+    console.log("handleBackToChoice");
   };
 
   const reset = () => {
     console.log("reset");
   };
-  const onChangeApero = () => {
-    console.log("test");
+
+  const onSubmit = () => {
+  
+  //setDataRooms(JSON.stringify(data))
   };
 
   const onChangeDresscode = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
   };
   return (
-    <form onSubmit={handleSubmit((data) => setDataRooms(JSON.stringify(data)))}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <LogoLocation />
       <h3>Lieu : </h3>
-      <InputNameRestaurant
+      <input
+        {...placeNameField}
         placeholder="Le nom de votre restaurant"
         type="text"
-        name="placeName"
       />
-      <InputAdressRestaurant
+      <input
+        {...adressField}
         placeholder="L'adresse de votre restaurant"
         type="text"
         name="address"
@@ -92,19 +109,21 @@ const FormRender: React.FC<unknown> = () => {
       />
       <LogoCalendar />
       <h3>Date et heure : </h3>
-      <Calendar type="date" name="date" />
+      <input type="date" {...dateField} />
       <GuestLogo />
       <AddPeople listFriends={list} />
-      <SearchBarGuest friends={list} name="partsIds" />
+      <SearchBarGuest
+        {...partIdsField}
+        friends={list}
+        friendsIdSelected={friendsIdSelected}
+        onChange={handleChangeSearchBarGuest}
+      />
       <h2>Options Supplémentaires</h2>
       <LogoApero />
-      <h3>Roue de l'apéro</h3>
-      <RadioButton onChange={onChangeApero} value="Oui" name="aperoWheel" />
-      <RadioButton onChange={onChangeApero} value="Non" name="aperoWheel" />
+      <ToggleSwitch label="aperoWheel'" {...aperoWheel} />
       <LogoDressCode />
+      <ToggleSwitch label="Dresscode" {...dresscode} />
       <h3>Dresscode</h3>
-      <RadioButton onChange={onChangeDresscode} value="Oui" name="dresscode" />
-      <RadioButton onChange={onChangeDresscode} value="Non" name="dresscode" />
       <InputDressCode />
       <ButtonGeneric
         classname=""
@@ -112,12 +131,10 @@ const FormRender: React.FC<unknown> = () => {
         onClick={reset}
         btnText="Annuler"
       />
-      <ButtonGeneric
-        classname=""
-        type="submit"
-        onClick={submit}
-        btnText="Envoyer"
-      />
+      <button type="submit">Benjamin</button>
+      <button type="button" onClick={() => console.log(getValues())}>
+        Debug
+      </button>
     </form>
   );
 };

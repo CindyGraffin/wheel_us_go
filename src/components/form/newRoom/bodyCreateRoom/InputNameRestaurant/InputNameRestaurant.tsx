@@ -1,20 +1,19 @@
 import { HTMLInputTypeAttribute } from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 type InputNameRestaurantType = {
   placeholder: string;
   type: HTMLInputTypeAttribute;
-  name: string;
 };
 
 const InputNameRestaurant: React.FC<InputNameRestaurantType> = ({
   placeholder,
-  type,
-  name
+  type
 }) => {
   return (
     <label>
       Nom du restaurant
-      <input placeholder={placeholder} type={type} name={name} />
+      <input placeholder={placeholder} type={type}></input>
     </label>
   );
 };
