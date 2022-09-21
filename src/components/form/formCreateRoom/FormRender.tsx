@@ -19,12 +19,14 @@ import IUser from "../../../types/IUser";
 import SearchBarGuest from "./searchBarGuest/SearchBarGuest";
 import ToggleSwitch from "../../UI/ToggleSwitch/ToggleSwitch";
 import "./form.css";
+import { roomService } from "../../../services/roomService";
 
 type RoomFormValues = {
     placeName: string;
     address: string;
     date: Date;
-    partIds: [string];
+    time: string;
+    partIds: string[];
     aperoWheelSetUp: boolean;
     dresscodeSetUp: boolean;
     dresscodeDescription: string;
@@ -33,15 +35,24 @@ type RoomFormValues = {
 const FormRender: React.FC<unknown> = () => {
 
 	const [dataRooms, setDataRooms] = useState<any>({});
-	
-    const [list, setList] = useState<IUser[]>([]);
 
-	const [friendIdSelected, setFriendIdSelected] = useState<string>('');
-	const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
-	
     const { state } = useContext(AuthContext);
     const userId = state.user?._id;
+	
+    const [list, setList] = useState<IUser[]>([]);
+	const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
+	
+    
 
+    useEffect(() => {
+        setDataRooms((prev: any) => ({
+            ...prev, 
+            theme: 'restaurant',
+            creatorId: userId,
+            aperoWheelSetUp: false,
+            dresscodeSetUp: false
+        }));
+    }, [userId])
     useEffect(() => {
         const fetchFriendList = async () => {
             const listFriends = await userService.getFriendsByUserId(userId!);
@@ -54,17 +65,17 @@ const FormRender: React.FC<unknown> = () => {
         register,
         handleSubmit,
         formState: { errors },
+        setValue
     } = useForm<RoomFormValues>({ mode: "onChange" });
 
     const placeName = register("placeName", { required: true });
     const address = register("address", { required: true });
     const date = register("date", { required: true });
-    const partIds = register("partIds", { required: true });
-    const aperoWheelSetUp = register("aperoWheelSetUp", { required: true });
-    const dresscodeSetUp = register("dresscodeSetUp", { required: true });
-    const dresscodeDescription = register("dresscodeDescription", {
-        required: true,
-    });
+    const time = register("time", { required: true });
+    const partIds = register("partIds");
+    const aperoWheelSetUp = register("aperoWheelSetUp");
+    const dresscodeSetUp = register("dresscodeSetUp");
+    const dresscodeDescription = register("dresscodeDescription");
 
 	
 
@@ -77,7 +88,7 @@ const FormRender: React.FC<unknown> = () => {
 
 	const handleChangeToggle = (e: ChangeEvent<HTMLInputElement>) => {
         setDataRooms((prev: any) => ({
-            ...prev,
+            ...prev, 
             [e.target.id]: e.target.checked,
         }));
     };
@@ -86,7 +97,10 @@ const FormRender: React.FC<unknown> = () => {
 		e: React.ChangeEvent<HTMLSelectElement>
 	) => {
 		const friendSelected = (e.target as HTMLSelectElement).value;
-		setFriendsIdSelected([...friendsIdSelected, friendSelected]);
+        if (friendSelected !== undefined && !friendsIdSelected.includes(friendSelected)) {
+            setFriendsIdSelected([...friendsIdSelected, friendSelected]);
+            setValue('partIds', friendsIdSelected)
+        }
 	};
 
     const onChangePlaceName = (e: any) => {
@@ -111,25 +125,23 @@ const FormRender: React.FC<unknown> = () => {
     };
     const onChangeDrescodeDescription = (e: any) => {
         dresscodeDescription.onChange(e);
-        handleChange(e);
+        handleChangeToggle(e);
     };
     const onChangePartsIds = (e: any) => {
 		partIds.onChange(e);
         handleChangeSearchBarGuest(e);
     };
+    const onChangeTime = (e: any) => {
+		time.onChange(e);
+        handleChange(e);
+    };
 
 
 	useEffect(() => {
-		if (friendIdSelected !== '')
-		setFriendsIdSelected([...friendsIdSelected, friendIdSelected]);
-		
-	}, [friendIdSelected])
-
-	useEffect(() => {
-		setDataRooms({
-			partIds: friendsIdSelected
-		});
-
+        setDataRooms((prev: any) => ({
+            ...prev, 
+            partIds: friendsIdSelected
+        }))
 	}, [friendsIdSelected])
 
 
@@ -139,7 +151,14 @@ const FormRender: React.FC<unknown> = () => {
 
     const onSubmit = async (e: any) => {
         console.log(dataRooms);
-        console.log("hello");
+        if (friendsIdSelected.length > 0) {
+            await roomService.createRoom({
+                ...dataRooms,
+                theme: 'restaurant',
+                creatorId: userId
+            })
+            console.log(dataRooms);
+        }
     };
     
 
@@ -165,7 +184,7 @@ const FormRender: React.FC<unknown> = () => {
             <LogoCalendar />
             <h3>Date et heure : </h3>
             <input type="date" {...date} id="date" onChange={onChangeDate} />
-            <input type="time" />
+            <input type="time" {...time} id="time" onChange={onChangeTime}/>
             <GuestLogo />
             <AddPeople listFriends={list} />
             <SearchBarGuest
@@ -183,13 +202,14 @@ const FormRender: React.FC<unknown> = () => {
                 onChange={onChangeAperoWheelSetUp}
             />
             <LogoDressCode />
-            <ToggleSwitch
+            <ToggleSwitch 
                 label="dresscodeSetUp"
                 nameField={dresscodeSetUp}
                 onChange={onChangeDrescodeSetUp}
             />
             <h3>Dresscode</h3>
             <textarea
+                id="dresscodeDescription"
                 {...dresscodeDescription}
                 onChange={onChangeDrescodeDescription}
             />

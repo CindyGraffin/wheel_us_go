@@ -13,6 +13,10 @@ class RoomService {
         return axios.get(`http://localhost:8800/api/rooms/parts/${id}`);
     }; 
 
+    createRoom = (room: any) => {
+        return axios.post(`http://localhost:8800/api/rooms/createroom`, room)
+    }
+
     deleteUserInRoom = (roomId: string, userId: string) => {
         return axios.delete(`http://localhost:8800/api/rooms/${roomId}/${userId}`)
     }
