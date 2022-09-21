@@ -20,7 +20,6 @@ const DashboardUserInformationModal: React.FC<
 > = ({ user, open, setOpen, refetchData }) => {
     const { data: reports } = useFetch(`/users/report/${user?._id}`);
 
-    console.log(reports);
     const onClickBanUser = async (userId: string): Promise<void> => {
         await userService.banUserById(userId);
         refetchData();

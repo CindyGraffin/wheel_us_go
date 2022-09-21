@@ -26,8 +26,6 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
         setShowModalUserInformation(true);
     };
 
-    console.log(users);
-
     const onClickBanUser = async (userId: string): Promise<void> => {
         await userService.banUserById(userId);
 
