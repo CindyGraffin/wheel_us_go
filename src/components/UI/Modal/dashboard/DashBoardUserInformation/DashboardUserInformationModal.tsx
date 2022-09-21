@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import useFetch from "../../../../../hooks/useFetch";
 import { userService } from "../../../../../services/userService";
+import IReport from "../../../../../types/IReport";
 import IUser from "../../../../../types/IUser";
 import Button from "../../../Button/Button";
 import Modal from "../../Modal";
@@ -119,7 +120,10 @@ const DashboardUserInformationModal: React.FC<
                                             <div className="report_list">
                                                 {/* je sais un any est pas top mais le vrai type est bof je verrai avec benoit si il y a mieux */}
                                                 {reports.map(
-                                                    (report: any, key: any) => (
+                                                    (
+                                                        report: IReport,
+                                                        key: string
+                                                    ) => (
                                                         <NavLink
                                                             to={`/dashboard/reports/${report._id}`}
                                                             key={key}
