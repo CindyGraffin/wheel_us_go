@@ -22,3 +22,33 @@
     color: var(--color-tertiary);
     font-size: 1.9rem;
 }
+
+@media only screen and (max-width: 1120px) {
+    .badge__container {
+        width: 5rem;
+        height: 5rem;
+    }
+    .badge__container .badge {
+        font-size: 3.8rem;
+    }
+} 
+
+@media only screen and (max-width: 455px) { 
+    .badge__container {
+        width: 4rem;
+        height: 4rem;
+    }
+    .badge__container .badge {
+        font-size: 3.2rem;
+    }
+}
+@media only screen and (max-width: 310px) { 
+    .badge__container {
+        width: 3rem;
+        height: 3rem;
+    }
+    .badge__container .badge {
+        font-size: 2.6rem;
+    }
+}
+

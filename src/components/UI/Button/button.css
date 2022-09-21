@@ -1,0 +1,39 @@
+/* BOUTON MARRON PRINCIPAL */
+.brown_button_basic {
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
+    border-radius: 20px;
+}
+
+.brown_button_basic:hover {
+    background-color: #bd7e54;
+}
+/* BOUTON ROUGE ALERT */
+.red_button_basic {
+    background-color: #c73333;
+    color: var(--color-secondary);
+    border-radius: 20px;
+}
+
+.red_button_basic:hover {
+    background-color: #ac2c2c;
+}
+/* BOUTON VIOLET DASHBOARD */
+.purple_button_basic {
+    background-color: var(--dashboard-color-secondary);
+    color: var(--color-secondary);
+    border-radius: 20px;
+}
+
+.purple_button_basic:hover {
+    background-color: #423c74;
+}
+
+.button_className {
+    padding: 0.3rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    margin-top: -1px;
+}

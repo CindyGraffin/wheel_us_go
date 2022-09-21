@@ -1,0 +1,5 @@
+.view-room-location {
+    display: flex;
+    align-items: center;
+    column-gap: 0.2rem;
+}

@@ -20,4 +20,18 @@
     font-size: 0.9rem;
     box-shadow: rgba(110, 110, 110, 0.115) 0px 2px 5px;
     cursor: pointer;
+} 
+
+@media only screen and (max-height: 700px) {
+    .no-contacts-message {
+        margin: 0.5rem;
+    }
+    .add-contact {
+        margin-bottom: 0.5rem;
+    }
+}
+@media only screen and (max-height: 580px) {
+    .no-contacts-message p:nth-child(2) {
+        font-size: 0.9rem;
+    }
 }

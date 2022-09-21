@@ -20,3 +20,33 @@
     justify-content: center;
     gap: 0.3rem;
 }
+@media only screen and (max-width: 900px) { 
+    .navbar-item {
+        width: 3.1rem;
+    }
+}
+@media only screen and (max-width: 800px) and (min-width: 650px) { 
+    .navbar-item {
+        width: 3.7rem;
+    }
+}
+@media only screen and (max-width: 560px) { 
+    .navbar-item {
+        width: 2.8rem;
+    }
+}
+
+@media only screen and (max-width: 385px) { 
+    .navbar-item {
+        width: 2.3rem;
+        height: 35px;
+        font-size: 22px;
+    }
+}
+@media only screen and (max-width: 310px) { 
+    .navbar-item {
+        width: 2rem;
+        height: 30px;
+        font-size: 20px;
+    }
+}

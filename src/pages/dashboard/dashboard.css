@@ -1,0 +1,15 @@
+.register_count_container {
+    width: 50%;
+}
+
+.navlink__encart {
+    text-decoration: none;
+    border-radius: 25px;
+    width: fit-content;
+}
+
+.spacing__container > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}

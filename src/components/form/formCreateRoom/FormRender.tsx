@@ -6,11 +6,11 @@ import LogoApero from "../../UI/LogoCreateRoom/LogoApero";
 import LogoCalendar from "../../UI/LogoCreateRoom/LogoCalendar";
 import LogoDressCode from "../../UI/LogoCreateRoom/LogoDressCode";
 import LogoLocation from "../../UI/LogoCreateRoom/LogoLocation";
-import AddPeople from "./componentForm/AddPeople/AddPeople";
+import AddPeople from "./AddPeople/AddPeople";
 import { AuthContext } from "../../../context/AuthContext";
 import { userService } from "../../../services/userService";
 import IUser from "../../../types/IUser";
-import SearchBarGuest from "./componentForm/searchBarGuest/SearchBarGuest";
+import SearchBarGuest from "./searchBarGuest/SearchBarGuest";
 import ToggleSwitch from "../../UI/ToggleSwitch/ToggleSwitch";
 import './form.css'
 

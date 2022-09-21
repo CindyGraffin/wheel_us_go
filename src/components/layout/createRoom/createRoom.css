@@ -1,9 +1,10 @@
 .create-room {
     background-color: var(--color-secondary);
     box-shadow: var(--box-shadow-light);
-    margin-bottom: 1.7rem;
-    width: 12rem;
-    height: 8rem;
+    margin-bottom: 1.5rem;
+    width: 13.5vw;
+    height: 15vh;
+    max-width: 230px;
     border-radius: 10px;
     color: var(--color-black);
     display: flex;
@@ -24,3 +25,16 @@
     color: var(--color-tertiary);
 }
 
+@media only screen and (max-width: 1120px) {
+    .create-room p {
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-height: 610px) {
+    .create-room p {
+        font-size: 0.9rem;
+    }
+    .create-room {
+        margin-bottom: 1rem;
+    }
+}
