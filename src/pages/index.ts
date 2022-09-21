@@ -1,6 +1,7 @@
 import Dashboard from "./dashboard";
 import DashboardStats from "./dashboard-stats/DashboardStats";
 import DashboardUsers from "./dashboard-users/DashboardUsers";
+import DashboardReport from "./dashboard-report/DashboardReport";
 import ConnectionPage from "./auth/ConnectionPage";
 import PremiumPage from "./premium/PremiumPage";
 import ProfilePage from "./profile/ProfilePage";
@@ -11,19 +12,17 @@ import UserMessages from "./userMessages/UserMessages";
 import UserRooms from "./userRooms/UserRooms";
 import ViewRoom from "./viewRoom/ViewRoom";
 
-
-
 export {
     Dashboard,
     DashboardStats,
     DashboardUsers,
-    ProfilePage, 
-    ConnectionPage, 
-    SearchUser, 
+    ProfilePage,
+    ConnectionPage,
+    SearchUser,
     UserRooms,
-    UserMessages, 
-    PremiumPage, 
-    ReglagesPage, 
+    UserMessages,
+    PremiumPage,
+    ReglagesPage,
     UserFriends,
-    ViewRoom
+    ViewRoom,
 };

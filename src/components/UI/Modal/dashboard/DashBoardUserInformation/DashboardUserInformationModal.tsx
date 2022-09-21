@@ -118,14 +118,13 @@ const DashboardUserInformationModal: React.FC<
                                                     : "Signalement"}
                                             </p>
                                             <div className="report_list">
-                                                {/* je sais un any est pas top mais le vrai type est bof je verrai avec benoit si il y a mieux */}
                                                 {reports.map(
                                                     (
                                                         report: IReport,
                                                         key: string
                                                     ) => (
                                                         <NavLink
-                                                            to={`/dashboard/reports/${report._id}`}
+                                                            to={`/dashboard/reports/${user._id}/${report._id}`}
                                                             key={key}
                                                             className="report_list_item"
                                                         >
