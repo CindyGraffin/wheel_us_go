@@ -69,79 +69,90 @@ const DashboardUserInformationModal: React.FC<
                                 </p>
                             )}
                         </div>
-                        <div className="actions_modal_container">
-                            {user.isActive ? (
-                                <div className="account_state">
-                                    <p>
-                                        Le compte de l'utilisateur&nbsp;
-                                        {user.firstname}&nbsp;{user.lastname}
-                                        &nbsp;est actif
-                                    </p>
-                                    <Button
-                                        color="red"
-                                        onClick={() => onClickBanUser(user._id)}
-                                    >
-                                        <p>Bannir</p>
-                                    </Button>
-                                </div>
-                            ) : (
-                                <div className="account_state">
-                                    <p className="alert_text">
-                                        Le compte de l'utilisateur&nbsp;
-                                        {user.firstname}&nbsp;{user.lastname}
-                                        &nbsp;est suspendu
-                                    </p>
-                                    <Button
-                                        color="purple"
-                                        onClick={() => onClickBanUser(user._id)}
-                                        className="modal_button"
-                                    >
-                                        <p>Débannir</p>
-                                    </Button>
-                                </div>
-                            )}
-                            <div className="separator" />
-                            <div className="report__container">
-                                {reports && reports.length > 0 ? (
-                                    <div>
-                                        <p className="report_title">
-                                            {reports.length > 1
-                                                ? "Signalements"
-                                                : "Signalement"}
+                        {user.role !== "admin" && (
+                            <div className="actions_modal_container">
+                                {user.isActive ? (
+                                    <div className="account_state">
+                                        <p>
+                                            Le compte de l'utilisateur&nbsp;
+                                            {user.firstname}&nbsp;
+                                            {user.lastname}
+                                            &nbsp;est actif
                                         </p>
-                                        <div className="report_list">
-                                            {/* je sais un any est pas top mais le vrai type est bof je verrai avec benoit si il y a mieux */}
-                                            {reports.map(
-                                                (report: any, key: any) => (
-                                                    <NavLink
-                                                        to={`/dashboard/reports/${report._id}`}
-                                                        key={key}
-                                                        className="report_list_item"
-                                                    >
-                                                        <p className="report_name">
-                                                            {report.category}
-                                                        </p>
-                                                        <p>
-                                                            {format(
-                                                                new Date(
-                                                                    report.createdAt as Date
-                                                                ),
-                                                                "dd-MM-yyyy"
-                                                            )}
-                                                        </p>
-                                                    </NavLink>
-                                                )
-                                            )}
-                                        </div>
+
+                                        <Button
+                                            color="red"
+                                            onClick={() =>
+                                                onClickBanUser(user._id)
+                                            }
+                                        >
+                                            <p>Bannir</p>
+                                        </Button>
                                     </div>
                                 ) : (
-                                    <p className="report_title">
-                                        L'utilistaeur n'a pas reçu de
-                                        signalement
-                                    </p>
+                                    <div className="account_state">
+                                        <p className="alert_text">
+                                            Le compte de l'utilisateur&nbsp;
+                                            {user.firstname}&nbsp;
+                                            {user.lastname}
+                                            &nbsp;est suspendu
+                                        </p>
+                                        <Button
+                                            color="purple"
+                                            onClick={() =>
+                                                onClickBanUser(user._id)
+                                            }
+                                            className="modal_button"
+                                        >
+                                            <p>Débannir</p>
+                                        </Button>
+                                    </div>
                                 )}
+                                <div className="separator" />
+                                <div className="report__container">
+                                    {reports && reports.length > 0 ? (
+                                        <div>
+                                            <p className="report_title">
+                                                {reports.length > 1
+                                                    ? "Signalements"
+                                                    : "Signalement"}
+                                            </p>
+                                            <div className="report_list">
+                                                {/* je sais un any est pas top mais le vrai type est bof je verrai avec benoit si il y a mieux */}
+                                                {reports.map(
+                                                    (report: any, key: any) => (
+                                                        <NavLink
+                                                            to={`/dashboard/reports/${report._id}`}
+                                                            key={key}
+                                                            className="report_list_item"
+                                                        >
+                                                            <p className="report_name">
+                                                                {
+                                                                    report.category
+                                                                }
+                                                            </p>
+                                                            <p>
+                                                                {format(
+                                                                    new Date(
+                                                                        report.createdAt as Date
+                                                                    ),
+                                                                    "dd-MM-yyyy"
+                                                                )}
+                                                            </p>
+                                                        </NavLink>
+                                                    )
+                                                )}
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <p className="report_title">
+                                            L'utilistaeur n'a pas reçu de
+                                            signalement
+                                        </p>
+                                    )}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             )}
