@@ -1,6 +1,7 @@
 export default interface IUser {
-    firstName: string;
-    lastName: string;
+    _id: string;
+    firstname: string;
+    lastname: string;
     email: string;
     birthday?: Date;
     password: string | undefined;
@@ -8,9 +9,9 @@ export default interface IUser {
     userImg?: string;
     outingPart: number;
     outingCre: number;
-    // Types.ObjectId à vérifier
+    role: string;
     tablesPartId?: string[];
     friendsId?: string[];
     groupsId?: string[];
+    createdAt?: Date;
 }
-

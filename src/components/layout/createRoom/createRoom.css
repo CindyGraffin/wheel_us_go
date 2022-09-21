@@ -1,9 +1,10 @@
 .create-room {
     background-color: var(--color-secondary);
-    box-shadow: var(--box-shadow-bold);
-    margin-bottom: 1.7rem;
-    width: 12rem;
-    height: 8rem;
+    box-shadow: var(--box-shadow-light);
+    margin-bottom: 1.5rem;
+    width: 13.5vw;
+    height: 15vh;
+    max-width: 230px;
     border-radius: 10px;
     color: var(--color-black);
     display: flex;
@@ -23,4 +24,3 @@
     font-size: 1.6rem;
     color: var(--color-tertiary);
 }
-

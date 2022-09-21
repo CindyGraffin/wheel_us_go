@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: rgba(83, 83, 83, 0.44) 2px 3px 7px 0px inset;;
+    box-shadow: rgba(83, 83, 83, 0.44) 2px 3px 7px 0px inset;
 }
 .badge__container .badge {
     color: rgba(210, 210, 210, 0.722);

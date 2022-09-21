@@ -1,24 +1,29 @@
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-primary);
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-primary);
 }
 
 :root {
-  --color-primary: #f4f3e2;
-  --color-secondary: #f9f9ee;
-  --color-tertiary: #c8865a;
-  --color-black: #464646;
-  --color-red: #a42424;
-  --box-shadow-light: rgba(110, 110, 110, 0.050) 0px 3px 5px;
+    --color-primary: #f4f3e2;
+    --color-secondary: #f9f9ee;
+    --color-tertiary: #c8865a;
+    --color-black: #434343;
+    --color-red: #a42424;
+    --color-white: #ffffff;
+    --box-shadow-light: rgba(110, 110, 110, 0.050) 0px 3px 5px;
+    --box-shadow: rgba(119, 119, 119, 0.141) 1px 1px 6px;
+    --dashboard-color-primary: #f5f5f5;
+    --dashboard-color-secondary: #2a264b;
+    --box-shadow-dashboard: rgba(110, 110, 110, 0.507) 0px 2px 8px;
 }

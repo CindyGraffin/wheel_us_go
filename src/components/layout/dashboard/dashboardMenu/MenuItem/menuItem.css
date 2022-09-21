@@ -1,0 +1,29 @@
+/* MENU ITEM */
+.menu__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    width: 100%;
+}
+.menu__items:hover {
+    color: #8a8a8a;
+}
+.list__items a {
+    text-decoration: none;
+}
+
+/* ICONS */
+.icon__container {
+    display: flex;
+    align-items: center;
+    color: var(--dashboard-color-primary);
+    background-color: #5c5692;
+    padding: 5px;
+    margin: 5px 20px;
+    border-radius: 20%;
+}
+.icon__container:hover {
+    background-color: #403b69;
+}
