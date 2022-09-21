@@ -3,21 +3,20 @@ import "./toggleSwitch.css";
 
 type ToggleSwitchProps = {
   label: string;
-  name: string;
-  onChange:  React.ChangeEventHandler<HTMLInputElement>
+  onChange:  React.ChangeEventHandler<HTMLInputElement>;
+  nameField: any;
 };
 
-const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, name, onChange}) => {
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, nameField, onChange}) => {
 return (
-  <Fragment>
     <div className="container">
-      {name}{" "}
       <div className="toggle-switch">
         <input
           type="checkbox"
           className="checkbox"
           name={label}
           id={label}
+          {...nameField}
           onChange={onChange}
         />
         <label className="label" htmlFor={label}>
@@ -26,7 +25,6 @@ return (
         </label>
       </div>
     </div>
-    </Fragment>
   );
 };
 

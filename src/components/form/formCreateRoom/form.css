@@ -5,3 +5,7 @@ form {
     align-content: center;
     row-gap: 1em;
 }
+
+.testform {
+    padding: 2rem;
+}

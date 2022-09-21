@@ -1,4 +1,4 @@
-import { ChangeEventHandler, RefObject } from "react";
+import { ChangeEventHandler } from "react";
 import IUser from "../../../../types/IUser";
 import ListPeopleInvited from "../ListPeopleInvited/ListPeopleInvited";
 
@@ -7,6 +7,7 @@ type SearchBarGuestProps = {
   friends: IUser[];
   friendsIdSelected: string[];
   onChange: ChangeEventHandler<HTMLSelectElement>;
+  nameField: any
 };
 
 const SearchBarGuest: React.FC<SearchBarGuestProps> = ({
@@ -25,7 +26,7 @@ const SearchBarGuest: React.FC<SearchBarGuestProps> = ({
 
   return (
     <div className="select__container__searchbar">
-      <select defaultValue={undefined} onChange={onChange}>
+      <select defaultValue={undefined} onChange={(e) => onChange(e)}>
         <option>Rajouter un ami à la liste</option>
         {friendsRemoveList.map((friend) => (
           <option key={friend._id} value={friend._id}>
