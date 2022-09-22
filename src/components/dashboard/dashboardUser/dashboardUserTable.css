@@ -116,3 +116,17 @@
     align-items: center;
 }
 
+.test {
+    position: relative;
+}
+
+.report_notification {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: x-small;
+    font-weight: 600;
+    height: 8px;
+    width: 8px;
+    color: #ac2c2c;
+}

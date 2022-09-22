@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { FiAlertTriangle } from "react-icons/fi";
-import { IoEyeOutline } from "react-icons/io5";
-import { userService } from "../../../services/userService";
 
-import IUser from "../../../types/IUser";
+import { userService } from "../../../services/userService";
 import { Button } from "../../UI";
 import DashboardUserInformationModal from "../../UI/Modal/dashboard/DashBoardUserInformation/DashboardUserInformationModal";
-import Modal from "../../UI/Modal/Modal";
+import IUser from "../../../types/IUser";
+
+import { FiAlertTriangle } from "react-icons/fi";
+import { IoAlertOutline, IoEyeOutline } from "react-icons/io5";
 import "./dashboardUserTable.css";
+
 
 export interface DashboardUserTableProps {
     users: IUser[];
@@ -74,6 +75,16 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
                                             <FiAlertTriangle className="alert_icons" />
                                         </div>
                                     )}
+                                    {user.reportingsId &&
+                                        user.reportingsId.length > 0 &&
+                                        user.isActive && (
+                                            <div className="test">
+                                                <IoAlertOutline className="alert_icons" />
+                                                <p className="report_notification">
+                                                    {user.reportingsId.length}
+                                                </p>
+                                            </div>
+                                        )}
                                 </div>
                                 <div className="grid_actions actions__container">
                                     <button
