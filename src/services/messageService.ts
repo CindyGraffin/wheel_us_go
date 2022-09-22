@@ -3,11 +3,11 @@ import { api } from "../utils/dryconfig";
 class MessageService {  
 
     getMessagesByConversationId = (conversationId: string) => {
-        return api.get(`/api/messages/${conversationId}`)
+        return api.get(`/messages/${conversationId}`)
     }
 
     addMessage = (message: any) => {
-        return api.post(`/api/messages/newmessage`,message)
+        return api.post(`/messages/newmessage`,message)
     }
 
 }  
