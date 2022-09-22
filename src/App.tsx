@@ -3,18 +3,18 @@ import "./App.css";
 import { AuthContext } from "./context/AuthContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
-	ConnectionPage,
+    ConnectionPage,
     Dashboard,
     DashboardStats,
     DashboardUsers,
-	PremiumPage,
-	ProfilePage,
-	ReglagesPage,
-	SearchUser,
-	UserFriends,
-	UserMessages,
-	UserRooms,
-    ViewRoom
+    PremiumPage,
+    ProfilePage,
+    ReglagesPage,
+    SearchUser,
+    UserFriends,
+    UserMessages,
+    UserRooms,
+    ViewRoom,
 } from "./pages";
 
 import ProtectedRoute from "./router/ProtectedRoute";
@@ -22,30 +22,27 @@ import AuthProtectedRoute from "./router/AuthProtectedRoute";
 
 import AdminRoute from "./router/AdminRoute";
 import { io } from "socket.io-client";
-
+import DashboardReport from "./pages/dashboard-report/DashboardReport";
 
 const socket = io("https://wheelsocket.azurewebsites.net/");
 
-
 function App() {
-    
     const { state } = useContext(AuthContext);
 
     useEffect(() => {
-        const userId = state.user?._id
+        const userId = state.user?._id;
         if (userId) {
             socket.emit("addUser", userId);
-        socket.on("getUsers", (users) => {
-			console.log(users);
-		});
+            socket.on("getUsers", (users) => {
+                console.log(users);
+            });
         }
-		
+
         return () => {
             socket.off("addUser");
-			socket.off("getUsers");
-        }
-    }, [state.user?._id])
-
+            socket.off("getUsers");
+        };
+    }, [state.user?._id]);
 
     return (
         <BrowserRouter>
@@ -62,11 +59,14 @@ function App() {
                     <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/userrooms" element={<UserRooms />} />
-                    <Route path="/usermessages" element={<UserMessages socket={socket}/>} />
+                    <Route
+                        path="/usermessages"
+                        element={<UserMessages socket={socket} />}
+                    />
                     <Route path="/userfriends" element={<UserFriends />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />
-                    <Route path="/viewroom/:roomid" element={<ViewRoom/>}/>
+                    <Route path="/viewroom/:roomid" element={<ViewRoom />} />
                 </Route>
 
                 <Route element={<AdminRoute user={state.user} />}>
@@ -79,8 +79,11 @@ function App() {
                         path="/dashboard/stats"
                         element={<DashboardStats />}
                     />
+                    <Route
+                        path="/dashboard/reports/:userid/:reportid"
+                        element={<DashboardReport />}
+                    />
                 </Route>
-
             </Routes>
         </BrowserRouter>
     );

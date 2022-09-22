@@ -15,4 +15,5 @@ export default interface IUser {
     friendsId?: string[];
     groupsId?: string[];
     createdAt?: Date;
+    reportingsId?: string[];
 }
