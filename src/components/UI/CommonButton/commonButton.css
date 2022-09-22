@@ -1,9 +1,32 @@
+.btn-container {
+    background-color: var(--color-tertiary);
+    border-radius: 10px;
+    padding: 0.4rem 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+    box-shadow: var(--box-shadow);
+    color: var(--color-secondary);
+    cursor: pointer;
+
+}
+.btn-container.delete-btn {
+    background-color: var(--color-red);
+}
 .room-btn {
     background-color: var(--color-tertiary);
-    color: var(--color-secondary);
-    padding: 0.3rem 0.5rem;
-    border-radius: 10px;
     font-weight: 600;
+    color: var(--color-secondary);
     cursor: pointer;
-    box-shadow: var(--box-shadow);
+
+}
+.room-btn.delete-btn {
+    background-color: var(--color-red);
+}
+
+@media only screen and (max-width: 390px) {
+    .btn-container {
+        padding: 0.3rem 0.5rem;
+    }
 }

@@ -5,7 +5,7 @@ import React, {
     useEffect,
     useState,
 } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, UseFormRegisterReturn } from "react-hook-form";
 import ButtonGeneric from "../../UI/boutons/ButtonGeneric";
 import GuestLogo from "../../UI/LogoCreateRoom/GuestLogo";
 import LogoApero from "../../UI/LogoCreateRoom/LogoApero";
@@ -165,12 +165,13 @@ const FormRender: React.FC<unknown> = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <LogoLocation />
-            <h3>Lieu : </h3>
+            <p>Lieu : </p>
             <input
                 {...placeName}
                 placeholder="Nom du lieu"
                 type="text"
                 id="placeName"
+                // onChange={setFieldValue('placeName', placeName)}
                 onChange={onChangePlaceName}
             />
             <input
@@ -182,7 +183,7 @@ const FormRender: React.FC<unknown> = () => {
                 onChange={onChangeAddress}
             />
             <LogoCalendar />
-            <h3>Date et heure : </h3>
+            <p>Date et heure : </p>
             <input type="date" {...date} id="date" onChange={onChangeDate} />
             <input type="time" {...time} id="time" onChange={onChangeTime}/>
             <GuestLogo />
@@ -207,7 +208,7 @@ const FormRender: React.FC<unknown> = () => {
                 nameField={dresscodeSetUp}
                 onChange={onChangeDrescodeSetUp}
             />
-            <h3>Dresscode</h3>
+            <p>Dresscode</p>
             <textarea
                 id="dresscodeDescription"
                 {...dresscodeDescription}

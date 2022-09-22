@@ -1,13 +1,13 @@
-import axios from "axios"; 
+import { api } from "../utils/dryconfig";
 
 class MessageService {  
 
     getMessagesByConversationId = (conversationId: string) => {
-        return axios.get(`http://localhost:8800/api/messages/${conversationId}`)
+        return api.get(`/api/messages/${conversationId}`)
     }
 
     addMessage = (message: any) => {
-        return axios.post(`http://localhost:8800/api/messages/newmessage`,message)
+        return api.post(`/api/messages/newmessage`,message)
     }
 
 }  

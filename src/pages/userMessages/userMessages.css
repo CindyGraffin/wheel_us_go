@@ -7,8 +7,9 @@
 	color: var(--color-black);
 }
 
-.bin-btn {
+.chatSubmitButton.bin-btn {
 	margin-top: 0.3rem;
+	background-color: var(--color-red);
 }
 
 .user-messages {

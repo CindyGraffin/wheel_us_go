@@ -25,6 +25,7 @@
     align-self: flex-end;
     display: flex;
     margin-bottom: 1rem;
+    margin-top: 0.3rem;
     column-gap: 1rem;
 }
 .room-loader {
@@ -34,3 +35,10 @@
     justify-content: center;
 }
 
+@media only screen and (max-width: 340px) {
+    .view-room-btns {
+        flex-direction: column;
+        align-self: center;
+        row-gap: 0.8rem;
+    }
+}

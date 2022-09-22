@@ -3,12 +3,15 @@ import './commonButton.css';
 interface CommonButtonProps {
     buttonText: string;
     handleClick: () => void;
+    classname?: string;
+    icon?: JSX.Element;
 }
 
-const CommonButton: React.FC<CommonButtonProps> = ({buttonText, handleClick}) => {
+const CommonButton: React.FC<CommonButtonProps> = ({buttonText, handleClick, icon, classname = ''}) => {
     return (
-        <div>
-            <button  className="room-btn" onClick={handleClick}>
+        <div onClick={handleClick} className={`btn-container ${classname}`}>
+            {icon}
+            <button  className={`room-btn ${classname}`}>
                 {buttonText}
             </button>
         </div>
