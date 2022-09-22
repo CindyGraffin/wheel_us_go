@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiStats } from "react-icons/bi";
+import { FiAlertCircle } from "react-icons/fi";
 import { HiOutlineUsers } from "react-icons/hi";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import "./dashboardMenu.css";
@@ -19,6 +20,12 @@ const navlinks = [
         path: "/dashboard/stats",
         name: "Statistiques",
         icon: <BiStats />,
+    },
+    {
+        id: 3,
+        path: "/dashboard/reports",
+        name: "Signalements",
+        icon: <FiAlertCircle />,
     },
 ] as const;
 

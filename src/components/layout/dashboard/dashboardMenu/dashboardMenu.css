@@ -19,7 +19,7 @@
 }
 /* MENU STATE STYLES */
 .hide__menu {
-    left: -86px;
+    left: -105px;
     transition-duration: 1s;
 }
 .show__menu {
