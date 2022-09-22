@@ -1,0 +1,20 @@
+.report_comment {
+    font-style: italic;
+    color: rgb(145, 145, 145);
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: rgb(224, 224, 224);
+    width: fit-content;
+    border-radius: 10px;
+}
+
+.report_information_container strong {
+    color: var(--color-black);
+}
+
+.report_information_container > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}

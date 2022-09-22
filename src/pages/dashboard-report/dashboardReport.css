@@ -1,0 +1,14 @@
+.dahboard_report_detail_title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+}
+.dahboard_report_detail_title p {
+    font-size: 42px;
+    color: var(--color-black);
+}
+.dashboard_report_detail_icon {
+    height: 42px;
+    width: 42px;
+    color: var(--dashboard-color-secondary);
+}

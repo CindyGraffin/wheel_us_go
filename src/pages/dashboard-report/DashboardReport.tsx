@@ -4,67 +4,51 @@ import DashboardLayout from "../../components/layout/dashboard/dashboard/Dashboa
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { IoAlertOutline } from "react-icons/io5";
-import { formattedDate } from "../../utils/formatDate";
-import Card from "../../components/UI/dashboard/Card/Card";
+import UserProfile from "../../components/dashboard/ReportsDetails/UserProfile/UserProfile";
+import ReportInformations from "../../components/dashboard/ReportsDetails/ReportInformations/ReportInformations";
+import { Button } from "../../components/UI";
+import { userService } from "../../services/userService";
 
 const DashboardReport: React.FC<unknown> = () => {
     const { userid, reportid } = useParams();
 
     const { data: report } = useFetch(`/report/${reportid}`);
-    const { data: user } = useFetch(`/users/${userid}`);
+    const { data: user, reFetch } = useFetch(`/users/${userid}`);
 
-    console.log(user);
+    const onClickBanUser = async (userId: string): Promise<void> => {
+        await userService.banUserById(userId);
+
+        reFetch();
+    };
 
     return (
         <DashboardLayout>
             <div>
-                <div>
-                    <p>Détails de signalement</p>
-                    <IoAlertOutline />
+                <div className="dashboard_detail_report_header">
+                    <div className="dahboard_report_detail_title">
+                        <p>Détails de signalement</p>
+                        <IoAlertOutline className="dashboard_report_detail_icon" />
+                    </div>
+                    <div>
+                        {user.isActive ? (
+                            <Button
+                                color="red"
+                                onClick={() => onClickBanUser(user._id)}
+                            >
+                                <p>Bannir</p>
+                            </Button>
+                        ) : (
+                            <Button
+                                color="purple"
+                                onClick={() => onClickBanUser(user._id)}
+                            >
+                                <p>Débannir</p>
+                            </Button>
+                        )}
+                    </div>
                 </div>
-                <div>
-                    {user && (
-                        <Card>
-                            <div>
-                                <div>
-                                    <img
-                                        src={user.userImg}
-                                        alt="visualisaton du profile de l'utilisateur"
-                                    />
-                                </div>
-                                <div>
-                                    <span>
-                                        {user.firstname}&nbsp;
-                                        {user.lastname}
-                                    </span>
-                                    <span>{user.email}</span>
-                                    <span>{user.role}</span>
-                                </div>
-                            </div>
-                        </Card>
-                    )}
-                </div>
-                {report && (
-                    <Card>
-                        <p>
-                            Signalement crée le&nbsp;
-                            {formattedDate(new Date(report.createdAt), "-")}
-                        </p>
-                        <p>pour la catégorie {report.category}</p>
-                        <div>
-                            <p>emit par l'utilisateur :</p>
-                            <div>
-                                <p>
-                                    {report.reportBy?.firstname}&nbsp;
-                                    {report.reportBy?.lastname}&nbsp;( id:&nbsp;
-                                    {report.reportBy?.userId}&nbsp;)
-                                </p>
-                                <p>{report.reportBy?.email}</p>
-                            </div>
-                            <div>{report.comment}</div>
-                        </div>
-                    </Card>
-                )}
+                {user && <UserProfile user={user} />}
+                {report && <ReportInformations report={report} />}
             </div>
         </DashboardLayout>
     );
