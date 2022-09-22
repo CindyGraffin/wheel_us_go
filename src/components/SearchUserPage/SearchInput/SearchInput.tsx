@@ -1,42 +1,68 @@
-import React from 'react'
-import List from '../InputResearch/List';
-
-
+import React, { useEffect, useState } from 'react'
+import IUser from '../../../types/IUser';
+import SearchForUserService from '../../../services/SearchForUserService';
+import './SearchInput.css'
 
 interface SearchInputProps {
-	value: string;
+    value: string;
     onChange?: React.ChangeEvent<HTMLInputElement>
 }
 
-const SearchInput:React.FC<SearchInputProps> = () => {
+const SearchInput: React.FC<SearchInputProps> = () => {
+    const [userSearch, setUserSearch] = useState("");
+    const [usersResearch, setUsersResearch] = useState<IUser[]>([])
 
-        const [userSearch, setUserSearch] = React.useState(
-            ""
-        );
-        
-        const handleChange = (event: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
-            setUserSearch(event.currentTarget.value);
-        };
+    const handleChange = (event: { currentTarget: { value: React.SetStateAction<string> } }) => {
+        setUserSearch(event.currentTarget.value)
+    }
 
-        const resetForm = (event: { currentTarget: { value: React.SetStateAction<string>; }; }) => {
-            setUserSearch("");    
-        };
+    useEffect(() => {
+        SearchForUserService.getUserBySearch(userSearch).then((resp) => {
+            setUsersResearch(resp.data);
+            console.log(resp.data)
+        })
+    }, [userSearch]);
 
-      return (
-          <>
-        <form action="../../form-result.php" method="get" target="_blank" >
-        <p>User search: <input type="search" name="titlesearch" value={userSearch} onChange={handleChange} placeholder='Recherchez un User' /> </p>
-     
-        <p> <input  type="submit" value="Search"  /> </p>
-        </form>
+    const noUserFound = () => {
+        if (userSearch.length > 0 && usersResearch.length === 0) {
+            return <div> No User Found </div>
+        } else if (userSearch.length === 0) {
+            return <div> Recherchez un utilisateur </div>
+        }
+    }
 
-        <button onClick={resetForm}>Clear input field</button>
-        
-        <br />
-        {/* <List/> */}
+    return (
+        <>
+            <div className='SearchUserPage'>
 
+                <form className='searchBar'>
+                    <p>Recherche : <input type="search" name="titlesearch" value={userSearch} onChange={handleChange} placeholder='Recherchez sur WUG' className='searchTerm' />  </p>
+                </form>
 
+                <p className='userList'>
+                    <ul>
+                        {userSearch.length > 0 && usersResearch.length != 0 ? usersResearch.map((user) =>
+                        (
+                            <li>
+                                <div className='userFoundContainer'>
+                                    <img className='userFoundPP' src={user.userImg} alt="visage de l'utilisateur" />
+                                    <div className='userFoundNameBox'>
+                                        <p className='userFoundName'> {user.firstname} {user.lastname} </p>
+                                        <p className='userFoundInfos'> {user.city} </p>
+                                    </div>
+                                </div>
+                            </li>
+                        )) : (
+                            <p className='noUserFound'>
+                                {noUserFound()}
+
+                            </p>
+                        )}
+
+                    </ul>
+                </p>
+            </div>
         </>
-            );
+    );
 }
 export default SearchInput
