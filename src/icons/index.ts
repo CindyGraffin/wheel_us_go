@@ -7,7 +7,7 @@ import {GoLocation} from "react-icons/go";
 import { HiOutlineBadgeCheck, HiOutlinePencilAlt, HiOutlineUserGroup } from "react-icons/hi";
 import { IoMdExit } from "react-icons/io";
 import { IoCalendarOutline, IoChatbubblesOutline, IoPersonOutline, IoRestaurantOutline, IoTrashBinOutline } from "react-icons/io5";
-import { RiErrorWarningLine, RiNewspaperLine, RiShirtLine } from "react-icons/ri";
+import { RiCloseCircleFill, RiErrorWarningLine, RiNewspaperLine, RiShirtLine } from "react-icons/ri";
 import { TbSofa, TbBrandAirtable } from "react-icons/tb";
 
 export {
@@ -31,6 +31,7 @@ export {
     IoPersonOutline, 
     IoRestaurantOutline,  
     IoTrashBinOutline,
+    RiCloseCircleFill,
     RiErrorWarningLine,
     RiNewspaperLine,
     RiShirtLine,

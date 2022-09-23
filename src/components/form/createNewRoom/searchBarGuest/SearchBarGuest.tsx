@@ -1,45 +1,29 @@
 import { ChangeEventHandler } from "react";
 import IUser from "../../../../types/IUser";
-import ListPeopleInvited from "../ListPeopleInvited/ListPeopleInvited";
+import './searchBarGuest.css';
 
-
-type SearchBarGuestProps = {
-  friends: IUser[];
-  friendsIdSelected: string[];
-  onChange: ChangeEventHandler<HTMLSelectElement>;
-  nameField: any
-};
+interface SearchBarGuestProps {
+	friendsRemoveList: IUser[];
+	onChange: ChangeEventHandler<HTMLSelectElement>;
+	nameField: any;
+}
 
 const SearchBarGuest: React.FC<SearchBarGuestProps> = ({
-  friends,
-  friendsIdSelected,
-  onChange,
+	friendsRemoveList,
+	onChange,
 }) => {
-  // On crée une copie de la liste d'amis
-  const friendsAddedList = friends.filter((friend) =>
-    friendsIdSelected.includes(friend._id!)
-  );
-
-  const friendsRemoveList = friends.filter(
-    (friend) => !friendsIdSelected.includes(friend._id!)
-  );
-
-  return (
-    <div className="select__container__searchbar">
-      <select defaultValue={undefined} onChange={(e) => onChange(e)}>
-        <option>Rajouter un ami à la liste</option>
-        {friendsRemoveList.map((friend) => (
-          <option key={friend._id} value={friend._id}>
-            {`${friend.firstname} ${friend.lastname}`}
-          </option>
-        ))}
-      </select>
-      <div>
-        <h3>Personnes invitées</h3>
-        <ListPeopleInvited listFriendsSelected={friendsAddedList} />
-      </div>
-    </div>
-  );
+		return (
+		<div className="search-bar-guest category-infos">
+			<select defaultValue={"Choisissez un ami"} onChange={(e) => onChange(e)}>
+				<option>Choisissez un ami</option>
+				{friendsRemoveList.map((friend) => (
+					<option key={friend._id} value={friend._id}>
+						{`${friend.firstname} ${friend.lastname}`}
+					</option>
+				))}
+			</select>
+		</div>
+	);
 };
 
 export default SearchBarGuest;

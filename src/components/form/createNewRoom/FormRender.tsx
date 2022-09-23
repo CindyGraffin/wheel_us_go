@@ -17,6 +17,7 @@ import { roomService } from "../../../services/roomService";
 import CreateNewRoomLocation from "./createNewRoomLocation/CreateNewRoomLocation";
 import CreateNewRoomCalendar from "./createNewRoomCalendar/CreateNewRoomCalendar";
 import CreateNewRoomParticipants from "./createNewRoomParticipants/CreateNewRoomParticipants";
+import ListPeopleInvited from "./ListPeopleInvited/ListPeopleInvited";
 
 type RoomFormValues = {
     placeName: string;
@@ -157,6 +158,14 @@ const FormRender: React.FC<unknown> = () => {
         handleChange(e);
     };
 
+    const friendsAddedList = friendsList.filter((friend) =>
+		friendsIdSelected.includes(friend._id!)
+	);
+
+	const friendsRemoveList = friendsList.filter(
+		(friend) => !friendsIdSelected.includes(friend._id!)
+	);
+
     const reset = () => {
         console.log("reset");
     };
@@ -172,7 +181,7 @@ const FormRender: React.FC<unknown> = () => {
             console.log(dataRooms);
         }
     }; 
-
+    
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <CreateNewRoomLocation 
@@ -188,14 +197,14 @@ const FormRender: React.FC<unknown> = () => {
                 onChangeTime={onChangeTime}
             />
             <CreateNewRoomParticipants/>
-            <AddPeople friendsList={friendsList} />
             <SearchBarGuest
                 nameField={partIds}
-                friends={friendsList}
-                friendsIdSelected={friendsIdSelected}
-				// onChange={handleChangeSearchBarGuest}
+                friendsRemoveList={friendsRemoveList}
                 onChange={(e) => onChangePartsIds(e)}
             />
+            <ListPeopleInvited 
+                listFriendsSelected={friendsAddedList} 
+            /> 
             <ToggleSwitch
                 label="aperoWheelSetUp"
                 nameField={aperoWheelSetUp}
