@@ -1,4 +1,3 @@
-import './SearchingForUsers.css'
 import React, { useEffect, useState } from 'react'
 import IUser from './../../types/IUser';
 import SearchForUserService from '../../services/SearchForUserService';
@@ -25,7 +24,6 @@ const SearchingForUsersComponent: React.FC<unknown> = () => {
 
 
     return (
-        <>
             <div className='SearchUserPage'>
                 {/* Barre de recherche  */}
                 <SearchBar handleChange={handleChange} userSearch={userSearch} />
@@ -35,12 +33,10 @@ const SearchingForUsersComponent: React.FC<unknown> = () => {
                     <ul>
                         {userSearch.length > 0 && usersResearch.length != 0 ?
                             (usersResearch.map((user) => <UserFoundItem user={user} key={user._id} />)) :
-                            // (<p className='noUserFound'> {noUserFound()} </p>)}
                             <NoUserFoundItem userSearch={userSearch} usersResearch={usersResearch} />}
                     </ul>
                 </p>
             </div>
-        </>
     );
 }
 
