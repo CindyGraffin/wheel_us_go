@@ -1,13 +1,13 @@
 import { Layout} from "../../components";
-import SearchUserMain from "../../components/SearchUserPage/SearchUserMain";
+import SearchingForUsersComponent from "../../components/searchingForUsers/SearchingForUsers";
 import "./searchUser.css";
 
 
-const SearchUser = () => {
+const SearchUser: React.FC<unknown> = () => {
     return (
         <Layout>
             <div>
-                <SearchUserMain></SearchUserMain>
+                <SearchingForUsersComponent />
             </div>
         </Layout>
     );
