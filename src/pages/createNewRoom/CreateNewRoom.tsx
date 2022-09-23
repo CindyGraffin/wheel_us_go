@@ -1,5 +1,5 @@
 import { Layout, RoomsTitle } from "../../components";
-import FormRender from "../../components/form/formCreateRoom/FormRender";
+import FormRender from "../../components/form/createNewRoom/FormRender";
 import "./createNewRoom.css";
 import {HiOutlinePencilAlt} from '../../icons/index'
 

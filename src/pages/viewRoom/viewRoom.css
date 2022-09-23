@@ -4,6 +4,7 @@
     align-items: center;
     padding: 1rem;
     text-align: center;
+    color: var(--color-black);
 }
 .view-room-section {
     display: flex;
@@ -17,6 +18,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 0.4rem;
+    
 }
 .view-room-icon {
     color: var(--color-tertiary);

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import IUser from "../../../../types/IUser";
 
 type AddPeopleProps = {
-  listFriends: IUser[];
+  friendsList: IUser[];
 };
 
-const AddPeople = ({ listFriends }: AddPeopleProps) => {
+const AddPeople = ({ friendsList }: AddPeopleProps) => {
    return (
     <div>
       <h3>Sélectionner les invités</h3>

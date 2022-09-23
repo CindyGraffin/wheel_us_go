@@ -1,25 +1,22 @@
 import React, {
     ChangeEvent,
-    Fragment,
     useContext,
     useEffect,
     useState,
 } from "react";
-import { useForm, UseFormRegisterReturn } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import ButtonGeneric from "../../UI/boutons/ButtonGeneric";
-import GuestLogo from "../../UI/LogoCreateRoom/GuestLogo";
-import LogoApero from "../../UI/LogoCreateRoom/LogoApero";
-import LogoCalendar from "../../UI/LogoCreateRoom/LogoCalendar";
-import LogoDressCode from "../../UI/LogoCreateRoom/LogoDressCode";
-import LogoLocation from "../../UI/LogoCreateRoom/LogoLocation";
 import AddPeople from "./AddPeople/AddPeople";
 import { AuthContext } from "../../../context/AuthContext";
 import { userService } from "../../../services/userService";
 import IUser from "../../../types/IUser";
 import SearchBarGuest from "./searchBarGuest/SearchBarGuest";
 import ToggleSwitch from "../../UI/ToggleSwitch/ToggleSwitch";
-import "./form.css";
+import "./formRender.css";
 import { roomService } from "../../../services/roomService";
+import CreateNewRoomLocation from "./createNewRoomLocation/CreateNewRoomLocation";
+import CreateNewRoomCalendar from "./createNewRoomCalendar/CreateNewRoomCalendar";
+import CreateNewRoomParticipants from "./createNewRoomParticipants/CreateNewRoomParticipants";
 
 type RoomFormValues = {
     placeName: string;
@@ -34,16 +31,27 @@ type RoomFormValues = {
 
 const FormRender: React.FC<unknown> = () => {
 
-	const [dataRooms, setDataRooms] = useState<any>({});
+    const [dataRooms, setDataRooms] = useState<any>({});
+	const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
+    const [friendsList, setfriendsList] = useState<IUser[]>([]);
 
     const { state } = useContext(AuthContext);
     const userId = state.user?._id;
-	
-    const [list, setList] = useState<IUser[]>([]);
-	const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
-	
-    
 
+    /**
+     * on récupère les informations <nom, prénom, userImg, _id> des amis de l'utilisateur à l'initialisation du composant, que l'on enregistre dans le state <friendsList>
+     */
+    useEffect(() => {
+        const fetchFriendList = async () => {
+            const friendsList = await userService.getFriendsByUserId(userId!);
+            setfriendsList(friendsList.data.friendsId);
+        };
+        fetchFriendList();
+    }, [userId]);
+
+    /**
+     * on ajoute des propriétés par défaut au state <dataRooms> à l'initialisation du composant
+     */
     useEffect(() => {
         setDataRooms((prev: any) => ({
             ...prev, 
@@ -53,14 +61,17 @@ const FormRender: React.FC<unknown> = () => {
             dresscodeSetUp: false
         }));
     }, [userId])
-    useEffect(() => {
-        const fetchFriendList = async () => {
-            const listFriends = await userService.getFriendsByUserId(userId!);
-            setList(listFriends.data.friendsId);
-        };
-        fetchFriendList();
-    }, [userId]);
 
+    /**
+     * on met à jour la propriété <partIds> du state en ajoutant les id des amis sélectionnés quand le state <friendsIdSelected> est modifié 
+     */
+    useEffect(() => {
+        setDataRooms((prev: any) => ({
+            ...prev, 
+            partIds: friendsIdSelected
+        }))
+	}, [friendsIdSelected])
+    
     const {
         register,
         handleSubmit,
@@ -77,8 +88,10 @@ const FormRender: React.FC<unknown> = () => {
     const dresscodeSetUp = register("dresscodeSetUp");
     const dresscodeDescription = register("dresscodeDescription");
 
-	
-
+    /**
+     * Met à jour la propriété correspondante à l'input dans le state <dataRooms> quand l'utilisateur modifie cet input 
+     * @param e ChangeEvent qui occure lorsque l'utilisateur modifie le contenu d'un <input>
+     */
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setDataRooms((prev: any) => ({
             ...prev,
@@ -86,6 +99,10 @@ const FormRender: React.FC<unknown> = () => {
         }));
     };
 
+    /**
+     * Met à jour la propriété correspondante au toggle dans le state <dataRooms> quand l'utilisateur clique sur le toggle
+     * @param e ChangeEvent qui occure lorsque l'utilisateur clique sur le toggle
+     */
 	const handleChangeToggle = (e: ChangeEvent<HTMLInputElement>) => {
         setDataRooms((prev: any) => ({
             ...prev, 
@@ -93,6 +110,10 @@ const FormRender: React.FC<unknown> = () => {
         }));
     };
 
+    /**
+     * Lorsque l'utilisateur clique sur une des options du select, il ajoute la valeur de l'option au state <friendIdSelected> s'il n'en fait pas déjà partie et s'il n'est pas undefined
+     * @param e ChangeEvent qui occure lorsque l'utilisateur clique sur un <select> élément
+     */
 	const handleChangeSearchBarGuest = (
 		e: React.ChangeEvent<HTMLSelectElement>
 	) => {
@@ -136,15 +157,6 @@ const FormRender: React.FC<unknown> = () => {
         handleChange(e);
     };
 
-
-	useEffect(() => {
-        setDataRooms((prev: any) => ({
-            ...prev, 
-            partIds: friendsIdSelected
-        }))
-	}, [friendsIdSelected])
-
-
     const reset = () => {
         console.log("reset");
     };
@@ -159,50 +171,36 @@ const FormRender: React.FC<unknown> = () => {
             })
             console.log(dataRooms);
         }
-    };
-    
+    }; 
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <LogoLocation />
-            <p>Lieu : </p>
-            <input
-                {...placeName}
-                placeholder="Nom du lieu"
-                type="text"
-                id="placeName"
-                // onChange={setFieldValue('placeName', placeName)}
-                onChange={onChangePlaceName}
+            <CreateNewRoomLocation 
+                placeName={placeName}
+                address={address}
+                onChangePlaceName={onChangePlaceName}
+                onChangeAddress={onChangeAddress}
             />
-            <input
-                {...address}
-                placeholder="Adresse du lieu"
-                type="text"
-                name="address"
-                id="address"
-                onChange={onChangeAddress}
+            <CreateNewRoomCalendar 
+                date={date} 
+                time={time} 
+                onChangeDate={onChangeDate} 
+                onChangeTime={onChangeTime}
             />
-            <LogoCalendar />
-            <p>Date et heure : </p>
-            <input type="date" {...date} id="date" onChange={onChangeDate} />
-            <input type="time" {...time} id="time" onChange={onChangeTime}/>
-            <GuestLogo />
-            <AddPeople listFriends={list} />
+            <CreateNewRoomParticipants/>
+            <AddPeople friendsList={friendsList} />
             <SearchBarGuest
                 nameField={partIds}
-                friends={list}
+                friends={friendsList}
                 friendsIdSelected={friendsIdSelected}
 				// onChange={handleChangeSearchBarGuest}
                 onChange={(e) => onChangePartsIds(e)}
             />
-            <h2>Options Supplémentaires</h2>
-            <LogoApero />
             <ToggleSwitch
                 label="aperoWheelSetUp"
                 nameField={aperoWheelSetUp}
                 onChange={onChangeAperoWheelSetUp}
             />
-            <LogoDressCode />
             <ToggleSwitch 
                 label="dresscodeSetUp"
                 nameField={dresscodeSetUp}

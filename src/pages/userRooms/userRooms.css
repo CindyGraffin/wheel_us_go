@@ -5,6 +5,8 @@
     max-width: 400px;
     margin: 0 auto;
     margin-bottom: 0.7rem;
+    color: var(--color-black);
+
 }
 
 @media only screen and (max-width: 925px) {

@@ -1,3 +1,6 @@
+.profile__container {
+    color: var(--color-black);
+}
 .badges-title {
     display: flex;
     align-items: center;
