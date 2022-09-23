@@ -1,0 +1,101 @@
+/* div.children-page{
+
+} */
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+.userFoundContainer{
+    height: 5em;
+    width: auto;
+    margin-top: 1em; 
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--color-black);
+
+    display: flex;
+    align-content: space-around;
+    gap: 0.3rem;
+    justify-content: center;
+}
+/* .userFoundContainer :hover{
+    border: black;
+    color: var(--color-line);
+
+} */
+
+.userFoundName:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.noUserFound{
+    padding: 2em;
+    text-align: center;
+}
+
+/* CSS PP */
+.userFoundPP {
+    width: 30%;
+    height: auto;
+}
+.userFoundContainer img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1em;
+    padding: 0.5em;
+
+}
+
+/* CSS Nom & infos */
+.userFoundNameBox {
+    width: 60%;
+    height: 80px;
+    font-size: 1.2rem;
+    font-weight: 250;
+    color: var(--color-tertiary);
+    text-transform: capitalize ;
+    display: flex;
+    flex-direction:column ;
+    vertical-align: auto;
+    justify-content: center;
+}
+
+.userFoundName{
+    font-size: 1.2rem;
+    font-stretch: semi-expanded;
+    color: var(--color-black);
+    text-transform: capitalize ;
+    
+    ;
+
+}
+.userFoundInfos{
+    font-size: 0.9rem;
+    font-style: italic;
+    text-transform: capitalize ;
+}
+
+/* SearchBar */
+.searchBar {
+    /* coucou le reviewer !*/
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  
+}
+
+.searchTerm {
+    border: 2.5px solid var(--color-tertiary);
+    border-radius: 5px ;
+  }
+  

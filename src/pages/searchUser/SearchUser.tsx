@@ -1,5 +1,5 @@
 import { Layout} from "../../components";
-import SearchUserMain from "../../components/SearchUserPage/SearchUserMain";
+import SearchingForUsersComponent from "../../components/searchingForUsers/SearchingForUsers";
 import "./searchUser.css";
 
 
@@ -7,7 +7,7 @@ const SearchUser = () => {
     return (
         <Layout>
             <div>
-                <SearchUserMain></SearchUserMain>
+                <SearchingForUsersComponent />
             </div>
         </Layout>
     );
