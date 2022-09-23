@@ -3,7 +3,7 @@ import SearchingForUsersComponent from "../../components/searchingForUsers/Searc
 import "./searchUser.css";
 
 
-const SearchUser = () => {
+const SearchUser: React.FC<unknown> = () => {
     return (
         <Layout>
             <div>

@@ -10,7 +10,7 @@ const SearchBar: React.FC<SearchBarProps> = ({handleChange, userSearch}) => {
 
     return (
         <form className='searchBar'>
-                    <p>Recherche :
+                    <p>Recherche :&nbsp; 
                         <input
                             type="search"
                             name="titlesearch"
