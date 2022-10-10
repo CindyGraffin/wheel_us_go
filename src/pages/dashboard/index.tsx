@@ -31,7 +31,6 @@ const Dashboard: React.FC<unknown> = () => {
                         </NavLink>
                     )}
                 </div>
-                <div>users encart</div>
             </div>
         </DashboardLayout>
     );
