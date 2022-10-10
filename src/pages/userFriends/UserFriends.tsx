@@ -26,7 +26,7 @@ const UserFriends: React.FC<unknown> = () => {
         <Layout>
             <div className="user_friends_container">
                 <div>
-                    <UserFriendsTitle titleText="Liste d'Amis" />
+                    <UserFriendsTitle titleText="LISTE D'AMIS" />
                     <ContactFriends friends={friends} />
                 </div>
             </div>
