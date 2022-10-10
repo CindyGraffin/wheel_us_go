@@ -48,15 +48,17 @@ form {
 }
 .form-btns {
     display: flex;
-    flex-direction: column;
-    row-gap: 0.8rem;
-    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: 0.8rem;
 }
 .form-btn {
-    padding: 0.2rem 0.6rem;
-    height: 1.6rem;
+    padding: 0.4rem 0.7rem;
     cursor: pointer;
+    font-size: 1rem;
     border-radius: 10px;
     background-color: var(--color-tertiary);
     color: var(--color-white);

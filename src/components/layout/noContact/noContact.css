@@ -8,7 +8,7 @@
     margin-bottom: 0.3rem;
 }
 .no-contacts-message p:nth-child(2) {
-    font-weight: bold;
+    font-weight: 600;
 }
 .add-contact {
     padding: 0.2rem 0.6rem;

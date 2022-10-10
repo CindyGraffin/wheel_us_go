@@ -25,9 +25,10 @@ const ProfilePage: React.FC<unknown> = () => {
 		},
 		{
 			classname: 'badge__container active',
-			badgeText: 'Adepte des restos',
-			icon: <GiMeal className="badge active"/>
+			badgeText: "Dresscode adept'",
+			icon: <RiShirtLine className="badge active"/>
 		},
+		
 		{
 			classname: 'badge__container active',
 			badgeText: 'At Home',
@@ -39,9 +40,9 @@ const ProfilePage: React.FC<unknown> = () => {
 			icon: <BiBeer className="badge active active"/>
 		},
 		{
-			classname: 'badge__container',
-			badgeText: 'Créateur de tables',
-			icon: <HiOutlinePhotograph className="badge"/>
+			classname: 'badge__container active',
+			badgeText: 'Souriez, photo',
+			icon: <HiOutlinePhotograph className="badge active"/>
 		},
 		{
 			classname: 'badge__container',
@@ -58,24 +59,25 @@ const ProfilePage: React.FC<unknown> = () => {
 			badgeText: 'Dernière minute',
 			icon: <IoCalendarOutline className="badge"/>
 		},
+		
 		{
 			classname: 'badge__container',
-			badgeText: 'Créateur de tables',
-			icon: <RiShirtLine className="badge"/>
-		},
-		{
-			classname: 'badge__container',
-			badgeText: 'Créateur de tables',
+			badgeText: 'Accro aux bars',
 			icon: <FaGlassMartiniAlt className="badge"/>
 		},
 		{
 			classname: 'badge__container',
-			badgeText: 'Créateur de tables',
+			badgeText: 'Adepte des restos',
+			icon: <GiMeal className="badge "/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: "Fan de l'aléatoire",
 			icon: <GiCartwheel className="badge"/>
 		},
 		{
 			classname: 'badge__container',
-			badgeText: 'Créateur de tables',
+			badgeText: 'Membre premium',
 			icon: <AiOutlineStar className="badge"/>
 		},
 	]

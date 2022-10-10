@@ -10,7 +10,7 @@
 }
 .badge__container.active {
     background-color: var(--color-primary);
-    box-shadow: var(--box-shadow)
+    box-shadow: rgba(0, 0, 0, 0.24) 2px 2px 2px;
 
 }
 .badge__container .badge {
@@ -30,7 +30,7 @@
 }
 .btn-icon {
     color: var(--color-tertiary);
-    font-size: 1.9rem;
+    font-size: 1.8rem;
 }
 .badge-text {
     width: 8.5rem;
@@ -45,7 +45,7 @@
         height: 5rem;
     }
     .badge__container .badge {
-        font-size: 3.8rem;
+        font-size: 3.6rem;
     }
 } 
 
@@ -55,7 +55,7 @@
         height: 4rem;
     }
     .badge__container .badge {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
 }
 @media only screen and (max-width: 310px) { 
@@ -64,7 +64,7 @@
         height: 3rem;
     }
     .badge__container .badge {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
     }
 }
 
