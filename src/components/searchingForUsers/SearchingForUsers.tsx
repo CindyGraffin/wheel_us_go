@@ -29,13 +29,13 @@ const SearchingForUsersComponent: React.FC<unknown> = () => {
                 <SearchBar handleChange={handleChange} userSearch={userSearch} />
 
                 {/* Résultat de la recherche : UserFoundItem & NoUserFound() */}
-                <p className='userList'>
+                <div className='userList'>
                     <ul>
                         {userSearch.length > 0 && usersResearch.length != 0 ?
                             (usersResearch.map((user) => <UserFoundItem user={user} key={user._id} />)) :
                             <NoUserFoundItem userSearch={userSearch} usersResearch={usersResearch} />}
                     </ul>
-                </p>
+                </div>
             </div>
     );
 }

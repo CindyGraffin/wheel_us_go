@@ -4,14 +4,21 @@
     gap: 1rem;
     max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 0.7rem;
+    color: var(--color-black);
+
 }
 
 @media only screen and (max-width: 925px) {
     .rooms__container {
-        max-width: 300px;
+        max-width: 360px;
     }
 }
-
+@media only screen and (max-width: 500px) {
+    .rooms__container {
+        max-width: 325px;
+    }
+}
 @media only screen and (max-width: 390px) {
     .rooms__container {
         max-width: 250px;

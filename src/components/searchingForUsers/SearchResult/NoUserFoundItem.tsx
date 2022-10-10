@@ -12,10 +12,10 @@ const NoUserFoundItem: React.FC<NoUserFoundProps> = ({ userSearch, usersResearch
     return (
         <div className='noUserFound'>
             {(userSearch.length > 0 && usersResearch.length === 0) && (
-                <div className='noUserFound'> No User Found Component </div>
+                <div className='noUserFound'>Pas d'utilisateurs correspondant à la recherche </div>
             )}
             {(userSearch.length === 0) && (
-                <div className='noUserFound'> Recherchez un utilisateur Component </div>
+                <div className='noUserFound'> Recherchez un utilisateur </div>
             )}
         </div>
     )

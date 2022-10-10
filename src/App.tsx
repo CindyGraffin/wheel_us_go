@@ -4,6 +4,7 @@ import { AuthContext } from "./context/AuthContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
     ConnectionPage,
+	CreateNewRoom,
     Dashboard,
     DashboardStats,
     DashboardUsers,
@@ -19,7 +20,6 @@ import {
 
 import ProtectedRoute from "./router/ProtectedRoute";
 import AuthProtectedRoute from "./router/AuthProtectedRoute";
-
 import AdminRoute from "./router/AdminRoute";
 import { io } from "socket.io-client";
 import DashboardReport from "./pages/dashboard-report/DashboardReport";
@@ -66,7 +66,8 @@ function App() {
                     <Route path="/userfriends" element={<UserFriends />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />
-                    <Route path="/viewroom/:roomid" element={<ViewRoom />} />
+                    <Route path="/viewroom/:roomid" element={<ViewRoom/>}/>
+					<Route path="/createroom" element={<CreateNewRoom/>}/>
                 </Route>
 
                 <Route element={<AdminRoute user={state.user} />}>
