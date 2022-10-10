@@ -1,0 +1,12 @@
+.settings-page {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.settings {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+}

@@ -41,6 +41,12 @@ const UserRooms: React.FC<unknown> = () => {
                         CREER UNE SALLE 
                     </button>
                 </div>
+                {rooms.length === 0 && (
+                    <div className="no-rooms">
+                        <p>Vous n'apartenez à aucune salle ?</p>
+                        <p>Cliquez sur le bouton &laquo;Créer une salle&raquo; pour créer votre première salle en invitant vos amis.</p>
+                    </div>
+                )}
                 <div className="rooms__container">
                     {rooms.map((room) => (
                         <Room
