@@ -15,6 +15,16 @@
     border-radius: 20px;
 }
 
+.black_red_basic {
+    background-color: var(--color-red);
+    color: var(--color-secondary);
+    border-radius: 20px;
+}
+
+.black_red_basic:hover{
+    background-color: #7e1b1b;
+}
+
 .red_button_basic:hover {
     background-color: #ac2c2c;
 }

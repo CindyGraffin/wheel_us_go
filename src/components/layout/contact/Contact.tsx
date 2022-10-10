@@ -12,7 +12,7 @@ const Contact: React.FC<ContactProps> = ({firstname, lastname, imgSrc}) => {
 				<div className='contact_img'>
 					<img src={imgSrc} alt="" />
 				</div>
-				<p>{firstName} {lastName}</p>
+				<p>{firstname} {lastname}</p>
 			</div>
 	);
 };
