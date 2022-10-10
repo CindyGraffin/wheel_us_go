@@ -11,7 +11,7 @@ const UserRooms: React.FC<unknown> = () => {
     const userId = state.user?._id;
 
     const [rooms, setRooms] = useState<[] | IRoom[]>([]);
-    const [deleteRoom, setDeleteRoom] = useState(false);
+    const [deleteRoom, setDeleteRoom] = useState<boolean>(false);
 
     /**
      * au chargement du composant, ou lors de la modification de deleteRoom ou userId, le service va récupérer les salles de l'utilisateur et les stocker dans le state room

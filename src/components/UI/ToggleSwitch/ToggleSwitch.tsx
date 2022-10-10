@@ -4,7 +4,7 @@ import "./toggleSwitch.css";
 type ToggleSwitchProps = {
   label: string;
   onChange:  React.ChangeEventHandler<HTMLInputElement>;
-  nameField: any;
+  nameField: Object;
 };
 
 const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ label, nameField, onChange}) => {

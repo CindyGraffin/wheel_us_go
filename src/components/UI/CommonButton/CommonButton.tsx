@@ -10,7 +10,7 @@ interface CommonButtonProps {
 const CommonButton: React.FC<CommonButtonProps> = ({buttonText, handleClick, icon, classname = ''}) => {
     return (
         <div onClick={handleClick} className={`btn-container ${classname}`}>
-            {icon}
+            {icon && icon}
             <button  className={`room-btn ${classname}`}>
                 {buttonText}
             </button>

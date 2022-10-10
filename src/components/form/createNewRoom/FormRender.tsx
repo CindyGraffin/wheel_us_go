@@ -14,6 +14,7 @@ import ListPeopleInvited from "./ListPeopleInvited/ListPeopleInvited";
 import CreateNewRoomTitle from "./createNewRoomTitle/CreateNewRoomTitle";
 import { BiBeer, TbBrandAirtable, RiShirtLine, BiReset } from "../../../icons";
 import { useNavigate } from "react-router-dom";
+import { IRoom } from "../../../types/IRoom";
 
 
 type RoomFormValues = {
@@ -28,7 +29,7 @@ type RoomFormValues = {
 };
 
 const FormRender: React.FC<unknown> = () => {
-    const [dataRooms, setDataRooms] = useState<any>({});
+    const [dataRooms, setDataRooms] = useState<IRoom | {}>({});
     const [friendsIdSelected, setFriendsIdSelected] = useState<string[]>([]);
     const [friendsList, setfriendsList] = useState<IUser[]>([]);
 
@@ -52,7 +53,7 @@ const FormRender: React.FC<unknown> = () => {
      * on ajoute des propriétés par défaut au state <dataRooms> à l'initialisation du composant
      */
     useEffect(() => {
-        setDataRooms((prev: any) => ({
+        setDataRooms((prev: Object) => ({
             ...prev,
             theme: "restaurant",
             creatorId: userId,
@@ -65,7 +66,7 @@ const FormRender: React.FC<unknown> = () => {
      * on met à jour la propriété <partIds> du state en ajoutant les id des amis sélectionnés quand le state <friendsIdSelected> est modifié
      */
     useEffect(() => {
-        setDataRooms((prev: any) => ({
+        setDataRooms((prev: Object) => ({
             ...prev,
             partIds: friendsIdSelected,
         }));
@@ -92,7 +93,7 @@ const FormRender: React.FC<unknown> = () => {
      * @param e ChangeEvent qui occure lorsque l'utilisateur modifie le contenu d'un <input>
      */
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setDataRooms((prev: any) => ({
+        setDataRooms((prev: Object) => ({
             ...prev,
             [e.target.id]: e.target.value.toLowerCase(),
         }));
@@ -103,7 +104,7 @@ const FormRender: React.FC<unknown> = () => {
      * @param e ChangeEvent qui occure lorsque l'utilisateur clique sur le toggle
      */
     const handleChangeToggle = (e: ChangeEvent<HTMLInputElement>) => {
-        setDataRooms((prev: any) => ({
+        setDataRooms((prev: Object) => ({
             ...prev,
             [e.target.id]: e.target.checked,
         }));
@@ -173,12 +174,8 @@ const FormRender: React.FC<unknown> = () => {
         (friend) => !friendsIdSelected.includes(friend._id!)
     );
 
-    const reset = () => {
-        console.log("reset");
-    };
 
-    const onSubmit = async (e: any) => {
-        console.log(dataRooms);
+    const onSubmit = async () => {
         if (friendsIdSelected.length > 0) {
             await roomService.createRoom({
                 ...dataRooms,
@@ -244,7 +241,7 @@ const FormRender: React.FC<unknown> = () => {
                     <TbBrandAirtable/>
                     Créer la salle
                 </button>
-                <button className="form-btn reset" type="reset" onClick={reset}>
+                <button className="form-btn reset" type="reset">
                     <BiReset/>
                     Réinitialiser
                 </button>
