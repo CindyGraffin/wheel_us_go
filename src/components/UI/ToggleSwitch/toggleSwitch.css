@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    margin-top: -1.5rem;
   }
   .toggle-switch {
     position: relative;
@@ -28,7 +29,7 @@
   .inner:after {
     float: left;
     width: 50%;
-    height: 36px;
+    height: 35px;
     padding: 0;
     line-height: 36px;
     color: #fff;
@@ -38,7 +39,7 @@
   .inner:before {
     content: "Oui";
     padding-left: 10px;
-    background-color: #060;
+    background-color: var(--color-tertiary);
     color: #fff;
   }
   .inner:after {

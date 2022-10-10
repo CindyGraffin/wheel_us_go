@@ -4,10 +4,12 @@ import {RiCloseCircleFill} from '../../../../icons/index';
 
 interface ListFriendsSelectedProps {
 	listFriendsSelected: IUser[];
+    handleDeletePart: (friendId: string) => void;
 }
 
 const ListPeopleInvited: React.FC<ListFriendsSelectedProps> = ({
 	listFriendsSelected,
+    handleDeletePart
 }) => {
 	return (
 		<div className="people_invited">
@@ -20,11 +22,11 @@ const ListPeopleInvited: React.FC<ListFriendsSelectedProps> = ({
                         <p>{friend.lastname + " " + friend.firstname}</p>
                     </div>
                     <div className="friend-selected-delete">
-                        <button>
+                        <button onClick={() => handleDeletePart(friend!._id)}>
                             <RiCloseCircleFill className="friend-selected-delete-icon"/>
                         </button>
                     </div>
-				</div>
+				</div> 
 			))}
 		</div>
 	);
