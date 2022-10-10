@@ -1,4 +1,4 @@
-import { AiOutlineEye, AiOutlineMessage, AiOutlinePlusCircle, AiOutlineStar } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineMessage, AiOutlinePlusCircle, AiOutlinePoweroff, AiOutlineStar } from "react-icons/ai";
 import { BiBeer, BiHomeAlt, BiReset, BiSearchAlt, BiSend } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
@@ -14,6 +14,7 @@ export {
     AiOutlineEye,
     AiOutlineMessage, 
     AiOutlinePlusCircle,
+    AiOutlinePoweroff,
     AiOutlineStar, 
     BiBeer, 
     BiHomeAlt, 
