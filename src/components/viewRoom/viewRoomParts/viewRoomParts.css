@@ -1,0 +1,37 @@
+.view-room-parts {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 1rem;
+    width: 34vw;
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 800px) {
+    .view-room-parts {
+        width: 55vw;
+        max-width: 650px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .view-room-parts {
+        width: 68vw;
+        max-width: 650px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .view-room-parts {
+        width: 75vw;
+        max-width: 650px; 
+    }
+}
+@media only screen and (max-width: 355px) {
+    .view-room-parts {
+        width: 78vw;
+        max-width: 650px; 
+        column-gap: 1rem;
+
+    }
+}

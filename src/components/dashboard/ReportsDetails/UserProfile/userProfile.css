@@ -1,0 +1,33 @@
+.user_profil_container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.user_profil_pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.information_profil_container {
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user_information_title {
+    font-size: 32px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.user_informations {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-black);
+    font-size: 16px;
+}

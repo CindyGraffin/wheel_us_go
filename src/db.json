@@ -233,12 +233,8 @@
 			"mail": "marquidefontaine@gmail.com",
 			"birthday": "15/12/1971",
 			"password": "MD123",
-<<<<<<< HEAD:db.json
-			"outingNumber": 0,
-=======
 			"connectedStatus" : true,
 			"premium" : false,
->>>>>>> feature/userHeadband:src/db.json
 			"city": "Lens",
 			"userImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gilbert_du_Motier_Marquis_de_Lafayette.jpg/280px-Gilbert_du_Motier_Marquis_de_Lafayette.jpg",
 			"tableCreations": 2,

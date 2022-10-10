@@ -9,8 +9,10 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({firstname, lastname, imgSrc}) => {
 	return (
 			<div className="contact__container">
-				<img src={imgSrc} alt="" />
-				<p>{firstname} {lastname}</p>
+				<div className='contact_img'>
+					<img src={imgSrc} alt="" />
+				</div>
+				<p>{firstName} {lastName}</p>
 			</div>
 	);
 };

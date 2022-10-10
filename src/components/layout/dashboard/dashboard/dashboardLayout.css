@@ -1,0 +1,13 @@
+/* DASHBOARD LAYOUT */
+.layout__dashboard {
+    background-color: var(--dashboard-color-primary);
+    min-height: 100vh;
+    min-width: fit-content;
+    display: flex;
+}
+
+/* VIEW CONTAINER */
+.content__container {
+    padding: 40px;
+    width: 100%;
+}

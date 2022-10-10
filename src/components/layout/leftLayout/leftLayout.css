@@ -1,37 +1,60 @@
-.left__container {
-    position: relative;
-    width: 100%;
-}
-.left-items__container {
-    position: fixed;
-    width: 16%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2.5rem;
-}
-/* LOGO */
-.logo__container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
 .logo__container>img {
-    max-width: 100%;    
-    z-index: 10;
+    position: absolute;
+    max-width: 200px;   
+    object-fit: cover; 
 }
-/* CREATE ROOMS */
-.create-rooms__container {
-    width: 100%;
+.logo__container {
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    height: 25%;
+    flex: 1;
 }
-.create-table-home {
+.left__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 1rem;
+}
+.create-rooms__container {
+    height: 80%;
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1120px) {
+    .logo__container>img {
+        max-width: 175px;   
+    }
+}
+@media only screen and (max-height: 750px) {
+    .logo__container>img {
+        max-width: 170px;   
+    }
+}
+@media only screen and (max-height: 700px) {
+    .create-rooms__container {
+        flex: 3;
+        row-gap: 0.8rem;
+    }
+}
+@media only screen and (max-height: 610px) {
+    .create-rooms__container {
+        flex: 2;
+        row-gap: 0.4rem;
+    }
+}
+@media only screen and (min-height: 960px) {
+    .create-rooms__container {
+        flex: 10;
+        row-gap: 0.4rem;
+    }
 }

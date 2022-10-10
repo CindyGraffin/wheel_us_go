@@ -1,0 +1,16 @@
+
+
+.register_count {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--color-black);
+
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -6,12 +6,14 @@ export default interface IUser {
     birthday?: Date;
     password: string | undefined;
     city: string;
+    isActive?: boolean;
     userImg?: string;
     outingPart: number;
     outingCre: number;
-    // Types.ObjectId à vérifier
+    role: string;
     tablesPartId?: string[];
     friendsId?: string[];
     groupsId?: string[];
+    createdAt?: Date;
+    reportingsId?: string[];
 }
-
