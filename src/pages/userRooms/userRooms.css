@@ -8,7 +8,13 @@
     color: var(--color-black);
 
 }
-
+.create-room-btn {
+    width: max-content;
+    display: flex;
+    margin: 0 auto;
+    margin-top: rem;
+    margin-bottom: 1rem;
+}
 @media only screen and (max-width: 925px) {
     .rooms__container {
         max-width: 360px;
