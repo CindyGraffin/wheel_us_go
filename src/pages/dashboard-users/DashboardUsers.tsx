@@ -7,7 +7,7 @@ import useFetch from "../../hooks/useFetch";
 import "./dashboardUser.css";
 
 const DashboardUsers: React.FC<unknown> = () => {
-    const { data: users, loading } = useFetch("/users");
+    const { data: users, loading, reFetch } = useFetch("/users");
 
     if (!users && loading) return <LoadingScreen />;
 
@@ -19,7 +19,7 @@ const DashboardUsers: React.FC<unknown> = () => {
                     <HiOutlineUsers className="dashboard_user_icon" />
                 </div>
                 <div>
-                    <DashboardUserTable users={users} />
+                    <DashboardUserTable users={users} refetchData={reFetch} />
                 </div>
             </div>
         </DashboardLayout>

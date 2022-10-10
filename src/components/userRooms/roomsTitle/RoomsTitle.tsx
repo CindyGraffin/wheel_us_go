@@ -1,17 +1,17 @@
-import './roomsTitle.css'
-import {TbBrandAirtable} from '../../../icons/index'
+import "./roomsTitle.css";
+import { TbBrandAirtable } from "../../../icons/index";
 
 interface RoomsTitleProps {
-    titleText: string
+    titleText: string;
+    icon: JSX.Element;
 }
 
-const RoomsTitle: React.FC<RoomsTitleProps> = ({titleText}) => {
+const RoomsTitle: React.FC<RoomsTitleProps> = ({ titleText, icon }) => {
     return (
-        <div className='rooms-title'>
-            <TbBrandAirtable className='rooms-icon'/>
+        <div className="rooms-title">
+            {icon}
             <div>
-            <h1>{titleText}</h1>
-
+                <h1>{titleText}</h1>
             </div>
         </div>
     );

@@ -1,24 +1,38 @@
 import React, { useState } from "react";
-import { IoEyeOutline } from "react-icons/io5";
 
-import IUser from "../../../types/IUser";
+import { userService } from "../../../services/userService";
+import { Button } from "../../UI";
 import DashboardUserInformationModal from "../../UI/Modal/dashboard/DashBoardUserInformation/DashboardUserInformationModal";
-import Modal from "../../UI/Modal/Modal";
+import IUser from "../../../types/IUser";
+
+import { FiAlertTriangle } from "react-icons/fi";
+import { IoAlertOutline, IoEyeOutline } from "react-icons/io5";
 import "./dashboardUserTable.css";
+
 
 export interface DashboardUserTableProps {
     users: IUser[];
+    refetchData: () => Promise<void>;
 }
 
-const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
+const DashboardUserTable: React.FC<DashboardUserTableProps> = ({
+    users,
+    refetchData,
+}) => {
     const [showModalUserInformation, setShowModalUserInformation] =
         useState<boolean>(false);
     const [selectedUser, setSelectedUser] = useState<IUser>();
-
     const onClickSeeUser = (user: IUser): void => {
         setSelectedUser(user);
         setShowModalUserInformation(true);
     };
+
+    const onClickBanUser = async (userId: string): Promise<void> => {
+        await userService.banUserById(userId);
+
+        refetchData();
+    };
+
     return (
         <>
             <div>
@@ -55,6 +69,23 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
                                 </div>
                                 <div className="grid_email">{user.email}</div>
                                 <div className="grid_role">{user.role}</div>
+                                <div className="grid_alert">
+                                    {!user.isActive && (
+                                        <div className="alert_icons_container">
+                                            <FiAlertTriangle className="alert_icons" />
+                                        </div>
+                                    )}
+                                    {user.reportingsId &&
+                                        user.reportingsId.length > 0 &&
+                                        user.isActive && (
+                                            <div className="test">
+                                                <IoAlertOutline className="alert_icons" />
+                                                <p className="report_notification">
+                                                    {user.reportingsId.length}
+                                                </p>
+                                            </div>
+                                        )}
+                                </div>
                                 <div className="grid_actions actions__container">
                                     <button
                                         type="button"
@@ -65,18 +96,41 @@ const DashboardUserTable: React.FC<DashboardUserTableProps> = ({ users }) => {
                                     >
                                         <IoEyeOutline className="see_more_icon" />
                                     </button>
+                                    {user.role !== "admin" && (
+                                        <div>
+                                            {user.isActive ? (
+                                                <Button
+                                                    color="red"
+                                                    onClick={() =>
+                                                        onClickBanUser(user._id)
+                                                    }
+                                                >
+                                                    <p>Bannir</p>
+                                                </Button>
+                                            ) : (
+                                                <Button
+                                                    color="purple"
+                                                    onClick={() =>
+                                                        onClickBanUser(user._id)
+                                                    }
+                                                >
+                                                    <p>Débannir</p>
+                                                </Button>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}
                 </div>
             </div>
             {showModalUserInformation && (
-                <Modal
-                    show={showModalUserInformation}
-                    setShow={setShowModalUserInformation}
-                >
-                    <DashboardUserInformationModal user={selectedUser} />
-                </Modal>
+                <DashboardUserInformationModal
+                    user={selectedUser}
+                    open={showModalUserInformation}
+                    setOpen={setShowModalUserInformation}
+                    refetchData={refetchData}
+                />
             )}
         </>
     );

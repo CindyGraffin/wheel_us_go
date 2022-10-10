@@ -1,0 +1,12 @@
+.category-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.category-icon {
+    color: var(--color-tertiary);
+}

@@ -28,11 +28,14 @@ const Conversation: React.FC<ConversationProps> = ({
 
 	return (
 		<div className={currentChat === conversation ? "conversation help" : "conversation"} >
-			<img
-				className="conversation-img"
-				src={friend?.userImg ? friend.userImg : ""}
-				alt=""
-			/>
+			<div>
+				<img
+					className="conversation-img"
+					src={friend?.userImg ? friend.userImg : ""}
+					alt=""
+				/>
+			</div>
+			
 			<span className="conversation-name">
 				{friend?.firstname} {friend?.lastname}
 			</span>

@@ -1,0 +1,36 @@
+.friend-selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+.friend-selected-img {
+    width: 3rem;
+    height: 3rem;
+}
+.friend-selected-img  img {
+    object-fit: cover;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.friend-selected-name {
+    width: 100%;
+}
+.friend-selected-name p {
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.friend-selected-delete button {
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.friend-selected-delete-icon {
+    font-size: 1.7rem;
+    color: var(--color-red);
+}

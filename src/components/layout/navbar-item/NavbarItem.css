@@ -25,6 +25,11 @@
         width: 3.1rem;
     }
 }
+@media only screen and (max-width: 800px) and (min-width: 650px) { 
+    .navbar-item {
+        width: 3.7rem;
+    }
+}
 @media only screen and (max-width: 560px) { 
     .navbar-item {
         width: 2.8rem;
