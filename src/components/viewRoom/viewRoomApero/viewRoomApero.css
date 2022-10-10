@@ -13,7 +13,7 @@
     object-fit: cover;
     margin-top: 1rem;
     margin-bottom: 0.8rem;
-    animation: rotation 4s infinite ease-in;
+    animation: rotation 3s infinite ease-in;
 }
 
 @keyframes rotation {
@@ -21,6 +21,6 @@
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(1500deg);
+        transform: rotate(1300deg);
     }
 }

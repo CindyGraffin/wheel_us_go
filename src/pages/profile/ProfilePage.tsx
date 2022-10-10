@@ -1,11 +1,84 @@
 import "./profilePage.css";
 import { Badge, Layout, UserHeadband } from "../../components/index";
-import { HiOutlineBadgeCheck } from "../../icons/index";
+import { AiOutlineStar, BiBeer, BiHomeAlt, BsPeople, FaGlassMartiniAlt, GiBabyFace, GiCartwheel, GiClover, GiMeal, GiRoastChicken, HiOutlineBadgeCheck, HiOutlinePhotograph, IoCalendarOutline, RiShirtLine, TbBrandAirtable } from "../../icons/index";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 
 
 const ProfilePage: React.FC<unknown> = () => {
+
+	const badges = [
+		{
+			classname: 'badge__container active',
+			badgeText: 'Petit Poulet',
+			icon: <GiBabyFace className="badge active"/>
+		},
+		{
+			classname: 'badge__container active',
+			badgeText: 'Chicken',
+			icon: <GiRoastChicken className="badge active"/>
+		},
+		{
+			classname: 'badge__container active',
+			badgeText: 'Chanceux',
+			icon: <GiClover className="badge active"/>
+		},
+		{
+			classname: 'badge__container active',
+			badgeText: 'Adepte des restos',
+			icon: <GiMeal className="badge active"/>
+		},
+		{
+			classname: 'badge__container active',
+			badgeText: 'At Home',
+			icon: <BiHomeAlt className="badge active"/>
+		},
+		{
+			classname: 'badge__container active',
+			badgeText: 'Adepte des apéros',
+			icon: <BiBeer className="badge active active"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Créateur de tables',
+			icon: <HiOutlinePhotograph className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'En groupe',
+			icon: <BsPeople className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Créateur de tables',
+			icon: <TbBrandAirtable className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Dernière minute',
+			icon: <IoCalendarOutline className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Créateur de tables',
+			icon: <RiShirtLine className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Créateur de tables',
+			icon: <FaGlassMartiniAlt className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Créateur de tables',
+			icon: <GiCartwheel className="badge"/>
+		},
+		{
+			classname: 'badge__container',
+			badgeText: 'Créateur de tables',
+			icon: <AiOutlineStar className="badge"/>
+		},
+	]
 
 	const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
@@ -22,8 +95,8 @@ const ProfilePage: React.FC<unknown> = () => {
 							<p>MES BADGES</p>
 						</div>
 						<div className="badges">
-							{nums.map((num, i) => {
-								return <Badge key={i}/>;
+							{badges.map((badge, i) => {
+								return <Badge key={i} badgeText={badge.badgeText} icon={badge.icon} classname={badge.classname!}/>;
 							})}
 						</div>
 					</div>

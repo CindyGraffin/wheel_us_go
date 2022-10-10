@@ -7,6 +7,14 @@
 .settings {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 1.5rem;
     align-items: center;
+}
+.settings a {
+    cursor: pointer;
+    color: var(--color-black);
+    font-weight: 600;
+}
+.settings a:active {
+    color: var(--color-tertiary);
 }

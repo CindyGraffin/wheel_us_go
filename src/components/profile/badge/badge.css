@@ -8,19 +8,35 @@
     border-radius: 50%;
     box-shadow: rgba(83, 83, 83, 0.44) 2px 3px 7px 0px inset;
 }
+.badge__container.active {
+    background-color: var(--color-primary);
+    box-shadow: var(--box-shadow)
+
+}
 .badge__container .badge {
     color: rgba(210, 210, 210, 0.722);
     font-size: 4.2rem;
 }
+.badge__container .badge.active {
+    color: var(--color-tertiary);
+}
 .badge-unique {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 0.3rem;
 }
 .btn-icon {
     color: var(--color-tertiary);
     font-size: 1.9rem;
+}
+.badge-text {
+    width: 8.5rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 1120px) {
