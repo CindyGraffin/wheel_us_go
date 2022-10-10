@@ -50,7 +50,9 @@ const ViewRoom: React.FC<unknown> = () => {
 					<ViewRoomLocation roomLocation={room.address} />
 					<ViewRoomDate roomDate={room.date.toString()} />
 					<ViewRoomDresscode dresscodeDescription={room.dresscode.description!} />
-					<ViewRoomApero roomId="1" />
+					{room.aperoWheel.setUp === true && (
+						<ViewRoomApero roomParts={room.partIds} />
+					)}
 					<ViewRoomParts parts={room.partIds}/>      
 					<div className="view-room-btns">
 						<CommonButton

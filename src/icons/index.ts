@@ -1,4 +1,4 @@
-import { AiOutlineEye, AiOutlineMessage, AiOutlineStar } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineMessage, AiOutlinePlusCircle, AiOutlineStar } from "react-icons/ai";
 import { BiBeer, BiHomeAlt, BiReset, BiSearchAlt, BiSend } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
@@ -13,6 +13,7 @@ import { TbSofa, TbBrandAirtable } from "react-icons/tb";
 export {
     AiOutlineEye,
     AiOutlineMessage, 
+    AiOutlinePlusCircle,
     AiOutlineStar, 
     BiBeer, 
     BiHomeAlt, 
