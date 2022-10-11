@@ -39,6 +39,9 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
     const goToCreateGroup = () => {
         navigate('/userfriends')
     }
+    const goToMessages = () => {
+        navigate('/usermessages')
+    }
     return (
         <div className={classname}>
             <div className="contacts-title">
@@ -51,6 +54,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                     <div className="contact-group">
                         {contacts.map((contact: IUser) => (
                             <Contact
+                                handleClick={goToMessages}
                                 key={contact.email + contact}
                                 firstname={contact.firstname}
                                 lastname={contact.lastname}

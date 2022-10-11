@@ -23,7 +23,7 @@ const ViewRoomApero: React.FC<ViewRoomAperoProps> = ({roomParts}) => {
         setTimeout(() => {
             setLaunchWheel(false)
             setWheelResults(true)
-        },2000)
+        },3000)
     }
 
     return (
