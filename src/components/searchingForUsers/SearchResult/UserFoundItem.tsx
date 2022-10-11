@@ -1,4 +1,7 @@
 import IUser from '../../../types/IUser'
+import { GoLocation } from '../../../icons/index'
+
+import FriendRequest from '../inputs/friendRequest/FriendRequest'
 
 // Affichage du User type depuis la recherche (PP + prénom + nom + Ville)
 
@@ -12,9 +15,18 @@ const UserFoundItem: React.FC<UserItemProps> = ({ user }) => {
     <li>
       <div className='userFoundContainer'>
         <img className='userFoundPP' src={user.userImg} alt="visage de l'utilisateur" />
+
         <div className='userFoundNameBox'>
-          <p className='userFoundName'> {user.firstname} {user.lastname} </p>
-          <p className='userFoundInfos'> {user.city}  </p>
+          <div className='userFoundName'> {user.firstname} {user.lastname} 
+            <span>
+            &nbsp; <FriendRequest friend={user} />
+            
+            </span>
+          </div>
+
+
+          <p className='userFoundInfos'> <GoLocation />&nbsp; {user.city}  </p>
+
         </div>
       </div>
     </li>

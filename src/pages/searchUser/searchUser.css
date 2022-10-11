@@ -22,13 +22,13 @@ form{
 
 .userFoundName:hover {
     font-weight: bold;
-    text-decoration: underline;
     cursor: pointer;
 }
 
 .noUserFound{
     padding: 2em;
     text-align: center;
+    justify-content: center;
 }
 
 /* CSS PP */
@@ -77,16 +77,19 @@ form{
 
 /* SearchBar */
 .searchBar {
-    /* coucou le reviewer !*/
+
     padding: 6px;
     border: none;
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
+    width: 300px;
 }
 
 .searchTerm {
     border: 2.5px solid var(--color-tertiary);
     border-radius: 5px ;
   }
+
+  
   
