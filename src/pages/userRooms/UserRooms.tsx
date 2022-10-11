@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { CommonButton, Layout, Room, RoomsTitle } from "../../components/index";
+import { Layout, Room, RoomsTitle } from "../../components/index";
 import { AuthContext } from "../../context/AuthContext";
 import { roomService } from "../../services/roomService";
 import { IRoom } from "../../types/IRoom";
