@@ -56,8 +56,8 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
                             <Contact
                                 handleClick={goToMessages}
                                 key={contact.email + contact}
-                                firstName={contact.firstname}
-                                lastName={contact.lastname}
+                                firstname={contact.firstname}
+                                lastname={contact.lastname}
                                 imgSrc={contact.userImg}
                             />
                         ))}

@@ -1,8 +1,10 @@
 import "./profilePage.css";
-import { Badge, Layout, UserHeadband } from "../../components/index";
-import { AiOutlineStar, BiBeer, BiHomeAlt, BsPeople, FaGlassMartiniAlt, GiBabyFace, GiCartwheel, GiClover, GiMeal, GiRoastChicken, HiOutlineBadgeCheck, HiOutlinePhotograph, IoCalendarOutline, RiShirtLine, TbBrandAirtable } from "../../icons/index";
-import { AuthContext } from "../../context/AuthContext";
+
+import { AiOutlineStar, BiBeer, BiHomeAlt, BsPeople, FaGlassMartiniAlt, GiBabyFace, GiCartwheel, GiClover, GiMeal, GiRoastChicken, HiOutlineBadgeCheck, HiOutlinePhotograph, IoCalendarOutline, RiShirtLine, TbBrandAirtable } from "../../../icons/index";
+
 import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { Badge, Layout, UserHeadband } from "../../../components";
 
 
 const ProfilePage: React.FC<unknown> = () => {
@@ -81,8 +83,6 @@ const ProfilePage: React.FC<unknown> = () => {
 			icon: <AiOutlineStar className="badge"/>
 		},
 	]
-
-	const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 	const {state} = useContext(AuthContext);
 

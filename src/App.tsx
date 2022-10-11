@@ -14,6 +14,7 @@ import {
     SearchUser,
     UserFriends,
     UserMessages,
+    UserProfile,
     UserRooms,
     ViewRoom,
 } from "./pages";
@@ -57,6 +58,7 @@ function App() {
                 />
                 <Route element={<ProtectedRoute user={state.user} />}>
                     <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/profile/:userId" element={<UserProfile />} />
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/userrooms" element={<UserRooms />} />
                     <Route

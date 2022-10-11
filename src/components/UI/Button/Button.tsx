@@ -6,6 +6,7 @@ const COLORS = {
     brown: { basic: "brown_button_basic" },
     red: { basic: "red_button_basic" },
     purple: { basic: "purple_button_basic" },
+    black_red: {basic: "black_red_basic"}
 } as const;
 
 type ButtonVariant = "basic";
