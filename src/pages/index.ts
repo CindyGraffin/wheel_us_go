@@ -7,6 +7,7 @@ import PremiumPage from "./premium/PremiumPage";
 import ProfilePage from "./profile/Me/ProfilePage";
 import ReglagesPage from "./reglages/ReglagesPage";
 import SearchUser from "./searchUser/SearchUser";
+import UserGroups from "./userGroups/UserGroups";
 import UserFriends from "./userFriends/UserFriends";
 import UserMessages from "./userMessages/UserMessages";
 import UserProfile from "./profile/UserProfile/UserProfile";
@@ -21,6 +22,7 @@ export {
     DashboardUsers,
     ProfilePage,
     SearchUser,
+    UserGroups, 
     UserProfile,
     UserRooms,
     UserMessages,

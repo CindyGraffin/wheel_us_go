@@ -13,6 +13,7 @@ import {
     ReglagesPage,
     SearchUser,
     UserFriends,
+    UserGroups,
     UserMessages,
     UserProfile,
     UserRooms,
@@ -24,6 +25,7 @@ import AuthProtectedRoute from "./router/AuthProtectedRoute";
 import AdminRoute from "./router/AdminRoute";
 import { io } from "socket.io-client";
 import DashboardReport from "./pages/dashboard-report/DashboardReport";
+
 
 const socket = io("https://wheelsocket.azurewebsites.net/");
 
@@ -66,6 +68,7 @@ function App() {
                         element={<UserMessages socket={socket} />}
                     />
                     <Route path="/userfriends" element={<UserFriends />} />
+                    <Route path="/usergroups" element={<UserGroups />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />
                     <Route path="/viewroom/:roomid" element={<ViewRoom/>}/>
