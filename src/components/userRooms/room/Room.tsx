@@ -3,7 +3,7 @@ import { RoomDate, RoomIcon, RoomTitle, CommonButton } from "../../index";
 import { roomService } from "../../../services/roomService";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {AiOutlineEye, IoTrashBinOutline} from '../../../icons'
 import "./room.css";
 
 interface RoomProps {
@@ -48,12 +48,15 @@ const Room: React.FC<RoomProps> = ({
             </div>
             <div className="room-btns">
                 <CommonButton
+                icon={<AiOutlineEye/>}
                     buttonText="Voir"
                     handleClick={goToRoom}
                 />
                 <CommonButton
+                    icon={<IoTrashBinOutline/>}
                     buttonText="Quitter la salle"
                     handleClick={deleteUserInRoom}
+                    classname='delete-btn'
                 />
             </div>
         </div>

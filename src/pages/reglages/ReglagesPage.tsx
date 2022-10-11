@@ -13,14 +13,16 @@ const ReglagesPage: React.FC<unknown> = () => {
     };
     return (
         <Layout>
-            <div>
-                {state && state.user?.role === "admin" && (
-                    <a href="/dashboard" target="_blank">
-                        Aller vers le Tableau de bord
-                    </a>
-                )}
-                <div>
-                    <Button onClick={onClickLogout}>Se déconnecter</Button>
+            <div className="settings-page">
+                <div className="settings">
+                    {state && state.user?.role === "admin" && (
+                        <a href="/dashboard" target="_blank">
+                            Aller vers le Tableau de bord
+                        </a>
+                    )}
+                    <div>
+                        <Button onClick={onClickLogout}>Se déconnecter</Button>
+                    </div>
                 </div>
             </div>
         </Layout>

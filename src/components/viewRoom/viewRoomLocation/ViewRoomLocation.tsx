@@ -1,5 +1,5 @@
-import { GoLocation } from "../../../icons/index";
 import "./viewRoomLocation.css";
+import { GoLocation } from "../../../icons/index";
 
 interface ViewRoomLocationProps {
     roomLocation: string;
@@ -12,7 +12,7 @@ const ViewRoomLocation: React.FC<ViewRoomLocationProps> = ({
         <div className="view-room-item">
             <div className="view-room-section">
                 <GoLocation className="view-room-icon" />
-                <span>Addresse:</span>
+                <p>Addresse:</p>
             </div>
             <p>{roomLocation}</p>
         </div>

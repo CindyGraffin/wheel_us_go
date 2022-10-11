@@ -5,6 +5,7 @@ import { IRoom } from "../../types/IRoom";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { roomService } from "../../services/roomService";
+import {IoMdExit, TbBrandAirtable} from '../../icons/index'
 
 const ViewRoom: React.FC<unknown> = () => {
 
@@ -49,16 +50,21 @@ const ViewRoom: React.FC<unknown> = () => {
 					<ViewRoomLocation roomLocation={room.address} />
 					<ViewRoomDate roomDate={room.date.toString()} />
 					<ViewRoomDresscode dresscodeDescription={room.dresscode.description!} />
-					<ViewRoomApero roomId="1" />
+					{room.aperoWheel.setUp === true && (
+						<ViewRoomApero roomParts={room.partIds} />
+					)}
 					<ViewRoomParts parts={room.partIds}/>      
 					<div className="view-room-btns">
 						<CommonButton
 							buttonText="Retour aux salles"
 							handleClick={returnToRooms}
+							icon={<TbBrandAirtable/>}
 						/>
 						<CommonButton
+							icon={<IoMdExit/>}
 							buttonText="Quitter la salle"
 							handleClick={leaveRoom}
+							classname='delete-btn'
 						/>
 					</div>
 				</div>
