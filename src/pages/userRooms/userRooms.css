@@ -13,7 +13,10 @@
     display: flex;
     margin: 0 auto;
     margin-top: -0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
+}
+.form-btn.rooms {
+    padding: 0.3rem 0.5rem;
 }
 .no-rooms {
     color: var(--color-black);

@@ -23,6 +23,9 @@
     align-items: center;
     gap: 0.3rem;
 }
+.headband-location p {
+    text-transform: capitalize;
+}
 .headband-name {
     text-align: center;
 }

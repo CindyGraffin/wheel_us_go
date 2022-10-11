@@ -59,6 +59,7 @@ const UserMessages: React.FC<UserMessagesProps> = ({socket}) => {
 		};
 		getMessagesByConversationId();
 	}, [currentChat]);
+	
 	useEffect(() => {
 		const getFriendsByUserId = async () => {
 			const response = await userService.getFriendsByUserId(userId);
