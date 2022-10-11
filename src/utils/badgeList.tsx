@@ -9,7 +9,6 @@ import {
     GiClover,
     GiMeal,
     GiRoastChicken,
-    HiOutlineBadgeCheck,
     HiOutlinePhotograph,
     IoCalendarOutline,
     RiShirtLine,
