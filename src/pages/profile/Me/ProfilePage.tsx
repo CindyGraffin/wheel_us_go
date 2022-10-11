@@ -16,6 +16,7 @@ const ProfilePage: React.FC<unknown> = () => {
             <div className="profile__container">
                 <div className="headband">
                     <UserHeadband user={state.user} />
+                   
                     <div className="badges__container">
                         <div className="badges-title">
                             <HiOutlineBadgeCheck className="badge-icon" />
