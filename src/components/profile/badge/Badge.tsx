@@ -1,13 +1,18 @@
 import './badge.css'
-import { GiRoastChicken } from '../../../icons/index';
 
-const Badge: React.FC<unknown> = () => {
+interface BadgeProps {
+    icon: JSX.Element;
+    badgeText: string;
+    classname: string;
+}
+
+const Badge: React.FC<BadgeProps> = ({icon, badgeText, classname}) => {
 	return (
         <div className='badge-unique'>
-            <div className="badge__container">
-            <GiRoastChicken className="badge"/>
+            <div className={classname}>
+            {icon}
             </div>
-            <p>Chicken</p>
+            <p className='badge-text'>{badgeText}</p>
         </div>
 
     );

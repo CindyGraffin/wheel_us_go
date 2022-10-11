@@ -59,6 +59,7 @@ const UserMessages: React.FC<UserMessagesProps> = ({socket}) => {
 		};
 		getMessagesByConversationId();
 	}, [currentChat]);
+	
 	useEffect(() => {
 		const getFriendsByUserId = async () => {
 			const response = await userService.getFriendsByUserId(userId);
@@ -127,7 +128,6 @@ const UserMessages: React.FC<UserMessagesProps> = ({socket}) => {
 
 	const createConversation = async () => {
 		if (friendId !== undefined) {
-			console.log(friendId);
 			const createdConversation =
 				await conversationService.createConversation(userId, friendId);
 			setConversations([...conversations, createdConversation.data]);

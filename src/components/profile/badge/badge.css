@@ -1,26 +1,42 @@
 .badge__container {
     background-color: rgb(163, 163, 163);
-    width: 6rem;
-    height: 6rem;
+    width: 5.7rem;
+    height: 5.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     box-shadow: rgba(83, 83, 83, 0.44) 2px 3px 7px 0px inset;
 }
+.badge__container.active {
+    background-color: var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.24) 2px 2px 2px;
+
+}
 .badge__container .badge {
     color: rgba(210, 210, 210, 0.722);
-    font-size: 4.2rem;
+    font-size: 3.8rem;
+}
+.badge__container .badge.active {
+    color: var(--color-tertiary);
 }
 .badge-unique {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 0.3rem;
 }
 .btn-icon {
     color: var(--color-tertiary);
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+}
+.badge-text {
+    width: 8.5rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 1120px) {
@@ -29,7 +45,7 @@
         height: 5rem;
     }
     .badge__container .badge {
-        font-size: 3.8rem;
+        font-size: 3.6rem;
     }
 } 
 
@@ -39,7 +55,7 @@
         height: 4rem;
     }
     .badge__container .badge {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
 }
 @media only screen and (max-width: 310px) { 
@@ -48,7 +64,7 @@
         height: 3rem;
     }
     .badge__container .badge {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
     }
 }
 

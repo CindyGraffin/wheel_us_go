@@ -1,20 +1,21 @@
-import axios from "axios"; 
+import { api } from "../utils/dryconfig";
+
 
 class ConversationService {  
 
     getConversationsByUserId = (userId: string) => {
-        return axios.get(`http://localhost:8800/api/conversations/${userId}`)
+        return api.get(`/conversations/${userId}`)
     }
 
     createConversation = (senderId: string, receiverId: string) => {
-        return axios.post(`http://localhost:8800/api/conversations/newconversation`, {
+        return api.post(`/conversations/newconversation`, {
             senderId: senderId,
             receiverId : receiverId
         })
     }
 
     deleteConversation = (conversationId: string) => {
-        return axios.delete(`http://localhost:8800/api/conversations/${conversationId}`)
+        return api.delete(`/conversations/${conversationId}`)
     }
 
 }  

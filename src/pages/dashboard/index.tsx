@@ -5,8 +5,8 @@ import LoadingScreen from "../../components/dashboard/LoadingScreen/LoadingScree
 import { AuthContext } from "../../context/AuthContext";
 import useFetch from "../../hooks/useFetch";
 import "./dashboard.css";
-import RegistredUserCount from "../../components/dashboard/dashboardStat/RegistredUserCount";
 import { NavLink } from "react-router-dom";
+import RegistredUserCount from "../../components/dashboard/dashboardStat/registredUserCount/RegistredUserCount";
 
 const Dashboard: React.FC<unknown> = () => {
     const { state } = useContext(AuthContext);
@@ -31,7 +31,6 @@ const Dashboard: React.FC<unknown> = () => {
                         </NavLink>
                     )}
                 </div>
-                <div>users encart</div>
             </div>
         </DashboardLayout>
     );

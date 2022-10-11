@@ -1,13 +1,14 @@
 .no-contacts-message {
     margin: 1.5rem;
     text-align: center;
+    color: var(--color-black);
 }
 .no-contacts-message p:nth-child(1) {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
 .no-contacts-message p:nth-child(2) {
-    font-weight: bold;
+    font-weight: 600;
 }
 .add-contact {
     padding: 0.2rem 0.6rem;

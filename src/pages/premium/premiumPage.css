@@ -1,0 +1,24 @@
+.premium-page {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star-icon {
+    font-size: 5rem;
+    color: var(--color-tertiary);
+}
+.premium {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.premium p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 50vw;
+    padding: 0rem 1rem;
+    color: var(--color-black);
+    font-weight: 600;
+}

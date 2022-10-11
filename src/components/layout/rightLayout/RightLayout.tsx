@@ -1,19 +1,32 @@
 import { BsPeople, IoPersonOutline } from "../../../icons/index";
 import './rightLayout.css'
 import ContactGroup from "../contactGroup/ContactGroup";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
+import IUser from "../../../types/IUser";
+import { userService } from "../../../services/userService";
 
 const RightLayout: React.FC<unknown> = () => {
+
+    const [contacts, setContacts] = useState<IUser | []>([])
     const { state } = useContext(AuthContext);
-    const userFriends = state.user?.friendsId;
+    const userId = state.user!._id
+
+    useEffect(() => {
+		const getFriendsByUserId = async () => {
+			const response = await userService.getFriendsByUserId(userId);
+			setContacts(response.data.friendsId);
+		};
+		getFriendsByUserId();
+	}, [userId]);
+
     const userGroups = state.user?.groupsId;
     
 	
     const contactsGroupsCreation = [
 		{
 			classname: "contacts-group contacts",
-			contacts: userFriends,
+			contacts: contacts,
 			title: 'CONTACTS',
 			icon: <IoPersonOutline className="contact-title-icon" />
 		},

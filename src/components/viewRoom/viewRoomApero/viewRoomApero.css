@@ -1,3 +1,26 @@
 .wheel-btn {
     margin: 0.7rem;
 }
+
+.apero-winner {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.wheel-img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    animation: rotation 3s infinite ease-in;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1300deg);
+    }
+}

@@ -4,6 +4,7 @@ import { AuthContext } from "./context/AuthContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
     ConnectionPage,
+	CreateNewRoom,
     Dashboard,
     DashboardStats,
     DashboardUsers,
@@ -12,17 +13,19 @@ import {
     ReglagesPage,
     SearchUser,
     UserFriends,
+    UserGroups,
     UserMessages,
+    UserProfile,
     UserRooms,
     ViewRoom,
 } from "./pages";
 
 import ProtectedRoute from "./router/ProtectedRoute";
 import AuthProtectedRoute from "./router/AuthProtectedRoute";
-
 import AdminRoute from "./router/AdminRoute";
 import { io } from "socket.io-client";
 import DashboardReport from "./pages/dashboard-report/DashboardReport";
+
 
 const socket = io("https://wheelsocket.azurewebsites.net/");
 
@@ -33,9 +36,7 @@ function App() {
         const userId = state.user?._id;
         if (userId) {
             socket.emit("addUser", userId);
-            socket.on("getUsers", (users) => {
-                console.log(users);
-            });
+            socket.on("getUsers", (users) => {});
         }
 
         return () => {
@@ -57,6 +58,7 @@ function App() {
                 />
                 <Route element={<ProtectedRoute user={state.user} />}>
                     <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/profile/:userId" element={<UserProfile />} />
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/userrooms" element={<UserRooms />} />
                     <Route
@@ -64,9 +66,11 @@ function App() {
                         element={<UserMessages socket={socket} />}
                     />
                     <Route path="/userfriends" element={<UserFriends />} />
+                    <Route path="/usergroups" element={<UserGroups />} />
                     <Route path="/premium" element={<PremiumPage />} />
                     <Route path="/reglages" element={<ReglagesPage />} />
-                    <Route path="/viewroom/:roomid" element={<ViewRoom />} />
+                    <Route path="/viewroom/:roomid" element={<ViewRoom/>}/>
+					<Route path="/createroom" element={<CreateNewRoom/>}/>
                 </Route>
 
                 <Route element={<AdminRoute user={state.user} />}>

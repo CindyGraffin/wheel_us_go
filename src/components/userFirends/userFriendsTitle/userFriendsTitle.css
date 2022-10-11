@@ -1,0 +1,64 @@
+.user-friends-title {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1.8rem;
+}
+.user-friends-icon {
+    font-size: 3rem;
+    color: var(--color-tertiary);
+}
+.user-friends-title h1 {
+    color: var(--color-tertiary);
+    font-weight: 500;
+    text-align: center;
+    font-size: 3rem;
+    max-width: 500px;
+}
+@media only screen and (max-width: 500px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 2.6rem;
+        margin-top: -1rem;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 2.6rem;
+    }
+    .user-friends-title {
+        column-gap: 0.7rem;
+        margin-bottom: 1.6rem;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 2.2rem;
+    }
+    .user-friends-title {
+        column-gap: 0.4rem;
+        margin-bottom: 1.2rem;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 2rem;
+    }
+    .user-friends-title {
+        column-gap: 0.2rem;
+        margin-bottom: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 1.7rem;
+    }
+}

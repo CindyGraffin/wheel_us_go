@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, Key } from "react";
 import { Contact } from "../index";
 import { AiOutlinePlus } from "react-icons/ai";
 import "./contactgroup.css";
@@ -13,14 +13,13 @@ interface ContactGroupProps {
     icon: ReactNode;
 }
 
-
 const ContactGroup: React.FC<ContactGroupProps> = ({
     classname,
     title,
     contacts,
-    icon,
+    icon
 }) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const noContactInfos = [
         {
             question: "Vous n'avez pas encore de poulets à vos côtés ?",
@@ -34,11 +33,14 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
         },
     ] as const;
     const goToAddFriends = () => {
-        navigate('/searchuser')
-    }
+        navigate("/searchuser");
+    };
     const goToCreateGroup = () => {
-        navigate('/userfriends')
-    }
+        navigate("/usergroups");
+    };
+    const goToMessages = () => {
+        navigate("/usermessages");
+    };
     return (
         <div className={classname}>
             <div className="contacts-title">
@@ -49,16 +51,17 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
             {contacts && contacts.length > 0 ? (
                 <>
                     <div className="contact-group">
-                        {contacts.map((contact: IUser) => (
+                        {contacts.map((contact: IUser, key: Key) => (
                             <Contact
-                                key={contact.email + contact}
-                                firstName={contact.firstname}
-                                lastName={contact.lastname}
+                                handleClick={goToMessages}
+                                key={key}
+                                firstname={contact.firstname}
+                                lastname={contact.lastname}
                                 imgSrc={contact.userImg}
                             />
                         ))}
                     </div>
-                <div className="contact-btn" onClick={goToAddFriends}>
+                    <div className="contact-btn" onClick={goToAddFriends}>
                         <AiOutlinePlus className="contact-btn-icon" />
                     </div>
                 </>

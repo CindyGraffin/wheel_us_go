@@ -4,14 +4,42 @@
     gap: 1rem;
     max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 0.7rem;
+    color: var(--color-black);
+
+}
+.create-room-btn {
+    width: max-content;
+    display: flex;
+    margin: 0 auto;
+    margin-top: -0.5rem;
+    margin-bottom: 1.3rem;
+}
+.form-btn.rooms {
+    padding: 0.3rem 0.5rem;
+}
+.no-rooms {
+    color: var(--color-black);
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+.no-rooms p:nth-child(2) {
+    margin-top: 0.5rem;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 925px) {
     .rooms__container {
-        max-width: 300px;
+        max-width: 360px;
     }
 }
-
+@media only screen and (max-width: 500px) {
+    .rooms__container {
+        max-width: 325px;
+    }
+}
 @media only screen and (max-width: 390px) {
     .rooms__container {
         max-width: 250px;

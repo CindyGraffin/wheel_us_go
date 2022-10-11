@@ -4,12 +4,6 @@ import { NavLink } from "react-router-dom";
 import './navlist.css';
 
 const Navlist: React.FC<unknown> = () => {
-    let activeStyle = {
-        color: '#c8865a',
-    };
-    let myStyle = {
-        color: '#c8865a'
-    }
     const navlinksInfos = [
         {
 			path: "/profile",
