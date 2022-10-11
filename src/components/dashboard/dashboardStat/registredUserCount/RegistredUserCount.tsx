@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../../UI/dashboard/Card/Card";
+import Card from "../../../UI/dashboard/Card/Card";
 import "./registredUserCount.css";
 
 export interface RegistredUserCountProps {
