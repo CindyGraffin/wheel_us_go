@@ -17,7 +17,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
     classname,
     title,
     contacts,
-    icon,
+    icon
 }) => {
     const navigate = useNavigate();
     const noContactInfos = [
@@ -36,7 +36,7 @@ const ContactGroup: React.FC<ContactGroupProps> = ({
         navigate("/searchuser");
     };
     const goToCreateGroup = () => {
-        navigate("/userfriends");
+        navigate("/usergroups");
     };
     const goToMessages = () => {
         navigate("/usermessages");
