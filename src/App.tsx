@@ -36,9 +36,7 @@ function App() {
         const userId = state.user?._id;
         if (userId) {
             socket.emit("addUser", userId);
-            socket.on("getUsers", (users) => {
-                console.log(users);
-            });
+            socket.on("getUsers", (users) => {});
         }
 
         return () => {

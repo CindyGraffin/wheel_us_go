@@ -1,5 +1,4 @@
 import "./roomsTitle.css";
-import { TbBrandAirtable } from "../../../icons/index";
 
 interface RoomsTitleProps {
     titleText: string;
