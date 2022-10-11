@@ -59,3 +59,61 @@
 .add_friend_navlink:hover {
     background-color: #a7704c;
 }
+.contact-friends-btn-large {
+    display: block; 
+}
+.contact-friends-btn-small {
+    display: none; 
+}
+
+
+@media only screen and (max-width: 500px) {
+    .friend-picture {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+    .contact_friends_container {
+        gap: 1rem;
+    }
+}
+@media only screen and (max-width: 440px) {
+    .friend-picture {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+    .contact-friends-btn-large {
+        display: none; 
+    }
+    .contact-friends-btn-small {
+        display: block; 
+    }
+    .trash-icon {
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .friend-picture {
+        width: 3.5rem;
+        height: 3.5rem;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+    .trash-icon {
+        font-size: 1.2rem;
+    }
+}
+@media only screen and (max-width: 310px) {
+    .contact_friends_container {
+        gap: 0.5rem;
+    }
+    .friend-picture {
+        margin-right: -0.5rem;
+    }
+    .trash-icon {
+        font-size: 1rem;
+    }
+}

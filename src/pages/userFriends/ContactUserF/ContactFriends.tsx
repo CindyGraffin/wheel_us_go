@@ -52,17 +52,31 @@ const ContactFriends: React.FC<ContactFriendsProps> = ({
                                 {friend.firstname}&nbsp;{friend.lastname}
                             </p>
                         </NavLink>
-                        <Button
-                            color="black_red"
-                            onClick={() => {
-                                removeFriend(userId, friend._id);
-                            }}
-                        >
-                            <span className="button_container">
-                                <IoTrashBinOutline />
-                                Supprimer
-                            </span>
-                        </Button>
+                        <div className="contact-friends-btn-large">
+                            <Button
+                                color="black_red"
+                                onClick={() => {
+                                    removeFriend(userId, friend._id);
+                                }}
+                            >
+                                <span className="button_container">
+                                    <IoTrashBinOutline />
+                                    Supprimer
+                                </span>
+                            </Button>
+                        </div>
+                        <div className="contact-friends-btn-small">
+                            <Button
+                                color="black_red"
+                                onClick={() => {
+                                    removeFriend(userId, friend._id);
+                                }}
+                            >
+                                <span className="button_container">
+                                    <IoTrashBinOutline className="trash-icon"/>
+                                </span>
+                            </Button>
+                        </div>
                     </div>
                 ))}
         </div>

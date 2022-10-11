@@ -17,6 +17,13 @@
     font-size: 3rem;
     max-width: 500px;
 }
+@media only screen and (max-width: 500px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 2.6rem;
+        margin-top: -1rem;
+    }
+}
 
 @media only screen and (max-width: 440px) {
     .user-friends-title h1,
@@ -31,14 +38,14 @@
 @media only screen and (max-width: 390px) {
     .user-friends-title h1,
     .user-friends-icon {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
     }
     .user-friends-title {
         column-gap: 0.4rem;
         margin-bottom: 1.2rem;
     }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 340px) {
     .user-friends-title h1,
     .user-friends-icon {
         font-size: 2rem;
@@ -46,5 +53,12 @@
     .user-friends-title {
         column-gap: 0.2rem;
         margin-bottom: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .user-friends-title h1,
+    .user-friends-icon {
+        font-size: 1.7rem;
     }
 }

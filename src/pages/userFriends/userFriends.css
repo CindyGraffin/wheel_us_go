@@ -1,8 +1,8 @@
-.bon_contact {
-    width: 100%;
-    color: blue;
-}
-
 .user_friends_container {
-    padding: 20px;
+    padding: 1rem;
+}
+@media only screen and (max-width: 350px) {
+    .user_friends_container {
+        padding: 0.3rem;
+    }
 }
