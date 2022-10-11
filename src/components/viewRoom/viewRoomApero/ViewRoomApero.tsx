@@ -43,7 +43,8 @@ const ViewRoomApero: React.FC<ViewRoomAperoProps> = ({roomParts}) => {
                 </div>
             )}
             {wheelResults && (
-                <div>
+                <div className='wheel-result'>
+                    <img src={partApero?.userImg} alt="winner" className="winner-img view-room-part-picture"/>
                     <p>Et le gagnant est ... <span className='apero-winner'>{partApero?.firstname} {partApero?.lastname}</span> !</p>
                     <p>Félicitations petit(e) poulet(te) 👏</p>
                 </div>

@@ -15,6 +15,10 @@
     margin-bottom: 0.8rem;
     animation: rotation 3s infinite ease-in;
 }
+.wheel-result {
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+}
 
 @keyframes rotation {
     from {
@@ -23,4 +27,8 @@
     to {
         transform: rotate(1300deg);
     }
+}
+.winner-img {
+    width: 3.5rem;
+    height: 3.5rem;
 }
