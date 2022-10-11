@@ -20,12 +20,7 @@ import {
     TbBrandAirtable,
 } from "../../../icons/index";
 
-export interface UserProfileProps {
-    className?: string;
-}
-
-const UserProfile: React.FC<UserProfileProps> = ({ className = "" }) => {
-    const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+const UserProfile: React.FC<unknown> = () => {
     const { userId } = useParams();
     const { data: user } = useFetch(`/users/${userId}`);
 
