@@ -2,9 +2,7 @@ import { Badge, Layout, UserHeadband } from "../../../components/index";
 import "./userprofile.css";
 import useFetch from "../../../hooks/useFetch";
 import { useParams } from "react-router-dom";
-import {
-    HiOutlineBadgeCheck,
-} from "../../../icons/index";
+import { HiOutlineBadgeCheck } from "../../../icons/index";
 import { Button } from "../../../components/UI";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
@@ -17,7 +15,6 @@ const UserProfile: React.FC<unknown> = () => {
     const { userId } = useParams();
     const { data: user, reFetch } = useFetch(`/users/${userId}`);
     const { state } = useContext(AuthContext);
-
 
     const [isFriend, setIsFriend] = useState<boolean>();
 
@@ -50,7 +47,7 @@ const UserProfile: React.FC<unknown> = () => {
             <div className="profile__container">
                 <div className="headband">
                     <UserHeadband user={user} />
-                    <div>
+                    <div className="actions_container">
                         {!isFriend ? (
                             <Button
                                 onClick={() => {

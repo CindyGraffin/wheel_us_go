@@ -21,6 +21,11 @@
     gap: 2.8rem;
     margin: 2rem 2.2rem;
 }
+.actions_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
 
 @media only screen and (max-width: 1120px) {
     .badges {
