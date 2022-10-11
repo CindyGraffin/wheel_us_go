@@ -31,6 +31,7 @@ const UserRooms: React.FC<unknown> = () => {
         navigate('/createroom')
     }    
 
+
     return (
         <Layout>
             <>
@@ -53,7 +54,7 @@ const UserRooms: React.FC<unknown> = () => {
                             key={room._id}
                             roomId={room._id}
                             roomTheme={room.theme}
-                            roomDate={room.date.toString()}
+                            roomDate={room.date}
                             roomTitle={room.placeName}
                             deleteRoom={deleteRoom}
                             setDeleteRoom={setDeleteRoom}

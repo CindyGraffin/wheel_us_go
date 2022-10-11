@@ -1,6 +1,6 @@
 import React from "react";
 import { BiStats } from "react-icons/bi";
-import RegistredUserCount from "../../components/dashboard/dashboardStat/RegistredUserCount";
+import RegistredUserCount from "../../components/dashboard/dashboardStat/registredUserCount/RegistredUserCount";
 import DashboardLayout from "../../components/layout/dashboard/dashboard/DashboardLayout";
 import useFetch from "../../hooks/useFetch";
 import "./dashboardStats.css";

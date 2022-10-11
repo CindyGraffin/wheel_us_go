@@ -6,8 +6,10 @@ import LoadingScreen from "../../components/dashboard/LoadingScreen/LoadingScree
 import useFetch from "../../hooks/useFetch";
 import "./dashboardUser.css";
 
+
 const DashboardUsers: React.FC<unknown> = () => {
     const { data: users, loading, reFetch } = useFetch("/users");
+
 
     if (!users && loading) return <LoadingScreen />;
 

@@ -5,11 +5,12 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {AiOutlineEye, IoTrashBinOutline} from '../../../icons'
 import "./room.css";
+import { formattedTime } from "../../../utils/formatDate";
 
 interface RoomProps {
     roomTitle: string;
     roomTheme: string;
-    roomDate: string;
+    roomDate: Date;
     roomId: string;
     deleteRoom: boolean;
     setDeleteRoom: React.Dispatch<React.SetStateAction<boolean>>;
@@ -35,6 +36,9 @@ const Room: React.FC<RoomProps> = ({
     const goToRoom = () => {
         navigate(`/viewroom/${roomId}`)
     }
+
+    const formattedDate = formattedTime(new Date(roomDate))
+    
     return (
         <div className="room">
             <div className="room-infos">
@@ -43,7 +47,7 @@ const Room: React.FC<RoomProps> = ({
                 </div>
                 <div>
                     <RoomTitle roomTitle={roomTitle} />
-                    <RoomDate roomDate={roomDate} />
+                    <RoomDate roomDate={formattedDate} />
                 </div>
             </div>
             <div className="room-btns">
