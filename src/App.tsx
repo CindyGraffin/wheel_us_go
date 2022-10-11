@@ -13,6 +13,7 @@ import {
     SearchUser,
     UserFriends,
     UserMessages,
+    UserProfile,
     UserRooms,
     ViewRoom,
 } from "./pages";
@@ -24,25 +25,25 @@ import AdminRoute from "./router/AdminRoute";
 import { io } from "socket.io-client";
 import DashboardReport from "./pages/dashboard-report/DashboardReport";
 
-// const socket = io("https://wheelsocket.azurewebsites.net/");
+const socket = io("https://wheelsocket.azurewebsites.net/");
 
 function App() {
     const { state } = useContext(AuthContext);
 
-    // useEffect(() => {
-    //     const userId = state.user?._id;
-    //     if (userId) {
-    //         socket.emit("addUser", userId);
-    //         socket.on("getUsers", (users) => {
-    //             console.log(users);
-    //         });
-    //     }
+    useEffect(() => {
+        const userId = state.user?._id;
+        if (userId) {
+            socket.emit("addUser", userId);
+            socket.on("getUsers", (users) => {
+                console.log(users);
+            });
+        }
 
-    //     return () => {
-    //         socket.off("addUser");
-    //         socket.off("getUsers");
-    //     };
-    // }, [state.user?._id]);
+        return () => {
+            socket.off("addUser");
+            socket.off("getUsers");
+        };
+    }, [state.user?._id]);
 
     return (
         <BrowserRouter>
@@ -57,14 +58,12 @@ function App() {
                 />
                 <Route element={<ProtectedRoute user={state.user} />}>
                     <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/profile/:userId" element={<UserProfile />} />
                     <Route path="/searchuser" element={<SearchUser />} />
                     <Route path="/userrooms" element={<UserRooms />} />
                     <Route
                         path="/usermessages"
-                        // element={
-                        //     <UserMessages socket={socket}
-                        //     />
-                        // }
+                        element={<UserMessages socket={socket} />}
                     />
                     <Route path="/userfriends" element={<UserFriends />} />
                     <Route path="/premium" element={<PremiumPage />} />

@@ -1,11 +1,9 @@
 import "./userFriends.css";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { Layout } from "../../components";
 import { AuthContext } from "../../context/AuthContext";
 
-import { userService } from "./UserService/userService";
 import ContactFriends from "./ContactUserF/ContactFriends";
-import { UFriends } from "../../types/UFriends";
 import UserFriendsTitle from "../../components/userFirends/userFriendsTitle/UserFriendsTitle";
 import useFetch from "../../hooks/useFetch";
 
@@ -15,16 +13,6 @@ const UserFriends: React.FC<unknown> = () => {
     const userId = state.user?._id;
 
     const { data: friends, reFetch } = useFetch(`/friend/${userId}`);
-    console.log(friends.friendsId);
-
-    // const [friends, setFriends] = useState<[] | UFriends[]>([]);
-    // useEffect(() => {
-    //     const fetchUFriends = async () => {
-    //         const response = await userService.getFriendsByUserId(userId!);
-    //         setFriends(response.data.friendsId);
-    //     };
-    //     fetchUFriends();
-    // }, [userId]);
 
     return (
         <Layout>

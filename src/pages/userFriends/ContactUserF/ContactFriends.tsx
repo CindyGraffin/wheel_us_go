@@ -1,4 +1,5 @@
 import React, { Key } from "react";
+import { AiOutlineUserAdd } from "react-icons/ai";
 import { IoTrashBinOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { Button } from "../../../components/UI";
@@ -21,17 +22,27 @@ const ContactFriends: React.FC<ContactFriendsProps> = ({
         userId: string,
         friendId: string
     ): Promise<void> => {
-        console.log(userId, friendId);
-
         await friendService.delete(userId, friendId);
         reFetch();
     };
     return (
-        <>
+        <div>
+            <div className="add_friend_navlink">
+                <NavLink to="/searchuser">
+                    <span className="button_container">
+                        <AiOutlineUserAdd />
+                        Ajouter un ami
+                    </span>
+                </NavLink>
+            </div>
+
             {friends &&
                 friends.map((friend: UFriends, key: Key) => (
                     <div className="contact_friends_container" key={key}>
-                        <NavLink to={`/`} className="navlink_friend_container">
+                        <NavLink
+                            to={`/profile/${friend._id}`}
+                            className="navlink_friend_container"
+                        >
                             <img
                                 className="friend-picture"
                                 src={friend.userImg}
@@ -54,7 +65,7 @@ const ContactFriends: React.FC<ContactFriendsProps> = ({
                         </Button>
                     </div>
                 ))}
-        </>
+        </div>
     );
 };
 

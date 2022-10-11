@@ -36,3 +36,26 @@
     align-items: center;
     gap: 5px;
 }
+
+.add_friend_navlink {
+    width: fit-content;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
+    font-weight: 600;
+    align-self: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    box-shadow: rgb(110 110 110 / 12%) 0px 2px 5px;
+    cursor: pointer;
+}
+
+.add_friend_navlink a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.add_friend_navlink:hover {
+    background-color: #a7704c;
+}

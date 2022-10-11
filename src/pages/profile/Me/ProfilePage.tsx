@@ -1,7 +1,7 @@
 import "./profilePage.css";
-import { Badge, Layout, UserHeadband } from "../../components/index";
-import { HiOutlineBadgeCheck } from "../../icons/index";
-import { AuthContext } from "../../context/AuthContext";
+import { Badge, Layout, UserHeadband } from "../../../components/index";
+import { HiOutlineBadgeCheck } from "../../../icons/index";
+import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
 
 
