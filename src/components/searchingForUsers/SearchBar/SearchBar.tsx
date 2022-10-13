@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({handleChange, userSearch}) => {
                             name="titlesearch"
                             value={userSearch}
                             onChange={handleChange}
-                            placeholder='Recherchez sur WUG'
+                            placeholder='Rechercher sur Wheel Us Go'
                             className='searchTerm' />
                     </p>
                 </form> 
