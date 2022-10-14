@@ -10,21 +10,22 @@ const Navlist: React.FC<unknown> = () => {
 			icon: <BiHomeAlt/>,
 		},
         {
-			path: "/searchuser",
-			icon: <BiSearchAlt/>,
-		},
-        {
 			path: "/userrooms",
 			icon: <TbBrandAirtable/>,
 		},
         {
-			path: "/usermessages",
-			icon: <AiOutlineMessage/>,
+			path: "/searchuser",
+			icon: <BiSearchAlt/>,
 		},
         {
 			path: "/userfriends",
 			icon: <HiOutlineUserGroup/>,
 		},
+        {
+			path: "/usermessages",
+			icon: <AiOutlineMessage/>,
+		},
+        
         {
 			path: "/premium",
 			icon: <AiOutlineStar/>,
