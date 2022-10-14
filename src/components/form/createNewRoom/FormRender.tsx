@@ -82,7 +82,6 @@ const FormRender: React.FC<unknown> = () => {
     const placeName = register("placeName", { required: true });
     const address = register("address", { required: true });
     const date = register("date", { required: true });
-    const time = register("time", { required: true });
     const partIds = register("partIds");
     const aperoWheelSetUp = register("aperoWheelSetUp");
     const dresscodeSetUp = register("dresscodeSetUp");
@@ -161,10 +160,6 @@ const FormRender: React.FC<unknown> = () => {
         partIds.onChange(e);
         handleChangeSearchBarGuest(e);
     };
-    const onChangeTime = (e: any) => {
-        time.onChange(e);
-        handleChange(e);
-    };
 
     const friendsAddedList = friendsList.filter((friend) =>
         friendsIdSelected.includes(friend._id!)
@@ -196,9 +191,7 @@ const FormRender: React.FC<unknown> = () => {
             />
             <CreateNewRoomCalendar
                 date={date}
-                time={time}
                 onChangeDate={onChangeDate}
-                onChangeTime={onChangeTime}
             />
             <CreateNewRoomParticipants />
             <SearchBarGuest
