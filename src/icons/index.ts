@@ -3,11 +3,11 @@ import { BiBeer, BiHomeAlt, BiReset, BiSearchAlt, BiSend } from "react-icons/bi"
 import { BsPeople } from "react-icons/bs";
 import {FaGlassMartiniAlt} from 'react-icons/fa';
 import { FiSettings } from "react-icons/fi";
-import {GiBabyFace, GiCartwheel, GiClover, GiMeal, GiRoastChicken} from 'react-icons/gi';
+import { IoCalendarOutline, IoChatbubblesOutline, IoPersonOutline, IoRestaurantOutline, IoTrashBinOutline, IoPersonAdd } from "react-icons/io5";
+import {GiBabyFace, GiCartwheel, GiClover, GiMeal, GiRoastChicken,GiChicken} from 'react-icons/gi';
 import {GoLocation} from "react-icons/go";
-import { HiOutlineBadgeCheck, HiOutlinePencilAlt, HiOutlineUserGroup, HiOutlinePhotograph } from "react-icons/hi";
+import {HiOutlineBadgeCheck, HiOutlinePencilAlt, HiOutlineUserGroup, HiOutlinePhotograph } from "react-icons/hi";
 import { IoMdExit } from "react-icons/io";
-import { IoCalendarOutline, IoChatbubblesOutline, IoPersonOutline, IoRestaurantOutline, IoTrashBinOutline } from "react-icons/io5";
 import { RiCloseCircleFill, RiErrorWarningLine, RiNewspaperLine, RiShirtLine } from "react-icons/ri";
 import { TbSofa, TbBrandAirtable } from "react-icons/tb";
 
@@ -23,8 +23,9 @@ export {
     BiSearchAlt, 
     BiSend,
     BsPeople, 
+    FiSettings, 
+    GiChicken,
     FaGlassMartiniAlt,
-    FiSettings,
     GiBabyFace, 
     GiCartwheel,
     GiClover,
@@ -37,6 +38,7 @@ export {
     HiOutlinePhotograph,
     IoCalendarOutline,
     IoChatbubblesOutline,
+    IoPersonAdd,
     IoMdExit,
     IoPersonOutline, 
     IoRestaurantOutline,  

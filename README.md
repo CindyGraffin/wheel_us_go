@@ -126,7 +126,7 @@ Mail: [boubacabko@gmail.com](boubacabko@gmail.com)
 :man: **Sofian Mejeddar**  
 Github: [aceovic](https://github.com/aceovic)  
 LinkedIn: [Sofian Mejeddar](https://www.linkedin.com/in/sofian-mejeddar/)  
-Mail: [alphfa@hotmail.com](alphfa@hotmail.com)
+Mail: [sofian.mejeddar@hotmail.fr](sofian.mejeddar@hotmail.fr)
 
 :man: **Roland Leteneur**  
 Github: [EresseaNui](https://github.com/EresseaNui)  
