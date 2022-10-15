@@ -28,6 +28,7 @@ import DashboardReport from "./pages/dashboard-report/DashboardReport";
 
 
 const socket = io("https://wheelsocket.azurewebsites.net/");
+// const socket = io("ws://localhost:8080");
 
 function App() {
     const { state } = useContext(AuthContext);
@@ -36,12 +37,10 @@ function App() {
         const userId = state.user?._id;
         if (userId) {
             socket.emit("addUser", userId);
-            socket.on("getUsers", (users) => {});
         }
 
         return () => {
             socket.off("addUser");
-            socket.off("getUsers");
         };
     }, [state.user?._id]);
 
